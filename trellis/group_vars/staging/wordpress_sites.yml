@@ -4,17 +4,19 @@
 wordpress_sites:
   nectardaamazonia.com.br:
     site_hosts:
-    - canonical: nectardaamazonia.com.br
-      redirects:
-      - www.nectardaamazonia.com.br
+    - canonical: staging.nectardaamazonia.com.br
+      # redirects:
+      # - www.staging.nectardaamazonia.com.br
     local_path: ../site
     branch: master
-    repo: git@github.com:example/example.com.git
+    repo: git@github.com:dsemblano/nectardaamazonia.git
     repo_subtree_path: site
     multisite:
       enabled: false
     ssl:
-      enabled: false
+      enabled: true
       provider: letsencrypt
     cache:
-      enabled: false
+      enabled: true
+      skip_cache_uri: /wp-admin/|/wp-json/|/xmlrpc.php|wp-.*.php|/feed/|index.php|sitemap(_index)?.xml|/store.*|/cart.*|/my-account.*|/checkout.*|/addons.*
+      skip_cache_cookie: comment_author|wordpress_[a-f0-9]+|wp-postpass|wordpress_no_cache|wordpress_logged_in|woocommerce_cart_hash|woocommerce_items_in_cart|wp_woocommerce_session_
