@@ -1,0 +1,18 @@
+# Created by trellis-cli vcanary
+# Documentation: https://roots.io/trellis/docs/wordpress-sites/
+
+wordpress_sites:
+  nectardaamazonia.com.br:
+    site_hosts:
+    - canonical: nectardaamazonia.test
+      redirects:
+      - www.nectardaamazonia.test
+    local_path: ../site
+    admin_email: admin@nectardaamazonia.test
+    multisite:
+      enabled: false
+    ssl:
+      enabled: false
+      provider: self-signed
+    cache:
+      enabled: false
