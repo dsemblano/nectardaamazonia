@@ -41,7 +41,9 @@
     "roots/wp-config": "1.0.0",
     "wpackagist-plugin/wp-import-export-lite":"^3.9.28",
     "wpackagist-plugin/wp-ultimate-csv-importer":"^7.21",
-    "wpackagist-theme/twentytwentyfive": "^1.0"
+    "wpackagist-theme/twentytwentyfive": "^1.0",
+    "wpackagist-plugin/woocommerce":"^9.8.2",
+    "generoi/sage-woocommerce": "^1.1"
   },
   "require-dev": {
     "roave/security-advisories": "dev-latest",
