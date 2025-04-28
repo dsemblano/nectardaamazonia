@@ -2,6 +2,8 @@
 @source "../views/";
 @source "../../app/";
 
+@plugin "@tailwindcss/typography";
+
 @theme {
     --color-primary: #D04A45;
     --color-secondary: #309237; 

@@ -1,5 +1,5 @@
 {{--
-  Template Name: Home Template
+  Template Name: Home Nectar Template
 --}}
 
 @extends('layouts.app')

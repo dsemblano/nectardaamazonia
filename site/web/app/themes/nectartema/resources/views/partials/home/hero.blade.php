@@ -5,27 +5,14 @@
                 {{-- <img id="logoname" class="hover:scale-110 transition duration-300 ease-in-out animate__animated animate__heartBeat animate__fast animate__delay-2s" width="200" height="280"
                 src="{{ asset('resources/images/TucuFoodlogo.png') }}" alt="Tour Macapá página inicial" /> --}}
 
-                <span
-                    class="bg-primary text-white font-sans text-xl inline-block px-6 py-2 animate__animated animate__fadeInLeftBig">
-                    Cupons vouchers
-                </span>
-                <div class="flex flex-row">
-                    <div class="w-full">
-                        <h1
-                        class="mt-4 text-6xl lg:text-8xl hero-heading font-bold text-grayH animate__animated animate__zoomInLeft  animate__fast text-p">
-                        Tour<br /> 
-                        <span class="flex flex-row"> Macapá 
-                        </span>
-                        </h1>
-                    </div>
                     
                 </div>
 
-                <div class="hero-text text-center lg:text-left">
-                    <p class="mt-7 text-3xl text-grayH">
+                <div class="hero-text prose lg:prose-xl">
+                    <p class="mt-7">
                         Os melhores estabelecimentos da cidade e região!
                     </p>
-                    <p class="mt-7 text-3xl text-grayH">
+                    <p class="mt-7">
                         Vouchers cupons Compre 1 Leve outro e promoções para os melhores estabelecimentos do Amapá!
                     </p>
                 </div>
