@@ -20,15 +20,9 @@
       @include('sections.header')
 
       <main id="main" class="main mt-24 lg:pt-6 flex-1">
-        @if (is_woocommerce() || is_cart() || is_checkout() || is_account_page())
         <div class="container woocommerce-wrapper">
           @yield('content')
         </div>
-            
-        @else
-          @yield('content')
-        @endif
-
       </main>
 
       @hasSection('sidebar')
