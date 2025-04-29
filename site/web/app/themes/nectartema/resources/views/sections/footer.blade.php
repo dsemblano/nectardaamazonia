@@ -5,7 +5,7 @@
         flex-row my-8 nav text-sm md:text-xl relative', 'echo' => false]) !!}
   </div>
   <div class="text-sm mt-4 flex flex-col items-center copyright border-gray-500 border-t border-solid pt-8 gap-2">
-    <span class="z-10 font-bold">© {{date("Y")}} Tour Macapá<span
+    <span class="z-10 font-bold">© 2018 - {{date("Y")}} Néctar da Amazônia<span
         class="sup align-text-bottom">&reg;</span>
   </div>
 </footer>
