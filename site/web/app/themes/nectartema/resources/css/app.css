@@ -53,7 +53,7 @@ ul#menu-menu-principal {
 .home-wrapper,
 .nav-primary {
   --s: 9px; /* control the size*/
-  --c1: #ffc107;
+  --c1: #ffc107; /* background color */
   --c2: #ffb300;
   
   --c:#0000,var(--c1) .5deg 119.5deg,#0000 120deg;
@@ -66,4 +66,11 @@ ul#menu-menu-principal {
     var(--g3) var(--s) 0,var(--g3) 0 calc(1.73*var(--s)) 
     var(--c2);
   background-size: calc(2*var(--s)) calc(3.46*var(--s));
+}
+
+/* Animation canvas home */
+canvas {
+  background: rgba(50,50,50,.05);
+  width: 100vw;
+  height: 100vh;
 }
