@@ -37,7 +37,7 @@ return [
         /**
          * Disable Gutenberg block library CSS.
          */
-        'disable-gutenberg-block-css' => true,
+        'disable-gutenberg-block-css' => false,
 
         /**
          * Disable extra RSS feeds.
@@ -52,7 +52,7 @@ return [
         /**
          * Disable gallery CSS.
          */
-        'disable-gallery-css' => true,
+        'disable-gallery-css' => false,
 
     ],
 
@@ -87,7 +87,7 @@ return [
         /**
          * Enable relative URLs.
          */
-        'enabled' => false,
+        'enabled' => true,
 
         /**
          * The hooks to filter.

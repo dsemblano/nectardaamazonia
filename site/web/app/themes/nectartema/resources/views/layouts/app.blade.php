@@ -20,13 +20,23 @@
       @include('sections.header')
 
       <main id="main" class="main mt-24 lg:pt-6 flex-1">
+        {{-- Só para as págins Woocommerce --}}
         @if (is_woocommerce() || is_cart() || is_checkout() || is_account_page())
         <div class="container woocommerce-wrapper">
           @yield('content')
         </div>
             
-        @else
+        {{-- Quando for páginas menos a home --}}
+        @elseif (! is_front_page() && ! is_home())
+        <div class="page-wrapper bg-green-400">
           @yield('content')
+        </div>
+
+        @else
+        {{-- Só para a home --}}
+        <div class="home-wrapper bg-red-400">
+          @yield('content')
+        </div>
         @endif
 
       </main>

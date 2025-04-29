@@ -13,9 +13,13 @@
     --font-sans: "LatoRegular", sans-serif;
     --font-p: "LatoRegular", sans-serif;
   }
+
+  .container {
+    display: contents;
+  }
   
   @layer utility {
-    .container {
+    .container > *:not(h1) {
       padding: var(--container-padding, 1rem);
       margin-inline: auto;
       
@@ -35,10 +39,6 @@
   
   html {
     scroll-behavior: smooth;
-  }
-
-  body {
-    background-color: var(--color-primary);
   }
 
 /* Menu */
