@@ -16,9 +16,11 @@
     "translate:mo": "wp i18n make-mo ./resources/lang ./resources/lang"
   },
   "devDependencies": {
+    "@alpinejs/focus": "^3.14.9",
     "@roots/vite-plugin": "^1.0.2",
     "@tailwindcss/typography": "^0.5.16",
     "@tailwindcss/vite": "^4.0.9",
+    "alpinejs": "^3.14.9",
     "laravel-vite-plugin": "^1.2.0",
     "tailwindcss": "^4.0.9",
     "vite": "^6.2.0"
