@@ -28,9 +28,9 @@
             
         {{-- Quando for páginas menos a home --}}
         @elseif (! is_front_page() && ! is_home())
-        <div class="page-wrapper bg-green-400">
+        {{-- <div class="page-wrapper bg-green-400"> --}}
           @yield('content')
-        </div>
+        {{-- </div> --}}
 
         @else
         {{-- Só para a home --}}

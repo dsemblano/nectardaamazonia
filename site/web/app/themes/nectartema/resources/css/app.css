@@ -19,7 +19,7 @@
 }
 
 @layer utility {
-  .container>*:not(h1) {
+  .container .section-page>*:not(h1) {
     padding: var(--container-padding, 1rem);
     margin-inline: auto;
 
