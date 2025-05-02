@@ -1,18 +1,15 @@
 @font-face {
     font-display: swap;
-    font-family: 'Tanker Regular';
+    font-family: 'Poppins-Regular';
     font-style: normal;
     font-weight: 400;
-    src: url('@fonts/Tanker-Regular.woff2') format('woff2'),
-       url('@fonts/Tanker-Regular.woff') format('woff'),
-       url('@fonts/Tanker-Regular.ttf') format('truetype'),
-       url('@fonts/Tanker-Regular.eot') format('eot');
+    src: url('@fonts/Poppins/Poppins-Regular.ttf') format('truetype');
   }
 
   @font-face {
-    font-family: 'LatoRegular';
     font-display: swap;
+    font-family: 'Lato-Regular';
     font-style: normal;
     font-weight: 400;
-    src: url('@fonts/Lato-Regular.ttf') format('truetype');
+    src: url('@fonts/Lato/Lato-Regular.ttf') format('truetype');
   }
