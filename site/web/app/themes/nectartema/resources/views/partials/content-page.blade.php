@@ -1,9 +1,9 @@
 @if (! is_front_page() && ! is_home() )
 
   <div class="container mx-auto">
-      <section class="section-page prose prose-xl max-w-full">
+      <div class="section-page prose prose-xl max-w-full">
         @php(the_content())
-      </section>
+      </div>
   </div>
 
 @else
