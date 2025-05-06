@@ -34,9 +34,7 @@
 
         @else
         {{-- Só para a home --}}
-        <div class="home-wrapper bg-red-400">
           @yield('content')
-        </div>
         @endif
 
       </main>

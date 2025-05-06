@@ -5,12 +5,12 @@
 
 @plugin "@tailwindcss/typography";
 
-
-@theme {
-  --color-primary: #D04A45;
+@theme static {
+  --color-primary: #E69037;
   --color-secondary: #EE7605;
-  --color-accent: #9561e2;
-  --color-page: #F8EAD0;
+  --color-fundo: #F8EAD0;
+  --color-melescuro: #B45F1F;
+  --color-dourado: #E69037;
   --color-p: #363B4C;
   --font-heading: "Poppins-Regular", sans-serif;
   --font-heading-bold: "Poppins-Black", sans-serif;
