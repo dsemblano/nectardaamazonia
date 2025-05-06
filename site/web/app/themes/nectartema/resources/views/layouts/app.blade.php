@@ -19,7 +19,7 @@
 
       @include('sections.header')
 
-      <main id="main" class="main mt-14 pt-6 flex-1">
+      <main id="main" class="main flex-1">
         {{-- Só para as págins Woocommerce --}}
         @if (is_woocommerce() || is_cart() || is_checkout() || is_account_page())
         <div class="container woocommerce-wrapper">
