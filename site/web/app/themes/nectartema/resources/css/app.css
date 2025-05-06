@@ -16,6 +16,11 @@
   --font-heading-bold: "Poppins-Black", sans-serif;
   --font-sans: "Lato-Regular", sans-serif;
   --font-p: "Lato-Regular", sans-serif;
+  --font-pbold: "Lato-Bold", sans-serif;
+}
+
+strong {
+  @apply text-inherit font-pbold;
 }
 
 /* .container {
