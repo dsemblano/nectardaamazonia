@@ -44,6 +44,8 @@
     "generoi/sage-woocommerce": "^1.1",
     "roots/acorn-prettify": "^1.0",
     "wpackagist-plugin/find-my-blocks":"^4.0.3",
+    "wpackagist-plugin/getwid":"^2.1.0",
+    "wpackagist-plugin/generateblocks":"^2.0.2",
     "log1x/navi": "^3.1"
   },
   "require-dev": {

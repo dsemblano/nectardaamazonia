@@ -18,12 +18,14 @@
   --font-p: "Lato-Regular", sans-serif;
 }
 
-.container {
+/* .container {
   display: contents;
-}
+} */
+
+/* .section-page>*:not(h1) */
 
 @layer utility {
-  .container .section-page>*:not(h1) {
+  .container {
     padding: var(--container-padding, 1rem);
     margin-inline: auto;
 
