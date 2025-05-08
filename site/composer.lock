@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "993917564ada758febcbcea0d3caa397",
+    "content-hash": "aa3c19e8295ee792f0e9b67e14872aec",
     "packages": [
         {
             "name": "brick/math",
@@ -6869,6 +6869,24 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/woocommerce/"
+        },
+        {
+            "name": "wpackagist-plugin/zoloblocks",
+            "version": "2.2.7",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/zoloblocks/",
+                "reference": "tags/2.2.7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/zoloblocks.2.2.7.zip"
+            },
+            "require": {
+                "composer/installers": "^1.0 || ^2.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/zoloblocks/"
         },
         {
             "name": "wpackagist-theme/twentytwentyfive",
