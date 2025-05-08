@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "f1adc6994a338fd7acb54a009ae9276d",
+    "content-hash": "993917564ada758febcbcea0d3caa397",
     "packages": [
         {
             "name": "brick/math",
@@ -6851,24 +6851,6 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/otter-blocks/"
-        },
-        {
-            "name": "wpackagist-plugin/responsive-block-editor-addons",
-            "version": "2.0.4",
-            "source": {
-                "type": "svn",
-                "url": "https://plugins.svn.wordpress.org/responsive-block-editor-addons/",
-                "reference": "tags/2.0.4"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/responsive-block-editor-addons.2.0.4.zip"
-            },
-            "require": {
-                "composer/installers": "^1.0 || ^2.0"
-            },
-            "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/responsive-block-editor-addons/"
         },
         {
             "name": "wpackagist-plugin/woocommerce",

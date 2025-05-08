@@ -1,6 +1,6 @@
-<article @php(post_class('h-entry'))>
+<article class="container prose prose-xl max-w-full" @php(post_class('h-entry'))>
   <header>
-    <h1 class="p-name">
+    <h1 class="p-name text-secondary">
       {!! $title !!}
     </h1>
 
