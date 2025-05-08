@@ -43,9 +43,9 @@
     "wpackagist-plugin/woocommerce":"^9.8.2",
     "generoi/sage-woocommerce": "^1.1",
     "roots/acorn-prettify": "^1.0",
-    "wpackagist-plugin/find-my-blocks":"^4.0.3",
-    "wpackagist-plugin/getwid":"^2.1.0",
     "wpackagist-plugin/generateblocks":"^2.0.2",
+    "wpackagist-plugin/responsive-block-editor-addons":"^2.0.3",
+    "wpackagist-plugin/otter-blocks":"^3.0.11",
     "log1x/navi": "^3.1"
   },
   "require-dev": {
