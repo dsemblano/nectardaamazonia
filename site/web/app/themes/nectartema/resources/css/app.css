@@ -36,11 +36,11 @@ strong {
     margin-inline: auto;
 
     @variant lg {
-      padding-inline: 4rem;
+      padding-inline: 8rem;
     }
 
     @variant xl {
-      padding-inline: 5rem;
+      padding-inline: 10rem;
     }
   }
 }

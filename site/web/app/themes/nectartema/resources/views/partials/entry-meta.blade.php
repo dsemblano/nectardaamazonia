@@ -1,5 +1,10 @@
 <time class="dt-published" datetime="{{ get_post_time('c', true) }}">
-  Postado em: {{ get_the_date() }}
+  <div class="text-base leading-6 text-p">
+      <span>Postado em {{ the_time('j F Y') }}<br></span>
+      @if ( get_the_modified_time( 'U' ) > get_the_time( 'U' ) )
+        <span>Atualizada em {{ the_modified_time('j F Y') }}</span>
+      @endif
+  </div>
 </time>
 
 {{-- <p>

@@ -1,6 +1,6 @@
 <div x-data="{ mobileOpen: false }" class="relative" x-cloak>
     <!-- Desktop Menu (Hidden on mobile) -->
-    <ul class="hidden lg:flex items-center space-x-6 text-xl lg:text-lg font-heading">
+    <ul class="hidden lg:flex justify-between text-xl lg:text-lg font-heading">
         @foreach ($primary_navigation as $item)
             <li class="hover:text-primary hover:underline transition-colors">
                 <a href="{{ $item->url }}"

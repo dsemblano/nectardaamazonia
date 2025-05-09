@@ -4,6 +4,10 @@
       {!! $title !!}
     </h1>
 
+    <p class="my-3 excerpt">
+      {{ get_the_excerpt() }}
+    </p>
+
     @include('partials.entry-meta')
   </header>
 
