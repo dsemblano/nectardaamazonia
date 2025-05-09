@@ -1,4 +1,4 @@
-<article class="container prose prose-xl max-w-full" @php(post_class('h-entry'))>
+<article class="container prose prose-xl max-w-full mt-12" @php(post_class('h-entry'))>
   <header>
     <h1 class="p-name text-secondary">
       {!! $title !!}
@@ -19,5 +19,5 @@
     </footer>
   @endif
 
-  @php(comments_template())
+  {{-- @php(comments_template()) --}}
 </article>
