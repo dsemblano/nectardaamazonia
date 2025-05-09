@@ -81,6 +81,10 @@ h6 {
   @apply text-xl
 }
 
+p {
+  @apply break-all;
+}
+
 .home-wrapper {
   --s: 9px;
   /* control the size*/
