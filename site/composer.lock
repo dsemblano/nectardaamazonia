@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "aa3c19e8295ee792f0e9b67e14872aec",
+    "content-hash": "cdc17d363490b54ab4160f635da8c2ba",
     "packages": [
         {
             "name": "brick/math",
@@ -6815,6 +6815,24 @@
                 "source": "https://github.com/webmozarts/assert/tree/1.11.0"
             },
             "time": "2022-06-03T18:03:27+00:00"
+        },
+        {
+            "name": "wpackagist-plugin/foobox-image-lightbox",
+            "version": "2.7.34",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/foobox-image-lightbox/",
+                "reference": "tags/2.7.34"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/foobox-image-lightbox.2.7.34.zip"
+            },
+            "require": {
+                "composer/installers": "^1.0 || ^2.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/foobox-image-lightbox/"
         },
         {
             "name": "wpackagist-plugin/generateblocks",

@@ -118,3 +118,36 @@ ul#menu-menu-principal {
 }
 
 /* Single pages */
+.wp-block-gallery.has-nested-images figure.wp-block-image:has(figcaption):before {
+  display: none;
+}
+
+ .wp-block-gallery.has-nested-images figure.wp-block-image figcaption {
+  background: none;
+  }
+
+/* Larger gallery block captions on wider screens */
+
+@media only screen and (min-width: 922px) {
+.wp-block-gallery.has-nested-images figure.wp-block-image figcaption {
+  font-size: 0.9em;
+  line-height: 24px;
+  padding: 0.5em 0.5px 0.5em 0.5px;
+  background: rgba(0,0,0,0.55);
+  position: absolute;
+  bottom: 2.2em;
+  }
+}
+
+/* Smaller gallery block captions on narrower screens */
+
+@media only screen and (max-width: 922px) {
+.wp-block-gallery.has-nested-images figure.wp-block-image figcaption {
+  font-size: 0.5em;
+  position: relative;
+  bottom: 8.2em;
+  line-height: 18px;
+  padding: 0.3em 0.2em 0.3em 0.2em;
+  background: rgba(0,0,0,0.55);
+  }
+}
