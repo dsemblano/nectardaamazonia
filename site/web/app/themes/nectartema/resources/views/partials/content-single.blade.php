@@ -1,4 +1,4 @@
-<article class="container prose prose-xl max-w-full mt-12" @php(post_class('h-entry'))>
+<article class="container prose prose-xl max-w-full prose-h1:text-4xl mt-12" @php(post_class('h-entry'))>
   <header>
     <h1 class="p-name text-secondary">
       {!! $title !!}
@@ -10,6 +10,8 @@
 
     @include('partials.entry-meta')
   </header>
+
+  <hr class="h-0.5 my-8 bg-gray-500 border-0">
 
   <div class="e-content">
     @php(the_content())

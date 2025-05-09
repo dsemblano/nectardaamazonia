@@ -107,3 +107,10 @@ ul#menu-menu-principal {
 :root :where(a:where(:not(.wp-element-button))) {
   text-decoration: inherit;
 }
+
+/* Otter block */
+.components-modal__screen-overlay {
+  display: none !important;
+}
+
+/* Single pages */
