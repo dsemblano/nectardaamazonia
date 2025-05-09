@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "cdc17d363490b54ab4160f635da8c2ba",
+    "content-hash": "5334f023063f0bcfd12e7e025d50f035",
     "packages": [
         {
             "name": "brick/math",
@@ -6853,6 +6853,24 @@
             "homepage": "https://wordpress.org/plugins/generateblocks/"
         },
         {
+            "name": "wpackagist-plugin/greenshift-animation-and-page-builder-blocks",
+            "version": "11.5.2",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/greenshift-animation-and-page-builder-blocks/",
+                "reference": "tags/11.5.2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/greenshift-animation-and-page-builder-blocks.11.5.2.zip"
+            },
+            "require": {
+                "composer/installers": "^1.0 || ^2.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/greenshift-animation-and-page-builder-blocks/"
+        },
+        {
             "name": "wpackagist-plugin/otter-blocks",
             "version": "3.0.11",
             "source": {
@@ -6869,6 +6887,24 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/otter-blocks/"
+        },
+        {
+            "name": "wpackagist-plugin/simply-gallery-block",
+            "version": "3.2.6",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/simply-gallery-block/",
+                "reference": "tags/3.2.6"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/simply-gallery-block.3.2.6.zip"
+            },
+            "require": {
+                "composer/installers": "^1.0 || ^2.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/simply-gallery-block/"
         },
         {
             "name": "wpackagist-plugin/woocommerce",
