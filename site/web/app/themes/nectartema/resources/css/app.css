@@ -118,3 +118,10 @@ ul#menu-menu-principal {
 }
 
 /* Single pages */
+.page:not(.page.home) main {
+  H1,
+  section
+   {
+    @apply prose lg:prose-lg max-w-none;
+  }
+}
