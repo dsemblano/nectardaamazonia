@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "5334f023063f0bcfd12e7e025d50f035",
+    "content-hash": "b23642c0a778e25014692a0f099f1d30",
     "packages": [
         {
             "name": "brick/math",
@@ -6869,24 +6869,6 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/greenshift-animation-and-page-builder-blocks/"
-        },
-        {
-            "name": "wpackagist-plugin/otter-blocks",
-            "version": "3.0.11",
-            "source": {
-                "type": "svn",
-                "url": "https://plugins.svn.wordpress.org/otter-blocks/",
-                "reference": "tags/3.0.11"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/otter-blocks.3.0.11.zip"
-            },
-            "require": {
-                "composer/installers": "^1.0 || ^2.0"
-            },
-            "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/otter-blocks/"
         },
         {
             "name": "wpackagist-plugin/simply-gallery-block",
