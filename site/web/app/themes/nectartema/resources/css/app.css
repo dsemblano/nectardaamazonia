@@ -1,3 +1,4 @@
+@layer "global-block-styles";
 @import "tailwindcss" theme(static);
 @import './fonts.css';
 @source "../views/";
@@ -108,9 +109,9 @@ ul#menu-menu-principal {
   @apply flex flex-col lg:flex-row gap-x-8
 }
 
-:root :where(a:where(:not(.wp-element-button))) {
+/* :root :where(a:where(:not(.wp-element-button))) {
   text-decoration: inherit;
-}
+} */
 
 /* Single pages */
 .page:not(.page.home) main section .container:not(h1.container) {
