@@ -112,6 +112,6 @@ ul#menu-menu-principal {
   @apply prose lg:prose-lg max-w-none prose-h1:text-inherit prose-strong:text-inherit;
 }
 
-.header-page {
+/* .header-page {
   background-color: green;
-}
+} */
