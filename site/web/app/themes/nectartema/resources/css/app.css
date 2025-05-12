@@ -1,10 +1,8 @@
-@layer "global-block-styles";
 @import "tailwindcss" theme(static);
-@import './fonts.css';
+@plugin "@tailwindcss/typography";
 @source "../views/";
 @source "../../app/";
-
-@plugin "@tailwindcss/typography";
+@import './fonts.css';
 
 @theme static {
   --color-primary: #E69037;
@@ -19,10 +17,6 @@
   --font-sans: "Lato-Regular", sans-serif;
   --font-p: "Lato-Regular", sans-serif;
   --font-pbold: "Lato-Bold", sans-serif;
-}
-
-strong {
-  @apply text-inherit font-pbold;
 }
 
 /* .container {
@@ -113,9 +107,9 @@ ul#menu-menu-principal {
   text-decoration: inherit;
 } */
 
-/* Single pages */
+/* pages */
 .page:not(.page.home) main section .container:not(h1.container) {
-  @apply prose lg:prose-lg max-w-none prose-h1:text-inherit;
+  @apply prose lg:prose-lg max-w-none prose-h1:text-inherit prose-strong:text-inherit;
 }
 
 .header-page {
