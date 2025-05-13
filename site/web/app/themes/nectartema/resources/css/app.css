@@ -108,8 +108,13 @@ ul#menu-menu-principal {
 } */
 
 /* pages */
+/* .page:not(.page.home) main section .container:not(h1.container) { */
 .page:not(.page.home) main section .container:not(h1.container) {
-  @apply prose lg:prose-lg max-w-none prose-h1:text-inherit prose-strong:text-inherit;
+  @apply prose prose-h1:text-6xl lg:prose-lg max-w-none prose-strong:text-inherit;
+}
+
+main section header h1.container {
+  @apply text-6xl;
 }
 
 /* .header-page {
