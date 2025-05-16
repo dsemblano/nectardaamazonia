@@ -61,6 +61,7 @@ h6 {
   h1 {
     @apply text-6xl lg:text-8xl font-heading-bold text-secondary;
   }
+
   section:not(#hero-section) {
     padding-top: 3rem;
   }
@@ -125,18 +126,15 @@ main section header h1.container {
   background-color: green;
 } */
 
-section#quem-somos {
+/* section#quem-somos {
   display: flex;
-  flex-direction: column;
-  background-color: var(--color-fundo);
+  flex-direction: column; */
 
-  .header-page {
-    background-color: red;
-    margin-bottom: 10rem;
-    height: auto;
-  }
-
-  .container.relative {
+/* .container.relative {
     background-color: yellow;
-  }
+  } */
+
+.section-page .header-page {
+  margin-bottom: 10rem;
+  height: auto;
 }
