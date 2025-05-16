@@ -109,8 +109,12 @@ ul#menu-menu-principal {
 
 /* pages */
 /* .page:not(.page.home) main section .container:not(h1.container) { */
-.page:not(.page.home) main section .container:not(h1.container) {
+/* .page:not(.page.home) main section .container:not(h1.container) {
   @apply prose prose-h1:text-6xl lg:prose-lg max-w-none prose-strong:text-inherit;
+} */
+
+.container.relative {
+  @apply prose lg:prose-lg max-w-none;
 }
 
 main section header h1.container {
@@ -120,3 +124,19 @@ main section header h1.container {
 /* .header-page {
   background-color: green;
 } */
+
+section#quem-somos {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--color-fundo);
+
+  .header-page {
+    background-color: red;
+    margin-bottom: 10rem;
+    height: auto;
+  }
+
+  .container.relative {
+    background-color: yellow;
+  }
+}
