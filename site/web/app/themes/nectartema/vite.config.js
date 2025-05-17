@@ -14,7 +14,13 @@ export default defineConfig({
         'resources/css/editor.css',
         'resources/js/editor.js',
       ],
-      refresh: true,
+      // refresh: true,
+        refresh: [
+        'resources/views/**/*.blade.php',
+        'resources/**/*.js',
+        'resources/**/*.vue',
+        './**/*.php', // Watch .php files for changes
+      ],
     }),
 
     wordpressPlugin(),
