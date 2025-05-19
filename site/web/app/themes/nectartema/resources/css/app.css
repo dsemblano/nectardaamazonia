@@ -139,6 +139,6 @@ main section header h1.container {
 }
 
 .header-image-h1 {
-   filter: brightness(50%);
-   background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5));
+   /* filter: brightness(50%); */
+   background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5));
 }
