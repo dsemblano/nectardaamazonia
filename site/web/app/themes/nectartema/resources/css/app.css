@@ -136,5 +136,8 @@ main section header h1.container {
 
 .section-page .header-page {
   margin-bottom: 10rem;
-  height: auto;
+}
+
+.header-image-h1 {
+   filter: brightness(50%);
 }
