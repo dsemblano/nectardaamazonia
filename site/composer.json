@@ -48,6 +48,7 @@
     "wpackagist-plugin/foobox-image-lightbox":"^2.7.34",
     "wpackagist-plugin/greenshift-animation-and-page-builder-blocks":"^11.5.2",
     "wpackagist-plugin/simply-gallery-block":"^3.2.6",
+    "wpackagist-plugin/ewww-image-optimizer":"^8.1.4",
     "log1x/navi": "^3.1"
   },
   "require-dev": {
