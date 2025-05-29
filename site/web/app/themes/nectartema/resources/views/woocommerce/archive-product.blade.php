@@ -22,8 +22,8 @@ the readme will list any important changes.
         do_action('woocommerce_before_main_content');
     @endphp
 
-    <section id="loja">
-        <header class="woocommerce-products-header bg-secondary prose max-w-none prose-h1:text-headingprimary">
+    <section id="loja" class=" prose max-w-none prose-h1:text-headingprimary">
+        <header class="woocommerce-products-header bg-secondary">
             @if (apply_filters('woocommerce_show_page_title', true))
                 <h1 class="woocommerce-products-header__title page-title container">{!! woocommerce_page_title(false) !!}</h1>
             @endif
