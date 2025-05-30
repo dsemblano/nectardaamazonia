@@ -23,7 +23,7 @@ the readme will list any important changes.
     @endphp
 
     <section id="shop" class=" prose max-w-none prose-h1:text-headingprimary">
-        <header class="woocommerce-products-header bg-secondary">
+        <header class="woocommerce-products-header">
             @if (apply_filters('woocommerce_show_page_title', true))
                 <h1 class="woocommerce-products-header__title page-title container">{!! woocommerce_page_title(false) !!}</h1>
             @endif
