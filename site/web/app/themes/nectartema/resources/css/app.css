@@ -105,16 +105,6 @@ ul#menu-menu-principal {
   @apply flex flex-col lg:flex-row gap-x-8
 }
 
-/* :root :where(a:where(:not(.wp-element-button))) {
-  text-decoration: inherit;
-} */
-
-/* pages */
-/* .page:not(.page.home) main section .container:not(h1.container) { */
-/* .page:not(.page.home) main section .container:not(h1.container) {
-  @apply prose prose-h1:text-6xl lg:prose-lg max-w-none prose-strong:text-inherit;
-} */
-
 .container.relative {
   @apply prose lg:prose-lg max-w-none;
 }
@@ -123,18 +113,6 @@ main section header h1.container {
   @apply text-6xl;
 }
 
-/* .header-page {
-  background-color: green;
-} */
-
-/* section#quem-somos {
-  display: flex;
-  flex-direction: column; */
-
-/* .container.relative {
-    background-color: yellow;
-  } */
-
 .section-page .header-page {
   margin-bottom: 10rem;
 }
@@ -142,4 +120,13 @@ main section header h1.container {
 .header-image-h1 {
    /* filter: brightness(50%); */
    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5));
+}
+
+/* Woocommerce */
+.products.columns-4 {
+  @apply flex flex-col lg:flex-row items-stretch justify-between content-between;
+}
+
+.woocommerce ul.products[class*="columns-"] li.product, .woocommerce-page ul.products[class*="columns-"] li.product {
+  width: 100%;
 }
