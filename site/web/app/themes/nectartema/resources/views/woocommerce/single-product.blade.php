@@ -35,5 +35,8 @@ the readme will list any important changes.
         do_action('get_sidebar', 'shop');
         do_action('get_footer', 'shop');
     @endphp
-    </section>
+        </section>
+        <div class="container flex flex-col lg:flex-row lg:justify-between">
+            {!! woocommerce_output_related_products() !!}
+        </div>
 @endsection

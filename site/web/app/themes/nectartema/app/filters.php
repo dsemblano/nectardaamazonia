@@ -35,6 +35,10 @@ add_filter('woocommerce_product_single_add_to_cart_text', function ($text) {
   return __('Comprar', 'sage');
 });
 
+add_filter('woocommerce_product_related_products_heading', function ($text) {
+  return __('Você pode comprar também:', 'sage');
+});
+
 
 // Remove all possible fields
 // add_filter( 'woocommerce_checkout_fields', function($fields) {

@@ -130,7 +130,7 @@ remove_action('woocommerce_after_shop_loop_item', 'woocommerce_template_loop_add
  */
 remove_action('woocommerce_after_single_product_summary', 'woocommerce_output_product_data_tabs', 10);
 // remove_action('woocommerce_after_single_product_summary', 'woocommerce_upsell_display', 15);
-// remove_action('woocommerce_after_single_product_summary', 'woocommerce_output_related_products', 20);
+remove_action('woocommerce_after_single_product_summary', 'woocommerce_output_related_products', 20);
 
 /**
  * Product Summary Box.
