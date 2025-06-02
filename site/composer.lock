@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "f50e30c393bdfdd891074e7f04459f58",
+    "content-hash": "b1dfea3fcb971a6c893c6438a8708f94",
     "packages": [
         {
             "name": "brick/math",
@@ -6828,6 +6828,24 @@
             "homepage": "https://wordpress.org/plugins/autodescription/"
         },
         {
+            "name": "wpackagist-plugin/contact-form-7",
+            "version": "6.0.6",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/contact-form-7/",
+                "reference": "tags/6.0.6"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/contact-form-7.6.0.6.zip"
+            },
+            "require": {
+                "composer/installers": "^1.0 || ^2.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/contact-form-7/"
+        },
+        {
             "name": "wpackagist-plugin/ewww-image-optimizer",
             "version": "8.1.4",
             "source": {
@@ -6900,6 +6918,24 @@
             "homepage": "https://wordpress.org/plugins/greenshift-animation-and-page-builder-blocks/"
         },
         {
+            "name": "wpackagist-plugin/redirection",
+            "version": "5.5.2",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/redirection/",
+                "reference": "tags/5.5.2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/redirection.5.5.2.zip"
+            },
+            "require": {
+                "composer/installers": "^1.0 || ^2.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/redirection/"
+        },
+        {
             "name": "wpackagist-plugin/regenerate-thumbnails",
             "version": "3.1.6",
             "source": {
@@ -6916,6 +6952,24 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/regenerate-thumbnails/"
+        },
+        {
+            "name": "wpackagist-plugin/side-cart-woocommerce",
+            "version": "2.6.5",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/side-cart-woocommerce/",
+                "reference": "tags/2.6.5"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/side-cart-woocommerce.2.6.5.zip"
+            },
+            "require": {
+                "composer/installers": "^1.0 || ^2.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/side-cart-woocommerce/"
         },
         {
             "name": "wpackagist-plugin/simply-gallery-block",
@@ -6936,6 +6990,24 @@
             "homepage": "https://wordpress.org/plugins/simply-gallery-block/"
         },
         {
+            "name": "wpackagist-plugin/woo-checkout-field-editor-pro",
+            "version": "2.1.4",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/woo-checkout-field-editor-pro/",
+                "reference": "tags/2.1.4"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/woo-checkout-field-editor-pro.2.1.4.zip"
+            },
+            "require": {
+                "composer/installers": "^1.0 || ^2.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/woo-checkout-field-editor-pro/"
+        },
+        {
             "name": "wpackagist-plugin/woocommerce",
             "version": "9.9.1",
             "source": {
@@ -6952,6 +7024,78 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/woocommerce/"
+        },
+        {
+            "name": "wpackagist-plugin/woocommerce-correios",
+            "version": "4.2.5",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/woocommerce-correios/",
+                "reference": "tags/4.2.5"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/woocommerce-correios.4.2.5.zip"
+            },
+            "require": {
+                "composer/installers": "^1.0 || ^2.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/woocommerce-correios/"
+        },
+        {
+            "name": "wpackagist-plugin/woocommerce-mercadopago",
+            "version": "8.1.0",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/woocommerce-mercadopago/",
+                "reference": "tags/8.1.0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/woocommerce-mercadopago.8.1.0.zip"
+            },
+            "require": {
+                "composer/installers": "^1.0 || ^2.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/woocommerce-mercadopago/"
+        },
+        {
+            "name": "wpackagist-plugin/woocommerce-pdf-invoices-packing-slips",
+            "version": "4.5.2",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/woocommerce-pdf-invoices-packing-slips/",
+                "reference": "tags/4.5.2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/woocommerce-pdf-invoices-packing-slips.4.5.2.zip"
+            },
+            "require": {
+                "composer/installers": "^1.0 || ^2.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/woocommerce-pdf-invoices-packing-slips/"
+        },
+        {
+            "name": "wpackagist-plugin/wp-mail-smtp",
+            "version": "4.4.0",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/wp-mail-smtp/",
+                "reference": "tags/4.4.0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/wp-mail-smtp.4.4.0.zip"
+            },
+            "require": {
+                "composer/installers": "^1.0 || ^2.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/wp-mail-smtp/"
         },
         {
             "name": "wpackagist-plugin/zoloblocks",
