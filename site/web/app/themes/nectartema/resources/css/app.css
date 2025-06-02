@@ -118,8 +118,8 @@ main section header h1.container {
 }
 
 .header-image-h1 {
-   /* filter: brightness(50%); */
-   background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5));
+  /* filter: brightness(50%); */
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
 }
 
 /* Woocommerce */
@@ -127,6 +127,15 @@ main section header h1.container {
   @apply flex flex-col lg:flex-row items-stretch justify-between content-between;
 }
 
-.woocommerce ul.products[class*="columns-"] li.product, .woocommerce-page ul.products[class*="columns-"] li.product {
-  width: 100%;
+.single_add_to_cart_button {
+  background-color: var(--color-secondary) !important;
+  color: white;
+
+  &:hover {
+    background-color: var(--color-primary) !important;
+  }
+}
+
+.product_title {
+  @apply text-headingprimary;
 }
