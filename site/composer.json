@@ -60,7 +60,7 @@
     "wpackagist-plugin/redirection":"^5.5.2",
     "wpackagist-plugin/side-cart-woocommerce":"^2.6.5",
     "wpackagist-plugin/wp-mail-smtp":"^4.4.0",
-    "wpackagist-plugin/jc-importer":"^2.14.12",
+    "wpackagist-plugin/woocommerce-xml-csv-product-import":"^1.5.4",
     "log1x/navi": "^3.1"
   },
   "require-dev": {

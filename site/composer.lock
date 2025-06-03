@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "5397a478f53a2bdeb68a80bd7567cd8e",
+    "content-hash": "f36a052de24d0d08569cfdcbc1d5cd31",
     "packages": [
         {
             "name": "brick/math",
@@ -6918,24 +6918,6 @@
             "homepage": "https://wordpress.org/plugins/greenshift-animation-and-page-builder-blocks/"
         },
         {
-            "name": "wpackagist-plugin/jc-importer",
-            "version": "2.14.12",
-            "source": {
-                "type": "svn",
-                "url": "https://plugins.svn.wordpress.org/jc-importer/",
-                "reference": "tags/2.14.12"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/jc-importer.2.14.12.zip"
-            },
-            "require": {
-                "composer/installers": "^1.0 || ^2.0"
-            },
-            "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/jc-importer/"
-        },
-        {
             "name": "wpackagist-plugin/redirection",
             "version": "5.5.2",
             "source": {
@@ -7096,6 +7078,24 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/woocommerce-pdf-invoices-packing-slips/"
+        },
+        {
+            "name": "wpackagist-plugin/woocommerce-xml-csv-product-import",
+            "version": "1.5.4",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/woocommerce-xml-csv-product-import/",
+                "reference": "tags/1.5.4"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/woocommerce-xml-csv-product-import.1.5.4.zip"
+            },
+            "require": {
+                "composer/installers": "^1.0 || ^2.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/woocommerce-xml-csv-product-import/"
         },
         {
             "name": "wpackagist-plugin/wp-mail-smtp",
