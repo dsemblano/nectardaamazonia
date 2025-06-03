@@ -16,3 +16,4 @@ use Roots\WPConfig\Config;
  */
 
 Config::define('DISALLOW_INDEXING', true);
+Config::define(‘ALLOW_UNFILTERED_UPLOADS’, true);
