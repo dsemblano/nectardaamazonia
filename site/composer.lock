@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "e86b7b15580296138a2a7179518a021e",
+    "content-hash": "24b2782b808e2e675524d5d1ff1f1f7c",
     "packages": [
         {
             "name": "brick/math",
@@ -6918,6 +6918,24 @@
             "homepage": "https://wordpress.org/plugins/greenshift-animation-and-page-builder-blocks/"
         },
         {
+            "name": "wpackagist-plugin/order-import-export-for-woocommerce",
+            "version": "2.6.2",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/order-import-export-for-woocommerce/",
+                "reference": "tags/2.6.2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/order-import-export-for-woocommerce.2.6.2.zip"
+            },
+            "require": {
+                "composer/installers": "^1.0 || ^2.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/order-import-export-for-woocommerce/"
+        },
+        {
             "name": "wpackagist-plugin/redirection",
             "version": "5.5.2",
             "source": {
@@ -7080,40 +7098,22 @@
             "homepage": "https://wordpress.org/plugins/woocommerce-pdf-invoices-packing-slips/"
         },
         {
-            "name": "wpackagist-plugin/woocommerce-xml-csv-product-import",
-            "version": "1.5.4",
+            "name": "wpackagist-plugin/wordpress-importer",
+            "version": "0.8.4",
             "source": {
                 "type": "svn",
-                "url": "https://plugins.svn.wordpress.org/woocommerce-xml-csv-product-import/",
-                "reference": "tags/1.5.4"
+                "url": "https://plugins.svn.wordpress.org/wordpress-importer/",
+                "reference": "tags/0.8.4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/woocommerce-xml-csv-product-import.1.5.4.zip"
+                "url": "https://downloads.wordpress.org/plugin/wordpress-importer.0.8.4.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
             },
             "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/woocommerce-xml-csv-product-import/"
-        },
-        {
-            "name": "wpackagist-plugin/wp-all-import",
-            "version": "3.9.1",
-            "source": {
-                "type": "svn",
-                "url": "https://plugins.svn.wordpress.org/wp-all-import/",
-                "reference": "tags/3.9.1"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/wp-all-import.3.9.1.zip"
-            },
-            "require": {
-                "composer/installers": "^1.0 || ^2.0"
-            },
-            "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/wp-all-import/"
+            "homepage": "https://wordpress.org/plugins/wordpress-importer/"
         },
         {
             "name": "wpackagist-plugin/wp-mail-smtp",
