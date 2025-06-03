@@ -8,8 +8,10 @@ ntp_timezone: Etc/UTC
 ntp_manage_config: true
 www_root: /srv/www
 max_journal_size: 512M
+post_max_size:
 php_extensions_custom:
   php8.2-gd: "{{ apt_package_state }}"
+  php8.2-curl: "{{ apt_package_state }}"
   php8.2-soap: "{{ apt_package_state }}"
 
 # Values of raw_vars will be wrapped in `{% raw %}` to avoid templating problems if values include `{%` and `{{`.
