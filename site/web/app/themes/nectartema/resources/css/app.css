@@ -63,8 +63,9 @@ h6 {
     @apply text-6xl lg:text-8xl font-heading-bold text-secondary;
   }
 
-  section:not(#hero-section) {
+  section {
     padding-top: 3rem;
+    padding-bottom: 3rem;
   }
 }
 
