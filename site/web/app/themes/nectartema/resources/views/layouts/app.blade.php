@@ -6,6 +6,7 @@
     @php(do_action('get_header'))
     @php(wp_head())
 
+    @include('partials.gtag')
     @vite(['resources/css/app.css', 'resources/js/app.js'])
   </head>
 
