@@ -60,7 +60,7 @@ h6 {
 
 .home {
   h1 {
-    @apply text-6xl lg:text-8xl font-heading-bold text-secondary;
+    @apply text-6xl lg:text-7xl font-heading-bold text-secondary;
   }
 
   section {
@@ -70,7 +70,7 @@ h6 {
 }
 
 
-.page h1,
+.page:not(.home) h1,
 .page .wp-block-cover h1 {
   @apply text-6xl lg:text-8xl;
 }
