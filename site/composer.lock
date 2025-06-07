@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "bbed41dd3d1383adeb8e284bff58b10a",
+    "content-hash": "2b15eee6ec96b2e5a755c1d6145bc3c6",
     "packages": [
         {
             "name": "brick/math",
@@ -6829,15 +6829,15 @@
         },
         {
             "name": "wpackagist-plugin/autocomplete-address-for-woocommerce",
-            "version": "1.3.2",
+            "version": "1.4.0",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/autocomplete-address-for-woocommerce/",
-                "reference": "tags/1.3.2"
+                "reference": "tags/1.4.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/autocomplete-address-for-woocommerce.1.3.2.zip"
+                "url": "https://downloads.wordpress.org/plugin/autocomplete-address-for-woocommerce.1.4.0.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
