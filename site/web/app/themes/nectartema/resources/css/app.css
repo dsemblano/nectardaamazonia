@@ -111,6 +111,10 @@ ul#menu-menu-principal {
   @apply prose lg:prose-lg max-w-none;
 }
 
+footer.content-info p {
+  @apply prose lg:prose-lg max-w-none text-sm;
+}
+
 main section header h1.container {
   @apply text-6xl;
 }
