@@ -5,7 +5,7 @@
     </h1>
 
     <p class="my-3 excerpt">
-      {{ get_the_excerpt() }}
+      {{ wp_trim_words(get_the_excerpt(), 40, '...') }}
     </p>
 
     @include('partials.entry-meta')
