@@ -112,7 +112,9 @@ ul#menu-menu-principal {
 }
 
 footer.content-info p {
-  @apply prose lg:prose-lg max-w-none text-sm;
+  @apply prose lg:prose-lg max-w-none;
+  
+  font-size: 18px;
 }
 
 main section header h1.container {
