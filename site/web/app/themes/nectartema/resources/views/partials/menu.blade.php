@@ -13,7 +13,7 @@
     </ul>
 
     <!-- Mobile Toggle Button (Hidden on desktop) -->
-    <button @click.stop="mobileOpen = !mobileOpen" class="lg:hidden p-2 relative w-10 h-10 z-50 left-8 top-4"
+    <button @click.stop="mobileOpen = !mobileOpen" class="lg:hidden p-2 relative w-10 h-10 z-50 left-6 top-4"
         :aria-expanded="mobileOpen">
         <svg x-show="!mobileOpen" class="absolute inset-0 w-full h-full" fill="none" viewBox="0 0 24 24"
             stroke="currentColor">
