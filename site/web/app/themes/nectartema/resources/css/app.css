@@ -135,7 +135,9 @@ main section header h1.container {
   @apply flex flex-col lg:flex-row items-stretch justify-between content-between;
 }
 
-.single_add_to_cart_button {
+#place_order,
+.single_add_to_cart_button,
+.checkout-button {
   background-color: var(--color-secondary) !important;
   color: white;
 
