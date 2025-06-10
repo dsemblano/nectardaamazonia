@@ -64,6 +64,7 @@
     "wpackagist-plugin/order-import-export-for-woocommerce":"^2.6.2",
     "wpackagist-plugin/autocep":"^1.0",
     "wpackagist-plugin/autocomplete-address-for-woocommerce":"^1.4.0",
+    "wpackagist-plugin/woo-better-shipping-calculator-for-brazil":"^4.2.1",
     "log1x/navi": "^3.1"
   },
   "require-dev": {
