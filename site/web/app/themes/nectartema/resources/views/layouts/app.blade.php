@@ -6,7 +6,7 @@
     @php(do_action('get_header'))
     @php(wp_head())
     <link rel="preload" fetchpriority="high" as="image" href="{{ Vite::asset('resources/images/logonectarnovo.webp') }}" type="image/webp">
-    <link rel="preload" fetchpriority="high" as="image" href="{{ asset('app/uploads/2024/11/PNG-Mel-home-nectar-da-amazonia.webp') }}" type="image/webp">
+    <link rel="preload" fetchpriority="high" as="image" href="{{ asset('app/uploads/2024/11/PNG-Mel-home-nectar-da-amazonia-768x739.webp') }}" type="image/webp">
     <link rel="preload" href="{{ Vite::asset('resources/fonts/Poppins/Poppins-Regular.ttf') }}" as="font" type="font/ttf" crossorigin>
     <link rel="author" type="text/plain" href="{{ Vite::asset('resources/fonts/humans.txt') }}" />
     @include('partials.gtag')
