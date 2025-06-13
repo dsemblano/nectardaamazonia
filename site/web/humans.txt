@@ -1,1 +1,1 @@
-app/themes/nectartema/public/humans.txt
+app/themes/nectartema/resources/fonts/humans.txt
