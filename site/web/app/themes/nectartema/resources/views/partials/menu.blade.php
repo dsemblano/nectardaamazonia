@@ -4,7 +4,7 @@
         @foreach ($primary_navigation as $item)
             <li class="hover:text-primary hover:underline transition-colors">
                 <a href="{{ $item->url }}"
-                  class="hover:text-melescuro {{ $item->active ? 'text-primary font-semibold' : 'text-gray-800' }}"
+                  class="hover:text-melescuro {{ $item->active ? 'text-melescuro font-semibold' : 'text-gray-800' }}"
                   @if ($item->active || $item->activeAncestor) aria-current="{{ $item->active ? 'page' : 'true' }}" @endif>
                     {{ $item->label }}
                 </a>
