@@ -5,7 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     @php(do_action('get_header'))
     @php(wp_head())
-
+    <link rel="preload" fetchpriority="high" as="image" href="{{ Vite::asset('images/logonectarnovo.webp')}}" type="image/webp">
+    <link rel="preload" href="@asset('fonts/Poppins/Poppins-Regular.ttf')" as="font" type="font/ttf" crossorigin>
+    <link rel="author" type="text/plain" href="{{ Vite::asset('humans.txt') }}" />
     @include('partials.gtag')
     @vite(['resources/css/app.css', 'resources/js/app.js'])
   </head>
