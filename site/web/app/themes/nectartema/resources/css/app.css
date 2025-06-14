@@ -112,7 +112,7 @@ ul#menu-menu-principal {
 }
 
 footer.content-info p {
-  @apply prose max-w-none prose-p:text-base;
+  @apply prose max-w-none prose-p:text-base prose-a:no-underline hover:prose-a:underline;
 }
 
 footer .wp-block-group {
