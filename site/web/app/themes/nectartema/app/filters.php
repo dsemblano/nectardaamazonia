@@ -26,7 +26,7 @@ add_filter('sage/blade/data', function ($data) {
 **/
 
 // shop page
-  add_filter('woocommerce_product_add_to_cart_text', function ($text) {
+add_filter('woocommerce_product_add_to_cart_text', function ($text) {
   return __('Comprar', 'sage');
 });
 
@@ -38,6 +38,25 @@ add_filter('woocommerce_product_single_add_to_cart_text', function ($text) {
 add_filter('woocommerce_product_related_products_heading', function ($text) {
   return __('Você pode comprar também:', 'sage');
 });
+
+add_filter('woocommerce_default_address_fields', function ($fields) {
+    $fields['postcode']['required'] = true;
+    $fields['postcode']['placeholder'] = 'Digite seu CEP';
+    return $fields;
+});
+
+remove_action('woocommerce_proceed_to_checkout', 'woocommerce_button_proceed_to_checkout', 20);
+
+add_action('woocommerce_proceed_to_checkout', function () {
+    echo '<a href="' . esc_url(wc_get_checkout_url()) . '" class="checkout-button button alt wc-forward bg-primary text-white px-4 py-2 rounded hover:bg-primary-dark">' . __('Finalizar Compra', 'sage') . '</a>';
+}, 20);
+
+
+
+// add_filter('woocommerce_default_address_fields', function ( $address_fields ) {
+//     $address_fields['postcode']['placeholder'] = 'Digite seu CEP';
+//     return $address_fields;
+// }, 20, 1);
 
 
 // Remove all possible fields
