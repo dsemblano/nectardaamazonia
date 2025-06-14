@@ -85,6 +85,7 @@ do_action( 'woocommerce_before_shipping_calculator' ); ?>
 			<p class="form-row form-row-wide" id="calc_shipping_postcode_field">
 				<label for="calc_shipping_postcode"><?php esc_html_e( 'Postcode / ZIP:', 'woocommerce' ); ?></label>
 				<input type="text" class="input-text" value="<?php echo esc_attr( WC()->customer->get_shipping_postcode() ); ?>" name="calc_shipping_postcode" id="calc_shipping_postcode" />
+				<!-- <input type="text" class="input-text" value="<?php echo esc_attr( WC()->customer->get_shipping_postcode() ); ?>" name="calc_shipping_postcode" id="calc_shipping_postcode" placeholder="<?php esc_attr_e( 'Digite aquiss', 'sage' ); ?>" /> -->
 			</p>
 		<?php endif; ?>
 

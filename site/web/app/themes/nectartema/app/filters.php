@@ -39,17 +39,24 @@ add_filter('woocommerce_product_related_products_heading', function ($text) {
   return __('Você pode comprar também:', 'sage');
 });
 
-add_filter('woocommerce_default_address_fields', function ($fields) {
-    $fields['postcode']['required'] = true;
-    $fields['postcode']['placeholder'] = 'Digite seu CEP';
-    return $fields;
-});
+// add_filter('woocommerce_default_address_fields', function ($fields) {
+//     $fields['postcode']['required'] = true;
+//     $fields['postcode']['placeholder'] = 'Digite seu CEP';
+//     return $fields;
+// });
 
 remove_action('woocommerce_proceed_to_checkout', 'woocommerce_button_proceed_to_checkout', 20);
 
 add_action('woocommerce_proceed_to_checkout', function () {
     echo '<a href="' . esc_url(wc_get_checkout_url()) . '" class="checkout-button button alt wc-forward bg-primary text-white px-4 py-2 rounded hover:bg-primary-dark">' . __('Finalizar Compra', 'sage') . '</a>';
 }, 20);
+
+add_filter('woocommerce_ship_to_different_address_checked', '__return_false');
+
+add_filter('wc_better_shipping_calculator_for_brazil_postcode_label',function () {
+return 'Calcule o frete';
+});
+
 
 
 
