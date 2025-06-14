@@ -1,0 +1,244 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Calculadora de Frete para o Brasil\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-06-14 21:43+0000\n"
+"PO-Revision-Date: 2025-06-14 21:43+0000\n"
+"Last-Translator: \n"
+"Language-Team: Português do Brasil\n"
+"Language: pt_BR\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Loco https://localise.biz/\n"
+"X-Loco-Version: 2.8.0; wp-6.8.1; php-8.2.28\n"
+"X-Domain: woo-better-shipping-calculator-for-brazil"
+
+#: Admin/partials/WcBetterShippingCalculatorForBrazilWcSettings.php:55
+msgid "Adiciona um campo para complementar o endereço no checkout."
+msgstr ""
+
+#: Admin/partials/WcBetterShippingCalculatorForBrazilWcSettings.php:45
+msgid "Adicionar campo de número (Checkout)"
+msgstr ""
+
+#: Includes/assets/templates/WcBetterShippingCalculatorForBrazilAdminSettingsCard.php:38
+msgid "Avaliar o plugin"
+msgstr ""
+
+#. Description of the plugin
+msgid ""
+"Calculadora automática de Frete com CEP para Woocommerce. Sem necessidade de "
+"informar o Pais e estado. Compatível com Gutenberg e shortcodes. Ideal para "
+"Lojas Brasileiras."
+msgstr ""
+
+#: Admin/partials/WcBetterShippingCalculatorForBrazilWcSettings.php:14
+msgid "Calculadora de frete"
+msgstr ""
+
+#. Name of the plugin
+msgid "Calculadora de Frete para o Brasil"
+msgstr ""
+
+#: Admin/WcBetterShippingCalculatorForBrazilAdmin.php:112
+msgid "Calculate shipping:"
+msgstr ""
+
+#: Admin/partials/WcBetterShippingCalculatorForBrazilWcSettings.php:57
+msgid "Campo de número no checkout."
+msgstr ""
+
+#: Admin/partials/WcBetterShippingCalculatorForBrazilWcSettings.php:102
+msgid "CEP obrigatório no carrinho"
+msgstr ""
+
+#: Admin/partials/WcBetterShippingCalculatorForBrazilWcSettings.php:114
+msgid "CEP obrigatório no carrinho."
+msgstr ""
+
+#: Admin/partials/WcBetterShippingCalculatorForBrazilWcSettings.php:41
+msgid "Configuração de entrega de produtos."
+msgstr ""
+
+#: Admin/partials/WcBetterShippingCalculatorForBrazilWcSettings.php:74
+msgid "Configuração de frete grátis."
+msgstr ""
+
+#: Includes/WcBetterShippingCalculatorForBrazil.php:389
+msgid "Configurações"
+msgstr ""
+
+#: Admin/partials/WcBetterShippingCalculatorForBrazilWcSettings.php:97
+msgid "Configurações Gutenberg"
+msgstr ""
+
+#: Admin/partials/WcBetterShippingCalculatorForBrazilWcSettings.php:85
+msgid "Defina o valor mínimo necessário para ativar o frete grátis."
+msgstr ""
+
+#: Admin/partials/WcBetterShippingCalculatorForBrazilWcSettings.php:52
+#: Admin/partials/WcBetterShippingCalculatorForBrazilWcSettings.php:68
+#: Admin/partials/WcBetterShippingCalculatorForBrazilWcSettings.php:109
+#: Admin/partials/WcBetterShippingCalculatorForBrazilWcSettings.php:125
+msgid "Desabilitar"
+msgstr ""
+
+#: Admin/partials/WcBetterShippingCalculatorForBrazilWcSettings.php:35
+msgid "Desabilitar entrega/endereço para apenas produtos digitais"
+msgstr ""
+
+#: Admin/partials/WcBetterShippingCalculatorForBrazilWcSettings.php:34
+msgid "Desabilitar entrega/endereço para todos os produtos"
+msgstr ""
+
+#: Includes/assets/templates/WcBetterShippingCalculatorForBrazilAdminSettingsCard.php:20
+msgid "Documentação"
+msgstr ""
+
+#: Admin/partials/WcBetterShippingCalculatorForBrazilWcSettings.php:28
+msgid "Entrega de produto"
+msgstr ""
+
+#: Admin/partials/WcBetterShippingCalculatorForBrazilWcSettings.php:39
+msgid "Escolha como deseja configurar a entrega dos produtos."
+msgstr ""
+
+#: Includes/WcBetterShippingCalculatorForBrazil.php:427
+#: Includes/WcBetterShippingCalculatorForBrazil.php:444
+msgid "Ex: 123a"
+msgstr ""
+
+#: Admin/partials/WcBetterShippingCalculatorForBrazilWcSettings.php:112
+msgid "Exige que o cliente insira um CEP válido no carrinho."
+msgstr ""
+
+#: Includes/WcBetterShippingCalculatorForBrazil.php:195
+msgid "Frete Gratuito"
+msgstr ""
+
+#: Admin/partials/WcBetterShippingCalculatorForBrazilWcSettings.php:61
+msgid "Frete grátis"
+msgstr ""
+
+#: Admin/partials/WcBetterShippingCalculatorForBrazilWcSettings.php:23
+msgid "Geral"
+msgstr ""
+
+#: Admin/partials/WcBetterShippingCalculatorForBrazilWcSettings.php:51
+#: Admin/partials/WcBetterShippingCalculatorForBrazilWcSettings.php:67
+#: Admin/partials/WcBetterShippingCalculatorForBrazilWcSettings.php:108
+#: Admin/partials/WcBetterShippingCalculatorForBrazilWcSettings.php:124
+msgid "Habilitar"
+msgstr ""
+
+#: Admin/partials/WcBetterShippingCalculatorForBrazilWcSettings.php:71
+msgid "Habilitar valor mínimo para frete grátis"
+msgstr ""
+
+#: Admin/partials/WcBetterShippingCalculatorForBrazilWcSettings.php:56
+msgid ""
+"Habilite esta configuração para adicionar um campo de número no checkout."
+msgstr ""
+
+#: Admin/partials/WcBetterShippingCalculatorForBrazilWcSettings.php:129
+msgid ""
+"Habilite esta configuração para ocultar os campos de endereço no carrinho."
+msgstr ""
+
+#: Admin/partials/WcBetterShippingCalculatorForBrazilWcSettings.php:113
+msgid "Habilite esta configuração para tornar o CEP obrigatório no carrinho."
+msgstr ""
+
+#: Admin/partials/WcBetterShippingCalculatorForBrazilWcSettings.php:73
+msgid "Habilite esta opção para configurar um valor mínimo para frete grátis."
+msgstr ""
+
+#: Includes/assets/templates/WcBetterShippingCalculatorForBrazilAdminSettingsCard.php:23
+msgid "Hosting"
+msgstr ""
+
+#. Author URI of the plugin
+msgid "https://linknacional.com.br/"
+msgstr ""
+
+#. URI of the plugin
+msgid "https://www.linknacional.com.br/wordpress"
+msgstr ""
+
+#: Admin/partials/WcBetterShippingCalculatorForBrazilWcSettings.php:86
+msgid "Insira o valor mínimo do carrinho para ativar o frete grátis."
+msgstr ""
+
+#. Author of the plugin
+msgid "Link Nacional"
+msgstr ""
+
+#: Admin/partials/WcBetterShippingCalculatorForBrazilWcSettings.php:36
+msgid "Manter entrega padrão"
+msgstr ""
+
+#: Includes/WcBetterShippingCalculatorForBrazil.php:426
+#: Includes/WcBetterShippingCalculatorForBrazil.php:443
+msgid "Número"
+msgstr ""
+
+#: Admin/partials/WcBetterShippingCalculatorForBrazilWcSettings.php:141
+msgid ""
+"O uso de shortcodes abaixo é aplicável principalmente em temas clássicos. Em "
+"temas baseados em blocos, como o Gutenberg, não há necessidade de utilizar "
+"shortcodes, pois o editor de blocos oferece funcionalidades nativas que "
+"substituem essa necessidade.<br><br><strong>Carrinho:</strong> <code>"
+"[woocommerce_cart]</code><br><br><strong>Finalização de compra:</strong> "
+"<code>[woocommerce_checkout]</code>"
+msgstr ""
+
+#: Admin/partials/WcBetterShippingCalculatorForBrazilWcSettings.php:128
+msgid "Oculta os campos de endereço na página de carrinho."
+msgstr ""
+
+#: Admin/partials/WcBetterShippingCalculatorForBrazilWcSettings.php:118
+msgid "Ocultar campos de endereço na página de carrinho"
+msgstr ""
+
+#: Admin/partials/WcBetterShippingCalculatorForBrazilWcSettings.php:130
+msgid "Ocultar campos de endereço."
+msgstr ""
+
+#: Admin/partials/WcBetterShippingCalculatorForBrazilWcSettings.php:72
+msgid "Permite definir um valor mínimo para ativar o frete grátis."
+msgstr ""
+
+#: Admin/partials/WcBetterShippingCalculatorForBrazilWcSettings.php:40
+msgid "Salve esta configuração para aplicar as regras de entrega selecionadas."
+msgstr ""
+
+#: Includes/WcBetterShippingCalculatorForBrazil.php:436
+#: Includes/WcBetterShippingCalculatorForBrazil.php:453
+msgid "Sem número (S/N)"
+msgstr ""
+
+#: Admin/partials/WcBetterShippingCalculatorForBrazilWcSettings.php:140
+msgid "Shortcodes"
+msgstr ""
+
+#: Includes/assets/templates/WcBetterShippingCalculatorForBrazilAdminSettingsCard.php:31
+msgid "Suporte WP"
+msgstr ""
+
+#: Public/WcBetterShippingCalculatorForBrazilPublic.php:277
+msgid "Type your postcode"
+msgstr "Digite CEP"
+
+#: Admin/partials/WcBetterShippingCalculatorForBrazilWcSettings.php:78
+msgid "Valor mínimo para frete grátis"
+msgstr ""
+
+#: Admin/partials/WcBetterShippingCalculatorForBrazilWcSettings.php:87
+msgid "Valor mínimo para frete grátis."
+msgstr ""
+
+#: Includes/assets/templates/WcBetterShippingCalculatorForBrazilAdminSettingsCard.php:28
+msgid "WP Plugin"
+msgstr ""
