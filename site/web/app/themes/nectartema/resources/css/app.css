@@ -112,9 +112,11 @@ ul#menu-menu-principal {
 }
 
 footer.content-info p {
-  @apply prose lg:prose-lg max-w-none;
-  
-  font-size: 16px;
+  @apply prose max-w-none prose-p:text-base;
+}
+
+footer .wp-block-group {
+  @apply my-2;
 }
 
 main section header h1.container {
