@@ -178,3 +178,7 @@ footer #menu-menu-principal.menu {
   display: flex;
   flex-direction: column;
 }
+
+.woocommerce-shipping-fields .shipping_address {
+  transition: all 0.3s ease;
+}
