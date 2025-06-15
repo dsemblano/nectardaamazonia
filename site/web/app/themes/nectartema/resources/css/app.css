@@ -3,6 +3,7 @@
 @source "../views/";
 @source "../../app/";
 @import './fonts.css';
+@import 'animate.css';
 
 @theme static {
   --color-primary: #E69037;
@@ -70,8 +71,7 @@ h6 {
 }
 
 
-.page:not(.home) h1,
-.page .wp-block-cover h1 {
+.page:not(.home) h1 {
   @apply text-6xl lg:text-8xl;
 }
 
@@ -207,4 +207,8 @@ footer #menu-menu-principal.menu {
       transform: scale(1.1);
     }
   }
+}
+
+.woocommerce-products-header {
+  padding-top: 2rem;
 }

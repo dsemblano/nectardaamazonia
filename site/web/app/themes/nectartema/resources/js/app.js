@@ -32,6 +32,10 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
+// animate
+const element = document.querySelector('h1');
+element.classList.add('animate__animated', 'animate__fadeInDown');
+
 import.meta.glob([
   '../images/**',
   '../fonts/**',
