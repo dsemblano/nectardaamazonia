@@ -62,7 +62,7 @@ the readme will list any important changes.
                 @php
                     do_action('woocommerce_no_products_found');
                 @endphp
-                </section>
+            </section>
         @endif
 
         @php
@@ -73,3 +73,4 @@ the readme will list any important changes.
     </section>
 
 @endsection
+</section>
