@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "eef6a1a3ac55422cf7092a9e709b1758",
+    "content-hash": "db383feebead92e80a029e0b856a8179",
     "packages": [
         {
             "name": "brick/math",
@@ -4172,6 +4172,64 @@
             "time": "2025-05-28T00:15:05+00:00"
         },
         {
+            "name": "roots/acorn-mail",
+            "version": "v1.0.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/roots/acorn-mail.git",
+                "reference": "ba0aeb6a7f2d4893f01b27a39d29ca86eb462983"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/roots/acorn-mail/zipball/ba0aeb6a7f2d4893f01b27a39d29ca86eb462983",
+                "reference": "ba0aeb6a7f2d4893f01b27a39d29ca86eb462983",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=8.1"
+            },
+            "require-dev": {
+                "laravel/pint": "^1.13",
+                "roots/acorn": "^4.0"
+            },
+            "type": "package",
+            "extra": {
+                "acorn": {
+                    "providers": [
+                        "Roots\\AcornMail\\AcornMailServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Roots\\AcornMail\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Brandon Nifong",
+                    "email": "brandon@tendency.me",
+                    "homepage": "https://github.com/log1x"
+                }
+            ],
+            "description": "Simple WordPress SMTP using Acorn's mail configuration.",
+            "support": {
+                "issues": "https://github.com/roots/acorn-mail/issues",
+                "source": "https://github.com/roots/acorn-mail/tree/v1.0.2"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/roots",
+                    "type": "github"
+                }
+            ],
+            "time": "2024-03-26T14:18:18+00:00"
+        },
+        {
             "name": "roots/acorn-prettify",
             "version": "v1.0.2",
             "source": {
@@ -6863,6 +6921,24 @@
             "homepage": "https://wordpress.org/plugins/ewww-image-optimizer/"
         },
         {
+            "name": "wpackagist-plugin/fluid-checkout",
+            "version": "4.0.6",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/fluid-checkout/",
+                "reference": "tags/4.0.6"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/fluid-checkout.4.0.6.zip"
+            },
+            "require": {
+                "composer/installers": "^1.0 || ^2.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/fluid-checkout/"
+        },
+        {
             "name": "wpackagist-plugin/foobox-image-lightbox",
             "version": "2.7.34",
             "source": {
@@ -7044,15 +7120,15 @@
         },
         {
             "name": "wpackagist-plugin/woocommerce",
-            "version": "9.9.3",
+            "version": "9.9.4",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/woocommerce/",
-                "reference": "tags/9.9.3"
+                "reference": "tags/9.9.4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/woocommerce.9.9.3.zip"
+                "url": "https://downloads.wordpress.org/plugin/woocommerce.9.9.4.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
@@ -7152,15 +7228,15 @@
         },
         {
             "name": "wpackagist-plugin/zoloblocks",
-            "version": "2.3.2",
+            "version": "2.3.3",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/zoloblocks/",
-                "reference": "tags/2.3.2"
+                "reference": "tags/2.3.3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/zoloblocks.2.3.2.zip"
+                "url": "https://downloads.wordpress.org/plugin/zoloblocks.2.3.3.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
@@ -7260,12 +7336,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Roave/SecurityAdvisories.git",
-                "reference": "0a95bcf39c5b55601cb073bc307d567a16e31dc0"
+                "reference": "2b9122a87c062376685eede1e0a0ce8e31544fe6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Roave/SecurityAdvisories/zipball/0a95bcf39c5b55601cb073bc307d567a16e31dc0",
-                "reference": "0a95bcf39c5b55601cb073bc307d567a16e31dc0",
+                "url": "https://api.github.com/repos/Roave/SecurityAdvisories/zipball/2b9122a87c062376685eede1e0a0ce8e31544fe6",
+                "reference": "2b9122a87c062376685eede1e0a0ce8e31544fe6",
                 "shasum": ""
             },
             "conflict": {
@@ -7373,7 +7449,7 @@
                 "co-stack/fal_sftp": "<0.2.6",
                 "cockpit-hq/cockpit": "<2.7|==2.7",
                 "codeception/codeception": "<3.1.3|>=4,<4.1.22",
-                "codeigniter/framework": "<3.1.9",
+                "codeigniter/framework": "<3.1.10",
                 "codeigniter4/framework": "<4.5.8",
                 "codeigniter4/shield": "<1.0.0.0-beta8",
                 "codiad/codiad": "<=2.8.4",
@@ -8206,7 +8282,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2025-06-13T22:05:09+00:00"
+            "time": "2025-06-16T22:05:27+00:00"
         }
     ],
     "aliases": [],
@@ -8219,6 +8295,6 @@
     "platform": {
         "php": ">=8.1"
     },
-    "platform-dev": [],
+    "platform-dev": {},
     "plugin-api-version": "2.6.0"
 }
