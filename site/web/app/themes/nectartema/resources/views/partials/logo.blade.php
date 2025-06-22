@@ -1,10 +1,5 @@
-<a class="brand relative" href="{{ home_url('/') }}">
-    <img  width="302" height="84" id="logo" alt="Logo da Néctar da Amazônia" src="{{ Vite::asset('resources/images/logonectarnovo.webp') }}">
-{{-- <div id="logo" class="flex flex-row items-center">
-    @include('partials/icons.nectar', ['width' => '60px', 'height' => '50px'])
-    <div id="nectar_logo" class="flex flex-col relative top-1">
-        <span class="text-base relative">Néctar</span>
-        <span class="text-base relative bottom-1.5">da Amazônia</span>
-    </div>
-</div> --}}
+<a class="brand w-[302px] lg:w-auto" href="{{ home_url('/') }}">
+  <div class="aspect-[302/84] w-full">
+    <img width="302" height="84" class="w-full h-full object-contain block" id="logo" alt="Logo da Néctar da Amazônia" src="{{ Vite::asset('resources/images/logonectarnovo.webp') }}" />
+  </div>
 </a>
