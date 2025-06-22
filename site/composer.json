@@ -64,6 +64,7 @@
     "wpackagist-plugin/woo-better-shipping-calculator-for-brazil":"^4.2.1",
     "wpackagist-plugin/loco-translate":"^2.8.0",
     "wpackagist-plugin/fluid-checkout":"^4.0.6",
+    "wpackagist-plugin/google-listings-and-ads":"^3.0.0",
     "log1x/navi": "^3.1",
     "roots/acorn-mail": "^1.0"
   },
