@@ -275,7 +275,7 @@ footer #menu-menu-principal.menu {
 }
 
 .woocommerce-products-header,
-.product-type-simple {
+div.product-type-simple {
   padding-top: 2rem;
 }
 
