@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "0cb71247a607cc87a73fba2ba8fa6a81",
+    "content-hash": "db383feebead92e80a029e0b856a8179",
     "packages": [
         {
             "name": "brick/math",
@@ -6973,24 +6973,6 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/generateblocks/"
-        },
-        {
-            "name": "wpackagist-plugin/google-listings-and-ads",
-            "version": "3.0.0",
-            "source": {
-                "type": "svn",
-                "url": "https://plugins.svn.wordpress.org/google-listings-and-ads/",
-                "reference": "tags/3.0.0"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/google-listings-and-ads.3.0.0.zip"
-            },
-            "require": {
-                "composer/installers": "^1.0 || ^2.0"
-            },
-            "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/google-listings-and-ads/"
         },
         {
             "name": "wpackagist-plugin/greenshift-animation-and-page-builder-blocks",
