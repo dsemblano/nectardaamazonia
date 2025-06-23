@@ -274,7 +274,8 @@ footer #menu-menu-principal.menu {
   }
 }
 
-.woocommerce-products-header {
+.woocommerce-products-header,
+.product-type-simple {
   padding-top: 2rem;
 }
 
@@ -282,4 +283,10 @@ footer #menu-menu-principal.menu {
 #hero-section figure img {
   position: relative;
   right: 1.7rem;
+}
+
+li.wc-block-product {
+  @apply rounded-t-2xl pb-6;
+
+  box-shadow: 0 0 4px rgba(0,0,0,0.12);
 }
