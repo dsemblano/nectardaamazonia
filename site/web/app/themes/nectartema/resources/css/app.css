@@ -172,7 +172,7 @@ ul#menu-menu-principal {
 }
 
 .container.relative,
-.page:not(.home) section {
+.page:not(.home) section:not(.wp-block-greenshift-blocks-container) {
   @apply prose lg:prose-lg max-w-none;
 }
 
