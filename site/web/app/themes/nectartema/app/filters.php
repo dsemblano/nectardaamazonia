@@ -66,6 +66,15 @@ add_filter('gettext', function ($translated_text, $text, $domain) {
     return $translated_text;
 }, 20, 3);
 
+add_filter('woocommerce_my_account_my_orders_actions', function($actions, $order) {
+    // Remove todas as ações da lista de pedidos
+    if (is_wc_endpoint_url('order-received')) {
+        return [];
+    }
+    return $actions;
+}, 10, 2);
+
+
 
 
 
