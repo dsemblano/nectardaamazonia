@@ -62,8 +62,6 @@
     "wpackagist-plugin/wordpress-importer":"^0.8.4",
     "wpackagist-plugin/order-import-export-for-woocommerce":"^2.6.2",
     "wpackagist-plugin/woo-better-shipping-calculator-for-brazil":"^4.2.1",
-    "wpackagist-plugin/loco-translate":"^2.8.0",
-    "wpackagist-plugin/automatic-translator-addon-for-loco-translate":"^2.4.11",
     "wpackagist-plugin/fluid-checkout":"^4.0.6",
     "log1x/navi": "^3.1",
     "roots/acorn-mail": "^1.0"

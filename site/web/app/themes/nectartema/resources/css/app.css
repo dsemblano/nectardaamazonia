@@ -293,3 +293,7 @@ li.wc-block-product {
 
   box-shadow: 0 0 4px rgba(0,0,0,0.12);
 }
+
+.woocommerce-order ul + p + p {
+    display: none;
+}
