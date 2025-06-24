@@ -20,7 +20,7 @@
 defined( 'ABSPATH' ) || exit;
 ?>
 
-<div class="woocommerce-order container">
+<div class="woocommerce-order container prose lg:prose-lg max-w-none">
 
 	<?php
 	if ( $order ) :
