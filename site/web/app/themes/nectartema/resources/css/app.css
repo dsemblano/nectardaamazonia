@@ -127,6 +127,8 @@ h6 {
 .home {
   h1 {
     @apply text-6xl lg:text-7xl font-heading-bold text-secondary;
+
+    word-break: keep-all;
   }
 
   section {
@@ -204,6 +206,7 @@ main section header h1.container {
 
 #place_order,
 .single_add_to_cart_button,
+#submit-payment,
 .checkout-button {
   background-color: var(--color-secondary) !important;
   color: white;

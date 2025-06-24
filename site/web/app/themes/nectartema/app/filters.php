@@ -58,13 +58,14 @@ return 'Calcule o frete';
 });
 
 add_filter('gettext', function ($translated_text, $text, $domain) {
-    if ($translated_text === 'Atualizar' && $domain === 'woocommerce') {
-        // Substitui o texto "Atualizar" no botão de cálculo de frete
+    // Só modifica se estiver na página do carrinho
+    if (is_cart() && $translated_text === 'Atualizar' && $domain === 'woocommerce') {
         return 'Calcular Frete';
     }
 
     return $translated_text;
 }, 20, 3);
+
 
 
 
