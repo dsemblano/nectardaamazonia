@@ -57,6 +57,14 @@ add_filter('wc_better_shipping_calculator_for_brazil_postcode_label',function ()
 return 'Calcule o frete';
 });
 
+add_filter('gettext', function ($translated_text, $text, $domain) {
+    if ($translated_text === 'Atualizar' && $domain === 'woocommerce') {
+        // Substitui o texto "Atualizar" no botão de cálculo de frete
+        return 'Calcular Frete';
+    }
+
+    return $translated_text;
+}, 20, 3);
 
 
 
