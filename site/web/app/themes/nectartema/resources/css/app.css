@@ -131,7 +131,7 @@ h6 {
     word-break: keep-all;
   }
 
-  section {
+  section:not(#hero-section) {
     padding-top: 3rem;
     padding-bottom: 3rem;
   }
