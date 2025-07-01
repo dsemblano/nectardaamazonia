@@ -143,7 +143,11 @@ h6 {
 }
 
 .home p {
-  @apply text-xl
+  @apply text-xl prose-p:mt-0 prose-p:mb-0;
+}
+
+.wp-block-zolo-container.zolo-root-container.frontend {
+  @apply prose-p:my-0;
 }
 
 p {
