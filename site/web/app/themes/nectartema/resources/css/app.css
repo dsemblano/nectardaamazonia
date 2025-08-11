@@ -154,6 +154,10 @@ p {
   word-break: break-word;
 }
 
+/* .widgettitle, #menu-footer {
+  @apply list-none text-xl;
+} */
+
 .home-wrapper {
   --s: 9px;
   /* control the size*/
@@ -179,7 +183,7 @@ ul#menu-menu-principal {
 
 .container.relative,
 .page:not(.home) section {
-  @apply prose lg:prose-lg max-w-none prose-a:no-underline;
+  @apply prose lg:prose-lg max-w-none prose-a:no-underline bg-red-500;
 }
 
 footer.content-info p {
