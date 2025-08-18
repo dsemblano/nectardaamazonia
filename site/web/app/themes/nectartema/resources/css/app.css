@@ -183,7 +183,7 @@ ul#menu-menu-principal {
 
 .container.relative,
 .page:not(.home) section {
-  @apply prose lg:prose-lg max-w-none prose-a:no-underline bg-red-500;
+  @apply prose lg:prose-lg max-w-none prose-a:no-underline;
 }
 
 footer.content-info p {
