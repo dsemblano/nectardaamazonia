@@ -154,10 +154,6 @@ p {
   word-break: break-word;
 }
 
-/* .widgettitle, #menu-footer {
-  @apply list-none text-xl;
-} */
-
 .home-wrapper {
   --s: 9px;
   /* control the size*/
@@ -181,17 +177,29 @@ ul#menu-menu-principal {
   @apply flex flex-col lg:flex-row gap-x-8
 }
 
-.container.relative,
-.page:not(.home) section {
+.gspb_container,
+.page:not(.home) main section {
   @apply prose lg:prose-lg max-w-none prose-a:no-underline;
 }
 
-footer.content-info p {
-  @apply prose max-w-none prose-p:text-base prose-a:no-underline hover:prose-a:underline;
+.menu {
+  @apply prose prose-a:no-underline prose-a:hover:underline prose-ul:list-none;
 }
 
-footer .wp-block-group {
-  @apply my-2;
+footer.content-info {
+  /* #menu-menu-principal.menu {
+    display: flex;
+    flex-direction: column;
+    background-color: red;
+  } */
+
+  p {
+    @apply prose max-w-none prose-p:text-base prose-a:no-underline hover:prose-a:underline;
+  }
+
+  .wp-block-group {
+    @apply my-2;
+  }
 }
 
 main section header h1.container {
@@ -235,24 +243,30 @@ figure .lazyloading {
   border-top: 20px solid #E69037;
   width: 120px !important;
   height: 120px !important;
-  -webkit-animation: spin 4s linear infinite; /* Safari */
+  -webkit-animation: spin 4s linear infinite;
+  /* Safari */
   animation: spinner 4s linear infinite;
 }
 
 /* Safari */
 @-webkit-keyframes spinner {
-  0% { -webkit-transform: rotate(0deg); }
-  100% { -webkit-transform: rotate(360deg); }
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
 }
 
 @keyframes spinner {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
-}
+  0% {
+    transform: rotate(0deg);
+  }
 
-footer #menu-menu-principal.menu {
-  display: flex;
-  flex-direction: column;
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 .woocommerce-shipping-fields .shipping_address {
@@ -267,10 +281,10 @@ footer #menu-menu-principal.menu {
 
 .wp-block-woocommerce-product-image {
   overflow: hidden;
-  
+
   .size-woocommerce_single {
     @apply rounded;
-    
+
     -webkit-transform: scale(1);
     transform: scale(1);
     -webkit-transition: .3s ease-in-out;
@@ -299,9 +313,9 @@ div.product-type-simple {
 li.wc-block-product {
   @apply rounded-t-2xl pb-6;
 
-  box-shadow: 0 0 4px rgba(0,0,0,0.12);
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.12);
 }
 
-.woocommerce-order ul + p + p {
-    display: none;
+.woocommerce-order ul+p+p {
+  display: none;
 }
