@@ -279,6 +279,14 @@ figure .lazyloading {
   }
 }
 
+.wp-block-image,
+.page:not(.nossos-parceiros) .wp-block-media-text__media,
+.single-post figure {
+  img {
+    @apply rounded-xl;
+  }
+} 
+
 .wp-block-woocommerce-product-image {
   overflow: hidden;
 
@@ -311,7 +319,7 @@ div.product-type-simple {
 }
 
 li.wc-block-product {
-  @apply rounded-t-2xl pb-6;
+  @apply rounded-t-xl pb-6;
 
   box-shadow: 0 0 4px rgba(0, 0, 0, 0.12);
 }
