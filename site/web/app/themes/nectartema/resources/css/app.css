@@ -279,6 +279,10 @@ figure .lazyloading {
   }
 }
 
+.related.products {
+  display: none;
+}
+
 .wp-block-image,
 .page:not(.nossos-parceiros) .wp-block-media-text__media,
 .single-post figure {
