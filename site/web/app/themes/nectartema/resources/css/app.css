@@ -283,6 +283,11 @@ figure .lazyloading {
   display: none;
 }
 
+.logo-wrapper-mobile {
+  right: 1rem;
+  bottom: 2rem;
+}
+
 .wp-block-image,
 .page:not(.nossos-parceiros) .wp-block-media-text__media,
 .single-post figure {
