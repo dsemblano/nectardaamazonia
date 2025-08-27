@@ -288,6 +288,10 @@ figure .lazyloading {
   bottom: 2rem;
 }
 
+#home-title-wrapper {
+  @apply bottom-20 lg:bottom-0;
+}
+
 .wp-block-image,
 .page:not(.nossos-parceiros) .wp-block-media-text__media,
 .single-post figure {
