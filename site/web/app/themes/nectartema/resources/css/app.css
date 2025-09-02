@@ -293,6 +293,7 @@ figure .lazyloading {
 }
 
 .wp-block-image,
+.wp-block-zolo-advanced-image,
 .page:not(.nossos-parceiros) .wp-block-media-text__media,
 .single-post figure {
   img {
