@@ -289,14 +289,14 @@ figure .lazyloading {
   display: none;
 }
 
-.logo-wrapper-mobile {
+/* .logo-wrapper-mobile {
   right: 1rem;
   bottom: 2rem;
-}
+} */
 
-#home-title-wrapper {
+/* #home-title-wrapper {
   @apply bottom-20 lg:bottom-0;
-}
+} */
 
 .wp-block-image,
 .wp-block-zolo-advanced-image,
