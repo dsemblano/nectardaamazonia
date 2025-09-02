@@ -26,6 +26,12 @@
   --arrow-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
 }
 
+@layer components {
+  #hero-wrapper {
+    @apply prose lg:prose-lg dark:prose-invert prose-h1:mb-0;
+  }
+}
+
 /* CSS Variables */
 :root {
   --link: #D68778;
@@ -143,7 +149,7 @@ h6 {
 }
 
 .home p {
-  @apply text-xl prose-p:mt-0 prose-p:mb-0;
+  @apply text-xl prose-p:mt-0 prose-p:mb-0 prose-h1:mb-0;
 }
 
 .wp-block-zolo-container.zolo-root-container.frontend {
