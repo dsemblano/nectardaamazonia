@@ -65,7 +65,6 @@
     "wpackagist-plugin/fluid-checkout":">=4.0.6",
     "wpackagist-plugin/comments-import-export-woocommerce":">=2.4.5",
     "wpackagist-plugin/wp-all-import":">=3.9.2",
-    "wpackagist-plugin/export-media-library":">=4.0.2",
     "log1x/navi": "^3.1",
     "roots/acorn-mail": "^1.0"
   },
