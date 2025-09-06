@@ -74,7 +74,15 @@ add_filter('woocommerce_my_account_my_orders_actions', function($actions, $order
     return $actions;
 }, 10, 2);
 
-
+// Mostrar preço tachado + texto "Fora de estoque" no loop da loja
+add_filter('woocommerce_get_price_html', function($price, $product) {
+    if ( ! $product->is_in_stock() ) {
+        $price = '<span class="price-out-of-stock" style="display:block;">'
+               . '<span class="old-price" style="text-decoration:line-through; opacity:0.7;">' . $price . '</span>'
+               . '</span>';
+    }
+    return $price;
+}, 10, 2);
 
 
 
