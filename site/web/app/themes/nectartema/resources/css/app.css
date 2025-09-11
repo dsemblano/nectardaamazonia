@@ -222,6 +222,10 @@ main section header h1.container {
 }
 
 /* Woocommerce */
+.aligncenter {
+    margin: 0 auto;
+}
+
 .products.columns-4 {
   @apply flex flex-col lg:flex-row items-stretch justify-between content-between;
 }
