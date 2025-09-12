@@ -61,7 +61,6 @@
     "wpackagist-plugin/wp-mail-smtp":">=4.4.0",
     "wpackagist-plugin/woo-better-shipping-calculator-for-brazil":">=4.2.1",
     "wpackagist-plugin/fluid-checkout":">=4.0.6",
-    "wpackagist-plugin/wp-all-import":">=3.9.2",
     "log1x/navi": "^3.1",
     "roots/acorn-mail": "^1.0"
   },
