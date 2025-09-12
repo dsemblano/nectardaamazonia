@@ -45,7 +45,7 @@ Alpine.start()
 
 // animate
 const element = document.querySelector('h1');
-element.classList.add('animate__animated', 'animate__fadeInDown');
+element.classList.add('animate__animated', 'animate__flipInX');
 
 import.meta.glob([
   '../images/**',

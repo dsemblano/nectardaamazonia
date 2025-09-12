@@ -60,7 +60,10 @@ if ( post_password_required() ) {
 		do_action( 'woocommerce_single_product_summary' );
 		echo apply_filters('the_content', get_the_content());
 		?>
-		
+		    <div>
+				<h2 class="text-base lg:text-lg font-bold">Você pode calcular o frete aqui:</h2>
+				<div class="calculo-frete"></div>
+			</div>
 	</div>
 
 	<?php

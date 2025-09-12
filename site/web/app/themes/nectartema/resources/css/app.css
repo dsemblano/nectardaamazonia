@@ -222,6 +222,10 @@ main section header h1.container {
 }
 
 /* Woocommerce */
+.woo-better-icon-current-style {
+    top: -0.5rem;
+}
+
 .aligncenter {
     margin: 0 auto;
 }
