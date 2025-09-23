@@ -355,3 +355,19 @@ li.wc-block-product {
 .woocommerce-order ul+p+p {
   display: none;
 }
+
+h1.wp-block-heading,
+h1.woocommerce-products-header__title,
+h1.product_title,
+article header h1 {
+	background: linear-gradient(
+    120deg,
+    var(--color-secondary),
+    var(--color-melescuro)
+  );
+	background-clip: text;
+	color: transparent;
+	/* -webkit-text-stroke-width: 1px;
+	-webkit-text-stroke-color: hsl(0 0% 10% / 30%); */
+}
+
