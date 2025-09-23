@@ -85,30 +85,18 @@ add_filter('woocommerce_get_price_html', function($price, $product) {
     return $price;
 }, 10, 2);
 
-
-add_filter('posts_clauses', function($clauses, $query) {
-    global $wpdb;
-
-    if (
-        is_admin() || 
-        ! $query->is_main_query() || 
-        ( ! is_post_type_archive('product') && ! is_tax(get_object_taxonomies('product')) )
-    ) {
-        return $clauses;
+// sort
+add_filter('woocommerce_get_catalog_ordering_args', function($args) {
+    if (!is_shop() && !is_product_taxonomy()) {
+        return $args;
     }
 
-    // Add stock status JOIN if not already joined
-    if (strpos($clauses['join'], 'stockstatus') === false) {
-        $clauses['join'] .= " LEFT JOIN {$wpdb->postmeta} AS stockstatus
-            ON {$wpdb->posts}.ID = stockstatus.post_id 
-            AND stockstatus.meta_key = '_stock_status'";
-    }
+    $args['meta_key'] = '_stock_status';
+    $args['orderby']  = 'meta_value';
+    $args['order']    = 'ASC'; // instock first
 
-    // Prepend stock status ordering
-    $clauses['orderby'] = "stockstatus.meta_value ASC, {$clauses['orderby']}";
-
-    return $clauses;
-}, 2000, 2);
+    return $args;
+});
 
 
 // add_filter('woocommerce_default_address_fields', function ( $address_fields ) {
