@@ -85,18 +85,7 @@ add_filter('woocommerce_get_price_html', function($price, $product) {
     return $price;
 }, 10, 2);
 
-// sort
-add_filter('woocommerce_get_catalog_ordering_args', function($args) {
-    if (!is_shop() && !is_product_taxonomy()) {
-        return $args;
-    }
 
-    $args['meta_key'] = '_stock_status';
-    $args['orderby']  = 'meta_value';
-    $args['order']    = 'ASC'; // instock first
-
-    return $args;
-});
 
 
 // add_filter('woocommerce_default_address_fields', function ( $address_fields ) {
