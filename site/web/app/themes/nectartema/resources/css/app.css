@@ -132,7 +132,7 @@ h6 {
 
 .home {
   h1 {
-    @apply text-6xl lg:text-7xl font-heading-bold text-secondary;
+    @apply text-7xl lg:text-7xl xl:text-8xl 2xl:text-6xl font-heading-bold text-center lg:text-left text-secondary;
 
     word-break: keep-all;
   }
@@ -162,11 +162,8 @@ p {
 
 .home-wrapper {
   --s: 9px;
-  /* control the size*/
   --c1: #ffc107;
-  /* background color */
   --c2: #ffb300;
-
   --c: #0000, var(--c1) .5deg 119.5deg, #0000 120deg;
   --g1: conic-gradient(from 60deg at 56.25% calc(425%/6), var(--c));
   --g2: conic-gradient(from 180deg at 43.75% calc(425%/6), var(--c));
@@ -349,7 +346,6 @@ div.product-type-simple {
 li.wc-block-product {
   @apply rounded-t-xl pb-6;
 
-  box-shadow: 0 0 4px rgba(0, 0, 0, 0.12);
 }
 
 .woocommerce-order ul+p+p {
@@ -371,3 +367,12 @@ article header h1 {
 	-webkit-text-stroke-color: hsl(0 0% 10% / 30%); */
 }
 
+/* .home-wrapper {
+  padding-bottom: 7rem;  
+  
+  background: linear-gradient(180deg,rgba(248, 234, 208, 1) 0%, rgba(248, 234, 208, 1) 75%, rgba(238, 118, 5, 1) 100%);
+} */
+
+/* header.banner {
+  background: linear-gradient(180deg,rgba(248, 234, 208, 1) 0%, rgba(248, 234, 208, 1) 75%, rgba(255, 255, 255, 1) 100%);
+} */
