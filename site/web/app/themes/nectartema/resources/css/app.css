@@ -28,7 +28,7 @@
 
 @layer components {
   #hero-wrapper {
-    @apply prose lg:prose-lg prose-h1:mt-4 prose-h1:mb-2;
+    @apply prose lg:prose-lg prose-h1:mt-4 prose-h1:mb-1;
   }
 }
 
@@ -41,7 +41,7 @@
   }
 
   p {
-    @apply text-lg xl:text-2xl prose-p:mt-0 prose-p:mb-0 prose-h1:mb-0;
+    @apply text-center xl:text-left text-lg xl:text-2xl prose-p:mt-0 prose-p:mb-0 prose-h1:mb-0;
   }
 
   .wp-element-button {
