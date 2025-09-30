@@ -48,12 +48,12 @@ const element = document.querySelector('h1');
 element.classList.add('animate__animated', 'animate__flipInX');
 
 // run on load and resize (debounce in production)
-function setVh() {
-  let vh = window.innerHeight * 0.01;
-  document.documentElement.style.setProperty('--vh', `${vh}px`);
-}
-setVh();
-window.addEventListener('resize', setVh);
+// function setVh() {
+//   let vh = window.innerHeight * 0.01;
+//   document.documentElement.style.setProperty('--vh', `${vh}px`);
+// }
+// setVh();
+// window.addEventListener('resize', setVh);
 
 
 import.meta.glob([
