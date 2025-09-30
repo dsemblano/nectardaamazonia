@@ -28,8 +28,40 @@
 
 @layer components {
   #hero-wrapper {
-    @apply prose lg:prose-lg prose-h1:mb-0;
+    @apply prose lg:prose-lg;
   }
+}
+
+
+.home {
+  h1 {
+    @apply text-6xl lg:text-7xl xl:text-8xl 2xl:text-8xl font-heading-bold text-center lg:text-left text-secondary;
+
+    word-break: keep-all;
+  }
+
+  p {
+    @apply text-lg xl:text-2xl prose-p:mt-0 prose-p:mb-0 prose-h1:mb-0;
+  }
+
+  .wp-element-button {
+    animation: headShake;
+    animation-duration: 1s;
+    animation-delay: 2s;
+  }
+
+  section:not(#hero-section) {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+}
+
+.page:not(.home) h1 {
+  @apply text-6xl lg:text-8xl;
+}
+
+.wp-block-zolo-container.zolo-root-container.frontend {
+  @apply prose-p:my-0;
 }
 
 /* CSS Variables */
@@ -128,37 +160,6 @@ h4,
 h5,
 h6 {
   font-family: var(--font-heading);
-}
-
-.home {
-  h1 {
-    @apply text-7xl lg:text-7xl xl:text-8xl 2xl:text-8xl font-heading-bold text-center lg:text-left text-secondary;
-
-    word-break: keep-all;
-  }
-
-  p {
-    @apply text-xl xl:text-2xl prose-p:mt-0 prose-p:mb-0 prose-h1:mb-0;
-  }
-
-  .wp-element-button {
-    animation: headShake;
-    animation-duration: 1s;
-    animation-delay: 2s;
-  }
-
-  section:not(#hero-section) {
-    padding-top: 3rem;
-    padding-bottom: 3rem;
-  }
-}
-
-.page:not(.home) h1 {
-  @apply text-6xl lg:text-8xl;
-}
-
-.wp-block-zolo-container.zolo-root-container.frontend {
-  @apply prose-p:my-0;
 }
 
 p {
