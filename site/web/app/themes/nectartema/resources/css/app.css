@@ -132,9 +132,13 @@ h6 {
 
 .home {
   h1 {
-    @apply text-7xl lg:text-7xl xl:text-8xl 2xl:text-6xl font-heading-bold text-center lg:text-left text-secondary;
+    @apply text-7xl lg:text-7xl xl:text-8xl 2xl:text-8xl font-heading-bold text-center lg:text-left text-secondary;
 
     word-break: keep-all;
+  }
+
+  p {
+    @apply text-xl xl:text-2xl prose-p:mt-0 prose-p:mb-0 prose-h1:mb-0;
   }
 
   section:not(#hero-section) {
@@ -146,10 +150,6 @@ h6 {
 
 .page:not(.home) h1 {
   @apply text-6xl lg:text-8xl;
-}
-
-.home p {
-  @apply text-xl prose-p:mt-0 prose-p:mb-0 prose-h1:mb-0;
 }
 
 .wp-block-zolo-container.zolo-root-container.frontend {
