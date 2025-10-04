@@ -56,6 +56,10 @@
   }
 }
 
+.gspb_button_wrapper {
+  justify-content: center !important;
+}
+
 .page:not(.home) h1 {
   @apply text-6xl lg:text-8xl;
 }

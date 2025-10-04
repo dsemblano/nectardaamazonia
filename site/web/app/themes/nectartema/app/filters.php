@@ -85,9 +85,6 @@ add_filter('woocommerce_get_price_html', function($price, $product) {
     return $price;
 }, 10, 2);
 
-
-
-
 // add_filter('woocommerce_default_address_fields', function ( $address_fields ) {
 //     $address_fields['postcode']['placeholder'] = 'Digite seu CEP';
 //     return $address_fields;

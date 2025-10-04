@@ -162,3 +162,33 @@ add_action('widgets_init', function () {
     ] + $config);
 });
 
+add_action( 'wp_enqueue_scripts', function() {
+    if ( ! class_exists( 'WooCommerce' ) ) {
+        return;
+    }
+
+    // Keep WooCommerce assets only on Woo pages
+    if ( ! is_woocommerce() && ! is_cart() && ! is_checkout() && ! is_account_page() ) {
+
+        // Classic WooCommerce styles
+        wp_dequeue_style( 'woocommerce-general' );
+        wp_dequeue_style( 'woocommerce-layout' );
+        wp_dequeue_style( 'woocommerce-smallscreen' );
+
+        // Classic WooCommerce scripts
+        wp_dequeue_script( 'wc-cart-fragments' );
+        wp_dequeue_script( 'woocommerce' );
+        wp_dequeue_script( 'wc-add-to-cart' );
+
+        // WooCommerce Blocks styles
+        wp_dequeue_style( 'wc-blocks-style' );
+        wp_dequeue_style( 'wc-blocks-vendors-style' );
+        wp_dequeue_style( 'wc-blocks-packages-style' );
+
+        // WooCommerce Blocks scripts
+        wp_dequeue_script( 'wc-blocks-vendors' );
+        wp_dequeue_script( 'wc-blocks-registry' );
+        wp_dequeue_script( 'wc-blocks-style' );
+    }
+}, 99 );
+
