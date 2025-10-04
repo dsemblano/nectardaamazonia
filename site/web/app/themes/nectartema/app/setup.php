@@ -192,3 +192,9 @@ add_action( 'wp_enqueue_scripts', function() {
     }
 }, 99 );
 
+// Remove brands.css woocommerce
+add_action( 'wp_enqueue_scripts', function() {
+wp_deregister_style('brands-styles');
+});
+
+
