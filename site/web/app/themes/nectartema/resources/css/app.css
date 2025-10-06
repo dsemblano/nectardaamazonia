@@ -27,8 +27,53 @@
 }
 
 @layer components {
-  #hero-wrapper {
+  /* #hero-wrapper {
     @apply prose lg:prose-lg prose-h1:mt-4 prose-h1:mb-1;
+  } */
+
+  .vb-block-wrap {
+    @apply prose prose-h2:mt-0 prose-strong:text-white;
+  }
+
+  .vb-block-wrap img {
+    @apply rounded-xl;
+  }
+}
+
+@layer utilities {
+  .container {
+    /* padding: var(--container-padding, 1rem); */
+    margin-inline: auto !important;
+    /* background-color: pink !important; */
+
+    @variant lg {
+      padding-inline: 8rem !important;
+    }
+
+    @variant xl {
+      padding-inline: 10rem !important;
+    }
+  }
+}
+
+  .wp-block-vayu-blocks-advance-container .th-con {
+    gap: 50px;
+  }
+
+/* .wp-block-vayu-blocks-advance-container {
+  padding: 0;
+} */
+
+/* .th-inside-container {
+  background-color: red;
+} */
+
+.wp-block-image,
+.wp-block-zolo-advanced-image,
+.page:not(.nossos-parceiros) .wp-block-media-text__media,
+.single-post figure {
+  img {
+    @apply rounded-xl;
   }
 }
 
@@ -50,10 +95,10 @@
     animation-delay: 2s;
   }
 
-  section:not(#hero-section) {
+  /* section:not(#hero-section) {
     padding-top: 3rem;
     padding-bottom: 3rem;
-  }
+  } */
 }
 
 .gspb_button_wrapper {
@@ -133,21 +178,6 @@
 } */
 
 /* .section-page>*:not(h1) */
-
-@layer utility {
-  .container {
-    padding: var(--container-padding, 1rem);
-    margin-inline: auto;
-
-    @variant lg {
-      padding-inline: 8rem;
-    }
-
-    @variant xl {
-      padding-inline: 10rem;
-    }
-  }
-}
 
 :root {
   color-scheme: only light;
@@ -314,16 +344,7 @@ figure .lazyloading {
 
 /* #home-title-wrapper {
   @apply bottom-20 lg:bottom-0;
-} */
-
-.wp-block-image,
-.wp-block-zolo-advanced-image,
-.page:not(.nossos-parceiros) .wp-block-media-text__media,
-.single-post figure {
-  img {
-    @apply rounded-xl;
-  }
-} 
+} */ 
 
 .wp-block-woocommerce-product-image {
   overflow: hidden;
@@ -351,10 +372,10 @@ div.product-type-simple {
 }
 
 /* Correção LCP imagem */
-#hero-section figure img {
+/* #hero-section figure img {
   position: relative;
   right: 1.7rem;
-}
+} */
 
 li.wc-block-product {
   @apply hover:scale-105 transition duration-300 ease-in-out;
