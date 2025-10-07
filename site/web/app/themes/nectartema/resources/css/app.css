@@ -35,7 +35,7 @@
 
 .home {
   h1 {
-    @apply text-6xl lg:text-7xl xl:text-8xl 2xl:text-8xl font-heading-bold text-center lg:text-left text-secondary;
+    @apply text-6xl lg:text-7xl 2xl:text-8xl font-heading-bold text-center lg:text-left text-secondary;
 
     word-break: keep-all;
   }
