@@ -196,4 +196,38 @@ add_action( 'wp_enqueue_scripts', function() {
 wp_deregister_style('brands-styles');
 });
 
+// onload trick
+/**
+ * Load all Vayu Blocks CSS asynchronously (non-render-blocking)
+ */
+if (!is_admin()) {
+    add_filter('style_loader_tag', function ($html, $handle) {
+        // Match any Vayu Blocks CSS file
+        if (strpos($html, 'vayu-blocks/') !== false) {
+            $html = str_replace(
+                "rel='stylesheet'",
+                "rel='preload' as='style' onload=\"this.onload=null;this.rel='stylesheet'\"",
+                $html
+            );
+        }
 
+        return $html;
+    }, 10, 2);
+
+    // Add fallback for browsers without JavaScript
+    add_action('wp_head', function () {
+        $plugin_url = plugin_dir_url(WP_PLUGIN_DIR . '/vayu-blocks/public/');
+        echo '<noscript>';
+        echo '<link rel="stylesheet" href="' . esc_url($plugin_url . 'build/block/image/style-index.css?ver=0.2.0') . '">';
+        echo '</noscript>';
+    });
+}
+
+
+add_action('wp_head', function () {
+    echo '<noscript><link rel="stylesheet" href="' . plugin_dir_url(WP_PLUGIN_DIR . '/vayu-blocks/public/build/block/image/style-index.css') . '?ver=0.2.0"></noscript>';
+});
+
+
+
+https://staging.nectardaamazonia.com.br/app/plugins/vayu-blocks/public/build/block/image/style-index.css?ver=0.2.0
