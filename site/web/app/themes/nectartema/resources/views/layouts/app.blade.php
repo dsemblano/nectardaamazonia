@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     @php(do_action('get_header'))
     @php(wp_head())
-    <link rel="preload" fetchpriority="high" as="image" href="{{ Vite::asset('resources/images/meliponario.webp') }}" type="image/webp">
+    <link rel="preload" fetchpriority="high" as="image" href="{{ Vite::asset('/app/uploads/2025/10/meliponario.webp') }}" type="image/webp">
     @if (is_front_page() || is_home() )
     <link rel="preload" fetchpriority="high" as="image" loading="eager" href="/app/uploads/2024/11/PNG-Mel-home-nectar-da-amazonia.webp" type="image/webp">
     @endif
@@ -24,7 +24,7 @@
       </a>
 
       @include('sections.header')
-
+v
       <main id="main" class="main flex-1">
         @yield('content')
       </main>
