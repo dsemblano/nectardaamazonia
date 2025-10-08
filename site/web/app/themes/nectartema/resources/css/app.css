@@ -27,15 +27,60 @@
 }
 
 @layer components {
-  #hero-wrapper {
+  /* #hero-wrapper {
     @apply prose lg:prose-lg prose-h1:mt-4 prose-h1:mb-1;
+  } */
+
+  .vb-block-wrap {
+    @apply prose prose-h2:mt-0 prose-strong:text-white;
+  }
+
+  .vb-block-wrap img {
+    @apply rounded-xl;
+  }
+}
+
+@layer utilities {
+  .container {
+    /* padding: var(--container-padding, 1rem); */
+    margin-inline: auto !important;
+    /* background-color: pink !important; */
+
+    @variant lg {
+      padding-inline: 8rem !important;
+    }
+
+    @variant xl {
+      padding-inline: 10rem !important;
+    }
+  }
+}
+
+  .wp-block-vayu-blocks-advance-container .th-con {
+    gap: 50px;
+  }
+
+/* .wp-block-vayu-blocks-advance-container {
+  padding: 0;
+} */
+
+/* .th-inside-container {
+  background-color: red;
+} */
+
+.wp-block-image,
+.wp-block-zolo-advanced-image,
+.page:not(.nossos-parceiros) .wp-block-media-text__media,
+.single-post figure {
+  img {
+    @apply rounded-xl;
   }
 }
 
 
 .home {
   h1 {
-    @apply text-6xl lg:text-7xl 2xl:text-8xl font-heading-bold text-center lg:text-left text-secondary;
+    @apply text-6xl lg:text-7xl xl:text-8xl 2xl:text-8xl font-heading-bold text-center lg:text-left text-secondary;
 
     word-break: keep-all;
   }
@@ -50,9 +95,16 @@
     animation-delay: 2s;
   }
 
-  section:not(#hero-section) {
+  /* section:not(#hero-section) {
     padding-top: 3rem;
     padding-bottom: 3rem;
+  } */
+}
+
+section#servicos {
+  p {
+    @apply text-center text-base;
+
   }
 }
 
@@ -134,21 +186,6 @@
 
 /* .section-page>*:not(h1) */
 
-@layer utility {
-  .container {
-    padding: var(--container-padding, 1rem);
-    margin-inline: auto;
-
-    @variant lg {
-      padding-inline: 8rem;
-    }
-
-    @variant xl {
-      padding-inline: 10rem;
-    }
-  }
-}
-
 :root {
   color-scheme: only light;
 }
@@ -162,7 +199,8 @@ h2,
 h3,
 h4,
 h5,
-h6 {
+h6,
+.wp-block-vayu-blocks-advance-heading {
   font-family: var(--font-heading);
 }
 
@@ -316,15 +354,6 @@ figure .lazyloading {
   @apply bottom-20 lg:bottom-0;
 } */
 
-.wp-block-image,
-.wp-block-zolo-advanced-image,
-.page:not(.nossos-parceiros) .wp-block-media-text__media,
-.single-post figure {
-  img {
-    @apply rounded-xl;
-  }
-} 
-
 .wp-block-woocommerce-product-image {
   overflow: hidden;
 
@@ -351,10 +380,10 @@ div.product-type-simple {
 }
 
 /* Correção LCP imagem */
-#hero-section figure img {
+/* #hero-section figure img {
   position: relative;
   right: 1.7rem;
-}
+} */
 
 li.wc-block-product {
   @apply hover:scale-105 transition duration-300 ease-in-out;
@@ -386,8 +415,8 @@ article header h1 {
 }
 
 /* .home-wrapper {
-  padding-bottom: 7rem;  
-  
+  padding-bottom: 7rem;
+
   background: linear-gradient(180deg,rgba(248, 234, 208, 1) 0%, rgba(248, 234, 208, 1) 75%, rgba(238, 118, 5, 1) 100%);
 } */
 
