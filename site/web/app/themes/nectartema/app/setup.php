@@ -300,6 +300,13 @@ add_action('wp_head', function () {
     echo '<noscript><link rel="stylesheet" href="' . plugin_dir_url(WP_PLUGIN_DIR . '/vayu-blocks/public/build/block/image/style-index.css') . '?ver=0.2.0"></noscript>';
 });
 
+// Disable jquery
 
-
-https://staging.nectardaamazonia.com.br/app/plugins/vayu-blocks/public/build/block/image/style-index.css?ver=0.2.0
+add_action('wp_enqueue_scripts', function () {
+    // Remove jQuery on the frontend only
+    if (!is_admin() && !is_customize_preview()) {
+        wp_deregister_script('jquery');
+        wp_deregister_script('jquery-core');
+        wp_deregister_script('jquery-migrate');
+    }
+}, 100);
