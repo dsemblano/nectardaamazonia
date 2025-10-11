@@ -1,7 +1,10 @@
 <section class="home-wrapper" id="hero-section">
     <div class="container flex flex-col lg:flex-row items-center gap-8 lg:gap-16 py-12 lg:py-24">
         <picture class="grow-0 shrink-1 w-full lg:w-3/5">
-            <img src="{{ Vite::asset('resources/images/meliponario.webp') }}" alt="Melkiponário" class="rounded-xl">
+
+            <source srcset="{{ Vite::asset('resources/images/mobile-meliponario.webp') }}" media="(max-width: 767px)">
+            <source srcset="{{ Vite::asset('resources/images/desktop-meliponario.webp') }}" media="(min-width: 768px)">
+            <img src="{{ Vite::asset('resources/images/desktop-meliponario.webp') }}" alt="Meliponário" class="rounded-xl">
         </picture>
         <div class="hero-text grow-0 shrink-1 w-full lg:w-2/5 prose lg:prose-lg max-w-none prose-a:no-underline">
             <h1>Néctar da Amazônia</h1>
