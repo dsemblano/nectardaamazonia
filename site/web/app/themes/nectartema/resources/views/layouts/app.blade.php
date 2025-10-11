@@ -7,7 +7,8 @@
     @php(wp_head())
     <link rel="preload" fetchpriority="high" as="image" href="{{ Vite::asset('resources/images/logonectarnovo.webp') }}" type="image/webp">
     @if (is_front_page() || is_home() )
-    <link rel="preload" fetchpriority="high" as="image" href="{{ Vite::asset('resources/images/meliponario.webp') }}" type="image/webp">
+    <link rel="preload" fetchpriority="high" as="image" href="{{ Vite::asset('resources/images/mobile-meliponario.webp') }}" type="image/webp">
+    <link rel="preload" fetchpriority="high" as="image" href="{{ Vite::asset('resources/images/desktop-meliponario.webp') }}" type="image/webp">
     @endif
     <link rel="preload" href="{{ Vite::asset('resources/fonts/Poppins/Poppins-Regular.ttf') }}" as="font" type="font/ttf" crossorigin>
     <link rel="author" type="text/plain" href="{{ Vite::asset('resources/fonts/humans.txt') }}" />
