@@ -198,107 +198,112 @@ wp_deregister_style('brands-styles');
 
 // onload trick
 
-/**
- * Make all Vayu Blocks CSS load asynchronously (non-render-blocking)
- * Compatible with Bedrock structure (app/plugins/vayu-blocks)
- */
+// if ( ! is_admin() ) {
 
-/**
- * Optimize Vayu Blocks: load CSS & JS asynchronously
- * Works with Bedrock structure (/app/plugins/vayu-blocks)
- */
+//     // 1) Convert Vayu CSS links to preload + onload (non-blocking)
+//     add_filter( 'style_loader_tag', function ( $html, $handle ) {
+//         if ( strpos( $html, 'vayu-blocks/' ) !== false ) {
+//             $html = str_replace(
+//                 "rel='stylesheet'",
+//                 "rel='preload' as='style' onload=\"this.onload=null;this.rel='stylesheet'\"",
+//                 $html
+//             );
+//         }
+//         return $html;
+//     }, 10, 2 );
 
-
-/**
- * app/mu-plugins/vayu-assets-optimize.php
- * Bedrock-friendly: optimize Vayu Blocks assets with resource hints + async loading
- */
-
-if ( ! is_admin() ) {
-
-    // 1) Convert Vayu CSS links to preload + onload (non-blocking)
-    add_filter( 'style_loader_tag', function ( $html, $handle ) {
-        if ( strpos( $html, 'vayu-blocks/' ) !== false ) {
-            $html = str_replace(
-                "rel='stylesheet'",
-                "rel='preload' as='style' onload=\"this.onload=null;this.rel='stylesheet'\"",
-                $html
-            );
-        }
-        return $html;
-    }, 10, 2 );
-
-    // 2) Defer Vayu JS
-    add_filter( 'script_loader_tag', function ( $tag, $handle, $src ) {
-        if ( $src && strpos( $src, 'vayu-blocks/' ) !== false ) {
-            // keep attributes simple and consistent
-            $tag = '<script src="' . esc_url( $src ) . '" defer></script>' . "\n";
-        }
-        return $tag;
-    }, 10, 3 );
+//     // 2) Defer Vayu JS
+//     add_filter( 'script_loader_tag', function ( $tag, $handle, $src ) {
+//         if ( $src && strpos( $src, 'vayu-blocks/' ) !== false ) {
+//             // keep attributes simple and consistent
+//             $tag = '<script src="' . esc_url( $src ) . '" defer></script>' . "\n";
+//         }
+//         return $tag;
+//     }, 10, 3 );
 
 
-    // 3) Add resource hint (preconnect) for the plugin origin so the browser can start TCP/TLS early
-    add_filter( 'wp_resource_hints', function ( $hints, $relation_type ) {
-        if ( $relation_type === 'preconnect' ) {
-            // base public URL for Vayu Blocks (Bedrock path used earlier)
-            $plugin_public = content_url( '/../app/plugins/vayu-blocks/public/' );
+//     // 3) Add resource hint (preconnect) for the plugin origin so the browser can start TCP/TLS early
+//     add_filter( 'wp_resource_hints', function ( $hints, $relation_type ) {
+//         if ( $relation_type === 'preconnect' ) {
+//             // base public URL for Vayu Blocks (Bedrock path used earlier)
+//             $plugin_public = content_url( '/../app/plugins/vayu-blocks/public/' );
 
-            $parsed = parse_url( $plugin_public );
-            if ( $parsed && ! empty( $parsed['scheme'] ) && ! empty( $parsed['host'] ) ) {
-                $origin = $parsed['scheme'] . '://' . $parsed['host'];
+//             $parsed = parse_url( $plugin_public );
+//             if ( $parsed && ! empty( $parsed['scheme'] ) && ! empty( $parsed['host'] ) ) {
+//                 $origin = $parsed['scheme'] . '://' . $parsed['host'];
 
-                if ( ! in_array( $origin, $hints, true ) ) {
-                    $hints[] = $origin;
-                }
-            }
-        }
-        return $hints;
-    }, 10, 2 );
+//                 if ( ! in_array( $origin, $hints, true ) ) {
+//                     $hints[] = $origin;
+//                 }
+//             }
+//         }
+//         return $hints;
+//     }, 10, 2 );
 
 
-    // 4) Preload Vayu JS files (index.js) early and auto-generate <noscript> CSS fallbacks.
-    add_action( 'wp_head', function () {
-        $plugin_dir  = WP_CONTENT_DIR . '/../app/plugins/vayu-blocks/public/build/block/';
-        $plugin_url  = content_url( '/../app/plugins/vayu-blocks/public/build/block/' );
+//     // 4) Preload Vayu JS files (index.js) early and auto-generate <noscript> CSS fallbacks.
+//     add_action( 'wp_head', function () {
+//         $plugin_dir  = WP_CONTENT_DIR . '/../app/plugins/vayu-blocks/public/build/block/';
+//         $plugin_url  = content_url( '/../app/plugins/vayu-blocks/public/build/block/' );
 
-        if ( ! is_dir( $plugin_dir ) ) {
-            return;
-        }
+//         if ( ! is_dir( $plugin_dir ) ) {
+//             return;
+//         }
 
-        // --- Preload JS files (so fetch starts early) ---
-        $js_files = glob( $plugin_dir . '*/index.js' );
-        if ( ! empty( $js_files ) ) {
-            foreach ( $js_files as $file ) {
-                $relative = str_replace( $plugin_dir, '', $file );
-                $ver      = @filemtime( $file ) ?: time();
-                $href     = esc_url( $plugin_url . $relative . '?ver=' . $ver );
+//         // --- Preload JS files (so fetch starts early) ---
+//         $js_files = glob( $plugin_dir . '*/index.js' );
+//         if ( ! empty( $js_files ) ) {
+//             foreach ( $js_files as $file ) {
+//                 $relative = str_replace( $plugin_dir, '', $file );
+//                 $ver      = @filemtime( $file ) ?: time();
+//                 $href     = esc_url( $plugin_url . $relative . '?ver=' . $ver );
 
-                // preload JS (we still defer execution via script_loader_tag)
-                printf( "<link rel=\"preload\" href=\"%s\" as=\"script\">\n", $href );
-            }
-        }
+//                 // preload JS (we still defer execution via script_loader_tag)
+//                 printf( "<link rel=\"preload\" href=\"%s\" as=\"script\">\n", $href );
+//             }
+//         }
 
-        // --- Noscript CSS fallbacks for all Vayu block CSS files ---
-        $css_files = glob( $plugin_dir . '*/style-index.css' );
-        if ( ! empty( $css_files ) ) {
-            echo "<noscript>\n";
-            foreach ( $css_files as $file ) {
-                $relative = str_replace( $plugin_dir, '', $file );
-                $ver      = @filemtime( $file ) ?: time();
-                $href     = esc_url( $plugin_url . $relative . '?ver=' . $ver );
-                echo '<link rel="stylesheet" href="' . $href . '">' . "\n";
-            }
-            echo "</noscript>\n";
-        }
-    } );
-}
+//         // --- Noscript CSS fallbacks for all Vayu block CSS files ---
+//         $css_files = glob( $plugin_dir . '*/style-index.css' );
+//         if ( ! empty( $css_files ) ) {
+//             echo "<noscript>\n";
+//             foreach ( $css_files as $file ) {
+//                 $relative = str_replace( $plugin_dir, '', $file );
+//                 $ver      = @filemtime( $file ) ?: time();
+//                 $href     = esc_url( $plugin_url . $relative . '?ver=' . $ver );
+//                 echo '<link rel="stylesheet" href="' . $href . '">' . "\n";
+//             }
+//             echo "</noscript>\n";
+//         }
+//     } );
+// }
 
 
 
-add_action('wp_head', function () {
-    echo '<noscript><link rel="stylesheet" href="' . plugin_dir_url(WP_PLUGIN_DIR . '/vayu-blocks/public/build/block/image/style-index.css') . '?ver=0.2.0"></noscript>';
-});
+// add_action('wp_head', function () {
+//     echo '<noscript><link rel="stylesheet" href="' . plugin_dir_url(WP_PLUGIN_DIR . '/vayu-blocks/public/build/block/image/style-index.css') . '?ver=0.2.0"></noscript>';
+// });
+
+// Disable Vayu plugin on home
+// add_action('wp_enqueue_scripts', function () {
+//     if (is_front_page() || is_home()) {
+//         // Deregister all Vayu Blocks assets
+//         foreach (wp_styles()->queue as $handle) {
+//             if (strpos($handle, 'vayu') !== false) {
+//                 wp_dequeue_style($handle);
+//                 wp_deregister_style($handle);
+//             }
+//         }
+
+//         foreach (wp_scripts()->queue as $handle) {
+//             if (strpos($handle, 'vayu') !== false) {
+//                 wp_dequeue_script($handle);
+//                 wp_deregister_script($handle);
+//             }
+//         }
+//     }
+// }, 999);
+
 
 // Disable jquery
 
