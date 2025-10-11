@@ -310,3 +310,9 @@ add_action('wp_enqueue_scripts', function () {
         wp_deregister_script('jquery-migrate');
     }
 }, 100);
+
+add_action( 'wp_enqueue_scripts', function () {
+    wp_dequeue_style( 'wp-block-library' );
+    wp_dequeue_style( 'wp-block-library-theme' );
+    wp_dequeue_style( 'wc-block-style' ); // Optional: if you use WooCommerce and want to remove its block styles
+}, 100);
