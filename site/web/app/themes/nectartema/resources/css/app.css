@@ -50,10 +50,10 @@
     animation-delay: 2s;
   }
 
-  section:not(#hero-section) {
+  /* section:not(#hero-section) {
     padding-top: 3rem;
     padding-bottom: 3rem;
-  }
+  } */
 }
 
 .gspb_button_wrapper {
