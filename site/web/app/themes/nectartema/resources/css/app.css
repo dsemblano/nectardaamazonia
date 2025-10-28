@@ -47,7 +47,7 @@
       @apply text-h text-center text-2xl mb-4;
     }
     p {
-        @apply text-center text-lg prose-p:mt-0 prose-p:mb-0 prose-h1:mb-0 text-p;
+        @apply text-lg prose-p:mt-0 prose-p:mb-0 prose-h1:mb-0 text-p;
       }
   }
 
