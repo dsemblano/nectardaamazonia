@@ -18,7 +18,7 @@
   --font-heading: "Poppins-Regular", sans-serif;
   --font-heading-bold: "Poppins-Black", sans-serif;
   --font-sans: "Lato-Regular", sans-serif;
-  --font-p: "Lato-Regular", sans-serif;
+  --font-p: ui-sans-serif, system-ui, sans-serif;
   --font-pbold: "Lato-Bold", sans-serif;
   --arrow-link: #D68778;
   --arrow-small: 480px;
@@ -44,10 +44,10 @@
   .wp-block-group,
   .th-inside-container {
     h3 {
-      @apply text-h text-center text-xl mb-4;
+      @apply text-h text-center text-2xl mb-4;
     }
     p {
-        @apply text-center text-base prose-p:mt-0 prose-p:mb-0 prose-h1:mb-0 text-p;
+        @apply text-center text-lg prose-p:mt-0 prose-p:mb-0 prose-h1:mb-0 text-p;
       }
   }
 
