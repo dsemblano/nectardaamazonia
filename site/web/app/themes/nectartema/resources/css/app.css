@@ -13,7 +13,8 @@
   --color-fundo: #F8EAD0;
   --color-melescuro: #A2571B;
   --color-dourado: #E69037;
-  --color-p: #363B4C;
+  --color-p: #545473;
+  --color-h: #14101F;
   --font-heading: "Poppins-Regular", sans-serif;
   --font-heading-bold: "Poppins-Black", sans-serif;
   --font-sans: "Lato-Regular", sans-serif;
@@ -40,8 +41,14 @@
     word-break: keep-all;
   }
 
-  p {
-    @apply text-center xl:text-left text-lg xl:text-2xl prose-p:mt-0 prose-p:mb-0 prose-h1:mb-0;
+  .wp-block-group,
+  .th-inside-container {
+    h3 {
+      @apply text-h text-center text-xl mb-4;
+    }
+    p {
+        @apply text-center text-base prose-p:mt-0 prose-p:mb-0 prose-h1:mb-0 text-p;
+      }
   }
 
   .wp-element-button {
