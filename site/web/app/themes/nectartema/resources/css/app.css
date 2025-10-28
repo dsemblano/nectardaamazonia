@@ -135,7 +135,8 @@
 /* .section-page>*:not(h1) */
 
 @layer utility {
-  .container {
+  .container,
+  .th-inside-container {
     padding: var(--container-padding, 1rem);
     margin-inline: auto;
 
