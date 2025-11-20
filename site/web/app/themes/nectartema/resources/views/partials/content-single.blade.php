@@ -11,7 +11,7 @@
     @include('partials.entry-meta')
   </header>
 
-  <hr class="h-0.5 my-8 bg-gray-500 border-0">
+  <hr class="h-0.5 my-4 bg-gray-400 border-0">
 
   <div class="e-content">
     @php(the_content())
