@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "2be0a3a4249deb01e9d743a3489c8235",
+    "content-hash": "c0ff21f5a4d7e20b845d65e713b9bc66",
     "packages": [
         {
             "name": "brick/math",
@@ -7272,21 +7272,39 @@
         },
         {
             "name": "wpackagist-plugin/greenshift-animation-and-page-builder-blocks",
-            "version": "12.3",
+            "version": "12.3.1",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/greenshift-animation-and-page-builder-blocks/",
-                "reference": "tags/12.3"
+                "reference": "tags/12.3.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/greenshift-animation-and-page-builder-blocks.12.3.zip"
+                "url": "https://downloads.wordpress.org/plugin/greenshift-animation-and-page-builder-blocks.12.3.1.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/greenshift-animation-and-page-builder-blocks/"
+        },
+        {
+            "name": "wpackagist-plugin/gtm-kit",
+            "version": "2.6.0",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/gtm-kit/",
+                "reference": "tags/2.6.0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/gtm-kit.2.6.0.zip"
+            },
+            "require": {
+                "composer/installers": "^1.0 || ^2.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/gtm-kit/"
         },
         {
             "name": "wpackagist-plugin/redirection",
@@ -7596,12 +7614,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Roave/SecurityAdvisories.git",
-                "reference": "3e3f82ed67bc5a5a3b880ad413e6c06c1c899322"
+                "reference": "f5a58d09ea64ab1d080876ee3abbd3b90dd022d6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Roave/SecurityAdvisories/zipball/3e3f82ed67bc5a5a3b880ad413e6c06c1c899322",
-                "reference": "3e3f82ed67bc5a5a3b880ad413e6c06c1c899322",
+                "url": "https://api.github.com/repos/Roave/SecurityAdvisories/zipball/f5a58d09ea64ab1d080876ee3abbd3b90dd022d6",
+                "reference": "f5a58d09ea64ab1d080876ee3abbd3b90dd022d6",
                 "shasum": ""
             },
             "conflict": {
@@ -8299,7 +8317,7 @@
                 "slim/slim": "<2.6",
                 "slub/slub-events": "<3.0.3",
                 "smarty/smarty": "<4.5.3|>=5,<5.1.1",
-                "snipe/snipe-it": "<8.1.18",
+                "snipe/snipe-it": "<=8.3.4",
                 "socalnick/scn-social-auth": "<1.15.2",
                 "socialiteproviders/steam": "<1.1",
                 "solspace/craft-freeform": ">=5,<5.10.16",
@@ -8584,7 +8602,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2025-11-20T19:05:16+00:00"
+            "time": "2025-11-20T22:05:30+00:00"
         }
     ],
     "aliases": [],
