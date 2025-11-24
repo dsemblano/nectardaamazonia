@@ -27,7 +27,14 @@
       @include('sections.header')
 
       <main id="main" class="main flex-1">
+
+      @if (is_category() && ! is_page('loja'))
+        <div class="">
         @yield('content')
+      </div>
+      @else
+        @yield('content')
+      @endif
       </main>
 
       @hasSection('sidebar')
