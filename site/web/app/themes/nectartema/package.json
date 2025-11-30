@@ -18,7 +18,7 @@
   "devDependencies": {
     "@alpinejs/focus": "^3.14.9",
     "@roots/vite-plugin": "^1.0.2",
-    "@tailwindcss/typography": "^0.5.16",
+    "@tailwindcss/typography": "^0.5.19",
     "@tailwindcss/vite": "^4.0.9",
     "alpinejs": "^3.14.9",
     "laravel-vite-plugin": "^1.2.0",

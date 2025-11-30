@@ -1,0 +1,29 @@
+@font-face {
+    font-display: swap;
+    font-family: 'Poppins-Regular';
+    font-style: normal;
+    font-weight: 400;
+    src: url('@fonts/Poppins/Poppins-Regular.ttf') format('truetype');
+  }
+
+  @font-face {
+    font-display: swap;
+    font-family: 'Poppins-Bold';
+    font-style: normal;
+    font-weight: 400;
+    src: url('@fonts/Poppins/Poppins-Bold.ttf') format('truetype');
+  }
+
+  @font-face {
+    font-display: swap;
+    font-family: 'Lato-Regular';
+    font-style: normal;
+    font-weight: 400;
+    src: url('@fonts/Lato/Lato-Regular.ttf') format('truetype');
+  }
+
+  @font-face {
+    font-display: swap;
+    font-family: 'Lato-Bold';
+    src: url('@fonts/Lato/Lato-Bold.ttf') format('truetype');
+  }

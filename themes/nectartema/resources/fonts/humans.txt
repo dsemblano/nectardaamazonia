@@ -1,0 +1,17 @@
+/* TEAM */
+Site: https://nectardaamazonia.com.br
+Owner: Richardson Frazão
+Chief Executive Officer: Richardson Frazão
+Location: Macapá AP
+Developer: Daniel Semblano
+Contact: dsemblano [at] gmail.com
+Twitter: @dsemblano
+
+
+/* SITE */
+Site name: Néctar da Amazônia
+Descrição: Empresa amapaense dedicada ao mel e desenvolvimento sustentável da Amazônia, com foco na meliponicultura e soluções que promovem a bioeconomia.
+Description: A company from Amapá dedicated to honey and sustainable development of the Amazon, with a focus on meliponiculture and solutions that promote the bioeconomy.
+Standards: HTML5, CSS3, JS
+Language: Brazilian Portuguese
+Components: This website was built with Roots stack (Trellis, Bedrock, Sage, Tailwind CSS)
