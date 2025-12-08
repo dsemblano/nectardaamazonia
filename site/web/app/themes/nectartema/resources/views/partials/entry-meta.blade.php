@@ -11,7 +11,7 @@
   <figure class="">
     <figcaption class="">
       {!! get_avatar( get_the_author_meta('ID'), 64, '', 'avatar', array('class' => 'rounded-full !m-0') ); !!}
-      {{-- <img src="@asset('images/Eudes-Bezerra.webp')" alt="Autor Eudes Bezerra" class="rounded-full" /> --}}
+      {{-- <img src="@asset('images/author.webp')" alt="Author" class="rounded-full" /> --}}
   </figure>
   <div class="text-ihcat p-author h-card lg:ml-8 not-prose">
     <div class="inline-block text-center">

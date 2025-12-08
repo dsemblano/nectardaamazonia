@@ -12,7 +12,7 @@
     @endif
     <link rel="preload" href="{{ Vite::asset('resources/fonts/Poppins/Poppins-Regular.ttf') }}" as="font" type="font/ttf" crossorigin>
     <link rel="author" type="text/plain" href="{{ Vite::asset('resources/fonts/humans.txt') }}" />
-    {{-- @include('partials.gtag') --}}
+    @include('partials.gtag')
     @vite(['resources/css/app.css', 'resources/js/app.js'])
   </head>
 
