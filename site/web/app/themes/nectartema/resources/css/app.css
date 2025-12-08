@@ -3,7 +3,7 @@
 @source "../views/";
 @source "../../app/";
 @import './fonts.css';
-@import 'animate.css';
+/* @import 'animate.css'; */
 
 @theme static {
   --color-primary: #E69037;
