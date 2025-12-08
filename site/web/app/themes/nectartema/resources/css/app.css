@@ -63,6 +63,12 @@
   } */
 }
 
+.wp-singular {
+  h1.p-name {
+    @apply text-4xl lg:text-6xl;
+  }
+}
+
 .gspb_button_wrapper {
   justify-content: center !important;
 }
