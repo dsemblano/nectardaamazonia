@@ -164,34 +164,34 @@ add_action('widgets_init', function () {
 
 // Woocommerce customizations
 
-add_action( 'wp_enqueue_scripts', function() {
-    if ( ! class_exists( 'WooCommerce' ) ) {
-        return;
-    }
+// add_action( 'wp_enqueue_scripts', function() {
+//     if ( ! class_exists( 'WooCommerce' ) ) {
+//         return;
+//     }
 
-    // Allow assets only on Woo pages
-    if ( ! is_woocommerce() && ! is_cart() && ! is_checkout() && ! is_account_page() ) {
+//     // Allow assets only on Woo pages
+//     if ( ! is_woocommerce() && ! is_cart() && ! is_checkout() && ! is_account_page() ) {
 
-        global $wp_styles, $wp_scripts;
+//         global $wp_styles, $wp_scripts;
 
-        // Dequeue all WooCommerce styles
-        foreach ( $wp_styles->queue as $handle ) {
-            if ( strpos( $handle, 'woocommerce' ) !== false || strpos( $handle, 'wc-blocks' ) !== false ) {
-                wp_dequeue_style( $handle );
-            }
-        }
+//         // Dequeue all WooCommerce styles
+//         foreach ( $wp_styles->queue as $handle ) {
+//             if ( strpos( $handle, 'woocommerce' ) !== false || strpos( $handle, 'wc-blocks' ) !== false ) {
+//                 wp_dequeue_style( $handle );
+//             }
+//         }
 
-        // Dequeue all WooCommerce scripts
-        foreach ( $wp_scripts->queue as $handle ) {
-            if ( strpos( $handle, 'woocommerce' ) !== false || strpos( $handle, 'wc-blocks' ) !== false || strpos( $handle, 'wc-' ) === 0 ) {
-                wp_dequeue_script( $handle );
-            }
-        }
-    }
-}, 99 );
+//         // Dequeue all WooCommerce scripts
+//         foreach ( $wp_scripts->queue as $handle ) {
+//             if ( strpos( $handle, 'woocommerce' ) !== false || strpos( $handle, 'wc-blocks' ) !== false || strpos( $handle, 'wc-' ) === 0 ) {
+//                 wp_dequeue_script( $handle );
+//             }
+//         }
+//     }
+// }, 99 );
 
 
-// Remove brands.css woocommerce
-add_action( 'wp_enqueue_scripts', function() {
-wp_deregister_style('brands-styles');
-});
+// // Remove brands.css woocommerce
+// add_action( 'wp_enqueue_scripts', function() {
+// wp_deregister_style('brands-styles');
+// });
