@@ -12,8 +12,8 @@
   --color-verde: #C1CA26;
   --color-fundo: #F8EAD0;
   --color-melescuro: #A2571B;
-  --color-dourado: #E69037;
-  --color-p: #545473;
+  --color-dourado: #FFF;
+  --color-p: #4B4B68;
   --color-h: #14101F;
   --font-heading: "Poppins-Regular", sans-serif;
   --font-heading-bold: "Poppins-Black", sans-serif;
@@ -26,6 +26,10 @@
   --arrow-large: 1024px;
   --arrow-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
 }
+
+/* .has-white-color {
+    color: var(--color-p) !important;
+} */
 
 @layer components {
   #hero-wrapper {
