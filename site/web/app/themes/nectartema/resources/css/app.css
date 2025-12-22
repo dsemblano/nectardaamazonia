@@ -447,3 +447,29 @@ article header h1 {
     }
   }
 }
+
+/* Preço */
+.price-out-of-stock {
+    display: block;
+}
+
+.price-out-of-stock .old-price {
+    text-decoration: line-through;
+    opacity: 0.6;
+}
+
+.price-out-of-stock .stock-label {
+    display: block;
+    margin-top: 4px;
+    color: #cc0000;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+/* Botão */
+.out-of-stock-btn {
+    opacity: 0.45;
+    cursor: not-allowed;
+    pointer-events: none;
+    filter: grayscale(100%);
+}

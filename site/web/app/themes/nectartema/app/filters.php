@@ -75,15 +75,15 @@ add_filter('woocommerce_my_account_my_orders_actions', function($actions, $order
 }, 10, 2);
 
 // Mostrar preço tachado + texto "Fora de estoque" no loop da loja
-add_filter('woocommerce_get_price_html', function($price, $product) {
-    if ( ! $product->is_in_stock() ) {
-        $price = '<span class="price-out-of-stock" style="display:block;">'
-               . '<span class="old-price" style="text-decoration:line-through; opacity:0.7;">' . $price . '</span>'
-               . '<br><span class="stock out-of-stock" style="color:#cc0000;font-weight:bold;">Fora de estoque</span>'
-               . '</span>';
-    }
-    return $price;
-}, 10, 2);
+// add_filter('woocommerce_get_price_html', function($price, $product) {
+//     if ( ! $product->is_in_stock() ) {
+//         $price = '<span class="price-out-of-stock" style="display:block;">'
+//                . '<span class="old-price" style="text-decoration:line-through; opacity:0.7;">' . $price . '</span>'
+//                . '<br><span class="stock out-of-stock" style="color:#cc0000;font-weight:bold;">Fora de estoque</span>'
+//                . '</span>';
+//     }
+//     return $price;
+// }, 10, 2);
 
 // add_filter('woocommerce_default_address_fields', function ( $address_fields ) {
 //     $address_fields['postcode']['placeholder'] = 'Digite seu CEP';
