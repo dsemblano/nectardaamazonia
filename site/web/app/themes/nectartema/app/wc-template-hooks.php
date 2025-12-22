@@ -74,8 +74,8 @@ remove_filter('woocommerce_product_loop_start', 'woocommerce_maybe_show_product_
  * @see woocommerce_result_count()
  * @see woocommerce_catalog_ordering()
  */
-remove_action('woocommerce_before_shop_loop', 'woocommerce_result_count', 20);
-remove_action('woocommerce_before_shop_loop', 'woocommerce_catalog_ordering', 30);
+// remove_action('woocommerce_before_shop_loop', 'woocommerce_result_count', 20);
+// remove_action('woocommerce_before_shop_loop', 'woocommerce_catalog_ordering', 30);
 // remove_action('woocommerce_no_products_found', 'wc_no_products_found');
 
 /**

@@ -191,7 +191,48 @@ add_action('widgets_init', function () {
 // }, 99 );
 
 
-// // Remove brands.css woocommerce
-// add_action( 'wp_enqueue_scripts', function() {
-// wp_deregister_style('brands-styles');
+// Remove brands.css woocommerce
+add_action( 'wp_enqueue_scripts', function() {
+wp_deregister_style('brands-styles');
+});
+
+// Limpa ordem padrão do WooCommerce
+add_action('wp', function () {
+
+  // Remove tudo da summary padrão
+  remove_action('woocommerce_single_product_summary', 'woocommerce_template_single_title', 5);
+  remove_action('woocommerce_single_product_summary', 'woocommerce_template_single_rating', 10);
+  remove_action('woocommerce_single_product_summary', 'woocommerce_template_single_price', 10);
+  remove_action('woocommerce_single_product_summary', 'woocommerce_template_single_excerpt', 20);
+  remove_action('woocommerce_single_product_summary', 'woocommerce_template_single_add_to_cart', 30);
+  remove_action('woocommerce_single_product_summary', 'woocommerce_template_single_meta', 40);
+});
+
+// Reinserir elementos na summary em nova ordem
+add_action('woocommerce_single_product_summary', function () {
+  echo view('woocommerce.single.title')->render();
+}, 5);
+
+add_action('woocommerce_single_product_summary', function () {
+  echo view('woocommerce.single.rating')->render();
+}, 10);
+
+add_action('woocommerce_single_product_summary', function () {
+  echo view('woocommerce.single.price')->render();
+}, 15);
+
+add_action('woocommerce_single_product_summary', function () {
+  echo view('woocommerce.single.description')->render();
+}, 20);
+
+add_action('woocommerce_single_product_summary', function () {
+  echo view('woocommerce.single.specs')->render();
+}, 25);
+
+// add_action('woocommerce_single_product_summary', function () {
+//   echo view('woocommerce.single.cta')->render();
+// }, 30);
+
+// add_action('mytheme_product_cta', function () {
+//   echo view('woocommerce.single.cta')->render();
 // });

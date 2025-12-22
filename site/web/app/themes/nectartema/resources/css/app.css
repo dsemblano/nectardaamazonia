@@ -11,6 +11,7 @@
   --color-secondary: #EE7605;
   --color-verde: #C1CA26;
   --color-fundo: #F8EAD0;
+  --color-accent: #f5f5dc;
   --color-melescuro: #A2571B;
   --color-dourado: #FFF;
   --color-p: #4B4B68;
@@ -34,6 +35,23 @@
 @layer components {
   #hero-wrapper {
     @apply prose lg:prose-lg prose-h1:mt-4 prose-h1:mb-1;
+  }
+}
+
+
+@layer utility {
+  .container,
+  .th-inside-container {
+    padding: var(--container-padding, 1rem);
+    margin-inline: auto;
+
+    @variant lg {
+      padding-inline: 8rem;
+    }
+
+    @variant xl {
+      padding-inline: 10rem;
+    }
   }
 }
 
@@ -250,6 +268,11 @@ main section header h1.container {
 }
 
 /* Woocommerce */
+
+body.sage {
+  background-color: var(--color-accent);
+}
+
 .woo-better-icon-current-style {
     top: -0.5rem;
 }

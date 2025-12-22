@@ -1,0 +1,64 @@
+@props(['product'])
+
+@php
+  /** @var WC_Product $product */
+@endphp
+
+<div class="group not-prose bg-white rounded-2xl shadow hover:shadow-lg transition overflow-hidden">
+
+  {{-- IMAGE --}}
+  <a href="{{ get_permalink($product->get_id()) }}" class="block bg-gray-100">
+    {!! $product->get_image(
+      'medium',
+      [
+        'class' => 'w-full h-64 sm:h-72 lg:h-80 object-cover transition-transform duration-300 group-hover:scale-105',
+        'loading' => 'lazy',
+        'decoding' => 'async',
+      ]
+    ) !!}
+
+    @if ($product->is_on_sale())
+      <span class="absolute top-3 left-3 bg-red-600 text-white text-xs font-semibold px-2 py-1 rounded">
+        Oferta
+      </span>
+    @endif
+  </a>
+
+  {{-- CONTENT --}}
+  <div class="p-5 space-y-3">
+
+    {{-- CATEGORY --}}
+    <div class="text-xs uppercase tracking-wide text-gray-400">
+      {!! wc_get_product_category_list($product->get_id()) !!}
+    </div>
+
+    {{-- TITLE --}}
+    <h3 class="text-lg font-semibold leading-tight text-melescuro">
+      <a href="{{ get_permalink($product->get_id()) }}">
+        {{ $product->get_name() }}
+      </a>
+    </h3>
+
+    {{-- SHORT DESCRIPTION --}}
+    @if ($product->get_short_description())
+      <p class="text-sm text-gray-600 line-clamp-2">
+        {!! wp_strip_all_tags($product->get_short_description()) !!}
+      </p>
+    @endif
+
+    {{-- PRICE + CTA --}}
+    <div class="flex items-center justify-between pt-3">
+      <span class="text-xl font-bold text-melescuro">
+        {!! $product->get_price_html() !!}
+      </span>
+
+      <a
+        href="?add-to-cart={{ $product->get_id() }}"
+        class="px-4 py-2 bg-melescuro hover:bg-primary text-white rounded-lg text-sm font-semibold transition"
+      >
+        Comprar
+      </a>
+    </div>
+
+  </div>
+</div>
