@@ -289,7 +289,7 @@ body.sage {
 .single_add_to_cart_button,
 #submit-payment,
 .checkout-button {
-  background-color: var(--color-secondary) !important;
+  background-color: var(--color-melescuro) !important;
   color: white;
 
   &:hover {
