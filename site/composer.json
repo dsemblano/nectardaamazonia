@@ -57,7 +57,6 @@
     "wpackagist-plugin/woocommerce-mercadopago":">=8.1.0",
     "wpackagist-plugin/woocommerce-pdf-invoices-packing-slips":">=4.5.2",
     "wpackagist-plugin/redirection":">=5.5.2",
-    "wpackagist-plugin/side-cart-woocommerce":">=2.6.5",
     "wpackagist-plugin/wp-mail-smtp":">=4.4.0",
     "wpackagist-plugin/woo-better-shipping-calculator-for-brazil":">=4.2.1",
     "wpackagist-plugin/fluid-checkout":">=4.0.6",
