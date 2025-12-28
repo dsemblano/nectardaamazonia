@@ -55,7 +55,6 @@
     "wpackagist-plugin/woocommerce-pdf-invoices-packing-slips":">=4.5.2",
     "wpackagist-plugin/redirection":">=5.5.2",
     "wpackagist-plugin/wp-mail-smtp":">=4.4.0",
-    "wpackagist-plugin/woo-better-shipping-calculator-for-brazil":">=4.2.1",
     "wpackagist-plugin/basic-user-avatars":">=1.0.9",
     "log1x/navi": "^3.1",
     "roots/acorn-mail": "^1.0"
