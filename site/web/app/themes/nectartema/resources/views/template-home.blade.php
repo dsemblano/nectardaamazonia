@@ -10,6 +10,9 @@
     @include('partials.page-header')
   @endif
     @include('partials/home.hero')
+    @include('partials/home.quemsomos')
+    @include('partials/home.servicos')
     {{-- @include('partials.content-page') --}}
+    {{-- @include('partials.contentservicos') --}}
   @endwhile
 @endsection
