@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "cae6c412d5bfe8757fb9a3fc21ee4ca3",
+    "content-hash": "a1b83b1c55b31a634dcc883663df3e56",
     "packages": [
         {
             "name": "brick/math",
@@ -7262,24 +7262,6 @@
             "homepage": "https://wordpress.org/plugins/ewww-image-optimizer/"
         },
         {
-            "name": "wpackagist-plugin/generateblocks",
-            "version": "2.2.0",
-            "source": {
-                "type": "svn",
-                "url": "https://plugins.svn.wordpress.org/generateblocks/",
-                "reference": "tags/2.2.0"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/generateblocks.2.2.0.zip"
-            },
-            "require": {
-                "composer/installers": "^1.0 || ^2.0"
-            },
-            "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/generateblocks/"
-        },
-        {
             "name": "wpackagist-plugin/redirection",
             "version": "5.5.2",
             "source": {
@@ -7314,24 +7296,6 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/regenerate-thumbnails/"
-        },
-        {
-            "name": "wpackagist-plugin/vayu-blocks",
-            "version": "1.4.3",
-            "source": {
-                "type": "svn",
-                "url": "https://plugins.svn.wordpress.org/vayu-blocks/",
-                "reference": "tags/1.4.3"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/vayu-blocks.1.4.3.zip"
-            },
-            "require": {
-                "composer/installers": "^1.0 || ^2.0"
-            },
-            "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/vayu-blocks/"
         },
         {
             "name": "wpackagist-plugin/woocommerce",
