@@ -42,8 +42,7 @@
 
 
 @layer utility {
-  .container,
-  .th-inside-container {
+  .container {
     padding: var(--container-padding, 1rem);
     margin-inline: auto;
 
@@ -57,34 +56,8 @@
   }
 }
 
-
-.home {
-  /* h1 {
-    @apply text-6xl lg:text-7xl font-heading-bold text-center lg:text-left text-white;
-
-    word-break: keep-all;
-  } */
-
-  .wp-block-group,
-  .th-inside-container {
-    h3 {
-      @apply text-h text-center text-2xl mb-4;
-    }
-    /* p {
-        @apply text-lg prose-p:mt-0 prose-p:mb-0 prose-h1:mb-0 text-p;
-      } */
-  }
-
-  .wp-element-button {
-    animation: headShake;
-    animation-duration: 1s;
-    animation-delay: 2s;
-  }
-
-  /* section:not(#hero-section) {
-    padding-top: 3rem;
-    padding-bottom: 3rem;
-  } */
+#artigos-e-blog {
+  margin-bottom: 2rem;
 }
 
 .wp-singular {
@@ -134,22 +107,6 @@
 } */
 
 /* .section-page>*:not(h1) */
-
-@layer utility {
-  .container,
-  .th-inside-container {
-    padding: var(--container-padding, 1rem);
-    margin-inline: auto;
-
-    @variant lg {
-      padding-inline: 8rem;
-    }
-
-    @variant xl {
-      padding-inline: 10rem;
-    }
-  }
-}
 
 :root {
   color-scheme: only light;

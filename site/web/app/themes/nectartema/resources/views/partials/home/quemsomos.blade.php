@@ -1,4 +1,4 @@
-<section id="quem-somos" class="">
+<section id="quem-somos" class="section-home">
     <div class="container flex flex-col lg:flex-row items-center gap-8 lg:gap-16 py-12 lg:py-24">
         <div class="hero-text grow-0 shrink-1 w-full lg:w-3/5 prose lg:prose-2xl max-w-none prose-a:no-underline">
             <h2 class="text-verde">Quem somos</h2>
