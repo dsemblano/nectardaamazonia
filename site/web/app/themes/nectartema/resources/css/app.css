@@ -143,23 +143,53 @@ p {
   background-size: cover;
 }
 
+/* Pages */
+
 .headerdesktop-page {
-  height: 20rem;
+  height: 16.5rem;
 }
 
-.headermobile-page {
-  height: 20rem;
-}
 
 .wp-block-zolo-advanced-heading {
   background-position: 0% 85%;
+
   .zolo-ah-title,
   .zolo-ah-subtitle,
-  .zolo-ah-main-title  {
+  .zolo-ah-main-title {
     color: white;
   }
 }
 
+.headerdesktop-page {
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.3));
+  .zolo-block-wrapper {
+    width: 100%;
+    margin-top: 2rem;
+  }
+}
+
+.headermobile-page {
+  .zolo-block-wrapper {
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.3));
+    height: 100%;
+    width: 100%;
+    padding: 2rem;
+
+    .zolo-ah-title{
+      margin-bottom: 1rem;
+    }
+  }
+}
+
+.wp-block-zolo-advanced-heading {
+  .zolo-ah-main-title {
+    @apply text-4xl lg:text-6xl;
+  }
+
+  .zolo-ah-subtitle {
+    @apply text-base lg:text-xl w-full md:w-1/2;
+  }
+}
 
 /* .home-wrapper {
   --s: 9px;
