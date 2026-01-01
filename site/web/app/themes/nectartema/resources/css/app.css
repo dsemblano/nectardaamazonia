@@ -30,9 +30,6 @@
   --arrow-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
 }
 
-/* .has-white-color {
-    color: var(--color-p) !important;
-} */
 /* 
 @layer components {
   #hero-wrapper {
@@ -41,11 +38,16 @@
 } */
 
 
+/* .container {
+  @apply bg-blue-500;
+} */
+
+
 @layer utility {
   .container {
     padding: var(--container-padding, 1rem);
     margin-inline: auto;
-
+    
     @variant lg {
       padding-inline: 8rem;
     }
@@ -143,53 +145,65 @@ p {
   background-size: cover;
 }
 
-/* Pages */
+/* Pages with Zolo block */
 
-.headerdesktop-page {
-  height: 16.5rem;
-}
-
-
-.wp-block-zolo-advanced-heading {
-  background-position: 0% 85%;
-
-  .zolo-ah-title,
-  .zolo-ah-subtitle,
-  .zolo-ah-main-title {
-    color: white;
+  /* Header em cada página usando Zolo blocos */
+  .headerdesktop-page {
+    height: 16.5rem;
   }
-}
 
-.headerdesktop-page {
-  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.3));
-  .zolo-block-wrapper {
-    width: 100%;
-    margin-top: 2rem;
-  }
-}
 
-.headermobile-page {
-  .zolo-block-wrapper {
-    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.3));
-    height: 100%;
-    width: 100%;
-    padding: 2rem;
+  .wp-block-zolo-advanced-heading {
+    background-position: 0% 85%;
 
-    .zolo-ah-title{
-      margin-bottom: 1rem;
+    .zolo-ah-title,
+    .zolo-ah-subtitle,
+    .zolo-ah-main-title {
+      color: white;
     }
   }
-}
 
-.wp-block-zolo-advanced-heading {
-  .zolo-ah-main-title {
-    @apply text-4xl lg:text-6xl;
+  .headerdesktop-page {
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.3));
+    .zolo-block-wrapper {
+      width: 100%;
+      margin-top: 2rem;
+    }
   }
 
-  .zolo-ah-subtitle {
-    @apply text-base lg:text-xl w-full md:w-1/2;
+  .headermobile-page {
+    .zolo-block-wrapper {
+      background-image: linear-gradient(to right, rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.3));
+      height: 100%;
+      width: 100%;
+      padding: 2rem;
+
+      .zolo-ah-title{
+        margin-bottom: 1rem;
+      }
+    }
   }
-}
+
+  .wp-block-zolo-advanced-heading {
+    .zolo-ah-main-title {
+      @apply text-4xl lg:text-6xl;
+    }
+
+    .zolo-ah-subtitle {
+      @apply text-base lg:text-xl w-full md:w-1/2;
+    }
+  }
+
+  /* FIM Header em cada página usando Zolo blocos */
+
+  /* Section */
+  .page {
+    section.wp-block-zolo-container {
+      @apply prose lg:prose-lg max-w-none prose-a:no-underline;
+    }
+  }
+
+/* Pages with Zolo block */
 
 /* .home-wrapper {
   --s: 9px;
