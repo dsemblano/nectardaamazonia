@@ -467,3 +467,12 @@ p {
     pointer-events: none;
     filter: grayscale(100%);
   }
+
+  /* Honeycomb */
+
+  .hexagon {
+    .hex2  {
+      background-image: url('@images/teste.jpg');
+    }
+  }
+  

@@ -54,6 +54,7 @@
     "wpackagist-plugin/redirection":">=5.5.2",
     "wpackagist-plugin/wp-mail-smtp":">=4.4.0",
     "wpackagist-plugin/basic-user-avatars":">=1.0.9",
+    "wpackagist-plugin/block-designer":">=1.10.1",
     "log1x/navi": "^3.1",
     "roots/acorn-mail": "^1.0"
   },
