@@ -264,6 +264,15 @@ p {
     margin-bottom: 10rem;
   }
 
+  .container-inner,
+  .wp-block-media-text {
+    @apply px-4 bg-white rounded-2xl;
+  }
+
+  .zolo-post-item {
+    @apply bg-white rounded-2xl p-4 gap-2;
+  }
+
   /* .header-image-h1 {
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
 } */
@@ -388,10 +397,10 @@ p {
   }
 
   /* Correção LCP imagem */
-  #hero-section figure img {
+  /* #hero-section figure img {
     position: relative;
     right: 1.7rem;
-  }
+  } */
 
   li.wc-block-product {
     @apply hover:scale-105 transition duration-300 ease-in-out;
