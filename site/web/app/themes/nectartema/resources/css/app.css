@@ -3,7 +3,7 @@
 @source "../views/";
 @source "../../app/";
 @import './fonts.css';
-/* @import 'animate.css'; */
+@import 'animate.css';
 
 @theme static {
   --color-primary: #E69037;
@@ -413,6 +413,7 @@ p {
         var(--color-melescuro));
     background-clip: text;
     color: transparent;
+    margin-top: 2rem;
     /* -webkit-text-stroke-width: 1px;
 	-webkit-text-stroke-color: hsl(0 0% 10% / 30%); */
   }
