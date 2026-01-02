@@ -149,7 +149,8 @@ p {
 
 /* Header em cada página usando Zolo blocos */
 .headerdesktop-page {
-  height: 16.5rem;
+  height: 18rem;
+  background-position: center !important;
 }
 
 
@@ -177,7 +178,7 @@ p {
     background-image: linear-gradient(to right, rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.3));
     height: 100%;
     width: 100%;
-    padding: 2rem;
+    padding: 2rem; 
 
     .zolo-ah-title {
       margin-bottom: 1rem;
