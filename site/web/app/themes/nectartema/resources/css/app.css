@@ -201,7 +201,8 @@ p {
 
 /* Section */
 .page {
-  section.wp-block-zolo-container {
+  section.wp-block-zolo-container,
+  article.wp-block-zolo-container {
     @apply prose lg:prose-lg max-w-none prose-a:no-underline;
   }
 }
@@ -476,3 +477,30 @@ p {
     }
   }
   
+  /* Contato form 7 */
+  .wpcf7-form {
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+
+  textarea {
+    @apply block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg shadow-sm border border-gray-300;
+  }
+
+  input {
+    @apply block p-3 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 shadow-sm;
+  }
+
+  .wpcf7-submit {
+    @apply py-3 px-5 text-sm font-medium text-center text-white rounded-lg bg-melescuro sm:w-fit hover:bg-primary focus:ring-4 focus:outline-none focus:ring-melescuro;
+  }
+
+  .wpcf7-response-output {
+    @apply py-3 px-5 text-sm p-4 font-medium text-center text-white rounded-lg bg-green-500 sm:w-fit focus:ring-4 focus:outline-none;
+  }
+}
+
+  .wpcf7 form.invalid .wpcf7-response-output {
+    @apply py-3 px-5 text-sm font-medium text-center text-white rounded-lg bg-red-500 border-transparent sm:w-fit focus:ring-4 focus:outline-none;
+  }
