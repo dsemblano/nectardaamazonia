@@ -11,7 +11,7 @@
 </section>
 
 
-<div id="o-time" class="max-w-5xl mx-auto px-4 py-12 flex flex-col items-center">
+<div id="o-time" class="max-w-5xl mx-auto px-4 py-12 flex flex-col items-center container">
   <h3 class="text-2xl md:text-3xl font-light text-center mb-10">O time</h3>
 
   <!-- ROW 1 (odd) -->
@@ -64,14 +64,14 @@
           </g>
         </svg>
 
-        <div class="absolute inset-x-0 bottom-0 px-2 py-2 bg-gradient-to-t from-black/70 to-transparent text-white text-xs uppercase text-center">
+        <div class="absolute inset-x-0 bottom-0 px-2 py-2 text-black text-xs uppercase text-center">
           Ana Laura Frazão
         </div>
       </div>
     </div>
 
     <!-- Hex 3 (hidden on mobile to keep 2-per-row) -->
-    <div class="flex w-40 md:w-48 justify-center">
+    <div class="w-40 md:w-48 hidden md:flex justify-center">
       <div class="relative">
         <svg width="256" viewBox="0 0 31 29" xmlns="http://www.w3.org/2000/svg" class="block">
           <defs>
@@ -90,7 +90,7 @@
           </g>
         </svg>
 
-        <div class="absolute inset-x-0 bottom-0 px-2 py-2 bg-gradient-to-t from-black/70 to-transparent text-white text-xs uppercase text-center">
+        <div class="absolute inset-x-0 bottom-0 px-2 py-2 text-black text-xs uppercase text-center">
           Francisco Junior
         </div>
       </div>
@@ -119,7 +119,7 @@
           </g>
         </svg>
 
-        <div class="absolute inset-x-0 bottom-0 px-2 py-2 bg-gradient-to-t from-black/70 to-transparent text-white text-xs uppercase text-center">
+        <div class="absolute inset-x-0 bottom-0 px-2 py-2 text-black text-xs uppercase text-center">
           Júlio Avelar
         </div>
       </div>
@@ -144,14 +144,14 @@
           </g>
         </svg>
 
-        <div class="absolute inset-x-0 bottom-0 px-2 py-2 bg-gradient-to-t from-black/70 to-transparent text-white text-xs uppercase text-center">
+        <div class="absolute inset-x-0 bottom-0 px-2 py-2 text-black text-xs uppercase text-center">
           Arnaldo Francisco
         </div>
       </div>
     </div>
 
     <!-- hidden on mobile -->
-    <div class="flex w-40 md:w-48 justify-center">
+    <div class="w-40 md:w-48 hidden md:flex justify-center">
       <div class="relative">
         <svg width="256" viewBox="0 0 31 29" xmlns="http://www.w3.org/2000/svg" class="block">
           <defs>
@@ -170,7 +170,7 @@
           </g>
         </svg>
 
-        <div class="absolute inset-x-0 bottom-0 px-2 py-2 bg-gradient-to-t from-black/70 to-transparent text-white text-xs uppercase text-center">
+        <div class="absolute inset-x-0 bottom-0 px-2 py-2 text-black text-xs uppercase text-center">
           Daniel Semblano
         </div>
       </div>
