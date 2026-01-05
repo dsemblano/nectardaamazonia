@@ -76,6 +76,10 @@
   @apply text-6xl lg:text-8xl;
 }
 
+.section-home {
+  @apply my-8;
+}
+
 /* .wp-block-zolo-container.zolo-root-container.frontend {
   @apply prose-p:my-0;
 } */

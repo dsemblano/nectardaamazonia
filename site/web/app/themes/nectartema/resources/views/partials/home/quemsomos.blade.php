@@ -11,7 +11,7 @@
                 href="/quem-somos">Mais sobre nós</a>
         </div>
         <picture class="grow-0 shrink-1 w-full lg:w-2/5">
-            <img src="{{ Vite::asset('resources/images/home-Melipona-fulva-TIW-Expedicao-nov2023.webp') }}"
+            <img src="{{ Vite::asset('resources/images/rf.webp') }}"
                 alt="Melkiponário" class="rounded-xl">
         </picture>
     </div>
