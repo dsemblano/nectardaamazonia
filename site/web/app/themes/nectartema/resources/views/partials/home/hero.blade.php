@@ -11,4 +11,4 @@
 </section>
 
 
-@include('partials.honeycomb')
+{{-- @include('partials.honeycomb') --}}

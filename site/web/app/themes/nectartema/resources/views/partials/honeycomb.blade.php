@@ -16,7 +16,7 @@
     "
   >
     <!-- HEX 1 -->
-    <div class="w-40 md:w-48 relative">
+    <div class="w-auto md:w-48 relative">
       <!-- SVG 1 -->
       <!-- (unchanged SVG code) -->
       <svg width="256" viewBox="0 0 31 29" xmlns="http://www.w3.org/2000/svg">
@@ -45,7 +45,7 @@
     </div>
 
     <!-- HEX 2 (desktop stagger) -->
-    <div class="w-40 md:w-48 relative md:translate-y-12">
+    <div class="w-auto md:w-48 relative md:translate-y-12">
             <svg width="256" viewBox="0 0 31 29" xmlns="http://www.w3.org/2000/svg">
         <defs>
           <clipPath id="hexClip1">
@@ -71,7 +71,7 @@
     </div>
 
     <!-- HEX 3 -->
-    <div class="w-40 md:w-48 relative">
+    <div class="w-auto md:w-48 relative">
               <svg width="256" viewBox="0 0 31 29" xmlns="http://www.w3.org/2000/svg">
         <defs>
           <clipPath id="hexClip1">
@@ -97,7 +97,7 @@
     </div>
 
     <!-- HEX 4 -->
-    <div class="w-40 md:w-48 relative">
+    <div class="w-auto md:w-48 relative">
               <svg width="256" viewBox="0 0 31 29" xmlns="http://www.w3.org/2000/svg">
         <defs>
           <clipPath id="hexClip1">
@@ -123,7 +123,7 @@
     </div>
 
     <!-- HEX 5 (desktop stagger) -->
-    <div class="w-40 md:w-48 relative md:translate-y-12">
+    <div class="w-auto md:w-48 relative md:translate-y-12">
               <svg width="256" viewBox="0 0 31 29" xmlns="http://www.w3.org/2000/svg">
         <defs>
           <clipPath id="hexClip1">
@@ -149,7 +149,7 @@
     </div>
 
     <!-- HEX 6 -->
-    <div class="w-40 md:w-48 relative">
+    <div class="w-auto md:w-48 relative">
               <svg width="256" viewBox="0 0 31 29" xmlns="http://www.w3.org/2000/svg">
         <defs>
           <clipPath id="hexClip1">
