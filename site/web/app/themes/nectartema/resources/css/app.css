@@ -133,6 +133,8 @@ h3,
 h4,
 h1.wp-block-heading,
 h1.woocommerce-products-header__title,
+h2#artigos-e-blog,
+.zolo-post-title,
 h1.product_title {
   color: var(--color-verde);
 }
