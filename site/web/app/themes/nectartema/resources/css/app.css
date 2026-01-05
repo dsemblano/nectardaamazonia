@@ -513,3 +513,15 @@ article header h1 {
 .zolo__display-icon {
   fill: white;
 }
+
+.wp-block-media-text {
+  background: #fdfdfd; /* Off-white */
+  border: 1px solid #e0e0e0;
+  border-radius: 20px;
+  transition: transform 0.3s ease;
+}
+
+.wp-block-media-text:hover {
+  transform: translateY(-5px);
+  border-color: #D4AF37; /* Cor de mel/ouro */
+}
