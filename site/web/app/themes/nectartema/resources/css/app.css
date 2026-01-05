@@ -210,6 +210,23 @@ p {
   }
 }
 
+main section header h1.container {
+  @apply text-6xl;
+}
+
+.section-page .header-page {
+  margin-bottom: 10rem;
+}
+
+.container-inner,
+.wp-block-media-text {
+  @apply px-4 bg-white rounded-2xl shadow-lg hover:shadow-xl;
+}
+
+.zolo-post-item {
+  @apply bg-white rounded-2xl p-4 gap-2 shadow hover:shadow-lg;
+}
+
 /* Pages with Zolo block */
 
 /* .home-wrapper {
@@ -258,23 +275,6 @@ footer.content-info {
   .wp-block-group {
     @apply my-2;
   }
-}
-
-main section header h1.container {
-  @apply text-6xl;
-}
-
-.section-page .header-page {
-  margin-bottom: 10rem;
-}
-
-.container-inner,
-.wp-block-media-text {
-  @apply px-4 bg-white rounded-2xl;
-}
-
-.zolo-post-item {
-  @apply bg-white rounded-2xl p-4 gap-2;
 }
 
 /* .header-image-h1 {
