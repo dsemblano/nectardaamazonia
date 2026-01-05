@@ -144,7 +144,7 @@ p {
 }
 
 #hero {
-  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.3)), url('../images/meliponario-1024x576-1.jpg');
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.3)), url('../images/meliponario-1024x576-1.webp');
   /* background-position: 10% 30%; */
   background-repeat: no-repeat;
   background-size: cover;
@@ -494,11 +494,11 @@ article header h1 {
 
 /* Honeycomb */
 
-.hexagon {
+/* .hexagon {
   .hex2 {
     background-image: url('@images/teste.jpg');
   }
-}
+} */
 
 /* Contato form 7 */
 .wpcf7-form {
