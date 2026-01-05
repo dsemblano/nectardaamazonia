@@ -227,6 +227,19 @@ main section header h1.container {
   @apply bg-white rounded-2xl p-4 gap-2 shadow hover:shadow-lg;
 }
 
+/* Cards */
+.wp-block-media-text {
+  border: 3px solid var(--color-verde);
+  border-radius: 20px;
+  transition: transform 0.3s ease;
+}
+
+.wp-block-media-text:hover {
+  transform: translateY(-5px);
+  border-color: #D4AF37;
+  /* border-color: var(--color-verde); */
+}
+
 /* Pages with Zolo block */
 
 /* .home-wrapper {
@@ -512,18 +525,4 @@ article header h1 {
 /* Footer */
 .zolo__display-icon {
   fill: white;
-}
-
-/* Cards */
-.wp-block-media-text {
-  background: #fdfdfd; /* Off-white */
-  border: 5px solid var(--color-verde);
-  border-radius: 20px;
-  transition: transform 0.3s ease;
-}
-
-.wp-block-media-text:hover {
-  transform: translateY(-5px);
-  border-color: #D4AF37;
-  /* border-color: var(--color-verde); */
 }
