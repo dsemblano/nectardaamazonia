@@ -229,14 +229,15 @@ main section header h1.container {
 
 /* Cards */
 .wp-block-media-text {
-  border: 3px solid var(--color-verde);
+  @apply rounded-2xl shadow-lg hover:shadow-xl;
+  /* border: 3px solid var(--color-verde);
   border-radius: 20px;
-  transition: transform 0.3s ease;
+  transition: transform 0.3s ease; */
 }
 
 .wp-block-media-text:hover {
-  transform: translateY(-5px);
-  border-color: #D4AF37;
+  /* transform: translateY(-5px);
+  border-color: #D4AF37; */
   /* border-color: var(--color-verde); */
 }
 
