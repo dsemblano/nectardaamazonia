@@ -76,7 +76,7 @@
   @apply text-6xl lg:text-8xl;
 }
 
-.section-home {
+.section-home:not(#hero) {
   @apply my-8;
 }
 
