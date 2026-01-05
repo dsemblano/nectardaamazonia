@@ -111,3 +111,8 @@ add_filter('woocommerce_my_account_my_orders_actions', function($actions, $order
   
 //     return $fields;
 //   });
+
+// Remove country/state/city from cart shipping calculator
+// add_filter( 'woocommerce_shipping_calculator_enable_country', '__return_false' );
+// add_filter( 'woocommerce_shipping_calculator_enable_state', '__return_false' );
+// add_filter( 'woocommerce_shipping_calculator_enable_city', '__return_false' );

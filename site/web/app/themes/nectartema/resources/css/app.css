@@ -497,7 +497,7 @@ article header h1 {
 
 /* Contato form 7 */
 .wpcf7-form {
-  width: fit-content;
+  width: auto;
   display: flex;
   flex-direction: column;
   margin: 0 auto;
