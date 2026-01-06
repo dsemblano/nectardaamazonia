@@ -1,3 +1,1 @@
-<div class="container">
-    <hr class="h-0.5 bg-verde border-0">
-</div>
+<hr class="h-0.5 bg-verde border-0 container">

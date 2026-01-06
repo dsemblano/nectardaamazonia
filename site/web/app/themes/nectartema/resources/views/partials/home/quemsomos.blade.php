@@ -1,5 +1,5 @@
-<section id="quem-somos" class="section-home">
-    <div class="container flex flex-col lg:flex-row gap-8 lg:gap-16">
+<section id="quem-somos" class="section-home  container h-fit">
+    <div class="flex flex-col lg:flex-row gap-8 lg:gap-16">
         <div class="hero-text grow-0 shrink-1 w-full lg:w-3/5">
             <h2 class="text-verde">Quem somos</h2>
             <p class="text-verde">
