@@ -58,62 +58,6 @@
   }
 }
 
-#artigos-e-blog {
-  margin-bottom: 2rem;
-}
-
-.wp-singular {
-  h1.p-name {
-    @apply text-4xl lg:text-6xl;
-  }
-}
-
-.gspb_button_wrapper {
-  justify-content: center !important;
-}
-
-.page:not(.home) h1 {
-  @apply text-6xl lg:text-8xl;
-}
-
-.section-home:not(#hero) {
-  @apply my-8;
-}
-
-/* .wp-block-zolo-container.zolo-root-container.frontend {
-  @apply prose-p:my-0;
-} */
-
-/* CSS Variables */
-:root {
-  --link: #D68778;
-  --button-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
-}
-
-
-/* Media Queries */
-@media only screen and (min-width: 768px) {
-  .cd-top {
-    right: 20px;
-    bottom: 20px;
-  }
-}
-
-@media only screen and (min-width: 1024px) {
-  .cd-top {
-    height: 60px;
-    width: 60px;
-    right: 1em;
-    bottom: 10em;
-  }
-}
-
-/* .container {
-  display: contents;
-} */
-
-/* .section-page>*:not(h1) */
-
 :root {
   color-scheme: only light;
 }
@@ -153,6 +97,28 @@ p {
   background-repeat: no-repeat;
   background-size: cover;
 }
+
+#artigos-e-blog {
+  margin-bottom: 2rem;
+}
+
+.wp-singular {
+  h1.p-name {
+    @apply text-4xl lg:text-6xl;
+  }
+}
+
+.gspb_button_wrapper {
+  justify-content: center !important;
+}
+
+.page:not(.home) h1 {
+  @apply text-6xl lg:text-8xl;
+}
+
+/* .section-home:not(#hero) {
+  @apply my-8;
+} */
 
 /* Pages with Zolo block */
 
@@ -206,8 +172,7 @@ p {
 /* FIM Header em cada página usando Zolo blocos */
 
 /* Section */
-.page {
-
+.page:not(.home) {
   section.wp-block-zolo-container,
   article.wp-block-zolo-container {
     @apply prose lg:prose-lg mt-8 max-w-none prose-a:no-underline prose-h2:mt-0 prose-h2:mb-4 md:prose-h2:mb-4 md:prose-h2:mt-0;
@@ -275,11 +240,6 @@ ul#menu-menu-principal {
   @apply flex flex-col lg:flex-row gap-x-8
 }
 
-/* .gspb_container,
-.page:not(.home) main section {
-  @apply prose lg:prose-lg max-w-none prose-a:no-underline;
-} */
-
 .menu {
   @apply prose prose-a:no-underline prose-a:hover:underline prose-ul:list-none prose-a:text-white;
 }
@@ -300,15 +260,7 @@ footer.content-info {
   }
 }
 
-/* .header-image-h1 {
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
-} */
-
 /* Woocommerce */
-
-/* .button-hero {
-  @apply px-4 py-2 rounded-lg text-sm font-semibold transition bg-melescuro hover:bg-primary text-white;  
-} */
 
 body.sage {
   background-color: var(--color-fundo);
@@ -423,12 +375,6 @@ figure .lazyloading {
 div.product-type-simple {
   padding-top: 2rem;
 }
-
-/* Correção LCP imagem */
-/* #hero-section figure img {
-    position: relative;
-    right: 1.7rem;
-  } */
 
 li.wc-block-product {
   @apply hover:scale-105 transition duration-300 ease-in-out;

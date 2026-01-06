@@ -1,5 +1,5 @@
 <section id="hero" class="section-home text-white container h-fit">
-    <div class="py-16 text-left prose  prose-a:no-underline">
+    <div class="py-16 text-left md:w-dvh">
         <h1 class="text-white text-4xl md:text-6xl">Mel Sustentável da Amazônia</h1>
         <h2 class="text-white font-normal text-xl md:text-2xl mb-10">Néctar da Amazônia: O mais puro mel de abelhas sem
             ferrão, direto do Amapá para o mundo</h2>
