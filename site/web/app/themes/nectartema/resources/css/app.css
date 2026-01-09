@@ -9,7 +9,7 @@
   --color-primary: #E69037;
   --color-headingprimary: #FEBE15;
   --color-secondary: #EE7605;
-  --color-verde: #C1CA26;
+  --color-mel: #D4AF37;
   --color-marrom: #402810;
   --color-verde: #294023;
   --color-fundo: #f5f5dc;
@@ -194,7 +194,7 @@ main section header h1.container {
 
 .container-inner,
 .wp-block-media-text {
-  @apply px-4 bg-white rounded-2xl shadow-lg hover:shadow-xl;
+  @apply px-4 bg-white rounded-2xl shadow-lg hover:border-2 hover:border-mel transition hover:translate-0.5;
 }
 
 .zolo-post-item {
@@ -212,7 +212,6 @@ main section header h1.container {
 .wp-block-media-text:hover {
   /* transform: translateY(-5px);
   border-color: #D4AF37; */
-  /* border-color: var(--color-verde); */
 }
 
 /* Pages with Zolo block */

@@ -29,7 +29,7 @@
 
       @include('sections.header')
 
-      <main id="main" class="main flex-1 prose lg:prose-xl max-w-full mx-auto prose-a:no-underline prose-h3:text-xl">
+      <main id="main" class="main flex-1 prose lg:prose-xl max-w-full mx-auto prose-a:no-underline prose-h3:text-xl prose-h2:mt-0">
         @yield('content')
       </main>
 
