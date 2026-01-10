@@ -281,6 +281,8 @@ body.sage {
 .single_add_to_cart_button,
 #submit-payment,
 a.wp-block-button__link.wp-element-button,
+#fkcart-modal .fkcart-checkout-wrap #fkcart-checkout-button,
+.woo-better-button-current-style,
 .checkout-button {
   background-color: var(--color-melescuro) !important;
   color: white;

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "7a30cce4562c79913eae4f31bf0e55e5",
+    "content-hash": "e13ec770cf9a461f4627b1603e3a112e",
     "packages": [
         {
             "name": "brick/math",
@@ -7226,22 +7226,22 @@
             "homepage": "https://wordpress.org/plugins/basic-user-avatars/"
         },
         {
-            "name": "wpackagist-plugin/block-designer",
-            "version": "1.10.1",
+            "name": "wpackagist-plugin/cart-for-woocommerce",
+            "version": "1.9.1",
             "source": {
                 "type": "svn",
-                "url": "https://plugins.svn.wordpress.org/block-designer/",
-                "reference": "tags/1.10.1"
+                "url": "https://plugins.svn.wordpress.org/cart-for-woocommerce/",
+                "reference": "tags/1.9.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/block-designer.1.10.1.zip"
+                "url": "https://downloads.wordpress.org/plugin/cart-for-woocommerce.1.9.1.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
             },
             "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/block-designer/"
+            "homepage": "https://wordpress.org/plugins/cart-for-woocommerce/"
         },
         {
             "name": "wpackagist-plugin/contact-form-7",
