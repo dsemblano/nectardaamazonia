@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "b8fe22f7dca66d413977953ae2053837",
+    "content-hash": "7a30cce4562c79913eae4f31bf0e55e5",
     "packages": [
         {
             "name": "brick/math",
@@ -7350,6 +7350,24 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/regenerate-thumbnails/"
+        },
+        {
+            "name": "wpackagist-plugin/woo-better-shipping-calculator-for-brazil",
+            "version": "4.7.2",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/woo-better-shipping-calculator-for-brazil/",
+                "reference": "tags/4.7.2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/woo-better-shipping-calculator-for-brazil.4.7.2.zip"
+            },
+            "require": {
+                "composer/installers": "^1.0 || ^2.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/woo-better-shipping-calculator-for-brazil/"
         },
         {
             "name": "wpackagist-plugin/woocommerce",
