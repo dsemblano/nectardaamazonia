@@ -17,7 +17,6 @@
   },
   "devDependencies": {
     "@alpinejs/focus": "^3.14.9",
-    "@builder.io/partytown": "^0.10.3",
     "@roots/vite-plugin": "^1.0.2",
     "@tailwindcss/typography": "^0.5.19",
     "@tailwindcss/vite": "^4.0.9",
