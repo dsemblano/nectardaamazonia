@@ -287,3 +287,21 @@ add_action( 'wp_enqueue_scripts', function() {
 		}
 	}
 }, 99);
+
+add_action('wp_enqueue_scripts', function () {
+
+    if (
+        function_exists('is_woocommerce') &&
+        (is_woocommerce() || is_cart() || is_checkout() || is_account_page())
+    ) {
+        return;
+    }
+
+    wp_dequeue_style('woocommerce-general');
+    wp_dequeue_style('woocommerce-layout');
+    wp_dequeue_style('woocommerce-smallscreen');
+    wp_dequeue_style('wc-blocks-style');
+    wp_dequeue_style('wc-blocks-vendors-style');
+
+}, 100);
+
