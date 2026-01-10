@@ -125,5 +125,3 @@ add_filter( 'wp_default_scripts', function( $scripts ){
         $scripts->add( 'jquery', false, array( 'jquery-core' ), '1.2.1' );
     }
 } );
-
-

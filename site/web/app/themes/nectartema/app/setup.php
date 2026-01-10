@@ -335,3 +335,49 @@ add_action('wp_print_styles', function () {
     wp_dequeue_style('wc-blocks-vendors-style');
 
 }, 100);
+
+// 1) Build a reliable flag once WP conditionals are ready
+add_action('wp', function () {
+    global $is_woo_page_flag;
+    $is_woo_page_flag = (function_exists('is_woocommerce') &&
+        (is_woocommerce() || is_cart() || is_checkout() || is_account_page()));
+}, 1);
+
+// 2) Remove any registered/enqueued style that looks like Woo Blocks outside Woo pages
+$dequeue_wc_block_assets = function () {
+    global $is_woo_page_flag;
+
+    // If it's a Woo page, do nothing.
+    if (!empty($is_woo_page_flag)) {
+        return;
+    }
+
+    global $wp_styles;
+    if ( empty( $wp_styles ) || empty( $wp_styles->registered ) ) {
+        return;
+    }
+
+    foreach ( $wp_styles->registered as $handle => $style ) {
+        $src = isset($style->src) ? $style->src : '';
+
+        // Normalize src (some handles are relative)
+        $src_l = strtolower($src);
+        $handle_l = strtolower($handle);
+
+        // If handle or src references the wc-blocks client files, dequeue/deregister it.
+        if (
+            strpos($handle_l, 'wc-blocks') !== false ||
+            strpos($handle_l, 'wc-blocks-style') !== false ||
+            strpos($src_l, 'woocommerce/assets/client/blocks') !== false ||
+            strpos($src_l, 'wc-blocks.css') !== false
+        ) {
+            wp_dequeue_style($handle);
+            wp_deregister_style($handle);
+        }
+    }
+};
+
+// Attach on the hooks where block styles may be added — run late (high priority)
+add_action('enqueue_block_assets', $dequeue_wc_block_assets, 999);
+add_action('wp_enqueue_scripts', $dequeue_wc_block_assets, 999);
+add_action('wp_print_styles', $dequeue_wc_block_assets, 999);
