@@ -127,3 +127,6 @@ add_filter( 'wp_default_scripts', function( $scripts ){
 } );
 
 
+// Dequeue WooCommerce styles globally
+add_filter('woocommerce_enqueue_styles', '__return_empty_array');
+
