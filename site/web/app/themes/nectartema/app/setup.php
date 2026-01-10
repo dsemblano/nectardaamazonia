@@ -305,3 +305,33 @@ add_action('wp_enqueue_scripts', function () {
 
 }, 100);
 
+/**
+ * Only load wc-blocks.css on WooCommerce pages
+ */
+add_action('enqueue_block_assets', function () {
+
+    if (
+        function_exists('is_woocommerce') &&
+        (is_woocommerce() || is_cart() || is_checkout() || is_account_page())
+    ) {
+        return; // ✅ keep blocks CSS on Woo pages
+    }
+
+    wp_dequeue_style('wc-blocks-style');
+    wp_dequeue_style('wc-blocks-vendors-style');
+
+}, 100);
+
+add_action('wp_print_styles', function () {
+
+    if (
+        function_exists('is_woocommerce') &&
+        (is_woocommerce() || is_cart() || is_checkout() || is_account_page())
+    ) {
+        return;
+    }
+
+    wp_dequeue_style('wc-blocks-style');
+    wp_dequeue_style('wc-blocks-vendors-style');
+
+}, 100);
