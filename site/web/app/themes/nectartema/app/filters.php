@@ -113,6 +113,17 @@ add_filter('woocommerce_my_account_my_orders_actions', function($actions, $order
 //   });
 
 // Remove country/state/city from cart shipping calculator
-// add_filter( 'woocommerce_shipping_calculator_enable_country', '__return_false' );
-// add_filter( 'woocommerce_shipping_calculator_enable_state', '__return_false' );
-// add_filter( 'woocommerce_shipping_calculator_enable_city', '__return_false' );
+add_filter( 'woocommerce_shipping_calculator_enable_country', '__return_false' );
+add_filter( 'woocommerce_shipping_calculator_enable_state', '__return_false' );
+add_filter( 'woocommerce_shipping_calculator_enable_city', '__return_false' );
+
+// remove jquery migrate
+
+add_filter( 'wp_default_scripts', function( $scripts ){
+    if(!is_admin()){
+        $scripts->remove( 'jquery');
+        $scripts->add( 'jquery', false, array( 'jquery-core' ), '1.2.1' );
+    }
+} );
+
+

@@ -236,3 +236,19 @@ add_action('woocommerce_single_product_summary', function () {
 // add_action('mytheme_product_cta', function () {
 //   echo view('woocommerce.single.cta')->render();
 // });
+
+// Source - https://stackoverflow.com/a/64867693
+// Posted by Jeremiah Deasey
+// Retrieved 2026-01-10, License - CC BY-SA 4.0
+
+
+add_action('wp_enqueue_scripts', function() {
+    if ( !is_page( array( 'contato' ) ) ){
+        wp_dequeue_script( 'contact-form-7' );
+        wp_dequeue_style( 'contact-form-7' );
+
+        /* these are both needed */
+        wp_dequeue_script( 'wpcf7-recaptcha' );
+        wp_dequeue_script('google-recaptcha');
+    }
+}, 99);
