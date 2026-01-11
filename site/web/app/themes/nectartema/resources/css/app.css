@@ -99,7 +99,7 @@ p {
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  
+
 }
 
 #artigos-e-blog {
@@ -110,10 +110,6 @@ p {
   h1.p-name {
     @apply text-4xl lg:text-6xl;
   }
-}
-
-.gspb_button_wrapper {
-  justify-content: center !important;
 }
 
 .page:not(.home) h1 {
@@ -173,6 +169,7 @@ p {
 
 /* Section */
 .page:not(.home) {
+
   section.wp-block-zolo-container,
   article.wp-block-zolo-container {
     @apply prose lg:prose-lg mt-0 max-w-none prose-a:no-underline prose-figure:mt-4 prose-h2:mt-0 prose-h2:mb-4 md:prose-h2:mb-4 md:prose-h2:mt-0 prose-p:text-xl;
@@ -189,9 +186,10 @@ p {
   background-size: cover;
 
   h1 {
-    color:white;
+    color: white;
   }
 }
+
 /* desktop background */
 @media (min-width: 768px) {
   .h1-container {
@@ -222,8 +220,8 @@ main section header h1.container {
 }
 
 .wp-block-media-text {
-    padding: 2rem 1rem 2rem 1rem;
-    min-height: 20rem;
+  padding: 2rem 1rem 2rem 1rem;
+  min-height: 20rem;
 }
 
 /* Cards */
@@ -302,10 +300,9 @@ body.sage {
   @apply flex flex-col lg:flex-row items-stretch justify-between content-between;
 }
 
-#place_order,
+/* #place_order,
 .single_add_to_cart_button,
 #submit-payment,
-a.wp-block-button__link.wp-element-button,
 #fkcart-modal .fkcart-checkout-wrap #fkcart-checkout-button,
 .woo-better-button-current-style,
 .checkout-button {
@@ -315,6 +312,23 @@ a.wp-block-button__link.wp-element-button,
   &:hover {
     background-color: var(--color-primary) !important;
   }
+} */
+
+/* Main CTA */
+.hero-cta,
+.woocommerce div.product form.cart .single_add_to_cart_button,
+#place_order,
+#submit-payment,
+.woocommerce a.checkout-button.button.alt,
+#fkcart-modal .fkcart-checkout-wrap #fkcart-checkout-button {
+  @apply px-4 py-4 rounded-lg text-xl font-semibold transition bg-melescuro hover:bg-primary text-white;
+}
+
+/* Second CTA button */
+a.wp-block-button__link.wp-element-button,
+.woo-better-button-current-style,
+.section-home .button {
+  @apply px-2 py-2 rounded-lg text-lg font-semibold transition border-2 text-melescuro border-melescuro bg-white hover:bg-primary hover:border-primary hover:text-white
 }
 
 .product_title {
