@@ -1,4 +1,4 @@
-<section id="quem-somos" class="section-home container flex flex-col lg:flex-row gap-8">
+<section id="quem-somos" class="section-home container flex flex-col lg:flex-row gap-8 mt-8 lg:mt-10">
         <div class="hero-text w-full lg:w-3/5">
             <h2 class="text-verde">Quem somos</h2>
             <p class="text-verde">

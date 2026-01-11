@@ -1,4 +1,4 @@
-<section id="hero" class="section-home text-white container h-fit">
+<section id="hero" class="section-home text-white container">
     <div class="py-16 text-left md:w-dvh">
         <h1 class="text-white text-4xl md:text-6xl">Mel Sustentável da Amazônia</h1>
         <h2 class="text-white font-normal text-xl md:text-2xl mb-10">Néctar da Amazônia: O mais puro mel de abelhas sem
@@ -8,6 +8,5 @@
             mel agora!</a>
     </div>
 </section>
-
 
 {{-- @include('partials.honeycomb') --}}

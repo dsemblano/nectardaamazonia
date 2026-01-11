@@ -92,10 +92,14 @@ p {
 }
 
 #hero {
+  @apply h-fit lg:min-h-screen;
+
   background-image: linear-gradient(to right, rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.3)), url('../images/meliponario-1024x576-1.webp');
   /* background-position: 10% 30%; */
   background-repeat: no-repeat;
+  background-position: center;
   background-size: cover;
+  
 }
 
 #artigos-e-blog {
@@ -115,10 +119,6 @@ p {
 .page:not(.home) h1 {
   @apply text-6xl lg:text-8xl;
 }
-
-/* .section-home:not(#hero) {
-  @apply my-8;
-} */
 
 /* Pages with Zolo block */
 
@@ -176,6 +176,26 @@ p {
   section.wp-block-zolo-container,
   article.wp-block-zolo-container {
     @apply prose lg:prose-lg mt-0 max-w-none prose-a:no-underline prose-figure:mt-4 prose-h2:mt-0 prose-h2:mb-4 md:prose-h2:mb-4 md:prose-h2:mt-0 prose-p:text-xl;
+  }
+}
+
+/* mobile background */
+.h1-container {
+  @apply prose lg:prose-lg mt-0 max-w-none prose-p:text-xl text-white;
+
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.3)), url("@images/bg/bg-mobile.webp");
+  background-position: 10% 30%;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  h1 {
+    color:white;
+  }
+}
+/* desktop background */
+@media (min-width: 768px) {
+  .h1-container {
+    background-image: url("@images/bg/bg-desktop.webp");
   }
 }
 
