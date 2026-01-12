@@ -328,7 +328,7 @@ body.sage {
 }
 
 .woocommerce div.product form.cart .single_add_to_cart_button {
-  @apply px-2 py-3 ml-4;
+  @apply px-2 py-2 lg:py-3 ml-4;
 }
 
 /* Second CTA button */
