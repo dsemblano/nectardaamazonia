@@ -1,33 +1,33 @@
-<section id="servicos"
-    class="section-home container">
+<section id="servicos" class="section-home container">
     <h2 class="text-center">Serviços</h2>
     <div class="flex flex-col md:flex-row items-center text-center">
         <div class="servicos-info flex flex-col items-center">
             <img src="{{ Vite::asset('resources/images/servicos/Icone-Consultoria-tecnica.webp') }}"
-                alt="Ícone Consultoria Técnica" class="rounded-xl">
+                alt="Ícone Consultoria para o Desenvolvimento da produção de mel" class="rounded-xl">
             <h3>Consultoria para o Desenvolvimento da produção de mel</h3>
             <p>Fazemos diagnósticos detalhados, elaboramos projetos e gerimos meliponários, garantindo o sucesso e a
                 sustentabilidade na criação de abelhas e produção de mel.</p>
         </div>
         <div class="servicos-info flex flex-col items-center">
-            <img src="{{ Vite::asset('resources/images/servicos/Icone-Consultoria-tecnica.webp') }}"
-                alt="Ícone Consultoria Técnica" class="rounded-xl">
+            <img src="{{ Vite::asset('resources/images/servicos/icone-estudos-socioambientais.webp') }}"
+                alt="Ícone Diagnósticos Socioambientais com Comunidades" class="rounded-xl">
             <h3>Diagnósticos Socioambientais
                 com Comunidades</h3>
             <p>Apoiamos comunidades locais, incluindo quilombolas, na implementação de práticas de meliponicultura como
                 estratégia de geração de renda e inclusão.</p>
         </div>
         <div class="servicos-info flex flex-col items-center">
-            <img src="{{ Vite::asset('resources/images/servicos/Icone-Consultoria-tecnica.webp') }}"
-                alt="Ícone Consultoria Técnica" class="rounded-xl">
+            <img src="{{ Vite::asset('resources/images/servicos/Icone-estudos-ambientais.webp') }}"
+                alt="Ícone Implantação de Biofábricas de Abelhas" class="rounded-xl">
             <h3>Implantação de
                 Biofábricas de Abelhas</h3>
             <p>Desenvolvemos soluções inovadoras para enfrentar o déficit global de polinizadores, com foco na
                 preservação e expansão das abelhas nativas.</p>
         </div>
         <div class="servicos-info flex flex-col items-center">
-            <img src="{{ Vite::asset('resources/images/servicos/Icone-Consultoria-tecnica.webp') }}"
-                alt="Ícone Consultoria Técnica" class="rounded-xl">
+            <img src="{{ Vite::asset('resources/images/servicos/icone-eventos.webp') }}"
+                alt="Ícone Eventos Sustentabilidade com Abelhas
+" class="rounded-xl">
             <h3>Eventos
                 Sustentabilidade
                 com Abelhas </h3>
