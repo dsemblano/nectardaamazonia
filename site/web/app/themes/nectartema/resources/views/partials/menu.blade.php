@@ -30,7 +30,7 @@
     <div x-show="mobileOpen" x-transition:enter="transition ease-out duration-200" x-transition:enter-start="opacity-0"
         x-transition:enter-end="opacity-100" x-transition:leave="transition ease-in duration-150"
         x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0"
-        class="fixed inset-0 z-40 bg-white lg:hidden pt-16" style="display: none">
+        class="fixed inset-0 z-40 bg-offwhite lg:hidden pt-16" style="display: none">
         <div class="container p-4">
             @foreach ($primary_navigation as $item)
                 <a href="{{ $item->url }}" @click="mobileOpen = false"

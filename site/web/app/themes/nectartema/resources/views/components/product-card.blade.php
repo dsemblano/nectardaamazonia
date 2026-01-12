@@ -4,7 +4,7 @@
     /** @var WC_Product $product */
 @endphp
 
-<div class="group not-prose bg-white rounded-2xl shadow hover:shadow-lg transition overflow-hidden">
+<div class="group not-prose bg-offwhite rounded-2xl shadow hover:shadow-lg transition overflow-hidden">
 
     {{-- IMAGE --}}
     <a href="{{ get_permalink($product->get_id()) }}" class="block bg-gray-100">

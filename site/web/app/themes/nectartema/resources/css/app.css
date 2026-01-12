@@ -14,8 +14,7 @@
   --color-verde: #294023;
   --color-fundo: #f5f5dc;
   --color-melescuro: #A2571B;
-  --color-marrom: #402810;
-  --color-dourado: #FFF;
+  --color-offwhite: #FAFAF7;
   --color-p: #4B4B68;
   --color-h: #14101F;
   --font-heading: "Poppins-Regular", sans-serif;
@@ -212,11 +211,11 @@ main section header h1.container {
 
 .container-inner,
 .wp-block-media-text {
-  @apply px-4 bg-white rounded-2xl shadow-lg hover:border-2 hover:border-mel transition hover:translate-0.5;
+  @apply px-4 bg-offwhite rounded-2xl shadow-lg hover:border-2 hover:border-mel transition hover:translate-0.5;
 }
 
 .zolo-post-item {
-  @apply bg-white rounded-2xl p-4 gap-2 shadow hover:shadow-lg;
+  @apply bg-offwhite rounded-2xl p-4 gap-2 shadow hover:shadow-lg;
 }
 
 .wp-block-media-text {
@@ -328,7 +327,7 @@ body.sage {
 a.wp-block-button__link.wp-element-button,
 .woo-better-button-current-style,
 .section-home .button {
-  @apply px-2 py-2 rounded-lg text-lg font-semibold transition border-2 text-melescuro border-melescuro bg-white hover:bg-primary hover:border-primary hover:text-white
+  @apply px-2 py-2 rounded-lg text-lg font-semibold transition border-2 text-melescuro border-melescuro bg-offwhite hover:bg-primary hover:border-primary hover:text-white
 }
 
 .product_title {
