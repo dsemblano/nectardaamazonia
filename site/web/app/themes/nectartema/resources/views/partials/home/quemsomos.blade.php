@@ -1,6 +1,6 @@
 <section id="quem-somos" class="section-home container flex flex-col lg:flex-row gap-8 mt-8 lg:mt-10">
         <div class="hero-text w-full lg:w-3/5">
-            <h2 class="text-verde">Quem somos</h2>
+            <h2 class="text-verde text-center">Quem somos</h2>
             <p class="text-verde">
                 Na Néctar da Amazônia, nosso objetivo vai além da produção de mel. Sob a liderança de Richardson Frazão,
                 biólogo e CEO com 25 anos de experiência, desenvolvemos soluções sustentáveis, unindo meliponicultura e

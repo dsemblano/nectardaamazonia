@@ -529,3 +529,7 @@ article header h1 {
 .zolo__display-icon {
   fill: white;
 }
+
+blockquote {
+  border-left: var(--color-mel) 4px solid;
+}
