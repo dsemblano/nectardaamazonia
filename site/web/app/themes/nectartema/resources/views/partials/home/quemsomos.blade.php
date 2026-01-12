@@ -11,7 +11,7 @@
         </div>
         <picture class="w-full lg:w-2/5">
             <img src="{{ Vite::asset('resources/images/rf.webp') }}"
-                alt="Melkiponário" class="rounded-xl">
+                alt="Richardson Frazão com um livro e explicando em uma mesa" class="rounded-xl">
         </picture>
 </section>
 
