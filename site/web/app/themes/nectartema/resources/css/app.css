@@ -324,7 +324,7 @@ body.sage {
 #submit-payment,
 .woocommerce a.checkout-button.button.alt,
 #fkcart-modal .fkcart-checkout-wrap #fkcart-checkout-button {
-  @apply px-4 py-4 rounded-lg text-xl font-semibold transition bg-melescuro hover:bg-primary text-white;
+  @apply px-4 py-4 rounded-lg text-xl font-semibold transition bg-melescuro hover:bg-melescuro text-white;
 }
 
 .woocommerce div.product form.cart .single_add_to_cart_button {
@@ -335,7 +335,7 @@ body.sage {
 a.wp-block-button__link.wp-element-button,
 .woo-better-button-current-style,
 .section-home .button {
-  @apply px-2 py-2 rounded-lg text-lg font-semibold transition border-2 text-melescuro border-melescuro bg-offwhite hover:bg-primary hover:border-primary hover:text-white
+  @apply px-2 py-2 rounded-lg text-lg font-semibold transition border-2 text-offwhite bg-primary hover:bg-melescuro  hover:text-white
 }
 
 .product_title {
