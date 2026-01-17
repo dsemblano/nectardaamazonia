@@ -321,6 +321,10 @@ body.sage {
   }
 } */
 
+.fkcart-shortcode-container {
+  color: var(--color-offwhite);
+}
+
 /* Main CTA */
 .hero-cta,
 .woocommerce div.product form.cart .single_add_to_cart_button,
