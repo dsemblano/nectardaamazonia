@@ -336,6 +336,8 @@ a.wp-block-button__link.wp-element-button,
 a.button.wc-backward,
 .woo-better-button-current-style,
 .woocommerce .cart .button,
+.zolo-post-grid-wrap.zolo-post-style-1 .zolo-post-link-btn a,
+.woocommerce a.button,
 .section-home .button {
   @apply px-2 py-2 rounded-lg text-lg font-semibold transition border-2 text-offwhite bg-primary hover:bg-melescuro hover:text-white
 }
