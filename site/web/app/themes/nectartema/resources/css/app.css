@@ -74,6 +74,10 @@ h6 {
   font-family: var(--font-heading);
 }
 
+.section-home h2 {
+  @apply text-4xl;
+}
+
 h1:not(.text-white),
 h2:not(.text-white),
 h3,

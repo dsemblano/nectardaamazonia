@@ -1,6 +1,6 @@
 <section id="servicos" class="section-home container">
     <h2 class="text-center">Serviços</h2>
-    <div class="flex flex-col md:flex-row items-center text-center">
+    <div class="flex flex-col md:flex-row items-center text-center prose-img:my-0">
         <div class="servicos-info flex flex-col items-center">
             <img src="{{ Vite::asset('resources/images/servicos/Icone-Consultoria-tecnica.webp') }}"
                 alt="Ícone Consultoria para o Desenvolvimento da produção de mel" class="rounded-xl">
