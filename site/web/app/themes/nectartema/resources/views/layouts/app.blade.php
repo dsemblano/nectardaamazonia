@@ -32,7 +32,7 @@
 </head>
 
 <body @php(body_class())>
-    @include('partials.gtmbody')
+    {{-- @include('partials.gtmbody') --}}
     @php(wp_body_open())
 
     <div id="app">
@@ -43,8 +43,12 @@
         @include('sections.header')
 
         <main id="main"
-            class="main min-h-dvh prose lg:prose-xl max-w-full mx-auto prose-a:no-underline prose-h3:text-xl prose-h2:mt-0 prose-picture:mt-0">
+            class="main  min-h-dvh prose lg:prose-xl max-w-full mx-auto prose-a:no-underline prose-h3:text-xl prose-h2:mt-0 prose-picture:mt-0">
+            @if (is_cart())
+            <div class="container">
+            @endif    
             @yield('content')
+            </div>
         </main>
 
         @hasSection('sidebar')
