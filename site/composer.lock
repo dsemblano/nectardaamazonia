@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "89412ac6af7065f3a269cc66b1f74e9e",
+    "content-hash": "bdd86c78cb0a3bec78086ba2d1404844",
     "packages": [
         {
             "name": "brick/math",
@@ -7296,24 +7296,6 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/foogallery/"
-        },
-        {
-            "name": "wpackagist-plugin/galleryberg-gallery-block",
-            "version": "1.0.8",
-            "source": {
-                "type": "svn",
-                "url": "https://plugins.svn.wordpress.org/galleryberg-gallery-block/",
-                "reference": "tags/1.0.8"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/galleryberg-gallery-block.1.0.8.zip"
-            },
-            "require": {
-                "composer/installers": "^1.0 || ^2.0"
-            },
-            "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/galleryberg-gallery-block/"
         },
         {
             "name": "wpackagist-plugin/gtm-kit",
