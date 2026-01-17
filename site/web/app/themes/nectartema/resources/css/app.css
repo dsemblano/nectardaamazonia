@@ -116,7 +116,7 @@ p {
 }
 
 .page:not(.home) h1 {
-  @apply text-6xl lg:text-8xl;
+  @apply text-4xl md:text-6xl;
 }
 
 /* Pages with Zolo block */
