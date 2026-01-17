@@ -57,7 +57,7 @@
     "wpackagist-plugin/galleryberg-gallery-block":">=1.0.8",
     "wpackagist-plugin/gtm-kit":">=2.7.0",
     "wpackagist-plugin/woo-better-shipping-calculator-for-brazil":">=4.7.2",
-    "wpackagist-plugin/envira-gallery-lite":">=1.12.3",
+    "wpackagist-plugin/foogallery":">=3.1.6",
     "wpackagist-plugin/cart-for-woocommerce":">=1.9.1",
     "log1x/navi": "^3.1",
     "roots/acorn-mail": "^1.0"
