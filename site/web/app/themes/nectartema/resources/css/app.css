@@ -327,16 +327,36 @@ body.sage {
   @apply px-4 py-4 rounded-lg text-xl font-semibold transition bg-melescuro hover:bg-melescuro text-white;
 }
 
-.woocommerce div.product form.cart .single_add_to_cart_button {
-  @apply px-2 py-2 lg:py-3 ml-4;
-}
-
 /* Second CTA button */
 a.wp-block-button__link.wp-element-button,
 a.button.wc-backward,
 .woo-better-button-current-style,
+.woocommerce .cart .button,
 .section-home .button {
-  @apply px-2 py-2 rounded-lg text-lg font-semibold transition border-2 text-offwhite bg-primary hover:bg-melescuro  hover:text-white
+  @apply px-2 py-2 rounded-lg text-lg font-semibold transition border-2 text-offwhite bg-primary hover:bg-melescuro hover:text-white
+}
+
+.woocommerce {
+
+  .woocommerce-cart-form {
+    thead tr th,
+    .product-name a {
+      color: var(--color-verde);
+    }
+
+    table.shop_table {
+      @apply bg-offwhite text-melescuro;
+    }
+  }
+}
+
+table.shop_table.shop_table_responsive {
+  @apply bg-offwhite text-verde;
+}
+
+
+.woocommerce div.product form.cart .single_add_to_cart_button {
+  @apply px-2 py-2 lg:py-3 ml-4;
 }
 
 .product_title {
