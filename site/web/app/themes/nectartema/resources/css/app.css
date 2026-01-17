@@ -331,8 +331,9 @@ body.sage {
 #place_order,
 #submit-payment,
 .woocommerce a.checkout-button.button.alt,
+#fkcart-modal .fkcart-zero-state .fkcart-shop-button,
 #fkcart-modal .fkcart-checkout-wrap #fkcart-checkout-button {
-  @apply px-4 py-4 rounded-lg text-xl font-semibold transition bg-melescuro hover:bg-mel text-white;
+  @apply px-4 py-4 rounded-lg text-xl font-semibold transition bg-melescuro hover:bg-mel text-white hover:text-black;
 }
 
 /* Second CTA button */
