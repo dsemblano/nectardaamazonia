@@ -381,3 +381,16 @@ $dequeue_wc_block_assets = function () {
 add_action('enqueue_block_assets', $dequeue_wc_block_assets, 999);
 add_action('wp_enqueue_scripts', $dequeue_wc_block_assets, 999);
 add_action('wp_print_styles', $dequeue_wc_block_assets, 999);
+
+$cart_h1 = function () {
+  if (!is_cart()) return;
+
+  echo '<h1 class="text-lg font-bold mb-6 container">'
+    . esc_html__('Carrinho de compras', 'woocommerce')
+    . '</h1>';
+};
+
+add_action('woocommerce_before_cart', $cart_h1, 5);
+add_action('woocommerce_cart_is_empty', $cart_h1, 5);
+
+
