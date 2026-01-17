@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "bdd86c78cb0a3bec78086ba2d1404844",
+    "content-hash": "c26ac3c3d999577f8c1b268fed98c08d",
     "packages": [
         {
             "name": "brick/math",
@@ -7242,6 +7242,24 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/cart-for-woocommerce/"
+        },
+        {
+            "name": "wpackagist-plugin/checkoutwc-lite",
+            "version": "11.0.2",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/checkoutwc-lite/",
+                "reference": "tags/11.0.2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/checkoutwc-lite.11.0.2.zip"
+            },
+            "require": {
+                "composer/installers": "^1.0 || ^2.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/checkoutwc-lite/"
         },
         {
             "name": "wpackagist-plugin/contact-form-7",
