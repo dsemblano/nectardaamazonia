@@ -10,7 +10,7 @@
                 href="/quem-somos">Mais sobre nós</a>
         </div>
         <picture class="w-full lg:w-2/5">
-            <img src="{{ Vite::asset('resources/images/rf.webp') }}"
+            <img width="380" height="253" src="{{ Vite::asset('resources/images/rf.webp') }}"
                 alt="Richardson Frazão com um livro e explicando em uma mesa" class="rounded-xl">
         </picture>
 </section>
