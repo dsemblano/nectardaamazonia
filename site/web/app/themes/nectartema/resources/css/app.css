@@ -17,7 +17,7 @@
   --color-melescuro: #A2571B;
   --color-offwhite: #FAFAF7;
   --color-p: #4B4B68;
-  --color-h: #14101F;
+  --color-h: #141414;
   --font-heading: "Poppins-Regular", sans-serif;
   --font-heading-bold: "Poppins-Black", sans-serif;
   --font-sans: "Lato-Regular", sans-serif;
@@ -367,7 +367,7 @@ a.button.wc-backward,
 .zolo-post-grid-wrap.zolo-post-style-1 .zolo-post-link-btn a,
 .woocommerce a.button,
 .section-home .button {
-  @apply px-2 py-2 rounded-lg text-base font-semibold transition border-2 text-offwhite bg-primary hover:bg-melescuro hover:text-white
+  @apply px-2 py-2 rounded-lg text-base font-semibold transition text-h bg-primary hover:bg-melescuro hover:text-white
 }
 
 
