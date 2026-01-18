@@ -4,7 +4,8 @@ Owner: Richardson Frazão
 Chief Executive Officer: Richardson Frazão
 Location: Macapá AP
 Developer: Daniel Semblano
-Contact: dsemblano [at] gmail.com
+Contact: hello [at] danielsemblano.dev
+Website: danielsemblano.dev
 Twitter: @dsemblano
 
 
