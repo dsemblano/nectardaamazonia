@@ -192,41 +192,41 @@ add_action('widgets_init', function () {
 
 
 // Remove brands.css woocommerce
-add_action( 'wp_enqueue_scripts', function() {
-wp_deregister_style('brands-styles');
+add_action('wp_enqueue_scripts', function () {
+    wp_deregister_style('brands-styles');
 });
 
 // Limpa ordem padrão do WooCommerce
 add_action('wp', function () {
 
-  // Remove tudo da summary padrão
-  remove_action('woocommerce_single_product_summary', 'woocommerce_template_single_title', 5);
-  remove_action('woocommerce_single_product_summary', 'woocommerce_template_single_rating', 10);
-  remove_action('woocommerce_single_product_summary', 'woocommerce_template_single_price', 10);
-  remove_action('woocommerce_single_product_summary', 'woocommerce_template_single_excerpt', 20);
-  remove_action('woocommerce_single_product_summary', 'woocommerce_template_single_add_to_cart', 30);
-  remove_action('woocommerce_single_product_summary', 'woocommerce_template_single_meta', 40);
+    // Remove tudo da summary padrão
+    remove_action('woocommerce_single_product_summary', 'woocommerce_template_single_title', 5);
+    remove_action('woocommerce_single_product_summary', 'woocommerce_template_single_rating', 10);
+    remove_action('woocommerce_single_product_summary', 'woocommerce_template_single_price', 10);
+    remove_action('woocommerce_single_product_summary', 'woocommerce_template_single_excerpt', 20);
+    remove_action('woocommerce_single_product_summary', 'woocommerce_template_single_add_to_cart', 30);
+    remove_action('woocommerce_single_product_summary', 'woocommerce_template_single_meta', 40);
 });
 
 // Reinserir elementos na summary em nova ordem
 add_action('woocommerce_single_product_summary', function () {
-  echo view('woocommerce.single.title')->render();
+    echo view('woocommerce.single.title')->render();
 }, 5);
 
 add_action('woocommerce_single_product_summary', function () {
-  echo view('woocommerce.single.rating')->render();
+    echo view('woocommerce.single.rating')->render();
 }, 10);
 
 add_action('woocommerce_single_product_summary', function () {
-  echo view('woocommerce.single.price')->render();
+    echo view('woocommerce.single.price')->render();
 }, 15);
 
 add_action('woocommerce_single_product_summary', function () {
-  echo view('woocommerce.single.description')->render();
+    echo view('woocommerce.single.description')->render();
 }, 20);
 
 add_action('woocommerce_single_product_summary', function () {
-  echo view('woocommerce.single.specs')->render();
+    echo view('woocommerce.single.specs')->render();
 }, 25);
 
 // add_action('woocommerce_single_product_summary', function () {
@@ -242,13 +242,13 @@ add_action('woocommerce_single_product_summary', function () {
 // Retrieved 2026-01-10, License - CC BY-SA 4.0
 
 
-add_action('wp_enqueue_scripts', function() {
-    if ( !is_page( array( 'contato' ) ) ){
-        wp_dequeue_script( 'contact-form-7' );
-        wp_dequeue_style( 'contact-form-7' );
+add_action('wp_enqueue_scripts', function () {
+    if (!is_page(array('contato'))) {
+        wp_dequeue_script('contact-form-7');
+        wp_dequeue_style('contact-form-7');
 
         /* these are both needed */
-        wp_dequeue_script( 'wpcf7-recaptcha' );
+        wp_dequeue_script('wpcf7-recaptcha');
         wp_dequeue_script('google-recaptcha');
     }
 }, 99);
@@ -257,35 +257,35 @@ add_action('wp_enqueue_scripts', function() {
  * Optimize WooCommerce Scripts
  * Remove WooCommerce Generator tag, styles, and scripts from non WooCommerce pages.
  */
-add_action( 'wp_enqueue_scripts', function() {
-    remove_action( 'wp_head', array( $GLOBALS['woocommerce'], 'generator' ) );
+add_action('wp_enqueue_scripts', function () {
+    remove_action('wp_head', array($GLOBALS['woocommerce'], 'generator'));
 
-	//first check that woo exists to prevent fatal errors
-	if ( function_exists( 'is_woocommerce' ) ) {
-		//dequeue scripts and styles
-		if ( ! is_woocommerce() && ! is_cart() && ! is_checkout() ) {
-			wp_dequeue_style( 'woocommerce_frontend_styles' );
-			wp_dequeue_style( 'woocommerce_fancybox_styles' );
-			wp_dequeue_style( 'woocommerce_chosen_styles' );
-			wp_dequeue_style( 'woocommerce_prettyPhoto_css' );
-			wp_dequeue_script( 'wc_price_slider' );
-			wp_dequeue_script( 'wc-single-product' );
-			wp_dequeue_script( 'wc-add-to-cart' );
-			wp_dequeue_script( 'wc-cart-fragments' );
-			wp_dequeue_script( 'wc-checkout' );
-			wp_dequeue_script( 'wc-add-to-cart-variation' );
-			wp_dequeue_script( 'wc-single-product' );
-			wp_dequeue_script( 'wc-cart' );
-			wp_dequeue_script( 'wc-chosen' );
-			wp_dequeue_script( 'woocommerce' );
-			wp_dequeue_script( 'prettyPhoto' );
-			wp_dequeue_script( 'prettyPhoto-init' );
-			wp_dequeue_script( 'jquery-blockui' );
-			wp_dequeue_script( 'jquery-placeholder' );
-			wp_dequeue_script( 'fancybox' );
-			wp_dequeue_script( 'jqueryui' );
-		}
-	}
+    //first check that woo exists to prevent fatal errors
+    if (function_exists('is_woocommerce')) {
+        //dequeue scripts and styles
+        if (! is_woocommerce() && ! is_cart() && ! is_checkout()) {
+            wp_dequeue_style('woocommerce_frontend_styles');
+            wp_dequeue_style('woocommerce_fancybox_styles');
+            wp_dequeue_style('woocommerce_chosen_styles');
+            wp_dequeue_style('woocommerce_prettyPhoto_css');
+            wp_dequeue_script('wc_price_slider');
+            wp_dequeue_script('wc-single-product');
+            wp_dequeue_script('wc-add-to-cart');
+            wp_dequeue_script('wc-cart-fragments');
+            wp_dequeue_script('wc-checkout');
+            wp_dequeue_script('wc-add-to-cart-variation');
+            wp_dequeue_script('wc-single-product');
+            wp_dequeue_script('wc-cart');
+            wp_dequeue_script('wc-chosen');
+            wp_dequeue_script('woocommerce');
+            wp_dequeue_script('prettyPhoto');
+            wp_dequeue_script('prettyPhoto-init');
+            wp_dequeue_script('jquery-blockui');
+            wp_dequeue_script('jquery-placeholder');
+            wp_dequeue_script('fancybox');
+            wp_dequeue_script('jqueryui');
+        }
+    }
 }, 99);
 
 add_action('wp_enqueue_scripts', function () {
@@ -302,7 +302,6 @@ add_action('wp_enqueue_scripts', function () {
     wp_dequeue_style('woocommerce-smallscreen');
     wp_dequeue_style('wc-blocks-style');
     wp_dequeue_style('wc-blocks-vendors-style');
-
 }, 100);
 
 /**
@@ -319,7 +318,6 @@ add_action('enqueue_block_assets', function () {
 
     wp_dequeue_style('wc-blocks-style');
     wp_dequeue_style('wc-blocks-vendors-style');
-
 }, 100);
 
 add_action('wp_print_styles', function () {
@@ -333,7 +331,6 @@ add_action('wp_print_styles', function () {
 
     wp_dequeue_style('wc-blocks-style');
     wp_dequeue_style('wc-blocks-vendors-style');
-
 }, 100);
 
 // 1) Build a reliable flag once WP conditionals are ready
@@ -353,11 +350,11 @@ $dequeue_wc_block_assets = function () {
     }
 
     global $wp_styles;
-    if ( empty( $wp_styles ) || empty( $wp_styles->registered ) ) {
+    if (empty($wp_styles) || empty($wp_styles->registered)) {
         return;
     }
 
-    foreach ( $wp_styles->registered as $handle => $style ) {
+    foreach ($wp_styles->registered as $handle => $style) {
         $src = isset($style->src) ? $style->src : '';
 
         // Normalize src (some handles are relative)
@@ -383,26 +380,43 @@ add_action('wp_enqueue_scripts', $dequeue_wc_block_assets, 999);
 add_action('wp_print_styles', $dequeue_wc_block_assets, 999);
 
 $cart_h1 = function () {
-  if (!is_cart()) {
-    return;
-  }
+    if (!is_cart()) {
+        return;
+    }
 
-  static $rendered = false;
-  if ($rendered) {
-    return;
-  }
-  $rendered = true;
-  ?>
-  <header class="container prose prose-xl mx-auto max-w-full">
-    <h1>
-      <?php echo esc_html__('Carrinho de compras', 'woocommerce'); ?>
-    </h1>
-  </header>
-  <?php
+    static $rendered = false;
+    if ($rendered) {
+        return;
+    }
+    $rendered = true;
+?>
+    <header class="container prose prose-xl mx-auto max-w-full">
+        <h1>
+            <?php echo esc_html__('Carrinho de compras', 'woocommerce'); ?>
+        </h1>
+    </header>
+<?php
 };
 
 add_action('woocommerce_before_cart', $cart_h1, 5);
 add_action('woocommerce_cart_is_empty', $cart_h1, 5);
 
+// Removing jquery
 
+add_action('wp_enqueue_scripts', function () {
 
+    // Never touch admin, login, or customizer
+    if (is_admin()) {
+        return;
+    }
+
+    // Allow jQuery ONLY on gallery page
+    if (is_page('galeria')) {
+        return;
+    }
+
+    // Deregister jQuery
+    wp_deregister_script('jquery');
+    wp_deregister_script('jquery-core');
+    wp_deregister_script('jquery-migrate');
+}, 100);
