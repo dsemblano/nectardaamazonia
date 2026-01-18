@@ -219,7 +219,27 @@ main section header h1.container {
 }
 
 .zolo-post-item {
-  @apply bg-offwhite rounded-2xl p-4 gap-2 shadow hover:shadow-lg;
+  @apply rounded-2xl shadow hover:shadow-lg transition overflow-hidden;
+
+  background-color: var(--color-offwhite) !important;
+
+  .zolo-post-content {
+    padding: 1rem !important;
+
+    .zolo-post-title {
+      margin: 0;
+
+      a {
+        color: var(--color-verde);
+        font-weight: bold;
+        font-size: large;
+      }
+    }
+  }
+}
+
+.zolo-post-grid-wrap .zolo-post-image {
+  border-radius: 0;
 }
 
 .wp-block-media-text {
@@ -287,6 +307,8 @@ footer.content-info {
 
 /* Woocommerce */
 
+
+
 .quantity input {
   @apply w-24 px-3 py-2 border border-gray-300 rounded-lg text-center focus:outline-none focus:ring-2 focus:ring-primary/40 transition;
 }
@@ -350,6 +372,7 @@ a.button.wc-backward,
 .woocommerce {
 
   .woocommerce-cart-form {
+
     thead tr th,
     .product-name a {
       color: var(--color-verde);
