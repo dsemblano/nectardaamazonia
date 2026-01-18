@@ -6,7 +6,7 @@
                 biólogo e CEO com 25 anos de experiência, desenvolvemos soluções sustentáveis, unindo meliponicultura e
                 preservação ambiental, com foco nos ODS e diretrizes ESG.
             </p>
-            <a class="button"
+            <a class="button-quemsomos"
                 href="/quem-somos">Mais sobre nós</a>
         </div>
         <picture class="w-full lg:w-2/5">

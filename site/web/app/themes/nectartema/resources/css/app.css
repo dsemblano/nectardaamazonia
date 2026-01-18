@@ -17,7 +17,7 @@
   --color-melescuro: #A2571B;
   --color-offwhite: #FAFAF7;
   --color-p: #4B4B68;
-  --color-h: #141414;
+  --color-h: #262626;
   --font-heading: "Poppins-Regular", sans-serif;
   --font-heading-bold: "Poppins-Black", sans-serif;
   --font-sans: "Lato-Regular", sans-serif;
@@ -355,8 +355,13 @@ body.sage {
 #submit-payment,
 .woocommerce a.checkout-button.button.alt,
 #fkcart-modal .fkcart-zero-state .fkcart-shop-button,
+.product-button,
 #fkcart-modal .fkcart-checkout-wrap #fkcart-checkout-button {
-  @apply px-4 py-4 rounded-lg text-xl font-semibold transition bg-melescuro hover:bg-mel text-white hover:text-black;
+  @apply px-4 py-4 rounded-lg text-xl font-bold transition text-h bg-mel hover:brightness-[80%] hover:scale-105 hover:shadow-lg active:scale-95;
+}
+
+.product-button {
+  @apply px-2 py-2 text-base;
 }
 
 /* Second CTA button */
@@ -366,8 +371,9 @@ a.button.wc-backward,
 .woocommerce .cart .button,
 .zolo-post-grid-wrap.zolo-post-style-1 .zolo-post-link-btn a,
 .woocommerce a.button,
-.section-home .button {
-  @apply px-2 py-2 rounded-lg text-base font-semibold transition text-h bg-primary hover:bg-melescuro hover:text-white
+.section-home .button,
+.button-quemsomos {
+  @apply px-2 py-2 rounded-lg text-base font-semibold transition text-offwhite bg-melescuro hover:brightness-[130%] hover:scale-105 hover:shadow-lg active:scale-95;
 }
 
 
