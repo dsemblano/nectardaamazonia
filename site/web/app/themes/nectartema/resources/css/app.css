@@ -4,6 +4,7 @@
 @source "../../app/";
 @import './fonts.css';
 @import 'animate.css';
+@import "./arrowcdtop.css";
 
 @theme static {
   --color-primary: #E69037;
