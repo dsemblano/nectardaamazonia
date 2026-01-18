@@ -125,3 +125,24 @@ add_filter( 'wp_default_scripts', function( $scripts ){
         $scripts->add( 'jquery', false, array( 'jquery-core' ), '1.2.1' );
     }
 } );
+
+
+/**
+ * Defer Cart for WooCommerce CSS
+ */
+
+add_filter('style_loader_tag', function ($html, $handle, $href, $media) {
+
+  if (strpos($href, 'cart-for-woocommerce/assets/css/style.min.css') === false) {
+    return $html;
+  }
+
+  return <<<HTML
+<link rel="preload" href="{$href}" as="style"
+      onload="this.onload=null;this.rel='stylesheet'">
+<noscript>
+  <link rel="stylesheet" href="{$href}">
+</noscript>
+HTML;
+
+}, 10, 4);

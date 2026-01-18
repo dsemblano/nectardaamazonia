@@ -403,20 +403,20 @@ add_action('woocommerce_cart_is_empty', $cart_h1, 5);
 
 // Removing jquery
 
-add_action('wp_enqueue_scripts', function () {
+// add_action('wp_enqueue_scripts', function () {
 
-    if (is_admin()) return;
+//     if (is_admin()) return;
 
-    if (
-        is_page('galeria') ||
-        is_cart() ||
-        is_checkout() ||
-        is_account_page()
-    ) {
-        return;
-    }
+//     if (
+//         is_page('galeria') ||
+//         is_cart() ||
+//         is_checkout() ||
+//         is_account_page()
+//     ) {
+//         return;
+//     }
 
-    wp_deregister_script('jquery');
-    wp_deregister_script('jquery-core');
-    wp_deregister_script('jquery-migrate');
-}, 100);
+//     wp_deregister_script('jquery');
+//     wp_deregister_script('jquery-core');
+//     wp_deregister_script('jquery-migrate');
+// }, 100);
