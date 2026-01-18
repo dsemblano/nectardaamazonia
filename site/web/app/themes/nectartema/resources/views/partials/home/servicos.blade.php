@@ -2,14 +2,14 @@
     <h2 class="text-center">Serviços</h2>
     <div class="flex flex-col md:flex-row items-center text-center prose-img:my-0">
         <div class="servicos-info flex flex-col items-center">
-            <img src="{{ Vite::asset('resources/images/servicos/Icone-Consultoria-tecnica.webp') }}"
+            <img width="188" height="215" src="{{ Vite::asset('resources/images/servicos/Icone-Consultoria-tecnica.webp') }}"
                 alt="Ícone Consultoria para o Desenvolvimento da produção de mel" class="rounded-xl">
             <h3>Consultoria para o Desenvolvimento da produção de mel</h3>
             <p>Fazemos diagnósticos detalhados, elaboramos projetos e gerimos meliponários, garantindo o sucesso e a
                 sustentabilidade na criação de abelhas e produção de mel.</p>
         </div>
         <div class="servicos-info flex flex-col items-center">
-            <img src="{{ Vite::asset('resources/images/servicos/icone-estudos-socioambientais.webp') }}"
+            <img width="188" height="215" src="{{ Vite::asset('resources/images/servicos/icone-estudos-socioambientais.webp') }}"
                 alt="Ícone Diagnósticos Socioambientais com Comunidades" class="rounded-xl">
             <h3>Diagnósticos Socioambientais
                 com Comunidades</h3>
@@ -17,7 +17,7 @@
                 estratégia de geração de renda e inclusão.</p>
         </div>
         <div class="servicos-info flex flex-col items-center">
-            <img src="{{ Vite::asset('resources/images/servicos/Icone-estudos-ambientais.webp') }}"
+            <img width="188" height="215" src="{{ Vite::asset('resources/images/servicos/Icone-estudos-ambientais.webp') }}"
                 alt="Ícone Implantação de Biofábricas de Abelhas" class="rounded-xl">
             <h3>Implantação de
                 Biofábricas de Abelhas</h3>
@@ -25,7 +25,7 @@
                 preservação e expansão das abelhas nativas.</p>
         </div>
         <div class="servicos-info flex flex-col items-center">
-            <img src="{{ Vite::asset('resources/images/servicos/icone-eventos.webp') }}"
+            <img width="188" height="215" src="{{ Vite::asset('resources/images/servicos/icone-eventos.webp') }}"
                 alt="Ícone Eventos Sustentabilidade com Abelhas
 " class="rounded-xl">
             <h3>Eventos

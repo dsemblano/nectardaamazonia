@@ -405,17 +405,17 @@ add_action('woocommerce_cart_is_empty', $cart_h1, 5);
 
 add_action('wp_enqueue_scripts', function () {
 
-    // Never touch admin, login, or customizer
-    if (is_admin()) {
+    if (is_admin()) return;
+
+    if (
+        is_page('galeria') ||
+        is_cart() ||
+        is_checkout() ||
+        is_account_page()
+    ) {
         return;
     }
 
-    // Allow jQuery ONLY on gallery page
-    if (is_page('galeria')) {
-        return;
-    }
-
-    // Deregister jQuery
     wp_deregister_script('jquery');
     wp_deregister_script('jquery-core');
     wp_deregister_script('jquery-migrate');
