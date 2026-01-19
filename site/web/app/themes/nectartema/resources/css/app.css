@@ -616,3 +616,8 @@ blockquote {
     @apply hover:underline text-melescuro hover:text-mel;
   }
 }
+
+/* Quando pede pra criar conta no checkout, plugin nao mostra opção de desabilitar */
+.cfw-input-wrap.cfw-check-input {
+    display: none !important;
+}
