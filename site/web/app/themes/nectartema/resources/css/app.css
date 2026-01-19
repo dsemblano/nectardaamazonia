@@ -618,6 +618,6 @@ blockquote {
 }
 
 /* Quando pede pra criar conta no checkout, plugin nao mostra opção de desabilitar */
-.cfw-input-wrap.cfw-check-input {
+.cfw-check-input {
     display: none !important;
 }
