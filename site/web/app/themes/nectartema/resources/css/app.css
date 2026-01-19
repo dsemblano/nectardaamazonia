@@ -216,7 +216,7 @@ main section header h1.container {
 
 .container-inner,
 .wp-block-media-text {
-  @apply px-4 bg-offwhite rounded-2xl shadow-lg hover:border-2 hover:border-mel transition hover:translate-0.5;
+  @apply px-4 bg-offwhite rounded-2xl shadow-lg transition hover:translate-0.5;
 }
 
 .zolo-post-item {
