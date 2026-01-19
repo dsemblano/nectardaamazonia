@@ -60,7 +60,7 @@
 
 :root {
   color-scheme: only light;
-  --h1-height: 1.2em;
+  --h1-height: 1.4em;
   --animation-speed: 8s;
 }
 
@@ -109,14 +109,16 @@ p {
 .ticker-container {
   /* font-size: 2.5rem; */
   line-height: var(--h1-height);
-  display: flex;
+  display: inline-flex;
+  vertical-align: bottom;
+  height: 1.2em;
   flex-wrap: wrap;
   justify-content: center;
   gap: 8px;
   display: inline-block;
   height: var(--h1-height);
   overflow: hidden;
-  vertical-align: top;
+  max-width: 100%;
   position: relative;
 }
 
@@ -127,8 +129,9 @@ p {
 }
 
 .item {
-  height: var(--h1-height);
+  height: 1.2em;
   white-space: nowrap;
+  display: block;
 }
 
 /* Animação para 4 itens (3 palavras + 1 repetição) */
