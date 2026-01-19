@@ -22,14 +22,12 @@
         do_action('woocommerce_before_main_content');
     @endphp
 
-    <section id="shop" class="prose-img:mt-0 prose-img:mb-0 prose-li:p-0 prose-a:text-melescuro prose-a:hover:text-mel prose-a:hover:underline">
+    <section id="shop"
+        class="prose-img:mt-0 prose-img:mb-0 prose-li:p-0 prose-a:text-melescuro prose-a:hover:text-mel prose-a:hover:underline">
 
-        {{-- Aqui vão os blocos da página da loja --}}
-        <div class="container">
-            @php
-                do_action('woocommerce_archive_description');
-            @endphp
-        </div>
+        @php
+            do_action('woocommerce_archive_description');
+        @endphp
 
 
         @if (woocommerce_product_loop())

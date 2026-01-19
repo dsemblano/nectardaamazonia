@@ -241,6 +241,14 @@ p {
   }
 }
 
+.h1-container.h1-loja {
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.3)), url("@images/bg/loja.webp");
+  background-position: left 75%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 15rem;
+}
+
 /* desktop background */
 @media (min-width: 768px) {
   .h1-container {
