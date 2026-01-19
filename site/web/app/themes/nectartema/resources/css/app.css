@@ -235,6 +235,7 @@ p {
   background-position: left 75%;
   background-repeat: no-repeat;
   background-size: cover;
+  min-height: 15rem;
 
   h1 {
     color: white;
