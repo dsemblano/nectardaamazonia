@@ -2,13 +2,13 @@
     <div class="container h-dvh">
         <div class="text-left h-dvh md:w-dvh md:h-full leading-loose flex flex-col justify-center">
             <h1 class="text-white text-4xl md:text-6xl lg:text-7xl">Mel Sustentável da Amazônia</h1>
-            <p class="text-white font-normal text-2xl md:text-3xl mb-8 pb-4">Néctar da Amazônia: O mais puro mel de abelhas
+            <p class="text-white font-normal text-2xl md:text-3xl">Néctar da Amazônia: <br> O mais puro mel de abelhas
                 sem ferrão,
                 <span class="ticker-container">
-                    <span class="ticker-wrapper text-mel text-2xl md:text-4xl font-bold">
+                    <span class="ticker-wrapper text-mel text-2xl md:text-3xl font-bold">
                         <span class="item">direto do Amapá para o mundo</span>
-                        <span class="item">fortalecendo a bioeconomia local</span>
-                        <span class="item">rico em propriedades medicinais</span>
+                        <span class="item">fortalecendo a bioeconomia</span>
+                        <span class="item">com propriedades medicinais</span>
                         <span class="item">direto do Amapá para o mundo</span> </span>
                 </span>
             </p>
