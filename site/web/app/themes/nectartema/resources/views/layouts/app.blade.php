@@ -6,7 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     @php(do_action('get_header'))
     @php(wp_head())
-    
+
+    <!-- Add forwarding event for Google Tag Manager -->
+    {{-- <script>
+        partytown = {
+            forward: ['dataLayer.push'],
+        };
+    </script> --}}
+
     <link rel="preload" fetchpriority="high" as="image"
         href="{{ Vite::asset('resources/images/meliponario-1024x576-1.webp') }}" type="image/webp">
     @if (is_front_page() || is_home())
@@ -15,7 +22,7 @@
         <link rel="preload" fetchpriority="high" as="image"
             href="{{ Vite::asset('resources/images/meliponario-1024x576-1.webp') }}" type="image/webp">
     @endif
-    
+
     @if (!is_front_page() && !is_home())
         <link rel="preload" as="image" href="{{ Vite::asset('resources/images/bg/bg-mobile.webp') }}"
             imagesrcset="{{ Vite::asset('resources/images/bg/bg-mobile.webp') }} 768w, {{ Vite::asset('resources/images/bg/bg-desktop.webp') }} 1600w"
@@ -28,6 +35,17 @@
     {{-- @include('partials.gtag') --}}
     {{-- @include('partials.partytown')
     @include('partials.gtm') --}}
+    
+    {{-- <script type="text/partytown" src="https://www.googletagmanager.com/gtag/js?GTM-TXS3QB8L">
+    </script>
+    <script type="text/partytown">
+    window.dataLayer = window.dataLayer || [];
+    window.gtag = function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    
+    gtag('config', 'GTM-TXS3QB8L');
+    </script> --}}
+
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 

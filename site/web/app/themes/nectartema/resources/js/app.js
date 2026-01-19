@@ -1,5 +1,8 @@
 import Alpine from 'alpinejs'
 import focus from '@alpinejs/focus' // For better accessibility
+// import partytownSnippet from '@qwik.dev/partytown/integration'
+
+// const snippetText = partytownSnippet()
 
 // Initialize Alpine
 window.Alpine = Alpine

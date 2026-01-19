@@ -60,6 +60,8 @@
 
 :root {
   color-scheme: only light;
+  --h1-height: 1.2em;
+  --animation-speed: 8s;
 }
 
 html {
@@ -93,6 +95,48 @@ h1.product_title {
 
 p {
   word-break: break-word;
+}
+
+.titulo-principal {
+  /* font-size: 2.5rem; */
+  line-height: var(--h1-height);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+}
+
+.ticker-container {
+  /* font-size: 2.5rem; */
+  line-height: var(--h1-height);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  display: inline-block;
+  height: var(--h1-height);
+  overflow: hidden;
+  vertical-align: top;
+  position: relative;
+}
+
+.ticker-wrapper {
+  display: flex;
+  flex-direction: column;
+  animation: slide var(--animation-speed) infinite cubic-bezier(0.83, 0, 0.17, 1);
+}
+
+.item {
+  height: var(--h1-height);
+  white-space: nowrap;
+}
+
+/* Animação para 4 itens (3 palavras + 1 repetição) */
+@keyframes slide {
+  0%, 20% { transform: translateY(0); }
+  25%, 45% { transform: translateY(-1.2em); }
+  50%, 70% { transform: translateY(-2.4em); }
+  75%, 100% { transform: translateY(-3.6em); }
 }
 
 #hero {
