@@ -320,6 +320,10 @@ main section header h1.container {
 .post-author {
     margin-top: 4rem;
     margin-bottom: 2rem;
+
+    .wp-block-heading {
+      @apply md:mt-8;
+    }
 }
 
 /* Pages with Zolo block */
