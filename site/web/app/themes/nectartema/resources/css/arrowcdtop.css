@@ -10,7 +10,7 @@
     text-indent: 100%;
     white-space: nowrap;
     /* background: rgb(from var(--color-melescuro) r g b / 0.8) url(../images/arrowcdtop.svg) no-repeat center 50%; */
-    background: color-mix(in srgb, var(--color-melescuro) 80%, transparent) url(../images/arrowcdtop.svg) no-repeat center 50%;
+    background: color-mix(in srgb, var(--color-mel) 80%, transparent) url(../images/arrowcdtop.svg) no-repeat center 50%;
     visibility: hidden;
     opacity: 0;
     transition: opacity 0.3s 0s, visibility 0s 0.3s;
