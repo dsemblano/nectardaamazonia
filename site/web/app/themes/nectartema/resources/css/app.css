@@ -317,7 +317,16 @@ main section header h1.container {
   border-color: #D4AF37; */
 }
 
+.my-3.excerpt {
+  @apply text-sm md:text-lg;
+}
+
+li::marker {
+  color: var(--color-melescuro);
+}
+
 .post-author {
+  padding: 0;
     margin-top: 4rem;
     margin-bottom: 2rem;
 
@@ -659,7 +668,7 @@ article header h1 {
 }
 
 blockquote {
-  border-left: var(--color-mel) 4px solid;
+  border-left: var(--color-melescuro) 3px solid;
 }
 
 .wfb-floating-button {
