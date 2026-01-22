@@ -322,7 +322,7 @@ main section header h1.container {
     margin-bottom: 2rem;
 
     .wp-block-heading {
-      @apply md:mt-8;
+      @apply mt-8 md:mt-0;
     }
 }
 
