@@ -317,6 +317,11 @@ main section header h1.container {
   border-color: #D4AF37; */
 }
 
+.post-author {
+    margin-top: 4rem;
+    margin-bottom: 2rem;
+}
+
 /* Pages with Zolo block */
 
 /* .home-wrapper {
