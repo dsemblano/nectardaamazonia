@@ -38,7 +38,7 @@
 
         {{-- SHORT DESCRIPTION --}}
         @if ($product->get_short_description())
-            <p class="text-sm text-gray-600">
+            <p class="text-sm text-gray-600 min-h-28">
                 {!! wp_strip_all_tags($product->get_short_description()) !!}
             </p>
         @endif
