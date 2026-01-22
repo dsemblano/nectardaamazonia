@@ -299,13 +299,13 @@ main section header h1.container {
   border-radius: 0;
 }
 
-.wp-block-media-text {
+.wp-block-media-text:not(.post-author) {
   padding: 2rem 1rem 2rem 1rem;
   min-height: 20rem;
 }
 
 /* Cards */
-.wp-block-media-text {
+.wp-block-media-text:not(.post-author) {
   @apply rounded-2xl shadow-lg hover:shadow-xl;
   /* border: 3px solid var(--color-verde);
   border-radius: 20px;
