@@ -271,7 +271,7 @@ main section header h1.container {
 }
 
 .container-inner,
-.wp-block-media-text {
+.wp-block-media-text:not(.post-author) {
   @apply px-4 bg-offwhite rounded-2xl shadow-lg transition hover:translate-0.5;
 }
 
