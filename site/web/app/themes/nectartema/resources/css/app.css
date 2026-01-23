@@ -304,6 +304,10 @@ main section header h1.container {
   min-height: 20rem;
 }
 
+.zolo-post-inner-content {
+  min-height: 12rem;
+}
+
 /* Cards */
 .wp-block-media-text:not(.post-author) {
   @apply rounded-2xl shadow-lg hover:shadow-xl;
