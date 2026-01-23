@@ -35,7 +35,7 @@
     {{-- @include('partials.gtag') --}}
     {{-- @include('partials.partytown')
     @include('partials.gtm') --}}
-    
+
     {{-- <script type="text/partytown" src="https://www.googletagmanager.com/gtag/js?GTM-TXS3QB8L">
     </script>
     <script type="text/partytown">
@@ -60,8 +60,7 @@
 
         @include('sections.header')
 
-        <main id="main"
-            class="main min-h-dvh">
+        <main id="main" class="main min-h-dvh">
             @yield('content')
         </main>
 
@@ -77,6 +76,28 @@
 
     @php(do_action('get_footer'))
     @php(wp_footer())
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const observerOptions = {
+                threshold: 0.15 // Dispara quando 15% da seção estiver visível
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("is-visible");
+                        // Para de observar após a animação (ganho de performance)
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            // Seleciona todas as seções que devem animar
+            document.querySelectorAll(".reveal-on-scroll").forEach((section) => {
+                observer.observe(section);
+            });
+        });
+    </script>
 </body>
 
 </html>

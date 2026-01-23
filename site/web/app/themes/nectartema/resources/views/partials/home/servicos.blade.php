@@ -1,4 +1,4 @@
-<section id="servicos" class="section-home container gap-8 mt-8 mb-8 lg:mt-10">
+<section id="servicos" class="section-home reveal-on-scroll delay-300 container gap-8 mt-8 mb-8 lg:mt-10">
     <h2 class="text-center font-bold mb-8">Serviços</h2>
     <div class="flex flex-col md:flex-row">
         <div class="servicos-info">
