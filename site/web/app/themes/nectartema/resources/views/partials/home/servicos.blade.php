@@ -1,5 +1,5 @@
-<section id="servicos" class="section-home container">
-    <h2 class="text-center">Serviços</h2>
+<section id="servicos" class="section-home container gap-8 mt-8 lg:mt-10">
+    <h2 class="text-center font-bold mb-8">Serviços</h2>
     <div class="flex flex-col md:flex-row">
         <div class="servicos-info">
             <img width="188" height="215"

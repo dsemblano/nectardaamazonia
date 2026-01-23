@@ -154,11 +154,23 @@ p {
 }
 
 .servicos-info {
-  @apply prose lg:prose-lg prose-a:no-underline prose-h2:mt-0 prose-figure:mt-0; 
+  @apply prose lg:prose-lg prose-a:no-underline prose-h2:mt-0 prose-figure:mt-0 text-center; 
+
+  h3 {
+    color: var(--color-verde);
+  }
+
+  img {
+    margin: 0 auto;
+  }
 }
 
 #artigos-e-blog {
   margin-bottom: 2rem;
+
+  .wp-block-heading {
+    @apply font-bold mb-8 mt-8 lg:mt-10;
+  }
 }
 
 .wp-singular {
