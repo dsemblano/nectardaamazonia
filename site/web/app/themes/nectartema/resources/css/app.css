@@ -136,10 +136,26 @@ p {
 
 /* Animação para 4 itens (3 palavras + 1 repetição) */
 @keyframes slide {
-  0%, 20% { transform: translateY(0); }
-  25%, 45% { transform: translateY(-1.2em); }
-  50%, 70% { transform: translateY(-2.4em); }
-  75%, 100% { transform: translateY(-3.6em); }
+
+  0%,
+  20% {
+    transform: translateY(0);
+  }
+
+  25%,
+  45% {
+    transform: translateY(-1.2em);
+  }
+
+  50%,
+  70% {
+    transform: translateY(-2.4em);
+  }
+
+  75%,
+  100% {
+    transform: translateY(-3.6em);
+  }
 }
 
 #hero {
@@ -154,7 +170,7 @@ p {
 }
 
 .servicos-info {
-  @apply prose lg:prose-lg prose-a:no-underline prose-h2:mt-0 prose-figure:mt-0 text-center; 
+  @apply prose lg:prose-lg prose-a:no-underline prose-h2:mt-0 prose-figure:mt-0 text-center;
 
   h3 {
     color: var(--color-verde);
@@ -346,13 +362,19 @@ li::marker {
 }
 
 .post-author {
-  padding: 0;
-    margin-top: 4rem;
-    margin-bottom: 2rem;
+  @apply rounded-lg;
 
-    .wp-block-heading {
-      @apply mt-8 md:mt-0;
-    }
+  padding: 0;
+  margin-top: 4rem;
+  margin-bottom: 2rem;
+  background-color: #F9F7F2;
+  /* border: 1px solid var(--color-mel); */
+  padding: 1rem 1rem 1rem 1rem;
+
+}
+
+.wp-block-heading {
+  @apply mt-8 md:mt-0;
 }
 
 /* Pages with Zolo block */
@@ -713,5 +735,5 @@ blockquote {
 
 /* Quando pede pra criar conta no checkout, plugin nao mostra opção de desabilitar */
 .cfw-check-input {
-    display: none !important;
+  display: none !important;
 }
