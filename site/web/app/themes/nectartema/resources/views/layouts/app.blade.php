@@ -60,7 +60,7 @@
 
         @include('sections.header')
 
-        <main id="main" class="main min-h-dvh">
+        <main id="main" class="main">
             @yield('content')
         </main>
 
