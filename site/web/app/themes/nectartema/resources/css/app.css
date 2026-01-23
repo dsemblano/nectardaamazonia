@@ -153,6 +153,10 @@ p {
 
 }
 
+.servicos-info {
+  @apply prose lg:prose-lg prose-a:no-underline prose-h2:mt-0 prose-figure:mt-0; 
+}
+
 #artigos-e-blog {
   margin-bottom: 2rem;
 }

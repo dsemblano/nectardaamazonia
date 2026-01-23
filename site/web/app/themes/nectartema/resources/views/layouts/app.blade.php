@@ -61,7 +61,7 @@
         @include('sections.header')
 
         <main id="main"
-            class="main min-h-dvh prose lg:prose-xl max-w-full mx-auto prose-a:no-underline prose-h3:text-xl prose-h2:mt-0 prose-picture:mt-0">
+            class="main min-h-dvh">
             @yield('content')
         </main>
 

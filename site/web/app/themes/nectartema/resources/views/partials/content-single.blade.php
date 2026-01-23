@@ -1,4 +1,4 @@
-<article class="container prose prose-xl max-w-full prose-h1:text-4xl" @php(post_class('h-entry'))>
+<article class="prose lg:prose-lg max-w-4xl mx-auto prose-a:no-underline prose-h3:text-xl prose-h2:mt-0 prose-picture:mt-0" @php(post_class('h-entry'))>
   <header>
     <h1 class="p-name text-secondary">
       {!! $title !!}
