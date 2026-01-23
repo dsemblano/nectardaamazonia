@@ -7,14 +7,13 @@
                 sem ferrão,
                 <span class="ticker-container block md:inline-block text-mel">
                     <span class="ticker-wrapper text-mel">
-                        <span class="item">direto do Amapá para o mundo</span>
-                        <span class="item">fortalecendo a bioeconomia</span>
-                        <span class="item">com propriedades medicinais</span>
-                        <span class="item">direto do Amapá para o mundo</span> </span>
+                        <span class="item">rico em antioxidantes</span>
+                        <span class="item">do Amapá para o mundo</span>
+                        <span class="item">fortalecendo a bioeconomia</span>                        
+                        <span class="item">rico em antioxidantes</span> </span>
                 </span>
             </p>
-            <a href="/loja" class="hero-cta w-fit">Compre
-                mel agora!</a>
+            <a href="/loja" class="hero-cta w-fit">Garantir meu Mel Puro</a>
         </div>
     </div>
 </section>

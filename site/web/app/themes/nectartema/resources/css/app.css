@@ -387,6 +387,15 @@ li::marker {
   color: var(--color-melescuro);
 }
 
+.wp-block-image,
+.wp-block-zolo-advanced-image,
+.page:not(.nossos-parceiros):not(.post-author) .wp-block-media-text__media,
+.single-post figure {
+  img {
+    @apply rounded-xl;
+  }
+}
+
 .post-author {
   @apply rounded-lg;
 
@@ -396,7 +405,12 @@ li::marker {
   background-color: #F9F7F2;
   /* border: 1px solid var(--color-mel); */
   padding: 1rem 1rem 1rem 1rem;
+}
 
+.post-author.author {
+  figure img {
+    @apply shadow-lg rounded-full;
+  }
 }
 
 .wp-block-heading {
@@ -592,15 +606,6 @@ figure .lazyloading {
 
 .related.products {
   display: none;
-}
-
-.wp-block-image,
-.wp-block-zolo-advanced-image,
-.page:not(.nossos-parceiros) .wp-block-media-text__media,
-.single-post figure {
-  img {
-    @apply rounded-xl;
-  }
 }
 
 .wp-block-woocommerce-product-image {
