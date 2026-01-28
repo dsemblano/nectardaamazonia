@@ -1,6 +1,6 @@
 <section id="hero" class="section-home text-white">
     <div class="container h-dvh">
-        <div class="text-left h-dvh md:w-dvh md:h-full leading-loose flex flex-col justify-center">
+        <div class="prose lg:prose-lg prose-a:no-underline text-left h-dvh md:w-dvh md:h-full leading-loose flex flex-col justify-center">
             <h1 class="text-white text-4xl md:text-6xl lg:text-7xl">Mel Sustentável da Amazônia</h1>
             <p class="text-white font-normal text-2xl md:text-3xl mb-10">
                 Néctar da Amazônia: O mais puro mel de abelhas

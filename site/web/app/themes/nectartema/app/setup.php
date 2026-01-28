@@ -390,7 +390,7 @@ $cart_h1 = function () {
     }
     $rendered = true;
 ?>
-    <header class="container prose prose-xl mx-auto max-w-full">
+    <header class="container prose lg:prose-lg mx-auto max-w-full">
         <h1>
             <?php echo esc_html__('Carrinho de compras', 'woocommerce'); ?>
         </h1>

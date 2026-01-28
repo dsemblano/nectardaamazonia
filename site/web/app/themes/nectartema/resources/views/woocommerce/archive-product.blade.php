@@ -23,7 +23,7 @@
     @endphp
 
     <section id="shop"
-        class="prose-img:mt-0 prose-img:mb-0 prose-li:p-0 prose-a:text-melescuro prose-a:hover:text-mel prose-a:hover:underline">
+        class="">
 
         @php
             do_action('woocommerce_archive_description');
@@ -31,7 +31,7 @@
 
 
         @if (woocommerce_product_loop())
-            <section id="shop_products" class="container">
+            <div id="shop_products" class="container">
                 @php
                     $products = wc_get_products([
                         'status' => 'publish',
@@ -45,7 +45,7 @@
                     @endforeach
                 </div>
 
-            </section>
+            </div>
         @endif
 
         @php
