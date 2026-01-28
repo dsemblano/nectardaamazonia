@@ -211,7 +211,7 @@ p {
   margin-bottom: 2rem;
 
   .wp-block-heading {
-    @apply font-bold mb-8 mt-8 lg:mt-10;
+    @apply font-bold mb-8 mt-8 lg:mt-10 text-4xl;
   }
 }
 
@@ -285,9 +285,9 @@ p {
   }
 }
 
-h2.wp-block-heading,
-.wp-block-group p {
-  @apply prose lg:prose-lg;   
+.page:not(.wp-singular) h2.wp-block-heading,
+.page:not(.wp-singular) .wp-block-group p {
+  @apply prose lg:prose-lg text-white;
 }
 
 /* mobile background */
