@@ -285,6 +285,11 @@ p {
   }
 }
 
+h2.wp-block-heading,
+.wp-block-group p {
+  @apply prose lg:prose-lg;   
+}
+
 /* mobile background */
 .h1-container {
   @apply prose lg:prose-lg mt-0 max-w-none prose-p:text-xl text-white;
@@ -767,4 +772,9 @@ blockquote {
 /* Quando pede pra criar conta no checkout, plugin nao mostra opção de desabilitar */
 .cfw-check-input {
   display: none !important;
+}
+
+.referencia-bibliografica {
+    font-size: 1rem;
+    line-height: normal;
 }
