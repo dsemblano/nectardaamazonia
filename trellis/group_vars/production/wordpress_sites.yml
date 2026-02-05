@@ -17,6 +17,7 @@ wordpress_sites:
       enabled: true
       provider: letsencrypt
       hsts_preload: true
+      hsts_include_subdomains: true
     cache:
       enabled: true
       duration: 30s
