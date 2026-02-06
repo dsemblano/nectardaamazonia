@@ -7245,15 +7245,15 @@
         },
         {
             "name": "wpackagist-plugin/checkoutwc-lite",
-            "version": "11.0.2",
+            "version": "11.0.4",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/checkoutwc-lite/",
-                "reference": "tags/11.0.2"
+                "reference": "tags/11.0.4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/checkoutwc-lite.11.0.2.zip"
+                "url": "https://downloads.wordpress.org/plugin/checkoutwc-lite.11.0.4.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
