@@ -62,10 +62,10 @@ if ( post_password_required() ) {
 		// do_action('mytheme_product_cta');
 		 woocommerce_template_single_add_to_cart();
 		?>
-		    <div>
+		    <!-- <div>
 				<h2 class="text-base lg:text-lg font-bold text-melescuro">Você pode calcular o frete aqui:</h2>
 				<div class="calculo-frete"></div>
-			</div>
+			</div> -->
 	</div>
 
 	<?php
