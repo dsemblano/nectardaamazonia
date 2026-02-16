@@ -2,6 +2,7 @@
 <html @php(language_attributes())>
 
 <head>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     @php(do_action('get_header'))
@@ -54,6 +55,16 @@
     @php(wp_body_open())
 
     <div id="app">
+            <script>
+  window.addEventListener('DOMContentLoaded', (event) => {
+    confetti({
+      particleCount: 150,
+      spread: 70,
+      origin: { y: 0.6 },
+      colors: ['#D4AF37', '#294023', '#E69037'] // Optional: Use your brand colors!
+    });
+  });
+</script>
         <a class="sr-only focus:not-sr-only" href="#main">
             {{ __('Skip to content', 'sage') }}
         </a>
