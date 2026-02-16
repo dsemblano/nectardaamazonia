@@ -1,5 +1,17 @@
 import Alpine from 'alpinejs'
 import focus from '@alpinejs/focus' // For better accessibility
+import confetti from 'canvas-confetti';
+
+const brandColors = ['#D4AF37', '#E69037', '#294023'];
+// Trigger the effect
+confetti({
+  particleCount: 100,
+  spread: 70,
+  colors: brandColors,
+  origin: { y: 0.6 }
+});
+
+
 // import partytownSnippet from '@qwik.dev/partytown/integration'
 
 // const snippetText = partytownSnippet()
