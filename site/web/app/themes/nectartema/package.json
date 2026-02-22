@@ -27,7 +27,6 @@
   },
   "dependencies": {
     "@qwik.dev/partytown": "^0.11.2",
-    "animate.css": "^4.1.1",
-    "canvas-confetti": "^1.9.4"
+    "animate.css": "^4.1.1"
   }
 }

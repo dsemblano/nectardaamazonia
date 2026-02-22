@@ -665,7 +665,7 @@ article header h1 {
 	-webkit-text-stroke-color: hsl(0 0% 10% / 30%); */
 }
 
-#shop_products {
+#shop_products, .wp-block-gallery.has-nested-images.is-cropped {
   a.block {
     aspect-ratio: 1 / 1;
     overflow: hidden;
