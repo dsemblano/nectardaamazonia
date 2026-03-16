@@ -243,7 +243,7 @@ add_action('woocommerce_single_product_summary', function () {
 
 
 add_action('wp_enqueue_scripts', function () {
-    if (!is_page(array('contato'))) {
+    if (!is_page(array('contato', 'biofabrica-orcamento'))) {
         wp_dequeue_script('contact-form-7');
         wp_dequeue_style('contact-form-7');
 
