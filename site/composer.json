@@ -56,7 +56,7 @@
     "wpackagist-plugin/basic-user-avatars":">=1.0.9",
     "wpackagist-plugin/gtm-kit":">=2.7.0",
     "wpackagist-plugin/foogallery":">=3.1.6",
-    "wpackagist-plugin/cart-for-woocommerce":">=1.9.1",
+    "wpackagist-plugin/fast-cart": "^1.2.1",
     "wpackagist-plugin/checkoutwc-lite":">=11.0.2",
     "wpackagist-plugin/wpc-composite-products": "^7.6.9",
     "log1x/navi": "^3.1",
