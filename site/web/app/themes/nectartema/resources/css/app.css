@@ -718,13 +718,18 @@ article header h1 {
 
 /* Contato form 7 */
 .wpcf7-form {
-  width: auto;
+  width: fit-content;
   display: flex;
   flex-direction: column;
   margin: 0 auto;
 
   textarea {
     @apply block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg shadow-sm border border-gray-300;
+  }
+
+  .flexcf7 {
+    @apply flex flex-col lg:flex-row gap-x-4;
+  
   }
 
   input {
