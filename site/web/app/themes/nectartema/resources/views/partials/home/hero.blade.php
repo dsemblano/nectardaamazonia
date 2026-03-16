@@ -15,7 +15,7 @@
             </p>
             <div class="flex flex-col md:flex-row gap-4">
                 <a href="/loja" class="hero-cta w-fit">Garantir meu Mel Puro</a>
-                <a href="/biofabrica-orcamento" class="hero-colmeia w-fit">Biofábricas orçamento</a>
+                <a href="/orcamento-instalacao-de-meliponarios" class="hero-colmeia w-fit">Orçamento meliponários</a>
             </div>
         </div>
     </div>
