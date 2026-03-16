@@ -58,6 +58,7 @@
     "wpackagist-plugin/foogallery":">=3.1.6",
     "wpackagist-plugin/cart-for-woocommerce":">=1.9.1",
     "wpackagist-plugin/checkoutwc-lite":">=11.0.2",
+    "wpackagist-plugin/wpc-composite-products": "^7.6.9",
     "log1x/navi": "^3.1",
     "roots/acorn-mail": "^1.0"
   },

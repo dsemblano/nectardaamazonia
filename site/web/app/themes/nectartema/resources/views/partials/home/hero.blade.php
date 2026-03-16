@@ -13,7 +13,10 @@
                         <span class="item">rico em antioxidantes</span> </span>
                 </span>
             </p>
-            <a href="/loja" class="hero-cta w-fit">Garantir meu Mel Puro</a>
+            <div class="flex flex-col md:flex-row gap-4">
+                <a href="/loja" class="hero-cta w-fit">Garantir meu Mel Puro</a>
+                <a href="/produtos/biofabricas-de-abelhas" class="hero-colmeia w-fit">Biofábricas de Abelhas</a>
+            </div>
         </div>
     </div>
 </section>
