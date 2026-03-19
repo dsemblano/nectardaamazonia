@@ -835,3 +835,46 @@ blockquote {
         transform: scale(1.15) translate(-2%, -1%);
     }
 }
+
+/* 1. Base Styles for both CTA buttons */
+.hero-cta {
+    position: relative !important;
+    overflow: hidden !important;
+    z-index: 1 !important;
+    background-color: transparent !important;
+    /* Using your Gold color for the border and text */
+    border: 2px solid #D4AF37 !important; 
+    color: #D4AF37 !important;
+    padding: 1rem 2rem;
+    display: inline-block;
+    transition: color 0.5s ease !important;
+    text-decoration: none;
+}
+
+/* 2. The Honey Liquid Layer */
+.hero-cta::before {
+    content: "";
+    position: absolute;
+    top: 110%; /* Start below the button */
+    left: -50%;
+    width: 200%;
+    height: 450%; 
+    background-color: #D4AF37; /* Nectar Gold */
+    border-radius: 45%; /* Creates the viscous honey wave */
+    z-index: -1;
+    /* Slightly slower transition than the wine to feel "thicker" */
+    /* transition: top 0.9s ease-in-out, transform 1.5s linear; */
+    transition: top 1.4s cubic-bezier(0.45, 0.05, 0.55, 0.95), 
+        transform 2.5s linear;
+}
+
+/* 3. The Pour Animation on Hover */
+.hero-cta:hover::before {
+    top: -160%; 
+    transform: rotate(180deg);
+}
+
+/* 4. Text contrast flip on hover */
+.hero-cta:hover {
+    color: #1F1A13 !important; /* Your --color-fundo for contrast */
+}
