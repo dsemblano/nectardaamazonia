@@ -210,7 +210,7 @@ p {
     background-position: center;
     z-index: -1;
     /* Apply the Ken Burns effect here */
-    animation: kenburns-effect 25s ease-out infinite alternate;
+    animation: kenburns-effect 10s ease-out infinite alternate;
 }
 
 @keyframes kenburns-effect {
@@ -835,4 +835,3 @@ blockquote {
         transform: scale(1.15) translate(-2%, -1%);
     }
 }
-
