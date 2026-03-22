@@ -545,7 +545,7 @@ body.sage {
 }
 
 .hero-colmeia {
-  @apply px-4 py-4 rounded-lg text-lg font-bold transition text-mel bg-transparent border-solid border-mel border-2 hover:brightness-[80%] hover:scale-105 hover:shadow-lg active:scale-95;
+  @apply px-2 py-2 rounded-lg text-lg font-bold transition text-mel bg-transparent border-solid border-mel border-2 hover:brightness-[80%] hover:scale-105 hover:shadow-lg active:scale-95;
 }
 
 .product-button {
@@ -562,6 +562,49 @@ a.button.wc-backward,
 .section-home .button,
 .button-quemsomos {
   @apply px-2 py-2 rounded-lg text-base font-semibold transition text-offwhite bg-melescuro hover:brightness-[130%] hover:scale-105 hover:shadow-lg active:scale-95;
+}
+
+/* 1. Base Styles for both CTA buttons */
+.hero-cta {
+    position: relative !important;
+    overflow: hidden !important;
+    z-index: 1 !important;
+    background-color: transparent !important;
+    /* Using your Gold color for the border and text */
+    border: 2px solid #D4AF37 !important; 
+    color: #D4AF37 !important;
+    padding: 0.5rem 1rem;
+    display: inline-block;
+    transition: color 0.5s ease !important;
+    text-decoration: none;
+}
+
+/* 2. The Honey Liquid Layer */
+.hero-cta::before {
+    content: "";
+    position: absolute;
+    top: 110%; /* Start below the button */
+    left: -50%;
+    width: 200%;
+    height: 450%; 
+    background-color: #D4AF37; /* Nectar Gold */
+    border-radius: 45%; /* Creates the viscous honey wave */
+    z-index: -1;
+    /* Slightly slower transition than the wine to feel "thicker" */
+    /* transition: top 0.9s ease-in-out, transform 1.5s linear; */
+    transition: top 1.4s cubic-bezier(0.45, 0.05, 0.55, 0.95), 
+        transform 2.5s linear;
+}
+
+/* 3. The Pour Animation on Hover */
+.hero-cta:hover::before {
+    top: -160%; 
+    transform: rotate(180deg);
+}
+
+/* 4. Text contrast flip on hover */
+.hero-cta:hover {
+    color: #1F1A13 !important; /* Your --color-fundo for contrast */
 }
 
 
@@ -834,47 +877,4 @@ blockquote {
         /* Subtle zoom to 115% and a slight pan */
         transform: scale(1.15) translate(-2%, -1%);
     }
-}
-
-/* 1. Base Styles for both CTA buttons */
-.hero-cta {
-    position: relative !important;
-    overflow: hidden !important;
-    z-index: 1 !important;
-    background-color: transparent !important;
-    /* Using your Gold color for the border and text */
-    border: 2px solid #D4AF37 !important; 
-    color: #D4AF37 !important;
-    padding: 1rem 2rem;
-    display: inline-block;
-    transition: color 0.5s ease !important;
-    text-decoration: none;
-}
-
-/* 2. The Honey Liquid Layer */
-.hero-cta::before {
-    content: "";
-    position: absolute;
-    top: 110%; /* Start below the button */
-    left: -50%;
-    width: 200%;
-    height: 450%; 
-    background-color: #D4AF37; /* Nectar Gold */
-    border-radius: 45%; /* Creates the viscous honey wave */
-    z-index: -1;
-    /* Slightly slower transition than the wine to feel "thicker" */
-    /* transition: top 0.9s ease-in-out, transform 1.5s linear; */
-    transition: top 1.4s cubic-bezier(0.45, 0.05, 0.55, 0.95), 
-        transform 2.5s linear;
-}
-
-/* 3. The Pour Animation on Hover */
-.hero-cta:hover::before {
-    top: -160%; 
-    transform: rotate(180deg);
-}
-
-/* 4. Text contrast flip on hover */
-.hero-cta:hover {
-    color: #1F1A13 !important; /* Your --color-fundo for contrast */
 }
