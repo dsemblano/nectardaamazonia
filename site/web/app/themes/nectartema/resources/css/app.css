@@ -588,6 +588,12 @@ a.button.wc-backward,
     width: 200%;
     height: 450%; 
     background-color: #D4AF37; /* Nectar Gold */
+    background: linear-gradient(
+    135deg, 
+    #D4AF37 0%, 
+    #FBDC8E 50%, 
+    #D4AF37 100%
+    );
     border-radius: 45%; /* Creates the viscous honey wave */
     z-index: -1;
     /* Slightly slower transition than the wine to feel "thicker" */
