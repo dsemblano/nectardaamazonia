@@ -123,6 +123,10 @@ p {
   word-break: break-word;
 }
 
+.benefit-bar svg path {
+  fill: var(--color-melescuro);
+}
+
 .titulo-principal {
   /* font-size: 2.5rem; */
   line-height: var(--h1-height);
