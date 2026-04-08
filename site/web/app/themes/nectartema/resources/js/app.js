@@ -99,6 +99,63 @@ document.addEventListener("DOMContentLoaded", function() {
     };
 });
 
+/**
+ * Transforma selects de variação em Swatches Premium
+ */
+const setupSwatches = () => {
+  const variationSelects = document.querySelectorAll('.variations select');
+
+  variationSelects.forEach(select => {
+    // Evita duplicar se o script rodar duas vezes
+    if (select.classList.contains('swatches-initialized')) return;
+    select.classList.add('swatches-initialized', 'hidden');
+
+    const container = document.createElement('div');
+    container.className = 'flex flex-wrap gap-3 my-4';
+
+    Array.from(select.options).forEach(option => {
+      if (!option.value) return; // Pula o "Escolha uma opção"
+
+      const button = document.createElement('button');
+      button.type = 'button';
+      button.className = `
+        relative px-5 py-2.5 rounded-full border-2 text-sm font-semibold transition-all duration-200
+        hover:border-primary hover:text-primary active:scale-95
+        ${option.selected 
+          ? 'border-primary bg-primary/5 text-primary shadow-sm' 
+          : 'border-gray-200 bg-white text-gray-600'}
+      `;
+      
+      button.innerHTML = `<span>${option.text}</span>`;
+
+      button.onclick = (e) => {
+        e.preventDefault();
+        select.value = option.value;
+        
+        // Dispara o evento que o WooCommerce precisa para atualizar o preço
+        select.dispatchEvent(new Event('change', { bubbles: true }));
+
+        // Atualiza o visual dos botões
+        container.querySelectorAll('button').forEach(btn => {
+          btn.classList.remove('border-primary', 'bg-primary/5', 'text-primary', 'shadow-sm');
+          btn.classList.add('border-gray-200', 'bg-white', 'text-gray-600');
+        });
+        
+        button.classList.add('border-primary', 'bg-primary/5', 'text-primary', 'shadow-sm');
+        button.classList.remove('border-gray-200', 'bg-white', 'text-gray-600');
+      };
+
+      container.appendChild(button);
+    });
+
+    select.parentNode.insertBefore(container, select);
+  });
+};
+
+// Inicia no carregamento e também se o WooCommerce atualizar as variações via AJAX
+document.addEventListener('DOMContentLoaded', setupSwatches);
+jQuery(document.body).on('check_variations', setupSwatches);
+
 
 
 import.meta.glob([

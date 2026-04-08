@@ -68,6 +68,41 @@
   @apply bg-blue-500;
 } */
 
+@layer components {
+  /* Estilo base para os swatches via JS acima */
+  .border-primary {
+    /* Usando a cor primária definida no seu tema Sage */
+    border-color: var(--color-primary);
+  }
+
+  /* Efeito de escala suave ao clicar */
+  button:active {
+    transform: scale(0.98);
+  }
+
+  /* Se quiser um indicador visual de "item selecionado" mais forte */
+  button.border-primary::after {
+    content: '';
+    @apply absolute -top-1 -right-1 w-4 h-4 bg-primary rounded-full border-2 border-white;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='white'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='3' d='M5 13l4 4L19 7'%3E%3C/path%3E%3C/svg%3E");
+    background-size: 10px;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+}
+
+.variations tr {
+  @apply flex flex-col mb-6 border-none;
+}
+
+.variations td.label {
+  @apply pb-2;
+}
+
+.variations td.value {
+  @apply p-0;
+}
+
 
 @layer utility {
   .container {

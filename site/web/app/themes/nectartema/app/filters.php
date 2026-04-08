@@ -146,3 +146,10 @@ add_filter('style_loader_tag', function ($html, $handle, $href, $media) {
 HTML;
 
 }, 10, 4);
+
+
+add_filter('woocommerce_dropdown_variation_attribute_options_args', function ($args) {
+    // Adiciona uma classe customizada para facilitar o alvo no Tailwind
+    $args['class'] = 'custom-variation-select border-gray-200 rounded-lg focus:ring-primary';
+    return $args;
+});
