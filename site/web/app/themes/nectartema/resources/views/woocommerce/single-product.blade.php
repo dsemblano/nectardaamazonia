@@ -23,7 +23,7 @@ the readme will list any important changes.
     @endphp
 
     @while (have_posts())
-        <section id="shop_single_products" class="container">
+        <section id="shop_single_products" class="container mt-10">
             @php
                 the_post();
                 wc_get_template_part('content', 'single-product');
@@ -40,3 +40,4 @@ the readme will list any important changes.
             {!! woocommerce_output_related_products() !!}
         </div>
 @endsection
+        

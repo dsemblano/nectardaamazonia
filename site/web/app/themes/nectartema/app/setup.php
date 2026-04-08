@@ -420,3 +420,11 @@ add_action('woocommerce_cart_is_empty', $cart_h1, 5);
 //     wp_deregister_script('jquery-core');
 //     wp_deregister_script('jquery-migrate');
 // }, 100);
+
+/**
+ * Posiciona o formulário de variações exatamente antes das especificações
+ */
+remove_action('woocommerce_single_product_summary', 'woocommerce_template_single_add_to_cart', 30);
+
+// A prioridade 60 costuma ser logo após a descrição curta e antes de blocos extras
+add_action('woocommerce_single_product_summary', 'woocommerce_template_single_add_to_cart', 60);

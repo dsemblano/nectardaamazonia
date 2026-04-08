@@ -99,7 +99,7 @@
   .swatch-btn.is-active {
     @apply border-primary bg-primary text-white shadow-md scale-105;
     /* Se o seu primário for escuro, o texto branco dá o contraste perfeito */
-  }
+  } 
 }
 
 .variations tr {
