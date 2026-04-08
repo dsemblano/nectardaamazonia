@@ -103,6 +103,14 @@
   @apply p-0;
 }
 
+/* Esconde o select original quando os swatches estão ativos */
+.variations select.swatches-initialized {
+  display: none !important;
+}
+
+/* Oculta a linha da tabela que contém o título se você já estiver repetindo ele no swatch */
+/* .variations label { display: none; } */
+
 
 @layer utility {
   .container {
