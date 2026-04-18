@@ -12,18 +12,18 @@ namespace App;
  * @return string
  */
 add_filter('excerpt_more', function () {
-    return sprintf(' &hellip; <a href="%s">%s</a>', get_permalink(), __('Ver mais', 'sage'));
+  return sprintf(' &hellip; <a href="%s">%s</a>', get_permalink(), __('Ver mais', 'sage'));
 });
 
 // New navigation menu
 add_filter('sage/blade/data', function ($data) {
-    $data['primary_navigation'] = \Log1x\Navi\Facades\Navi::build('primary_navigation')->toArray();
-    return $data;
-  });
+  $data['primary_navigation'] = \Log1x\Navi\Facades\Navi::build('primary_navigation')->toArray();
+  return $data;
+});
 
 /**
-* Woocommerce filters
-**/
+ * Woocommerce filters
+ **/
 
 // shop page
 add_filter('woocommerce_product_add_to_cart_text', function ($text) {
@@ -58,20 +58,20 @@ return 'Calcule o frete';
 });
 
 add_filter('gettext', function ($translated_text, $text, $domain) {
-    // Só modifica se estiver na página do carrinho
-    if (is_cart() && $translated_text === 'Atualizar' && $domain === 'woocommerce') {
-        return 'Calcular Frete';
-    }
+  // Só modifica se estiver na página do carrinho
+  if (is_cart() && $translated_text === 'Atualizar' && $domain === 'woocommerce') {
+    return 'Calcular Frete';
+  }
 
-    return $translated_text;
+  return $translated_text;
 }, 20, 3);
 
-add_filter('woocommerce_my_account_my_orders_actions', function($actions, $order) {
-    // Remove todas as ações da lista de pedidos
-    if (is_wc_endpoint_url('order-received')) {
-        return [];
-    }
-    return $actions;
+add_filter('woocommerce_my_account_my_orders_actions', function ($actions, $order) {
+  // Remove todas as ações da lista de pedidos
+  if (is_wc_endpoint_url('order-received')) {
+    return [];
+  }
+  return $actions;
 }, 10, 2);
 
 // Mostrar preço tachado + texto "Fora de estoque" no loop da loja
@@ -100,7 +100,7 @@ add_filter('woocommerce_my_account_my_orders_actions', function($actions, $order
 //     unset( $fields['billing']['billing_city'] );
 //     unset( $fields['billing']['billing_postcode'] );
 //     unset( $fields['billing']['billing_country'] );
-  
+
 //     // Shipping fields
 //     unset( $fields['shipping']['shipping_state'] );
 //     unset( $fields['shipping']['shipping_address_1'] );
@@ -108,23 +108,23 @@ add_filter('woocommerce_my_account_my_orders_actions', function($actions, $order
 //     unset( $fields['shipping']['shipping_city'] );
 //     unset( $fields['shipping']['shipping_postcode'] );
 //     unset( $fields['shipping']['shipping_country'] );
-  
+
 //     return $fields;
 //   });
 
 // Remove country/state/city from cart shipping calculator
-add_filter( 'woocommerce_shipping_calculator_enable_country', '__return_false' );
-add_filter( 'woocommerce_shipping_calculator_enable_state', '__return_false' );
-add_filter( 'woocommerce_shipping_calculator_enable_city', '__return_false' );
+add_filter('woocommerce_shipping_calculator_enable_country', '__return_false');
+add_filter('woocommerce_shipping_calculator_enable_state', '__return_false');
+add_filter('woocommerce_shipping_calculator_enable_city', '__return_false');
 
 // remove jquery migrate
 
-add_filter( 'wp_default_scripts', function( $scripts ){
-    if(!is_admin()){
-        $scripts->remove( 'jquery');
-        $scripts->add( 'jquery', false, array( 'jquery-core' ), '1.2.1' );
-    }
-} );
+add_filter('wp_default_scripts', function ($scripts) {
+  if (!is_admin()) {
+    $scripts->remove('jquery');
+    $scripts->add('jquery', false, array('jquery-core'), '1.2.1');
+  }
+});
 
 
 /**
@@ -144,12 +144,11 @@ add_filter('style_loader_tag', function ($html, $handle, $href, $media) {
   <link rel="stylesheet" href="{$href}">
 </noscript>
 HTML;
-
 }, 10, 4);
 
 
 add_filter('woocommerce_dropdown_variation_attribute_options_args', function ($args) {
-    // Adiciona uma classe customizada para facilitar o alvo no Tailwind
-    $args['class'] = 'custom-variation-select border-gray-200 rounded-lg focus:ring-primary';
-    return $args;
+  // Adiciona uma classe customizada para facilitar o alvo no Tailwind
+  $args['class'] = 'custom-variation-select border-gray-200 rounded-lg focus:ring-primary';
+  return $args;
 });

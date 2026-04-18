@@ -951,3 +951,7 @@ blockquote {
     transform: scale(1.15) translate(-2%, -1%);
   }
 }
+
+.woocommerce-account-fields {
+    display: none;
+}

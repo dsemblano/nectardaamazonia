@@ -17,19 +17,23 @@
     }
   ],
   "keywords": [
-    "bedrock", "composer", "roots", "wordpress", "wp", "wp-config"
+    "bedrock",
+    "composer",
+    "roots",
+    "wordpress",
+    "wp",
+    "wp-config"
   ],
   "support": {
     "issues": "https://github.com/roots/bedrock/issues",
     "forum": "https://discourse.roots.io/category/bedrock"
   },
-  "repositories": [
-    {
+  "repositories": {
+    "wp-packages": {
       "type": "composer",
-      "url": "https://wpackagist.org",
-      "only": ["wpackagist-plugin/*", "wpackagist-theme/*"]
+      "url": "https://repo.wp-packages.org"
     }
-  ],
+  },
   "require": {
     "php": ">=8.1",
     "composer/installers": "^2.2",
@@ -39,26 +43,26 @@
     "roots/bedrock-disallow-indexing": "^2.0",
     "roots/wordpress": ">=6.9",
     "roots/wp-config": "1.0.0",
-    "wpackagist-theme/twentytwentyfive": "^1.0",
-    "wpackagist-plugin/woocommerce":">=10.0",
+    "wp-theme/twentytwentyfive": "^1.0",
+    "wp-plugin/woocommerce": "^10.6",
     "generoi/sage-woocommerce": "^1.1",
     "roots/acorn-prettify": "^1.0",
-    "wpackagist-plugin/zoloblocks":">=2.2.7",
-    "wpackagist-plugin/ewww-image-optimizer":">=8.1.4",
-    "wpackagist-plugin/regenerate-thumbnails": ">=3.1.5",
-    "wpackagist-plugin/autodescription":">=5.1.2",
-    "wpackagist-plugin/woocommerce-correios":">=4.2.5",
-    "wpackagist-plugin/contact-form-7":">=6.0.6",
-    "wpackagist-plugin/woocommerce-mercadopago":">=8.1.0",
-    "wpackagist-plugin/woocommerce-pdf-invoices-packing-slips":">=4.5.2",
-    "wpackagist-plugin/redirection":">=5.5.2",
-    "wpackagist-plugin/wp-mail-smtp":">=4.4.0",
-    "wpackagist-plugin/basic-user-avatars":">=1.0.9",
-    "wpackagist-plugin/gtm-kit":">=2.7.0",
-    "wpackagist-plugin/foogallery":">=3.1.6",
-    "wpackagist-plugin/fast-cart": "^1.2.1",
-    "wpackagist-plugin/checkoutwc-lite":">=11.0.2",
-    "wpackagist-plugin/sales-analytics-for-woocommerce": "^2.5.3",
+    "wp-plugin/zoloblocks": ">=2.2.7",
+    "wp-plugin/ewww-image-optimizer": ">=8.1.4",
+    "wp-plugin/regenerate-thumbnails": ">=3.1.5",
+    "wp-plugin/autodescription": ">=5.1.2",
+    "wp-plugin/woocommerce-correios": ">=4.2.5",
+    "wp-plugin/contact-form-7": ">=6.0.6",
+    "wp-plugin/woocommerce-mercadopago": ">=8.1.0",
+    "wp-plugin/woocommerce-pdf-invoices-packing-slips": ">=4.5.2",
+    "wp-plugin/redirection": ">=5.5.2",
+    "wp-plugin/wp-mail-smtp": ">=4.4.0",
+    "wp-plugin/basic-user-avatars": ">=1.0.9",
+    "wp-plugin/gtm-kit": ">=2.7.0",
+    "wp-plugin/foogallery": ">=3.1.6",
+    "wp-plugin/fast-cart": "^1.2.1",
+    "wp-plugin/woocommerce-extra-checkout-fields-for-brazil": "^4.0",
+    "wp-plugin/sales-analytics-for-woocommerce": "^2.5.3",
     "log1x/navi": "^3.1",
     "roots/acorn-mail": "^1.0"
   },
@@ -78,9 +82,15 @@
   "prefer-stable": true,
   "extra": {
     "installer-paths": {
-      "web/app/mu-plugins/{$name}/": ["type:wordpress-muplugin"],
-      "web/app/plugins/{$name}/": ["type:wordpress-plugin"],
-      "web/app/themes/{$name}/": ["type:wordpress-theme"]
+      "web/app/mu-plugins/{$name}/": [
+        "type:wordpress-muplugin"
+      ],
+      "web/app/plugins/{$name}/": [
+        "type:wordpress-plugin"
+      ],
+      "web/app/themes/{$name}/": [
+        "type:wordpress-theme"
+      ]
     },
     "wordpress-install-dir": "web/wp"
   },
