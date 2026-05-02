@@ -48,13 +48,13 @@ add_filter('woocommerce_product_related_products_heading', function ($text) {
 remove_action('woocommerce_proceed_to_checkout', 'woocommerce_button_proceed_to_checkout', 20);
 
 add_action('woocommerce_proceed_to_checkout', function () {
-    echo '<a href="' . esc_url(wc_get_checkout_url()) . '" class="checkout-button button alt wc-forward bg-primary text-white px-4 py-2 rounded hover:bg-primary-dark">' . __('Finalizar Compra', 'sage') . '</a>';
+  echo '<a href="' . esc_url(wc_get_checkout_url()) . '" class="checkout-button button alt wc-forward bg-primary text-white px-4 py-2 rounded hover:bg-primary-dark">' . __('Finalizar Compra', 'sage') . '</a>';
 }, 20);
 
 add_filter('woocommerce_ship_to_different_address_checked', '__return_false');
 
-add_filter('wc_better_shipping_calculator_for_brazil_postcode_label',function () {
-return 'Calcule o frete';
+add_filter('wc_better_shipping_calculator_for_brazil_postcode_label', function () {
+  return 'Calcule o frete';
 });
 
 add_filter('gettext', function ($translated_text, $text, $domain) {
@@ -152,3 +152,28 @@ add_filter('woocommerce_dropdown_variation_attribute_options_args', function ($a
   $args['class'] = 'custom-variation-select border-gray-200 rounded-lg focus:ring-primary';
   return $args;
 });
+
+// para o plugin pdf
+add_filter('wf_pklist_alter_billing_address', function($billing_address, $template_type, $order) {
+    
+    // Callback anônimo para validação de integridade do documento
+    $validate_doc = function($value, $type) {
+        $clean_value = preg_replace('/[^0-9]/', '', $value);
+        return ($type === 'cpf') ? (strlen($clean_value) === 11) : (strlen($clean_value) === 14);
+    };
+
+    $cpf  = $order->get_meta('_billing_cpf');
+    $cnpj = $order->get_meta('_billing_cnpj');
+
+    // Injeção validada do CPF
+    if (!empty($cpf) && $validate_doc($cpf, 'cpf')) {
+        $billing_address['nectar_cpf'] = '<br><strong>CPF:</strong> ' . esc_html($cpf);
+    }
+
+    // Injeção validada do CNPJ
+    if (!empty($cnpj) && $validate_doc($cnpj, 'cnpj')) {
+        $billing_address['nectar_cnpj'] = '<br><strong>CNPJ:</strong> ' . esc_html($cnpj);
+    }
+
+    return $billing_address;
+}, 10, 3);
