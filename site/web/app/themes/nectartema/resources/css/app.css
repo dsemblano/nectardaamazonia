@@ -955,3 +955,7 @@ blockquote {
 .woocommerce-account-fields {
     display: none;
 }
+
+figure.w-full img {
+  width: 100%;
+}
