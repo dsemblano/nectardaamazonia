@@ -11,9 +11,9 @@
   @endif
     @include('partials/home.hero')
     {{-- @include('partials/home.benefit-bar') --}}
-    @include('partials/home.quemsomos')
     @include('partials/home.servicos')
     @include('partials.content-page')
+        @include('partials/home.quemsomos')
     {{-- @include('partials.contentservicos') --}}
   @endwhile
 @endsection
