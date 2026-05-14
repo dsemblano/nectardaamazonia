@@ -959,3 +959,7 @@ blockquote {
 figure.w-full img {
   width: 100%;
 }
+
+.wp-block-video video {
+  height: 100vh;
+}
