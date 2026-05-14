@@ -961,5 +961,5 @@ figure.w-full img {
 }
 
 .wp-block-video video {
-  height: 100vh;
+  @apply w-1/2 mx-auto rounded-lg shadow-lg;  
 }
