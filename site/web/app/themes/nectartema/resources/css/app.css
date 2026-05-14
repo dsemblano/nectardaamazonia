@@ -960,6 +960,27 @@ figure.w-full img {
   width: 100%;
 }
 
-.wp-block-video video {
+/* .wp-block-video {
   @apply w-1/2 mx-auto rounded-lg shadow-lg;  
+} */
+
+.wp-block-video {
+  /* Apply the width and centering to the block wrapper */
+  @apply w-full mx-auto my-8;
+
+  @variant lg {
+    @apply w-1/2; /* Only shrink on desktop */
+  }
+}
+
+.wp-block-video video {
+  /* Apply the styling to the video itself */
+  @apply w-full h-auto rounded-lg shadow-lg;
+  
+  /* This ensures that when the video tag itself goes into fullscreen, 
+     it ignores the container's width constraints */
+  &:fullscreen {
+    @apply w-full h-full rounded-none shadow-none;
+    object-fit: contain;
+  }
 }
