@@ -19,7 +19,10 @@ class App extends Composer
     public function with()
     {
         return [
-            'primary_navigation' => Navi::make()->build('primary_navigation')->toArray(),
+            'primary_navigation' => Navi::make()
+                ->withDefaultClasses()
+                ->build('primary_navigation')
+                ->all(),
         ];
     }
 

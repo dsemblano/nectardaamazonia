@@ -124,7 +124,7 @@
 
 
 @layer utility {
-  .container {
+  .container, .woocommerce {
     padding: var(--container-padding, 1rem);
     margin-inline: auto;
 
@@ -983,4 +983,13 @@ figure.w-full img {
     @apply w-full h-full rounded-none shadow-none;
     object-fit: contain;
   }
+}
+
+
+#footer #menu-menu-principal {
+  @apply flex flex-col gap-x-8;
+}
+
+.woocommerce-info {
+  @apply text-2xl;
 }
