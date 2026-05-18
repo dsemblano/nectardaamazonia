@@ -2954,16 +2954,16 @@
         },
         {
             "name": "league/flysystem",
-            "version": "3.33.0",
+            "version": "3.34.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/thephpleague/flysystem.git",
-                "reference": "570b8871e0ce693764434b29154c54b434905350"
+                "reference": "2daaac3b0d4c83ea7ed5d8586e786f5d00f3540e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thephpleague/flysystem/zipball/570b8871e0ce693764434b29154c54b434905350",
-                "reference": "570b8871e0ce693764434b29154c54b434905350",
+                "url": "https://api.github.com/repos/thephpleague/flysystem/zipball/2daaac3b0d4c83ea7ed5d8586e786f5d00f3540e",
+                "reference": "2daaac3b0d4c83ea7ed5d8586e786f5d00f3540e",
                 "shasum": ""
             },
             "require": {
@@ -3031,9 +3031,9 @@
             ],
             "support": {
                 "issues": "https://github.com/thephpleague/flysystem/issues",
-                "source": "https://github.com/thephpleague/flysystem/tree/3.33.0"
+                "source": "https://github.com/thephpleague/flysystem/tree/3.34.0"
             },
-            "time": "2026-03-25T07:59:30+00:00"
+            "time": "2026-05-14T10:28:08+00:00"
         },
         {
             "name": "league/flysystem-local",
@@ -7387,15 +7387,15 @@
         },
         {
             "name": "wp-plugin/contact-form-7",
-            "version": "6.1.5",
+            "version": "6.1.6",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/contact-form-7/",
-                "reference": "tags/6.1.5"
+                "reference": "tags/6.1.6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/contact-form-7.6.1.5.zip"
+                "url": "https://downloads.wordpress.org/plugin/contact-form-7.6.1.6.zip"
             },
             "require": {
                 "composer/installers": "~1.0|~2.0"
@@ -7414,19 +7414,19 @@
                 "issues": "https://wordpress.org/support/plugin/contact-form-7",
                 "source": "https://plugins.svn.wordpress.org/contact-form-7"
             },
-            "time": "2026-03-23T19:23:21+00:00"
+            "time": "2026-05-15T03:01:03+00:00"
         },
         {
             "name": "wp-plugin/ewww-image-optimizer",
-            "version": "8.5.0",
+            "version": "8.6.0",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/ewww-image-optimizer/",
-                "reference": "tags/8.5.0"
+                "reference": "tags/8.6.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/ewww-image-optimizer.8.5.0.zip"
+                "url": "https://downloads.wordpress.org/plugin/ewww-image-optimizer.8.6.0.zip"
             },
             "require": {
                 "composer/installers": "~1.0|~2.0"
@@ -7445,7 +7445,7 @@
                 "issues": "https://wordpress.org/support/plugin/ewww-image-optimizer",
                 "source": "https://plugins.svn.wordpress.org/ewww-image-optimizer"
             },
-            "time": "2026-04-01T17:06:27+00:00"
+            "time": "2026-05-14T16:05:50+00:00"
         },
         {
             "name": "wp-plugin/fast-cart",
@@ -7507,7 +7507,7 @@
                 "issues": "https://wordpress.org/support/plugin/foogallery",
                 "source": "https://plugins.svn.wordpress.org/foogallery"
             },
-            "time": "2026-04-10T14:25:37+00:00"
+            "time": "2026-05-15T16:41:10+00:00"
         },
         {
             "name": "wp-plugin/gtm-kit",
@@ -7983,12 +7983,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Roave/SecurityAdvisories.git",
-                "reference": "bc5eb5643ac86830769128f1118ec66194008625"
+                "reference": "80f4d3dbb1fc1ef5bb1eee68dbfb44060e1fb4e8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Roave/SecurityAdvisories/zipball/bc5eb5643ac86830769128f1118ec66194008625",
-                "reference": "bc5eb5643ac86830769128f1118ec66194008625",
+                "url": "https://api.github.com/repos/Roave/SecurityAdvisories/zipball/80f4d3dbb1fc1ef5bb1eee68dbfb44060e1fb4e8",
+                "reference": "80f4d3dbb1fc1ef5bb1eee68dbfb44060e1fb4e8",
                 "shasum": ""
             },
             "conflict": {
@@ -8109,7 +8109,7 @@
                 "clickstorm/cs-seo": ">=6,<6.8|>=7,<7.5|>=8,<8.4|>=9,<9.3",
                 "co-stack/fal_sftp": "<0.2.6",
                 "cockpit-hq/cockpit": "<2.14",
-                "code16/sharp": "<9.20",
+                "code16/sharp": "<9.22",
                 "codeception/codeception": "<3.1.3|>=4,<4.1.22",
                 "codeigniter/framework": "<3.1.10",
                 "codeigniter4/framework": "<4.6.2",
@@ -8129,7 +8129,7 @@
                 "contao/core-bundle": "<4.13.57|>=5,<5.3.42|>=5.4,<5.6.5",
                 "contao/listing-bundle": ">=3,<=3.5.30|>=4,<4.4.8",
                 "contao/managed-edition": "<=1.5",
-                "coreshop/core-shop": "<4.1.9",
+                "coreshop/core-shop": "<4.1.9|==5",
                 "corveda/phpsandbox": "<1.3.5",
                 "cosenary/instagram": "<=2.3",
                 "couleurcitron/tarteaucitron-wp": "<0.3",
@@ -8733,6 +8733,7 @@
                 "simplesamlphp/saml2": "<=4.16.15|>=5.0.0.0-alpha1,<=5.0.0.0-alpha19",
                 "simplesamlphp/saml2-legacy": "<=4.16.15",
                 "simplesamlphp/simplesamlphp": "<1.18.6",
+                "simplesamlphp/simplesamlphp-module-casserver": "<=7.0.2",
                 "simplesamlphp/simplesamlphp-module-infocard": "<1.0.1",
                 "simplesamlphp/simplesamlphp-module-openid": "<1",
                 "simplesamlphp/simplesamlphp-module-openidprovider": "<0.9",
@@ -9041,7 +9042,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2026-05-13T16:50:04+00:00"
+            "time": "2026-05-15T18:36:41+00:00"
         }
     ],
     "aliases": [],
