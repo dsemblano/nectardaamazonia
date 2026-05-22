@@ -156,6 +156,18 @@ const setupSwatches = () => {
 document.addEventListener('DOMContentLoaded', setupSwatches);
 jQuery(document.body).on('check_variations', setupSwatches);
 
+// Translate "Shopping Cart" string from the cart plugin to "Carrinho"
+  document.addEventListener("DOMContentLoaded", function() {
+    // Find the elements matching your plugin's class
+    const titleElements = document.querySelectorAll('.fc-title-text');
+    
+    titleElements.forEach(el => {
+      if (el.textContent.trim() === 'Shopping Cart') {
+        el.textContent = 'Carrinho';
+      }
+    });
+  });
+
 
 
 import.meta.glob([
