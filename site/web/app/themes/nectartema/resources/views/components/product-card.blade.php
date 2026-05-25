@@ -4,7 +4,7 @@
     /** @var WC_Product $product */
 @endphp
 
-<div class="group relative flex flex-col h-full bg-white rounded-2xl shadow-md hover:shadow-2xl transition-all duration-300 overflow-hidden pb-5">
+<div class="group not-prose relative flex flex-col h-full bg-white rounded-2xl shadow-md hover:shadow-2xl transition-all duration-300 overflow-hidden pb-5">
 
     {{-- IMAGE CONTAINER --}}
     <div class="relative aspect-square w-full overflow-hidden bg-gray-100">
@@ -26,17 +26,17 @@
     {{-- CONTENT BLOCK --}}
     <div class="flex flex-col flex-grow px-4 pt-4 text-center">
         
-        {{-- TITLE (Clamped to 2 lines max to keep grid uniform) --}}
-        <h3 class="text-sm lg:text-base font-semibold leading-snug text-gray-800 line-clamp-2 mb-3 min-h-[2.5rem] hover:text-primary transition-colors">
-            <a href="{{ get_permalink($product->get_id()) }}">
+        {{-- TITLE (Displays fully, no matter how many lines) --}}
+        <h3 class="text-sm lg:text-base font-semibold leading-snug text-verde mb-0 hover:text-primary transition-colors">
+            <a href="{{ get_permalink($product->get_id()) }}" class="">
                 {{ $product->get_name() }}
             </a>
         </h3>
 
-        {{-- PRICE + CTA (Pushed to the bottom cleanly) --}}
-        <div class="mt-auto flex flex-col items-center w-full space-y-3">
+        {{-- PRICE + CTA (mt-auto pushes this entire block to the very bottom) --}}
+        <div class="mt-auto flex flex-col items-center w-full">
             
-            <div class="price text-base lg:text-lg font-bold text-gray-900">
+            <div class="price text-base lg:text-lg font-bold text-melescuro pb-4 pt-2">
                 {!! $product->get_price_html() !!}
             </div>
 
@@ -47,7 +47,7 @@
             <a href="{{ $outOfStock ? '#' : '?add-to-cart=' . $product->get_id() }}" 
                 @class([
                     'w-full bg-primary text-white py-2.5 px-4 rounded-xl text-sm font-semibold transition duration-200 hover:bg-opacity-90 text-center' => !$outOfStock,
-                    'w-full bg-gray-100 text-gray-400 py-2.5 px-4 rounded-xl text-sm font-semibold text-center cursor-not-allowed pointer-events-none' => $outOfStock,
+                    'w-full bg-gray-100 text-gray-400 py-2.5 px-2 rounded-xl text-sm font-semibold text-center cursor-not-allowed pointer-events-none' => $outOfStock,
                 ])
                 aria-disabled="{{ $outOfStock ? 'true' : 'false' }}">
                 {{ $outOfStock ? 'Fora de estoque' : 'Adicionar' }}
