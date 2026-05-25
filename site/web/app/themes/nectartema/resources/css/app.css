@@ -395,7 +395,6 @@ p {
   background-repeat: no-repeat;
   background-size: cover;
   min-height: 15rem;
-  margin-bottom: 2rem;
 }
 
 /* desktop background */
@@ -409,6 +408,11 @@ p {
   margin-top: 2rem;
   margin-bottom: 2rem;
 } */
+
+.h1-container {
+  margin-bottom: 2rem;
+  background-color: #E69037;
+}
 
 main section header h1.container {
   @apply text-6xl;
