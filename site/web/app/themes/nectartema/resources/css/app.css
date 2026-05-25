@@ -99,7 +99,7 @@
   .swatch-btn.is-active {
     @apply border-primary bg-primary text-white shadow-md scale-105;
     /* Se o seu primário for escuro, o texto branco dá o contraste perfeito */
-  } 
+  }
 }
 
 .variations tr {
@@ -958,7 +958,7 @@ blockquote {
 }
 
 .woocommerce-account-fields {
-    display: none;
+  display: none;
 }
 
 figure.w-full img {
@@ -974,14 +974,15 @@ figure.w-full img {
   @apply w-full mx-auto my-8;
 
   @variant lg {
-    @apply w-1/2; /* Only shrink on desktop */
+    @apply w-1/2;
+    /* Only shrink on desktop */
   }
 }
 
 .wp-block-video video {
   /* Apply the styling to the video itself */
   @apply w-full h-auto rounded-lg shadow-lg;
-  
+
   /* This ensures that when the video tag itself goes into fullscreen, 
      it ignores the container's width constraints */
   &:fullscreen {
@@ -998,3 +999,12 @@ figure.w-full img {
 .woocommerce-info {
   @apply text-2xl;
 }
+
+
+/* .group-produtos {
+  display: grid;
+  grid-template-rows: 2fr 1fr;
+  grid-column-gap: 5px;
+  grid-row-gap: 10px;
+  align-content: end;
+} */
