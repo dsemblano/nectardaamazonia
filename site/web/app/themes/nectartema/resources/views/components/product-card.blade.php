@@ -4,7 +4,7 @@
     /** @var WC_Product $product */
 @endphp
 
-<div class="group not-prose flex flex-col justify-start bg-white rounded-2xl shadow-xl hover:shadow-2xl transition overflow-hidden py-6 min-h-9">
+<div class="group not-prose flex flex-col justify-start bg-white rounded-2xl shadow-xl hover:shadow-2xl transition overflow-hidden pb-6 min-h-9">
 
     {{-- IMAGE --}}
     <a href="{{ get_permalink($product->get_id()) }}" class="block bg-gray-100">
@@ -23,23 +23,23 @@
 
     {{-- CONTENT --}}
         {{-- CATEGORY --}}
-        <div class="text-xs uppercase font-bold text-white bg-vinho p-2 text-center">
+        {{-- <div class="text-xs uppercase font-bold text-white bg-vinho p-2 text-center">
             {!! wc_get_product_category_list($product->get_id()) !!}
-        </div>
+        </div> --}}
 
         {{-- TITLE --}}
-        <h3 class="text-base lg:text-xl font-semibold leading-tight text-primary p-5 space-y-3">
+        <h3 class="text-base lg:text-xl font-semibold leading-tight text-primary p-2 lg:p-5 space-y-3">
             <a href="{{ get_permalink($product->get_id()) }}">
                 {{ $product->get_name() }}
             </a>
         </h3>
 
         {{-- SHORT DESCRIPTION --}}
-        @if ($product->get_short_description())
+        {{-- @if ($product->get_short_description())
             <p class="text-sm text-gray-600 min-h-28 p-5 space-y-3">
                 {!! wp_strip_all_tags($product->get_short_description()) !!}
             </p>
-        @endif
+        @endif --}}
 
         {{-- PRICE + CTA --}}
         <div class="flex flex-col pt-3 prose lg:prose-lg items-center">
@@ -52,7 +52,7 @@
             @endphp
 
             <a href="{{ $outOfStock ? '#' : '?add-to-cart=' . $product->get_id() }}" @class([
-                'product-button buy-button lg:w-fit text-center space-y-6' => !$outOfStock,
+                'product-button buy-button lg:w-fit text-center space-y-3' => !$outOfStock,
                 'px-4 py-2 rounded-lg text-sm font-semibold transition cursor-not-allowed pointer-events-none' => $outOfStock,
             ])
                 aria-disabled="{{ $outOfStock ? 'true' : 'false' }}">
