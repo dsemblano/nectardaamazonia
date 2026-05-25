@@ -21,38 +21,43 @@
         do_action('get_header', 'shop');
         do_action('woocommerce_before_main_content');
     @endphp
+     
+        <section id="shop" class="woocommerce w-full">
 
-    <section id="shop"
-        class="">
+            @php
+                do_action('woocommerce_archive_description');
+            @endphp
 
-        @php
-            do_action('woocommerce_archive_description');
-        @endphp
+            @if (woocommerce_product_loop())
+                
+                <div id="shop_products" class="products-archive-container container">
+                    
+                    {{-- @php do_action('woocommerce_before_shop_loop'); @endphp --}}
 
+                    <div class="products grid grid-cols-2 lg:grid-cols-3 gap-2 lg:gap-4 mb-6">
+                        @while(have_posts()) 
+                            @php 
+                                the_post();
+                                $product = wc_get_product(get_the_ID()); 
+                            @endphp
+                            
+                            <x-product-card :product="$product" />
+                        @endwhile
+                    </div>
 
-        @if (woocommerce_product_loop())
-            <div id="shop_products" class="container">
-                @php
-                    $products = wc_get_products([
-                        'status' => 'publish',
-                        'limit' => 12,
-                    ]);
-                @endphp
-
-                <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-8">
-                    @foreach ($products as $product)
-                        <x-product-card :product="$product" />
-                    @endforeach
+                    @php do_action('woocommerce_after_shop_loop'); @endphp
                 </div>
+            @else
+                @php do_action('woocommerce_no_products_found'); @endphp
+            @endif
 
-            </div>
-        @endif
+            @php
+                do_action('woocommerce_after_main_content');
+                do_action('get_sidebar', 'shop');
+                do_action('get_footer', 'shop');
+            @endphp
 
-        @php
-            do_action('woocommerce_after_main_content');
-            do_action('get_sidebar', 'shop');
-            do_action('get_footer', 'shop');
-        @endphp
-    </section>
+        </section>
+
 
 @endsection

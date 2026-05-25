@@ -124,19 +124,17 @@
 
 
 @layer utility {
-  .container, .woocommerce {
-    padding: var(--container-padding, 1rem);
+  .container {
+    container-type: inline-size;
     margin-inline: auto;
 
-    @variant lg {
-      padding-inline: 8rem;
-    }
-
-    @variant xl {
-      padding-inline: 10rem;
-    }
+    padding-inline: clamp(1rem, 10vw, 10rem);
   }
 }
+
+/* .woocommerce {
+  background-color: pink;
+} */
 
 :root {
   color-scheme: only light;
@@ -397,6 +395,7 @@ p {
   background-repeat: no-repeat;
   background-size: cover;
   min-height: 15rem;
+  margin-bottom: 2rem;
 }
 
 /* desktop background */
@@ -555,7 +554,9 @@ footer.content-info {
 
 /* Woocommerce */
 
-
+.page-description {
+  @apply mb-6;
+}
 
 .quantity input {
   @apply w-24 px-3 py-2 border border-gray-300 rounded-lg text-center focus:outline-none focus:ring-2 focus:ring-primary/40 transition;

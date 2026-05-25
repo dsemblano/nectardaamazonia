@@ -65,7 +65,8 @@
     "wp-plugin/sales-analytics-for-woocommerce": "^2.5.3",
     "log1x/navi": "^3.1",
     "roots/acorn-mail": "^1.0",
-    "wp-plugin/print-invoices-packing-slip-labels-for-woocommerce": "^4.9"
+    "wp-plugin/print-invoices-packing-slip-labels-for-woocommerce": "^4.9",
+    "wp-plugin/virtuaria-correios": "^1.13"
   },
   "require-dev": {
     "roave/security-advisories": "dev-latest",
