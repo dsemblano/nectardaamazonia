@@ -44,6 +44,7 @@
                 $outOfStock = !$product->is_in_stock();
             @endphp
 
+            @if( ! $product->is_type('variable') )
             <a href="{{ $outOfStock ? '#' : '?add-to-cart=' . $product->get_id() }}" 
                 @class([
                     'w-full bg-primary text-white py-2.5 px-4 rounded-xl text-sm font-semibold transition duration-200 hover:bg-opacity-90 text-center' => !$outOfStock,
@@ -52,6 +53,7 @@
                 aria-disabled="{{ $outOfStock ? 'true' : 'false' }}">
                 {{ $outOfStock ? 'Fora de estoque' : 'Adicionar' }}
             </a>
+            @endif
 
         </div>
     </div>
