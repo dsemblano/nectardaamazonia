@@ -261,7 +261,7 @@ p {
   width: 100%;
   height: 100%;
   /* Move your background-image properties here */
-  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.3)), url('@images/meliponario-1024x576-1.webp');
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.3)), url('@images/meliponarios.webp');
   background-size: cover;
   background-position: center;
   z-index: -1;
