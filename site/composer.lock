@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "39e64895b93f8519837a9606552725c6",
+    "content-hash": "6b862ee320521f2cc7fd1477fc6016f7",
     "packages": [
         {
             "name": "brick/math",
@@ -7540,6 +7540,36 @@
                 "source": "https://plugins.svn.wordpress.org/gtm-kit"
             },
             "time": "2026-05-26T08:51:13+00:00"
+        },
+        {
+            "name": "wp-plugin/infixs-correios-automatico",
+            "version": "1.7.8",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/infixs-correios-automatico/",
+                "reference": "tags/1.7.8"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/infixs-correios-automatico.1.7.8.zip"
+            },
+            "require": {
+                "composer/installers": "~1.0|~2.0"
+            },
+            "type": "wordpress-plugin",
+            "notification-url": "https://wp-packages.org/downloads",
+            "authors": [
+                {
+                    "name": "Infixs"
+                }
+            ],
+            "description": "Integração com correios automatizada (Tudo em um), com ou sem contrato, código de rastreio automático, geração de etiquetas, devolução e muito mais.",
+            "support": {
+                "changelog": "https://wordpress.org/plugins/infixs-correios-automatico/#developers",
+                "issues": "https://wordpress.org/support/plugin/infixs-correios-automatico",
+                "source": "https://plugins.svn.wordpress.org/infixs-correios-automatico"
+            },
+            "time": "2026-04-13T20:16:07+00:00"
         },
         {
             "name": "wp-plugin/print-invoices-packing-slip-labels-for-woocommerce",
