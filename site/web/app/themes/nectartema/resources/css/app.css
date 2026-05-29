@@ -1022,6 +1022,7 @@ figure.w-full img {
   margin: 0;
 }
 
-.woocommerce:where(body:not(.woocommerce-block-theme-has-button-styles)) a.button.alt {
-  @apply bg-correios hover:bg-correios hover:brightness-[80%] text-white hover:text-yellow-400 px-4 py-2 rounded-lg transition;
+.woocommerce:where(body:not(.woocommerce-block-theme-has-button-styles)) a.button.alt,
+:where(body:not(.woocommerce-block-theme-has-button-styles)):where(:not(.edit-post-visual-editor)) .woocommerce button.button {
+  @apply bg-correios hover:bg-correios hover:brightness-[80%] text-gray-200 hover:text-yellow-400 px-4 py-2 rounded transition font-light;
 }
