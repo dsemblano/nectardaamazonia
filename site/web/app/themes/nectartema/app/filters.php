@@ -177,3 +177,47 @@ add_filter('wf_pklist_alter_billing_address', function($billing_address, $templa
 
     return $billing_address;
 }, 10, 3);
+
+/**
+ * Corrige o bug de imagem quebrada (googleusercontent) nos e-mails do WooCommerce/WebToffee
+ */
+add_action('woocommerce_email_order_item_meta', function($item_id, $item, $order, $plain_text) {
+    if ($plain_text) {
+        return;
+    }
+
+    $product = $item->get_product();
+    if (!$product) {
+        return;
+    }
+
+    // Pega o ID da imagem destacada diretamente do produto pai (trata variações também)
+    $image_id = $product->get_image_id();
+    
+    // Se for variação e não tiver imagem própria, pega a do produto pai
+    if (!$image_id && $product->is_type('variation')) {
+        $parent_product = wc_get_product($product->get_parent_id());
+        if ($parent_product) {
+            $image_id = $parent_product->get_image_id();
+        }
+    }
+
+    if ($image_id) {
+        // Busca a URL real da imagem cadastrada na biblioteca de mídia
+        $image_url = wp_get_attachment_image_url($image_id, 'thumbnail');
+
+        if ($image_url) {
+            // Garante o protocolo HTTPS absoluto para o Gmail não bloquear
+            $image_url = str_replace('http://', 'https://', $image_url);
+
+            // Injeta a tag forçada eliminando o lixo do proxy do Gmail
+            printf(
+                '<div style="margin: 10px 0; display: inline-block; vertical-align: middle;">' .
+                '<img src="%s" alt="%s" width="48" height="48" style="border: 1px solid #e5e5e5; display: block; max-width: 48px; height: auto;" />' .
+                '</div>',
+                esc_url($image_url),
+                esc_attr($product->get_name())
+            );
+        }
+    }
+}, 5, 4); // Alterado para prioridade 5 para rodar ANTES do bloco padrão da WebToffee
