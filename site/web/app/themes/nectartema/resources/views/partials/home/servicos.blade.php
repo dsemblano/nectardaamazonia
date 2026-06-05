@@ -43,5 +43,3 @@
 
 
 </section>
-
-@include('partials.hr')

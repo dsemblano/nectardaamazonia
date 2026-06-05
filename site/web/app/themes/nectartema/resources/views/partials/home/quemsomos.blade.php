@@ -14,5 +14,3 @@
                 alt="Richardson Frazão com um livro e explicando em uma mesa" class="rounded-xl">
         </picture>
 </section>
-
-@include('partials.hr')
