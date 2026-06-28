@@ -274,8 +274,8 @@ add_action('woocommerce_single_product_summary', 'woocommerce_template_single_ad
 /**
  * Adiciona CPF/CNPJ ao PDF da WebToffee (Filtro)
  */
-add_filter('wf_pklist_alter_billing_address', function($billing_address, $template_type, $order) {
-    $validate_doc = function($value, $type) {
+add_filter('wf_pklist_alter_billing_address', function ($billing_address, $template_type, $order) {
+    $validate_doc = function ($value, $type) {
         $clean = preg_replace('/[^0-9]/', '', $value);
         return ($type === 'cpf') ? (strlen($clean) === 11) : (strlen($clean) === 14);
     };
@@ -298,7 +298,7 @@ add_filter('wf_pklist_alter_billing_address', function($billing_address, $templa
  * Adiciona CPF/CNPJ aos E-mails (Ação)
  * Corrigido para evitar o Parse Error de string inesperada
  */
-add_action('woocommerce_email_customer_details', function($order, $sent_to_admin, $plain_text) {
+add_action('woocommerce_email_customer_details', function ($order, $sent_to_admin, $plain_text) {
     $cpf  = $order->get_meta('_billing_cpf');
     $cnpj = $order->get_meta('_billing_cnpj');
 
@@ -319,23 +319,32 @@ add_action('woocommerce_email_customer_details', function($order, $sent_to_admin
  */
 add_action('wp_print_styles', function () {
     global $wp_styles;
-    
+
     if (empty($wp_styles->queue)) {
         return;
     }
 
     // Array com os trechos dos caminhos dos arquivos que você quer remover
     $css_to_remove = [
+        // Fast Cart
         'fast-cart/fonts/fontello.css',
         'fast-cart/public/css/public.min.css',
         'fast-cart/public/css/public.css',
-        'zoloblocks/build/common/style-index.css'
+
+        // Zoloblocks
+        'zoloblocks/build/common/style-index.css',
+
+        // WooCommerce
+        'woocommerce/assets/css/woocommerce.css',
+        'woocommerce/assets/client/blocks/wc-blocks.css',
+        'woocommerce/assets/css/woocommerce-smallscreen.css',
+        'woocommerce/assets/css/woocommerce-layout.css'
     ];
 
     foreach ($wp_styles->queue as $handle) {
         if (isset($wp_styles->registered[$handle])) {
             $src = $wp_styles->registered[$handle]->src;
-            
+
             foreach ($css_to_remove as $css_path) {
                 if (strpos($src, $css_path) !== false) {
                     wp_dequeue_style($handle);
