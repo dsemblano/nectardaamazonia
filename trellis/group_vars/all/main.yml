@@ -14,7 +14,6 @@ ntp_timezone: Etc/UTC
 ntp_manage_config: true
 www_root: /srv/www
 max_journal_size: 512M
-post_max_size:
 php_extensions_custom:
   php8.3-gd: "{{ apt_package_state }}"
   php8.3-curl: "{{ apt_package_state }}"

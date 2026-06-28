@@ -310,3 +310,26 @@ add_action('woocommerce_email_customer_details', function($order, $sent_to_admin
         printf('<p><strong>CNPJ:</strong> %s</p>', esc_html($cnpj));
     }
 }, 25, 3);
+
+// Otimizações
+
+// Localiza o handle correto e remove o fontello.css do Fast Cart 
+add_action('wp_print_styles', function () {
+    global $wp_styles;
+    
+    if (empty($wp_styles->queue)) {
+        return;
+    }
+
+    // Varre todos os estilos que o WordPress colocou na fila para renderizar
+    foreach ($wp_styles->queue as $handle) {
+        // Se o objeto do estilo existir e o link contiver 'fast-cart/fonts/fontello.css'
+        if (isset($wp_styles->registered[$handle]) && strpos($wp_styles->registered[$handle]->src, 'fast-cart/fonts/fontello.css') !== false) {
+            
+            // Encontrou! Agora removemos usando o handle real descoberto
+            wp_dequeue_style($handle);
+            wp_deregister_style($handle);
+            break;
+        }
+    }
+}, 1);
