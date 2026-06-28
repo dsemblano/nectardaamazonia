@@ -328,7 +328,8 @@ add_action('wp_print_styles', function () {
     $css_to_remove = [
         'fast-cart/fonts/fontello.css',
         'fast-cart/public/css/public.min.css',
-        'fast-cart/public/css/public.css' // Fallback caso varie entre minificado ou não
+        'fast-cart/public/css/public.css',
+        'zoloblocks/build/common/style-index.css'
     ];
 
     foreach ($wp_styles->queue as $handle) {
