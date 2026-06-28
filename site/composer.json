@@ -65,7 +65,8 @@
     "wp-plugin/print-invoices-packing-slip-labels-for-woocommerce": "^4.9",
     "wp-plugin/infixs-correios-automatico": "^1.7",
     "log1x/navi": "^3.1",
-    "roots/acorn-mail": "^1.0"
+    "roots/acorn-mail": "^1.0",
+    "wp-plugin/freesoul-deactivate-plugins": "^2.6"
   },
   "require-dev": {
     "roave/security-advisories": "dev-latest",

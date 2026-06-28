@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "b53e2038bc54ad67d6586a93a1dab4c6",
+    "content-hash": "97948bdbc14aa6f50497e97f2cc461d2",
     "packages": [
         {
             "name": "brick/math",
@@ -7513,6 +7513,37 @@
                 "source": "https://plugins.svn.wordpress.org/foogallery"
             },
             "time": "2026-06-04T10:21:03+00:00"
+        },
+        {
+            "name": "wp-plugin/freesoul-deactivate-plugins",
+            "version": "2.6.4",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/freesoul-deactivate-plugins/",
+                "reference": "tags/2.6.4"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/freesoul-deactivate-plugins.2.6.4.zip"
+            },
+            "require": {
+                "composer/installers": "~1.0|~2.0"
+            },
+            "type": "wordpress-plugin",
+            "notification-url": "https://wp-packages.org/downloads",
+            "authors": [
+                {
+                    "name": "Jose Mortellaro"
+                }
+            ],
+            "description": "Load plugins only where you need them. No bloat, no conflicts, more speed. Deactivate plugins where they don't add anything useful.",
+            "homepage": "https://freesoul-deactivate-plugins.com/",
+            "support": {
+                "changelog": "https://wordpress.org/plugins/freesoul-deactivate-plugins/#developers",
+                "issues": "https://wordpress.org/support/plugin/freesoul-deactivate-plugins",
+                "source": "https://plugins.svn.wordpress.org/freesoul-deactivate-plugins"
+            },
+            "time": "2026-05-28T18:45:51+00:00"
         },
         {
             "name": "wp-plugin/gtm-kit",
