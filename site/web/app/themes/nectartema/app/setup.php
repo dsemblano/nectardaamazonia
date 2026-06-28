@@ -317,35 +317,35 @@ add_action('woocommerce_email_customer_details', function ($order, $sent_to_admi
 /**
  * Remove os arquivos CSS específicos do plugin Fast Cart de forma dinâmica
  */
+/**
+ * Remove os arquivos CSS específicos de plugins (Fast Cart, Zoloblocks e WooCommerce) de forma dinâmica
+ */
 add_action('wp_print_styles', function () {
     global $wp_styles;
-
+    
     if (empty($wp_styles->queue)) {
         return;
     }
 
-    // Array com os trechos dos caminhos dos arquivos que você quer remover
     $css_to_remove = [
         // Fast Cart
         'fast-cart/fonts/fontello.css',
         'fast-cart/public/css/public.min.css',
         'fast-cart/public/css/public.css',
-
+        
         // Zoloblocks
         'zoloblocks/build/common/style-index.css',
 
-        // WooCommerce
+        // WooCommerce Padrão
         'woocommerce/assets/css/woocommerce.css',
-        'woocommerce/assets/client/blocks/wc-blocks.css',
         'woocommerce/assets/css/woocommerce-smallscreen.css',
-        'woocommerce/assets/css/woocommerce-layout.css',
-        'woocommerce/assets/client/blocks/wc-blocks.css'
+        'woocommerce/assets/css/woocommerce-layout.css'
     ];
 
     foreach ($wp_styles->queue as $handle) {
         if (isset($wp_styles->registered[$handle])) {
             $src = $wp_styles->registered[$handle]->src;
-
+            
             foreach ($css_to_remove as $css_path) {
                 if (strpos($src, $css_path) !== false) {
                     wp_dequeue_style($handle);
@@ -355,3 +355,17 @@ add_action('wp_print_styles', function () {
         }
     }
 }, 1);
+
+/**
+ * Força a remoção do CSS de Blocos do WooCommerce (wc-blocks) que ignora o wp_print_styles
+ */
+add_action('wp_enqueue_scripts', function () {
+    // Esses são os handles canônicos que o core do WC usa para os blocos na frente do site
+    wp_dequeue_style('wc-blocks-style');
+    wp_dequeue_style('wc-blocks-packages-style');
+    wp_dequeue_style('wc-blocks-vendors-style');
+    
+    wp_deregister_style('wc-blocks-style');
+    wp_deregister_style('wc-blocks-packages-style');
+    wp_deregister_style('wc-blocks-vendors-style');
+}, 9999); // Prioridade altíssima para rodar no final da fila de assets do Gutenberg
