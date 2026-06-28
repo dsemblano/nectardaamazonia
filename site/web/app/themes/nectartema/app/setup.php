@@ -314,6 +314,9 @@ add_action('woocommerce_email_customer_details', function($order, $sent_to_admin
 // Otimizações
 
 // Localiza o handle correto e remove o fontello.css do Fast Cart 
+/**
+ * Remove os arquivos CSS específicos do plugin Fast Cart de forma dinâmica
+ */
 add_action('wp_print_styles', function () {
     global $wp_styles;
     
@@ -321,15 +324,23 @@ add_action('wp_print_styles', function () {
         return;
     }
 
-    // Varre todos os estilos que o WordPress colocou na fila para renderizar
+    // Array com os trechos dos caminhos dos arquivos que você quer remover
+    $css_to_remove = [
+        'fast-cart/fonts/fontello.css',
+        'fast-cart/public/css/public.min.css',
+        'fast-cart/public/css/public.css' // Fallback caso varie entre minificado ou não
+    ];
+
     foreach ($wp_styles->queue as $handle) {
-        // Se o objeto do estilo existir e o link contiver 'fast-cart/fonts/fontello.css'
-        if (isset($wp_styles->registered[$handle]) && strpos($wp_styles->registered[$handle]->src, 'fast-cart/fonts/fontello.css') !== false) {
+        if (isset($wp_styles->registered[$handle])) {
+            $src = $wp_styles->registered[$handle]->src;
             
-            // Encontrou! Agora removemos usando o handle real descoberto
-            wp_dequeue_style($handle);
-            wp_deregister_style($handle);
-            break;
+            foreach ($css_to_remove as $css_path) {
+                if (strpos($src, $css_path) !== false) {
+                    wp_dequeue_style($handle);
+                    wp_deregister_style($handle);
+                }
+            }
         }
     }
 }, 1);

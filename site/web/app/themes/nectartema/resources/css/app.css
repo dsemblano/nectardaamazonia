@@ -3,6 +3,7 @@
 @source "../views/";
 @source "../../app/";
 @import './fonts.css';
+@import './fast-public.css';
 @import 'animate.css';
 @import "./arrowcdtop.css";
 
