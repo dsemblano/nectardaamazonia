@@ -30,6 +30,7 @@
 
   @font-face {
   font-family: 'fontello';
+  font-display: swap;
   src: url('@fonts/font-fontello/fontello.eot?19786557');
   src: url('@fonts/font-fontello/fontello.eot?19786557#iefix') format('embedded-opentype'),
        url('@fonts/font-fontello/fontello.woff2?19786557') format('woff2'),
@@ -42,6 +43,7 @@
 
 [class^="fc-icon-"]:before, [class*=" fc-icon-"]:before {
   font-family: "fontello";
+  font-display: swap;
   font-style: normal;
   font-weight: normal;
   speak: never;
