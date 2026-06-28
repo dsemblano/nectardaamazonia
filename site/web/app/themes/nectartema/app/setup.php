@@ -335,10 +335,10 @@ add_action('wp_print_styles', function () {
         'zoloblocks/build/common/style-index.css',
 
         // WooCommerce
-        // 'woocommerce/assets/css/woocommerce.css',
-        // 'woocommerce/assets/client/blocks/wc-blocks.css',
-        // 'woocommerce/assets/css/woocommerce-smallscreen.css',
-        // 'woocommerce/assets/css/woocommerce-layout.css'
+        'woocommerce/assets/css/woocommerce.css',
+        'woocommerce/assets/client/blocks/wc-blocks.css',
+        'woocommerce/assets/css/woocommerce-smallscreen.css',
+        'woocommerce/assets/css/woocommerce-layout.css'
     ];
 
     foreach ($wp_styles->queue as $handle) {
