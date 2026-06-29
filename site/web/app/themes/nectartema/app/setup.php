@@ -317,9 +317,6 @@ add_action('woocommerce_email_customer_details', function ($order, $sent_to_admi
 /**
  * Remove os arquivos CSS específicos do plugin Fast Cart de forma dinâmica
  */
-/**
- * Remove os arquivos CSS específicos de plugins (Fast Cart, Zoloblocks e WooCommerce) de forma dinâmica
- */
 add_action('wp_print_styles', function () {
     global $wp_styles;
     
@@ -327,21 +324,28 @@ add_action('wp_print_styles', function () {
         return;
     }
 
+    // 1. Verifica se o WooCommerce está ativo e se estamos em uma página dele
+    $is_woocommerce_page = false;
+    if (function_exists('is_woocommerce')) {
+        $is_woocommerce_page = is_woocommerce() || is_cart() || is_checkout() || is_account_page();
+    }
+
+    // 2. CSS que SEMPRE serão removidos de todas as páginas (Fast Cart e Zoloblocks)
     $css_to_remove = [
-        // Fast Cart
         'fast-cart/fonts/fontello.css',
         'fast-cart/public/css/public.min.css',
         'fast-cart/public/css/public.css',
-        
-        // Zoloblocks
-        'zoloblocks/build/common/style-index.css',
-
-        // WooCommerce Padrão
-        'woocommerce/assets/css/woocommerce.css',
-        'woocommerce/assets/css/woocommerce-smallscreen.css',
-        'woocommerce/assets/css/woocommerce-layout.css'
+        'zoloblocks/build/common/style-index.css'
     ];
 
+    // 3. Se NÃO for uma página do WooCommerce, adicionamos os estilos dele na lista de remoção
+    if (!$is_woocommerce_page) {
+        $css_to_remove[] = 'woocommerce/assets/css/woocommerce.css';
+        $css_to_remove[] = 'woocommerce/assets/css/woocommerce-smallscreen.css';
+        $css_to_remove[] = 'woocommerce/assets/css/woocommerce-layout.css';
+    }
+
+    // 4. Executa a limpa da fila
     foreach ($wp_styles->queue as $handle) {
         if (isset($wp_styles->registered[$handle])) {
             $src = $wp_styles->registered[$handle]->src;
@@ -357,15 +361,23 @@ add_action('wp_print_styles', function () {
 }, 1);
 
 /**
- * Força a remoção do CSS de Blocos do WooCommerce (wc-blocks) que ignora o wp_print_styles
+ * Remove o CSS de Blocos do WooCommerce (wc-blocks), exceto nas páginas do ecossistema Woo
  */
 add_action('wp_enqueue_scripts', function () {
-    // Esses são os handles canônicos que o core do WC usa para os blocos na frente do site
-    wp_dequeue_style('wc-blocks-style');
-    wp_dequeue_style('wc-blocks-packages-style');
-    wp_dequeue_style('wc-blocks-vendors-style');
-    
-    wp_deregister_style('wc-blocks-style');
-    wp_deregister_style('wc-blocks-packages-style');
-    wp_deregister_style('wc-blocks-vendors-style');
-}, 9999); // Prioridade altíssima para rodar no final da fila de assets do Gutenberg
+    // Verifica se estamos em uma página do WooCommerce
+    $is_woocommerce_page = false;
+    if (function_exists('is_woocommerce')) {
+        $is_woocommerce_page = is_woocommerce() || is_cart() || is_checkout() || is_account_page();
+    }
+
+    // Só remove os blocos se NÃO for página do WooCommerce
+    if (!$is_woocommerce_page) {
+        wp_dequeue_style('wc-blocks-style');
+        wp_dequeue_style('wc-blocks-packages-style');
+        wp_dequeue_style('wc-blocks-vendors-style');
+        
+        wp_deregister_style('wc-blocks-style');
+        wp_deregister_style('wc-blocks-packages-style');
+        wp_deregister_style('wc-blocks-vendors-style');
+    }
+}, 9999);
