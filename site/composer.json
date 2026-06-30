@@ -67,7 +67,7 @@
     "log1x/navi": "^3.1",
     "roots/acorn-mail": "^1.0",
     "wp-plugin/freesoul-deactivate-plugins": "^2.6",
-    "wp-plugin/redis-cache": "^2.8"
+    "millipress/millicache": "^1.6"
   },
   "require-dev": {
     "roave/security-advisories": "dev-latest",
