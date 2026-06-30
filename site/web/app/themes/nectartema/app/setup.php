@@ -229,39 +229,6 @@ add_action('woocommerce_single_product_summary', function () {
     echo view('woocommerce.single.specs')->render();
 }, 25);
 
-
-add_action('wp_enqueue_scripts', function () {
-    if (!is_page(array('contato', 'biofabrica-orcamento', 'orcamento-instalacao-de-meliponarios'))) {
-        wp_dequeue_script('contact-form-7');
-        wp_dequeue_style('contact-form-7');
-
-        /* these are both needed */
-        wp_dequeue_script('wpcf7-recaptcha');
-        wp_dequeue_script('google-recaptcha');
-    }
-}, 99);
-
-
-// Removing jquery
-
-// add_action('wp_enqueue_scripts', function () {
-
-//     if (is_admin()) return;
-
-//     if (
-//         is_page('galeria') ||
-//         is_cart() ||
-//         is_checkout() ||
-//         is_account_page()
-//     ) {
-//         return;
-//     }
-
-//     wp_deregister_script('jquery');
-//     wp_deregister_script('jquery-core');
-//     wp_deregister_script('jquery-migrate');
-// }, 100);
-
 /**
  * Posiciona o formulário de variações exatamente antes das especificações
  */
@@ -313,9 +280,20 @@ add_action('woocommerce_email_customer_details', function ($order, $sent_to_admi
 
 // Otimizações
 
-// Localiza o handle correto e remove o fontello.css do Fast Cart 
 /**
- * Remove os arquivos CSS específicos do plugin Fast Cart de forma dinâmica
+ * Função auxiliar interna para centralizar a checagem do ecossistema WooCommerce.
+ * Evita redundância de processamento e mantém o código DRY.
+ */
+function nectar_is_woocommerce_page() {
+    if (function_exists('is_woocommerce')) {
+        return is_woocommerce() || is_cart() || is_checkout() || is_account_page();
+    }
+    return false;
+}
+
+/**
+ * Hook 1: Sniper Dinâmico por URL (Apenas para plugins embutidos no seu app.css)
+ * Executado no wp_print_styles para capturar injeções agressivas dessas ferramentas.
  */
 add_action('wp_print_styles', function () {
     global $wp_styles;
@@ -324,36 +302,23 @@ add_action('wp_print_styles', function () {
         return;
     }
 
-    // 1. Verifica se o WooCommerce está ativo e se estamos em uma página dele
-    $is_woocommerce_page = false;
-    if (function_exists('is_woocommerce')) {
-        $is_woocommerce_page = is_woocommerce() || is_cart() || is_checkout() || is_account_page();
-    }
-
-    // 2. CSS que SEMPRE serão removidos de todas as páginas (Fast Cart e Zoloblocks)
-    $css_to_remove = [
+    // CSS que SEMPRE serão removidos (já estão limpos e compilados no seu app.css global)
+    $css_to_always_remove = [
         'fast-cart/fonts/fontello.css',
         'fast-cart/public/css/public.min.css',
         'fast-cart/public/css/public.css',
         'zoloblocks/build/common/style-index.css'
     ];
 
-    // 3. Se NÃO for uma página do WooCommerce, adicionamos os estilos dele na lista de remoção
-    if (!$is_woocommerce_page) {
-        $css_to_remove[] = 'woocommerce/assets/css/woocommerce.css';
-        $css_to_remove[] = 'woocommerce/assets/css/woocommerce-smallscreen.css';
-        $css_to_remove[] = 'woocommerce/assets/css/woocommerce-layout.css';
-    }
-
-    // 4. Executa a limpa da fila
     foreach ($wp_styles->queue as $handle) {
         if (isset($wp_styles->registered[$handle])) {
             $src = $wp_styles->registered[$handle]->src;
             
-            foreach ($css_to_remove as $css_path) {
+            foreach ($css_to_always_remove as $css_path) {
                 if (strpos($src, $css_path) !== false) {
                     wp_dequeue_style($handle);
                     wp_deregister_style($handle);
+                    break; // Match encontrado para este handle, avança para o próximo da fila
                 }
             }
         }
@@ -361,23 +326,32 @@ add_action('wp_print_styles', function () {
 }, 1);
 
 /**
- * Remove o CSS de Blocos do WooCommerce (wc-blocks), exceto nas páginas do ecossistema Woo
+ * Hook 2: Remoção Estática por Handles (WooCommerce Core e Gutenberg Blocks)
+ * Se NÃO for página do Woo, removemos direto pelo ID nativo. Muito mais rápido que varrer strings.
  */
 add_action('wp_enqueue_scripts', function () {
-    // Verifica se estamos em uma página do WooCommerce
-    $is_woocommerce_page = false;
-    if (function_exists('is_woocommerce')) {
-        $is_woocommerce_page = is_woocommerce() || is_cart() || is_checkout() || is_account_page();
+    // Se for qualquer página do ecossistema WooCommerce, interrompe e mantém os estilos ativos
+    if (nectar_is_woocommerce_page()) {
+        return;
     }
 
-    // Só remove os blocos se NÃO for página do WooCommerce
-    if (!$is_woocommerce_page) {
-        wp_dequeue_style('wc-blocks-style');
-        wp_dequeue_style('wc-blocks-packages-style');
-        wp_dequeue_style('wc-blocks-vendors-style');
+    // Handles canônicos do WooCommerce Core e dos blocos do Gutenberg
+    $woocommerce_handles = [
+        // Core Styles
+        'woocommerce-layout',
+        'woocommerce-smallscreen',
+        'woocommerce-general',
+        'woocommerce_frontend_styles',
         
-        wp_deregister_style('wc-blocks-style');
-        wp_deregister_style('wc-blocks-packages-style');
-        wp_deregister_style('wc-blocks-vendors-style');
+        // Block Styles
+        'wc-blocks-style',
+        'wc-blocks-packages-style',
+        'wc-blocks-vendors-style',
+        'classic-theme-styles' // Estilos de tema antigo herdados pelo core
+    ];
+
+    foreach ($woocommerce_handles as $handle) {
+        wp_dequeue_style($handle);
+        wp_deregister_style($handle);
     }
 }, 9999);
