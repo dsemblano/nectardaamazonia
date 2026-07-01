@@ -18,8 +18,6 @@ php_extensions_custom:
   php8.3-gd: "{{ apt_package_state }}"
   php8.3-curl: "{{ apt_package_state }}"
   php8.3-soap: "{{ apt_package_state }}"
-apt_packages:
-  redis-server: "{{ apt_package_state }}"
 
 # Values of raw_vars will be wrapped in `{% raw %}` to avoid templating problems if values include `{%` and `{{`.
 # Will recurse dicts/lists. `*` is wildcard for one or more dict keys, list indices, or strings. Example:
