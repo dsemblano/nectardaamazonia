@@ -61,13 +61,11 @@
     "wp-plugin/foogallery": ">=3.1.6",
     "wp-plugin/fast-cart": "^1.2.1",
     "wp-plugin/woocommerce-extra-checkout-fields-for-brazil": "^4.0",
-    "wp-plugin/sales-analytics-for-woocommerce": "^2.5.3",
     "wp-plugin/print-invoices-packing-slip-labels-for-woocommerce": "^4.9",
     "wp-plugin/infixs-correios-automatico": "^1.7",
     "log1x/navi": "^3.1",
-    "roots/acorn-mail": "^1.0",
     "wp-plugin/freesoul-deactivate-plugins": "^2.6",
-    "millipress/millicache": "^1.6"
+    "roots/acorn-mail": "^2.0"
   },
   "require-dev": {
     "roave/security-advisories": "dev-latest",
