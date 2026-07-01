@@ -1,1 +1,0 @@
-/srv/www/nectardaamazonia.com.br/current/web/app/plugins/millicache/advanced-cache.php
