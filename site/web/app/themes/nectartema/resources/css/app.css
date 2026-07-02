@@ -536,13 +536,13 @@ li::marker {
 } */
 
 /* Menu */
-ul#menu-menu-principal {
+/* ul#menu-menu-principal {
   @apply flex flex-col lg:flex-row gap-x-8
 }
 
 .menu {
   @apply prose prose-a:no-underline prose-a:hover:underline prose-ul:list-none prose-a:text-white;
-}
+} */
 
 footer.content-info {
   /* #menu-menu-principal.menu {
