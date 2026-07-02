@@ -35,19 +35,20 @@ class Post extends Composer
         }
 
         if (is_archive()) {
-            return get_the_archive_title();
+            // return get_the_archive_title();
+            return single_cat_title('', false);
         }
 
         if (is_search()) {
             return sprintf(
                 /* translators: %s is replaced with the search query */
-                __('Resultados da busca para %s', 'sage'),
+                __('Search Results for %s', 'sage'),
                 get_search_query()
             );
         }
 
         if (is_404()) {
-            return __('Página não encontrada', 'sage');
+            return __('Not Found', 'sage');
         }
 
         return get_the_title();

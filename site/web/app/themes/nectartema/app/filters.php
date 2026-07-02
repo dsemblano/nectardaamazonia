@@ -17,8 +17,8 @@ add_filter('excerpt_more', function () {
 
 // New navigation menu
 add_filter('sage/blade/data', function ($data) {
-  $data['primary_navigation'] = \Log1x\Navi\Facades\Navi::build('primary_navigation')->toArray();
-  return $data;
+    $data['primary_navigation'] = \Log1x\Navi\Facades\Navi::build('primary_navigation')->toArray();
+    return $data;
 });
 
 /**
@@ -221,3 +221,8 @@ add_action('woocommerce_email_order_item_meta', function($item_id, $item, $order
         }
     }
 }, 5, 4); // Alterado para prioridade 5 para rodar ANTES do bloco padrão da WebToffee
+
+/**
+ * Carregar o CSS dos blocos do Gutenberg apenas quando forem utilizados na página.
+ */
+add_filter('should_load_separate_core_block_assets', '__return_true');

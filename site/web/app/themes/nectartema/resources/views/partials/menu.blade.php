@@ -1,5 +1,5 @@
 <div x-data="{ mobileOpen: false }" class="relative" x-cloak>
-    <ul id="menu-menu-principal" class="hidden lg:flex text-lg justify-around font-heading relative items-center">
+    <ul id="menu-menu-principal" class="!hidden lg:flex text-lg justify-around font-heading relative items-center">
         @foreach ($primary_navigation as $item)
             {{-- Parent Menu Item Container --}}
             <li class="{{ $item->classes }} relative group transition-all duration-500 ease-in-out py-4">
@@ -60,8 +60,8 @@
     <div x-show="mobileOpen" x-transition:enter="transition ease-out duration-200" x-transition:enter-start="opacity-0"
         x-transition:enter-end="opacity-100" x-transition:leave="transition ease-in duration-150"
         x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0"
-        class="fixed inset-0 z-40 bg-offmel lg:hidden mt-28" style="display: none">
-        <div class="container px-10 py-4 bg-black shadow-xl h-full overflow-y-auto">
+        class="fixed inset-0 z-40 bg-offmel lg:hidden mt-22" style="display: none">
+        <div class="container px-10 py-4 bg-fundo shadow-xl h-full overflow-y-auto">
             
             <ul id="menu-mobile" class="space-y-8">
                 @foreach ($primary_navigation as $item)
