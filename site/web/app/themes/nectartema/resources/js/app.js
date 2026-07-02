@@ -156,6 +156,80 @@ const setupSwatches = () => {
 document.addEventListener('DOMContentLoaded', setupSwatches);
 jQuery(document.body).on('check_variations', setupSwatches);
 
+// Shrink banner
+document.addEventListener("DOMContentLoaded", function() {
+    const bannerInner = document.getElementById("banner-inner");
+    const banner = document.getElementById("banner");
+
+    if (!bannerInner) return;
+
+    window.addEventListener("scroll", function() {
+        // Fallback checks across all browser engines and structural overflow alterations
+        const scrollPosition = window.scrollY 
+            || window.pageYOffset 
+            || document.documentElement.scrollTop 
+            || document.body.scrollTop;
+
+        // Diagnostic log: check your browser inspector console on /catalogo/ to see if this changes!
+        console.log("Current Scroll Position:", scrollPosition);
+
+        if (scrollPosition > 50) {
+            banner.classList.remove('notshrink');
+            banner.classList.add('shrink');
+            bannerInner.classList.remove('py-4');
+            bannerInner.classList.add('py-2');
+        } else {
+            banner.classList.remove('shrink');
+            banner.classList.add('notshrink');
+            bannerInner.classList.remove('py-2');
+            bannerInner.classList.add('py-4');
+        }
+    }, { passive: true }); // passive increases performance on heavy product scroll loops
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+    // Procura todos os seletores de quantidade do WooCommerce
+    document.querySelectorAll('.quantity').forEach(qty => {
+        const input = qty.querySelector('input[type="number"]');
+        if (!input) return;
+
+        // Cria o botão de Menos
+        const minusBtn = document.createElement('button');
+        minusBtn.type = 'button';
+        minusBtn.innerText = '−';
+        minusBtn.className = 'px-3 h-full text-neutral-500 hover:text-neutral-800 transition-colors font-medium text-lg focus:outline-none';
+        
+        // Cria o botão de Mais
+        const plusBtn = document.createElement('button');
+        plusBtn.type = 'button';
+        plusBtn.innerText = '+';
+        plusBtn.className = 'px-3 h-full text-neutral-500 hover:text-neutral-800 transition-colors font-medium text-lg focus:outline-none';
+
+        // Insere os botões envolvendo o input
+        qty.insertBefore(minusBtn, input);
+        qty.appendChild(plusBtn);
+
+        // Listeners de clique
+        minusBtn.addEventListener('click', () => {
+            const val = parseInt(input.value) || 1;
+            const min = parseInt(input.getAttribute('min')) || 1;
+            if (val > min) {
+                input.value = val - 1;
+                input.dispatchEvent(new Event('change', { bubbles: true }));
+            }
+        });
+
+        plusBtn.addEventListener('click', () => {
+            const val = parseInt(input.value) || 1;
+            const max = parseInt(input.getAttribute('max'));
+            if (!max || val < max) {
+                input.value = val + 1;
+                input.dispatchEvent(new Event('change', { bubbles: true }));
+            }
+        });
+    });
+});
+
 // Translate "Shopping Cart" string from the cart plugin to "Carrinho"
   document.addEventListener("DOMContentLoaded", function() {
     // Find the elements matching your plugin's class
