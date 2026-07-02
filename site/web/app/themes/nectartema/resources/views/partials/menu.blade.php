@@ -4,7 +4,7 @@
             {{-- Parent Menu Item Container --}}
             <li class="{{ $item->classes }} relative group transition-all duration-500 ease-in-out py-4">
                 <a href="{{ $item->url }}"
-                    class="px-3 py-2 rounded no-underline opacity-100 transition duration-300 inline-flex items-center hover:bg-mel {{ $item->active ? 'text-mel font-semibold' : 'text-black' }}"
+                    class="px-3 py-2 rounded no-underline opacity-100 transition duration-300 inline-flex items-center hover:bg-mel/10 {{ $item->active ? 'text-mel font-semibold' : 'text-p' }}"
                     @if ($item->active || $item->activeAncestor) aria-current="{{ $item->active ? 'page' : 'true' }}" @endif>
                     {{ $item->label }}
                     
@@ -16,11 +16,11 @@
 
                 {{-- Desktop Sub-menu Dropdown --}}
                 @if ($item->children)
-                    <ul class="absolute z-[99999] left-0 top-9/12 mt-1 w-80 bg-mel shadow-md rounded p-2 transition-all duration-300 ease-out origin-top invisible opacity-0 -translate-y-2 group-hover:visible group-hover:opacity-100 group-hover:translate-y-0">
+                    <ul class="absolute z-[99999] left-0 top-9/12 mt-1 w-80 bg-fundo shadow-md rounded p-2 transition-all duration-300 ease-out origin-top invisible opacity-0 -translate-y-2 group-hover:visible group-hover:opacity-100 group-hover:translate-y-0">
                         @foreach ($item->children as $child)
                             <li class="{{ $child->classes }} w-full clear-both py-2 px-4 rounded transition duration-200 hover:bg-mel/20">
                                 <a href="{{ $child->url }}"
-                                    class="block text-sm no-underline {{ $child->active ? 'text-mel font-semibold' : 'text-black' }}"
+                                    class="block text-sm no-underline {{ $child->active ? 'text-mel font-semibold' : 'text-p' }}"
                                     @if ($child->active || $child->activeAncestor) aria-current="{{ $child->active ? 'page' : 'true' }}" @endif>
                                     {{ $child->label }}
                                 </a>
@@ -44,7 +44,7 @@
         @endforeach
     </ul>
 
-    <button @click.stop="mobileOpen = !mobileOpen" class="lg:hidden p-2 relative w-10 h-10 z-50"
+    <button @click.stop="mobileOpen = !mobileOpen" class="lg:hidden relative w-10 h-10 z-50 top-2"
         :aria-expanded="mobileOpen" aria-label="Menu">
         <svg x-show="!mobileOpen" class="absolute inset-0 w-full h-full" fill="none" viewBox="0 0 24 24"
             stroke="currentColor">
@@ -71,7 +71,7 @@
                         
                         <div class="flex items-center justify-between border-b border-gray-100 py-3">
                             <a href="{{ $item->url }}" @click="mobileOpen = false"
-                                class="text-xl no-underline {{ $item->active ? 'text-mel' : 'text-gray-800' }}"
+                                class="text-xl no-underline {{ $item->active ? 'text-mel' : 'text-p' }}"
                                 @if ($item->active || $item->activeAncestor) aria-current="{{ $item->active ? 'page' : 'true' }}" @endif>
                                 {{ $item->label }}
                             </a>
