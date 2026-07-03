@@ -362,3 +362,18 @@ add_action('wp_enqueue_scripts', function () {
         wp_deregister_style($handle);
     }
 }, 9999);
+
+
+// WhatsApp shotrcode
+add_shortcode('whatsapp_button', function ($atts) {
+    // Define os atributos padrão do shortcode
+    $attributes = shortcode_atts([
+        'number'  => '5596991955990',
+        'text'    => 'Falar no WhatsApp',
+        'message' => 'Olá! Gostaria de mais informações.',
+        'class'   => '',
+    ], $atts);
+
+    // Renderiza a view do Blade e retorna como string para o WordPress
+    return view('shortcodes.whatsapp', $attributes)->render();
+});
