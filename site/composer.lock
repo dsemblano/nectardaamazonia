@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "890a7919e4e5105c8c7beb98db74e43d",
+    "content-hash": "1aba0614362566f6f260be5060d75a68",
     "packages": [
         {
             "name": "brick/math",
@@ -7666,6 +7666,37 @@
                 "source": "https://plugins.svn.wordpress.org/print-invoices-packing-slip-labels-for-woocommerce"
             },
             "time": "2026-06-17T08:10:56+00:00"
+        },
+        {
+            "name": "wp-plugin/query-monitor",
+            "version": "4.0.7",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/query-monitor/",
+                "reference": "tags/4.0.7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/query-monitor.4.0.7.zip"
+            },
+            "require": {
+                "composer/installers": "~1.0|~2.0"
+            },
+            "type": "wordpress-plugin",
+            "notification-url": "https://wp-packages.org/downloads",
+            "authors": [
+                {
+                    "name": "John Blackbourn"
+                }
+            ],
+            "description": "Query Monitor is the developer tools panel for WordPress and WooCommerce.",
+            "homepage": "https://querymonitor.com/",
+            "support": {
+                "changelog": "https://wordpress.org/plugins/query-monitor/#developers",
+                "issues": "https://wordpress.org/support/plugin/query-monitor",
+                "source": "https://plugins.svn.wordpress.org/query-monitor"
+            },
+            "time": "2026-06-20T20:20:53+00:00"
         },
         {
             "name": "wp-plugin/redirection",
