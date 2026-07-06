@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "3f57d880b08698df99e154d4d6d12972",
+    "content-hash": "890a7919e4e5105c8c7beb98db74e43d",
     "packages": [
         {
             "name": "brick/math",
@@ -7419,6 +7419,37 @@
                 "source": "https://plugins.svn.wordpress.org/contact-form-7"
             },
             "time": "2026-05-15T03:01:03+00:00"
+        },
+        {
+            "name": "wp-plugin/debug-log-manager",
+            "version": "2.5.2",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/debug-log-manager/",
+                "reference": "tags/2.5.2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/debug-log-manager.2.5.2.zip"
+            },
+            "require": {
+                "composer/installers": "~1.0|~2.0"
+            },
+            "type": "wordpress-plugin",
+            "notification-url": "https://wp-packages.org/downloads",
+            "authors": [
+                {
+                    "name": "Bowo"
+                }
+            ],
+            "description": "Log PHP, database and JavaScript errors via WP_DEBUG with one click. Conveniently create, view, filter and clear the debug.log file.",
+            "homepage": "https://wordpress.org/plugins/debug-log-manager/",
+            "support": {
+                "changelog": "https://wordpress.org/plugins/debug-log-manager/#developers",
+                "issues": "https://wordpress.org/support/plugin/debug-log-manager",
+                "source": "https://plugins.svn.wordpress.org/debug-log-manager"
+            },
+            "time": "2026-06-26T02:25:59+00:00"
         },
         {
             "name": "wp-plugin/ewww-image-optimizer",

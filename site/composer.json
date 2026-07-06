@@ -65,7 +65,8 @@
     "wp-plugin/infixs-correios-automatico": "^1.7",
     "log1x/navi": "^3.1",
     "wp-plugin/freesoul-deactivate-plugins": "^2.6",
-    "roots/acorn-mail": "^2.0"
+    "roots/acorn-mail": "^2.0",
+    "wp-plugin/debug-log-manager": "^2.5"
   },
   "require-dev": {
     "roave/security-advisories": "dev-latest",
