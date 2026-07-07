@@ -48,7 +48,6 @@
     "wp-plugin/woocommerce": "^10.6",
     "generoi/sage-woocommerce": "^1.1",
     "wp-plugin/zoloblocks": "^2.7",
-    "wp-plugin/ewww-image-optimizer": ">=8.1.4",
     "wp-plugin/regenerate-thumbnails": ">=3.1.5",
     "wp-plugin/autodescription": ">=5.1.2",
     "wp-plugin/contact-form-7": ">=6.0.6",
@@ -67,7 +66,8 @@
     "wp-plugin/freesoul-deactivate-plugins": "^2.6",
     "roots/acorn-mail": "^2.0",
     "wp-plugin/debug-log-manager": "^2.5",
-    "wp-plugin/query-monitor": "^4.0"
+    "wp-plugin/query-monitor": "^4.0",
+    "wp-plugin/webp-converter-for-media": "^6.6"
   },
   "require-dev": {
     "roave/security-advisories": "dev-latest",

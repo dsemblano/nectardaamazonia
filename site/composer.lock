@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "1aba0614362566f6f260be5060d75a68",
+    "content-hash": "0c35638efd9c259b37a970dee95191a7",
     "packages": [
         {
             "name": "brick/math",
@@ -7452,37 +7452,6 @@
             "time": "2026-06-26T02:25:59+00:00"
         },
         {
-            "name": "wp-plugin/ewww-image-optimizer",
-            "version": "8.7.2",
-            "source": {
-                "type": "svn",
-                "url": "https://plugins.svn.wordpress.org/ewww-image-optimizer/",
-                "reference": "tags/8.7.2"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/ewww-image-optimizer.8.7.2.zip"
-            },
-            "require": {
-                "composer/installers": "~1.0|~2.0"
-            },
-            "type": "wordpress-plugin",
-            "notification-url": "https://wp-packages.org/downloads",
-            "authors": [
-                {
-                    "name": "Shane Bishop"
-                }
-            ],
-            "description": "Comprehensive image optimization with WebP, AVIF, Lazy Load, and more. Optimize images automatically for Faster Sites and Happy Visitors.",
-            "homepage": "https://wordpress.org/plugins/ewww-image-optimizer/",
-            "support": {
-                "changelog": "https://wordpress.org/plugins/ewww-image-optimizer/#developers",
-                "issues": "https://wordpress.org/support/plugin/ewww-image-optimizer",
-                "source": "https://plugins.svn.wordpress.org/ewww-image-optimizer"
-            },
-            "time": "2026-06-10T19:31:34+00:00"
-        },
-        {
             "name": "wp-plugin/fast-cart",
             "version": "1.2.3",
             "source": {
@@ -7759,6 +7728,37 @@
                 "source": "https://plugins.svn.wordpress.org/regenerate-thumbnails"
             },
             "time": "2026-03-23T19:23:21+00:00"
+        },
+        {
+            "name": "wp-plugin/webp-converter-for-media",
+            "version": "6.6.1",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/webp-converter-for-media/",
+                "reference": "tags/6.6.1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/webp-converter-for-media.6.6.1.zip"
+            },
+            "require": {
+                "composer/installers": "~1.0|~2.0"
+            },
+            "type": "wordpress-plugin",
+            "notification-url": "https://wp-packages.org/downloads",
+            "authors": [
+                {
+                    "name": "Mateusz Gbiorczyk"
+                }
+            ],
+            "description": "Speed up your website by using our WebP & AVIF Converter. Optimize images and serve WebP and AVIF images instead of standard formats!",
+            "homepage": "https://mattplugins.com/products/webp-converter-for-media-pro",
+            "support": {
+                "changelog": "https://wordpress.org/plugins/webp-converter-for-media/#developers",
+                "issues": "https://wordpress.org/support/plugin/webp-converter-for-media",
+                "source": "https://plugins.svn.wordpress.org/webp-converter-for-media"
+            },
+            "time": "2026-06-03T13:35:47+00:00"
         },
         {
             "name": "wp-plugin/woocommerce",
