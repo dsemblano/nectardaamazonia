@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "0c35638efd9c259b37a970dee95191a7",
+    "content-hash": "8e1e5b0c74f31acab08bfdf5c905710b",
     "packages": [
         {
             "name": "brick/math",
@@ -7606,6 +7606,36 @@
             "time": "2026-06-01T00:11:22+00:00"
         },
         {
+            "name": "wp-plugin/optimole-wp",
+            "version": "4.2.9",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/optimole-wp/",
+                "reference": "tags/4.2.9"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/optimole-wp.4.2.9.zip"
+            },
+            "require": {
+                "composer/installers": "~1.0|~2.0"
+            },
+            "type": "wordpress-plugin",
+            "notification-url": "https://wp-packages.org/downloads",
+            "authors": [
+                {
+                    "name": "Optimole"
+                }
+            ],
+            "description": "Automatically optimize images with bulk compression, lazy loading, WebP/AVIF conversion & CloudFront image CDN. Boost Core Web Vitals & conversions.",
+            "support": {
+                "changelog": "https://wordpress.org/plugins/optimole-wp/#developers",
+                "issues": "https://wordpress.org/support/plugin/optimole-wp",
+                "source": "https://plugins.svn.wordpress.org/optimole-wp"
+            },
+            "time": "2026-07-06T07:50:41+00:00"
+        },
+        {
             "name": "wp-plugin/print-invoices-packing-slip-labels-for-woocommerce",
             "version": "4.9.7",
             "source": {
@@ -7728,37 +7758,6 @@
                 "source": "https://plugins.svn.wordpress.org/regenerate-thumbnails"
             },
             "time": "2026-03-23T19:23:21+00:00"
-        },
-        {
-            "name": "wp-plugin/webp-converter-for-media",
-            "version": "6.6.1",
-            "source": {
-                "type": "svn",
-                "url": "https://plugins.svn.wordpress.org/webp-converter-for-media/",
-                "reference": "tags/6.6.1"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/webp-converter-for-media.6.6.1.zip"
-            },
-            "require": {
-                "composer/installers": "~1.0|~2.0"
-            },
-            "type": "wordpress-plugin",
-            "notification-url": "https://wp-packages.org/downloads",
-            "authors": [
-                {
-                    "name": "Mateusz Gbiorczyk"
-                }
-            ],
-            "description": "Speed up your website by using our WebP & AVIF Converter. Optimize images and serve WebP and AVIF images instead of standard formats!",
-            "homepage": "https://mattplugins.com/products/webp-converter-for-media-pro",
-            "support": {
-                "changelog": "https://wordpress.org/plugins/webp-converter-for-media/#developers",
-                "issues": "https://wordpress.org/support/plugin/webp-converter-for-media",
-                "source": "https://plugins.svn.wordpress.org/webp-converter-for-media"
-            },
-            "time": "2026-06-03T13:35:47+00:00"
         },
         {
             "name": "wp-plugin/woocommerce",
