@@ -245,20 +245,48 @@ p {
 
 }
 
-#hero::before {
+/* #hero::before {
   content: "";
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  /* Move your background-image properties here */
   background-image: linear-gradient(to right, rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.3)), url('@images/meliponarios.webp');
   background-size: cover;
   background-position: center;
   z-index: -1;
-  /* Apply the Ken Burns effect here */
   animation: kenburns-effect 10s ease-out infinite alternate;
+} */
+
+/* Ensure the section parent forms a solid positioning context */
+#hero {
+  position: relative;
+  overflow: hidden;
+}
+
+/* The actual image scaling to act exactly like background-size: cover */
+.hero-bg-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  z-index: 0;
+  animation: kenburns-effect 10s ease-out infinite alternate;
+}
+
+/* The dark gradient layered perfectly between the image and the text content */
+.hero-bg-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.3));
+  z-index: 1;
 }
 
 @keyframes kenburns-effect {
