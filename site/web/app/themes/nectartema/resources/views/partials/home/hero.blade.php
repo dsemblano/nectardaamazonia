@@ -1,6 +1,6 @@
 <section id="hero" class="section-home text-white relative overflow-hidden">
     
-    <img 
+    <img id="hero-img"
         src="{{ Vite::asset('resources/images/meliponarios.webp') }}" 
         fetchpriority="high" 
         class="hero-bg-img no-lazy" 
