@@ -16,7 +16,7 @@ location ~* \.(?:rss|atom)$ {
 }
 
 # Media: images, icons, video, audio, HTC
-location ~* \.(?:jpg|jpeg|gif|png|webp|ico|cur|gz|svg|mp4|ogg|ogv|webm|htc)$ {
+location ~* \.(?:jpg|jpeg|gif|png|webp|avif|ico|cur|gz|svg|mp4|ogg|ogv|webm|htc)$ {
   expires 30d;
   access_log off;
   add_header Cache-Control "public";
