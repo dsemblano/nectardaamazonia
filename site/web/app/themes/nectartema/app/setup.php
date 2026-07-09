@@ -351,10 +351,10 @@ add_action('wp_enqueue_scripts', function () {
         'woocommerce_frontend_styles',
         
         // Block Styles
-        'wc-blocks-style',
-        'wc-blocks-packages-style',
-        'wc-blocks-vendors-style',
-        'classic-theme-styles'
+        // 'wc-blocks-style',
+        // 'wc-blocks-packages-style',
+        // 'wc-blocks-vendors-style',
+        // 'classic-theme-styles'
     ];
 
     foreach ($woocommerce_handles as $handle) {
