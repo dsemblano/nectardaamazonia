@@ -1,5 +1,5 @@
 <section id="hero" class="section-home text-white relative overflow-hidden">
-<picture class="w-full h-full block">
+<picture class="hero-bg-img" class="w-full h-full block">
     <!-- 1. Mobile devices (under 576px) -->
     <source media="(max-width: 576px)" srcset="{{ Vite::asset('resources/images/meliponarios-mobile.avif') }}" type="image/avif">
     <source media="(max-width: 576px)" srcset="{{ Vite::asset('resources/images/meliponarios-mobile.webp') }}" type="image/webp">
@@ -11,8 +11,9 @@
     <!-- 3. Native fallback (This is where your layout classes MUST sit) -->
     <img id="hero-img" 
          src="{{ Vite::asset('resources/images/meliponarios.webp') }}" 
+         data-opt-lazy-loaded="false"
          fetchpriority="high"
-         class="hero-bg-img no-lazy w-full object-cover" 
+         class="hero-bg-img no-lazy w-full object-cover optml-skip"
          alt="Logo Néctar da Amazônia">
 </picture>
     <div class="hero-bg-overlay"></div>
