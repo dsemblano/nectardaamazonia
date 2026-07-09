@@ -16,10 +16,10 @@
         };
     </script> --}}
 
-    @if (is_front_page() || is_home())
-        <link rel="preload" fetchpriority="high" as="image"
-            href="{{ Vite::asset('resources/images/meliponarios.webp') }}" type="image/webp">
-    @endif
+@if (is_front_page() || is_home())
+    <link rel="preload" fetchpriority="high" as="image" href="{{ Vite::asset('resources/images/meliponarios.webp') }}" type="image/webp" imagesizes="(max-width: 768px) 100vw, 65vw">
+    <link rel="preload" fetchpriority="high" as="image" href="{{ Vite::asset('resources/images/meliponarios-mobile.webp') }}" type="image/webp" imagesizes="(max-width: 576px) 100vw, 100vw">
+@endif
 
     <link rel="preload" href="{{ Vite::asset('resources/fonts/Poppins/Poppins-Regular.ttf') }}" as="font"
         type="font/ttf" crossorigin>

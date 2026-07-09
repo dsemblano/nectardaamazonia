@@ -1,27 +1,20 @@
 <section id="hero" class="section-home text-white relative overflow-hidden">
-
-    {{-- <img id="hero-img"
-        src="{{ Vite::asset('resources/images/meliponarios.webp') }}"
-        fetchpriority="high" 
-        class="hero-bg-img no-lazy" 
-        alt="Meliponários da Amazônia"
-    > --}}
-
+<picture class="w-full h-full block">
+    <!-- 1. Mobile devices (under 576px) -->
+    <source media="(max-width: 576px)" srcset="{{ Vite::asset('resources/images/meliponarios-mobile.avif') }}" type="image/avif">
+    <source media="(max-width: 576px)" srcset="{{ Vite::asset('resources/images/meliponarios-mobile.webp') }}" type="image/webp">
+    
+    <!-- 2. Desktop/Tablet devices -->
+    <source srcset="{{ Vite::asset('resources/images/meliponarios.avif') }}" type="image/avif">
+    <source srcset="{{ Vite::asset('resources/images/meliponarios.webp') }}" type="image/webp">
+    
+    <!-- 3. Native fallback (This is where your layout classes MUST sit) -->
     <img id="hero-img" 
-     src="{{ Vite::asset('resources/images/meliponarios.webp') }}"
-     srcset="{{ Vite::asset('resources/images/meliponarios-mobile.webp') }} 324w, {{ Vite::asset('resources/images/meliponarios.webp') }} 1920w"
-     sizes="(max-width: 576px) 100vw, 100vw"
-     fetchpriority="high" 
-     class="hero-bg-img no-lazy" 
-     alt="Logo Néctar da Amazônia">
-
-    <picture class="hero-bg-img no-lazy">
-        <source srcset="{{ Vite::asset('resources/images/meliponar.avif') }}" type="image/avif">
-        <source srcset="{{ Vite::asset('resources/images/meliponar.webp') }}" type="image/webp">
-        <img id="hero-img" src="{{ Vite::asset('resources/images/meliponar.webp') }}" fetchpriority="high"
-            alt="Meliponários da Amazônia">
-    </picture>
-
+         src="{{ Vite::asset('resources/images/meliponarios.webp') }}" 
+         fetchpriority="high"
+         class="hero-bg-img no-lazy w-full object-cover" 
+         alt="Logo Néctar da Amazônia">
+</picture>
     <div class="hero-bg-overlay"></div>
 
     <div class="container h-dvh relative z-10">
