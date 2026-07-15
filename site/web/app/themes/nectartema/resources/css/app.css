@@ -245,20 +245,6 @@ p {
 
 }
 
-/* #hero::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.3)), url('@images/meliponarios.webp');
-  background-size: cover;
-  background-position: center;
-  z-index: -1;
-  animation: kenburns-effect 10s ease-out infinite alternate;
-} */
-
 /* Ensure the section parent forms a solid positioning context */
 #hero {
   position: relative;
@@ -275,7 +261,7 @@ p {
   object-fit: cover;
   object-position: center;
   z-index: 0;
-  animation: kenburns-effect 10s ease-out infinite alternate;
+  animation: kenburns-effect 15s ease-out infinite alternate;
 }
 
 /* The dark gradient layered perfectly between the image and the text content */
@@ -950,32 +936,6 @@ blockquote {
 .referencia-bibliografica {
   font-size: 1rem;
   line-height: normal;
-}
-
-/* 1. Ensure the parent container clips the zooming image */
-.wp-block-cover.is-ken-burns {
-  overflow: hidden;
-  height: 100dvh;
-}
-
-/* 2. Target the background image */
-.wp-block-cover.is-ken-burns .wp-block-cover__image-background {
-  animation: kenburns-effect 20s ease-out infinite alternate;
-  transform-origin: center center;
-  /* Ensure the image stays sharp */
-  backface-visibility: hidden;
-}
-
-/* 3. Define the movement */
-@keyframes kenburns-effect {
-  0% {
-    transform: scale(1) translate(0, 0);
-  }
-
-  100% {
-    /* Subtle zoom to 115% and a slight pan */
-    transform: scale(1.15) translate(-2%, -1%);
-  }
 }
 
 .woocommerce-account-fields {
