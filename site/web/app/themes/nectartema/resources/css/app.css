@@ -633,7 +633,7 @@ body.sage {
 }
 
 .hero-colmeia {
-  @apply px-2 py-2 rounded-lg text-lg font-bold transition text-black bg-mel border-solid border-mel border-2 brightness-[80%] hover:scale-105 hover:shadow-lg active:scale-95;
+  @apply px-2 py-2 rounded-lg text-lg font-bold hover:scale-105 transition-transform duration-300 ease-in-out text-mel hover:text-black bg-transparent hover:bg-mel border-solid border-mel border-2 brightness-[80%] hover:shadow-lg;
 }
 
 .product-button {
@@ -654,16 +654,17 @@ a.button.wc-backward,
 
 /* 1. Base Styles for both CTA buttons */
 .hero-cta {
+  @apply hover:scale-105 transition-transform duration-300 ease-in-out; 
+
   position: relative !important;
   overflow: hidden !important;
   z-index: 1 !important;
-  background-color: transparent !important;
+  background-color: #D97B13 !important;
   /* Using your Gold color for the border and text */
   border: 2px solid #D4AF37 !important;
-  color: #D4AF37 !important;
+  color: black !important;
   padding: 0.5rem 1rem;
   display: inline-block;
-  transition: color 0.5s ease !important;
   text-decoration: none;
 }
 
@@ -676,12 +677,12 @@ a.button.wc-backward,
   left: -50%;
   width: 200%;
   height: 450%;
-  background-color: #D4AF37;
+  background-color: #F7B203;
   /* Nectar Gold */
   background: linear-gradient(135deg,
-      #D4AF37 0%,
-      #FBDC8E 50%,
-      #D4AF37 100%);
+      #F7B203 0%,
+      #D97B13 50%,
+      #F7B203 100%);
   border-radius: 45%;
   /* Creates the viscous honey wave */
   z-index: -1;
