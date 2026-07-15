@@ -10,10 +10,10 @@
 @import "./arrowcdtop.css";
 
 @theme {
-  --color-primary: #E69037;
+  --color-primary: #F7B203;
   --color-headingprimary: #FEBE15;
   --color-secondary: #EE7605;
-  --color-mel: #D4AF37;
+  --color-mel: #D97B13;
   --color-marrom: #402810;
   --color-verde: #294023;
   --color-fundo: #f5f5dc;
@@ -626,16 +626,31 @@ body.sage {
   @apply px-2 py-2 text-base;
 }
 
-/* Second CTA button */
-a.wp-block-button__link.wp-element-button,
+/* Second CTA */
+@utility cta-second {
+  @apply px-2 py-2 rounded-lg text-base font-semibold transition text-offwhite bg-mel hover:brightness-[130%] hover:scale-105 hover:shadow-lg active:scale-95;
+}
+
 a.button.wc-backward,
 .woo-better-button-current-style,
 .woocommerce .cart .button,
-.zolo-post-grid-wrap.zolo-post-style-1 .zolo-post-link-btn a,
 .woocommerce a.button,
-.section-home .button,
-.button-quemsomos {
-  @apply px-2 py-2 rounded-lg text-base font-semibold transition text-offwhite bg-melescuro hover:brightness-[130%] hover:scale-105 hover:shadow-lg active:scale-95;
+.section-home .button {
+  @apply cta-second;
+}
+
+@utility cta-second-transparent {
+  @apply px-2 py-2 rounded-lg text-base fill-mel text-center font-semibold text-mel bg-transparent hover:bg-mel/10 border-solid border-mel border-2;
+}
+
+.button-quemsomos,
+.zolo-post-grid-wrap.zolo-post-style-1 .zolo-post-link-btn a,
+a.wp-block-button__link.wp-element-button {
+  @apply cta-second-transparent;
+}
+
+.zolo__display-icon {
+  fill: inherit !important;
 }
 
 /* 1. Base Styles for both CTA buttons */
@@ -887,7 +902,7 @@ article header h1 {
   }
 
   .wpcf7-submit {
-    @apply py-3 px-5 text-sm font-medium text-center text-white rounded-lg bg-melescuro sm:w-fit hover:bg-primary focus:ring-4 focus:outline-none focus:ring-melescuro;
+    @apply py-3 px-5 text-sm font-medium text-center text-white rounded-lg bg-mel sm:w-fit hover:bg-primary focus:ring-4 focus:outline-none focus:ring-melescuro;
   }
 
   .wpcf7-response-output {

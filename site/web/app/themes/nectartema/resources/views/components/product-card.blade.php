@@ -72,7 +72,7 @@
             {{-- Bloco de Ação Inteligente --}}
             @if ($outOfStock)
                 {{-- Se QUALQUER tipo de produto estiver fora de estoque --}}
-                <div class="w-full bg-gray-100 text-gray-400 py-2.5 px-2 rounded-xl text-sm font-semibold text-center cursor-not-allowed select-none">
+                <div class="bg-gray-100 text-gray-400 py-2.5 px-2 rounded-xl text-sm font-semibold text-center cursor-not-allowed select-none">
                     Fora de estoque
                 </div>
             @else
@@ -85,7 +85,7 @@
                 @else
                     {{-- Produto simples COM estoque: Adiciona direto ao carrinho --}}
                     <a href="?add-to-cart={{ $product->get_id() }}" 
-                       class="w-full bg-primary text-white py-2.5 px-4 rounded-xl text-sm font-semibold transition duration-200 hover:bg-opacity-90 text-center">
+                       class="cta-second">
                         Adicionar
                     </a>
                 @endif
