@@ -573,7 +573,7 @@ footer.content-info {
 }
 
 body.sage {
-  background-color: var(--color-fundo);
+  @apply bg-offwhite;
 }
 
 .woo-better-icon-current-style {
@@ -889,7 +889,7 @@ article header h1 {
   margin: 0 auto;
 
   textarea {
-    @apply block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg shadow-sm border border-gray-300;
+    @apply block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg shadow-sm border border-gray-300 outline-none focus:border-mel focus:ring-2 focus:ring-mel;
   }
 
   .flexcf7 {
@@ -898,7 +898,7 @@ article header h1 {
   }
 
   input {
-    @apply block p-3 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 shadow-sm;
+    @apply block p-3 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 shadow-sm outline-none focus:border-mel focus:ring-2 focus:ring-mel;
   }
 
   .wpcf7-submit {
