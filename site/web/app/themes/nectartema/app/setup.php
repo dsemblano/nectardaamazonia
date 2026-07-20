@@ -350,6 +350,7 @@ add_action('wp_enqueue_scripts', function () {
         'woocommerce-general',
         'woocommerce_frontend_styles',
         'woocommerce-layout',
+        'wc-blocks'
         
         // Block Styles
         // 'wc-blocks-style',
