@@ -349,6 +349,7 @@ add_action('wp_enqueue_scripts', function () {
         'woocommerce-smallscreen',
         'woocommerce-general',
         'woocommerce_frontend_styles',
+        'woocommerce-layout',
         
         // Block Styles
         // 'wc-blocks-style',
