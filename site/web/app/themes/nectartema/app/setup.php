@@ -314,7 +314,9 @@ add_action('wp_print_styles', function () {
         'fast-cart/fonts/fontello.css',
         'fast-cart/public/css/public.min.css',
         'fast-cart/public/css/public.css',
-        'zoloblocks/build/common/style-index.css'
+        'zoloblocks/build/common/style-index.css',
+        // O WooCommerce muda muito os handles dos blocos, então matamos pela URL por garantia:
+        'woocommerce/assets/client/blocks/wc-blocks.css'
     ];
 
     foreach ($wp_styles->queue as $handle) {
@@ -330,7 +332,7 @@ add_action('wp_print_styles', function () {
             }
         }
     }
-}, 1);
+}, 100); // AUMENTADO de 1 para 100: Garante que varre a fila depois que todos os plugins já injetaram seus scripts.
 
 /**
  * Hook 2: Remoção Estática por Handles (WooCommerce Core e Gutenberg Blocks)
@@ -349,14 +351,15 @@ add_action('wp_enqueue_scripts', function () {
         'woocommerce-smallscreen',
         'woocommerce-general',
         'woocommerce_frontend_styles',
-        'woocommerce-layout',
-        'wc-blocks'
+        'woocommerce-inline', // Algumas versões do Woo injetam CSS inline aqui
         
-        // Block Styles
-        // 'wc-blocks-style',
-        // 'wc-blocks-packages-style',
-        // 'wc-blocks-vendors-style',
-        // 'classic-theme-styles'
+        // Block Styles (Atualizados para Woo 10.x+)
+        'wc-blocks',
+        'wc-blocks-style',
+        'wc-blocks-packages-style',
+        'wc-blocks-vendors-style',
+        'wc-all-blocks-style',
+        'classic-theme-styles'
     ];
 
     foreach ($woocommerce_handles as $handle) {
@@ -364,7 +367,6 @@ add_action('wp_enqueue_scripts', function () {
         wp_deregister_style($handle);
     }
 }, 9999);
-
 
 // WhatsApp shotrcode
 add_shortcode('whatsapp_button', function ($atts) {
