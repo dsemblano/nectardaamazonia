@@ -92,6 +92,28 @@
             });
         });
     </script>
-</body>
 
+
+<svg width="0" height="0" style="position: absolute; pointer-events: none;" aria-hidden="true">
+  <defs>
+    <clipPath id="favo-arredondado-plugin" clipPathUnits="objectBoundingBox">
+      <path d="
+        M 0.44 0.03
+        Q 0.50 0.00, 0.56 0.03
+        L 0.95 0.22
+        Q 1.00 0.25, 0.98 0.31
+        L 0.98 0.69
+        Q 1.00 0.75, 0.95 0.78
+        L 0.56 0.97
+        Q 0.50 1.00, 0.44 0.97
+        L 0.05 0.78
+        Q 0.00 0.75, 0.02 0.69
+        L 0.02 0.31
+        Q 0.00 0.25, 0.05 0.22
+        Z" />
+    </clipPath>
+  </defs>
+</svg>
+
+</body>
 </html>

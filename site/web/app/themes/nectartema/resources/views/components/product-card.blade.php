@@ -44,7 +44,7 @@
 
         {{-- Badge visual de Fora de Estoque em cima da imagem (Opcional, mas melhora muito a UX) --}}
         @if ($outOfStock)
-            <div class="absolute inset-0 bg-black/40 flex items-center justify-center z-10 esgotado">
+            <div class="absolute inset-0 bg-p/40 flex items-center justify-center z-10 esgotado">
                 <span class="bg-white/90 text-gray-800 text-xs font-bold uppercase tracking-wider px-3 py-1.5 rounded-lg shadow-sm">
                     Esgotado
                 </span>

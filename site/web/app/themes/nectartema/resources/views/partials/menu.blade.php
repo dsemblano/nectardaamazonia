@@ -16,7 +16,7 @@
 
                 {{-- Desktop Sub-menu Dropdown --}}
                 @if ($item->children)
-                    <ul class="absolute z-[99999] left-0 top-9/12 mt-1 w-80 bg-fundo shadow-md rounded p-2 transition-all duration-300 ease-out origin-top invisible opacity-0 -translate-y-2 group-hover:visible group-hover:opacity-100 group-hover:translate-y-0">
+                    <ul class="absolute z-[99999] left-0 top-9/12 mt-1 w-80 bg-header shadow-md rounded p-2 transition-all duration-300 ease-out origin-top invisible opacity-0 -translate-y-2 group-hover:visible group-hover:opacity-100 group-hover:translate-y-0">
                         @foreach ($item->children as $child)
                             <li class="{{ $child->classes }} w-full clear-both py-2 px-4 rounded transition duration-200 hover:bg-mel/20">
                                 <a href="{{ $child->url }}"
@@ -61,7 +61,7 @@
         x-transition:enter-end="opacity-100" x-transition:leave="transition ease-in duration-150"
         x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0"
         class="fixed inset-0 z-40 bg-offmel lg:hidden mt-22" style="display: none">
-        <div class="container px-10 py-4 bg-fundo shadow-xl h-full overflow-y-auto">
+        <div class="container px-10 py-4 bg-header shadow-xl h-full overflow-y-auto">
             
             <ul id="menu-mobile" class="space-y-8">
                 @foreach ($primary_navigation as $item)

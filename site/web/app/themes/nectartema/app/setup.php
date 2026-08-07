@@ -368,6 +368,7 @@ add_action('wp_enqueue_scripts', function () {
     }
 }, 9999);
 
+
 // WhatsApp shotrcode
 add_shortcode('whatsapp_button', function ($atts) {
     // Define os atributos padrão do shortcode
