@@ -529,7 +529,11 @@ li::marker {
 /* Woocommerce */
 
 .page-description {
-  @apply mb-6;
+  @apply flex flex-col mb-8;
+
+  header {
+    @apply py-4 gap-4;
+  }
 }
 
 .quantity input {
