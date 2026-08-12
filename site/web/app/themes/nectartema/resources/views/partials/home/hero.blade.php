@@ -1,17 +1,17 @@
 <section id="hero" class="section-home text-white relative overflow-hidden">
     <picture class="hero-bg-img" class="w-full h-full block">
         <!-- 1. Mobile devices (under 576px) -->
-        <source media="(max-width: 576px)" srcset="{{ Vite::asset('resources/images/meliponarios-mobile.avif') }}"
+        <source media="(max-width: 576px)" srcset="{{ Vite::asset('resources/images/loja-mobile.avif') }}"
             type="image/avif">
-        <source media="(max-width: 576px)" srcset="{{ Vite::asset('resources/images/meliponarios-mobile.webp') }}"
+        <source media="(max-width: 576px)" srcset="{{ Vite::asset('resources/images/loja.webp') }}"
             type="image/webp">
 
         <!-- 2. Desktop/Tablet devices -->
-        <source srcset="{{ Vite::asset('resources/images/meliponarios.avif') }}" type="image/avif">
-        <source srcset="{{ Vite::asset('resources/images/meliponarios.webp') }}" type="image/webp">
+        <source srcset="{{ Vite::asset('resources/images/loja.avif') }}" type="image/avif">
+        <source srcset="{{ Vite::asset('resources/images/loja.webp') }}" type="image/webp">
 
         <!-- 3. Native fallback (This is where your layout classes MUST sit) -->
-        <img id="hero-img" src="{{ Vite::asset('resources/images/meliponarios.webp') }}" data-opt-lazy-loaded="false"
+        <img id="hero-img" src="{{ Vite::asset('resources/images/loja.webp') }}" data-opt-lazy-loaded="false"
             fetchpriority="high" class="hero-bg-img no-lazy w-full object-cover optml-skip"
             alt="Logo Néctar da Amazônia">
     </picture>
