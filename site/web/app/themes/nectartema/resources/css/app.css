@@ -160,6 +160,7 @@ h1.wp-block-heading,
 h1.woocommerce-products-header__title,
 h2#artigos-e-blog,
 .zolo-post-title,
+.wp-block-heading,
 h1.product_title {
   color: var(--color-verde);
 }
@@ -372,7 +373,18 @@ p {
 
   section.wp-block-zolo-container,
   article.wp-block-zolo-container {
-    @apply prose lg:prose-lg mt-0 max-w-none prose-a:no-underline prose-figure:mt-4 prose-h2:mt-0 prose-h2:mb-4 md:prose-h2:mb-4 md:prose-h2:mt-0 prose-p:text-xl;
+      @apply prose lg:prose-lg mt-0 max-w-none prose-a:no-underline prose-a:hover:underline prose-figure:mt-4 prose-h2:mt-0 prose-h2:mb-4 md:prose-h2:mb-4 md:prose-h2:mt-0 prose-p:text-xl;
+
+      h2,
+      h3,h4 {
+        color: var(--color-verde);
+        font-weight: bold;
+
+        a {
+          color: inherit;
+          font-weight: inherit;
+        }
+      }
   }
 }
 
