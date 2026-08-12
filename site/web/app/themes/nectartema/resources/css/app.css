@@ -411,6 +411,13 @@ p {
   }
 }
 
+  /* Para a página loja de meliponários */
+  .orcamento-instalacao-de-meliponarios .h1-container {
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.3)), url("@images/meliponarios.webp");
+    background-position: top center;
+    height: 50vh;
+  }
+
 /* .wp-block-media-text__content {
   margin-top: 2rem;
   margin-bottom: 2rem;
@@ -532,7 +539,7 @@ li::marker {
   @apply flex flex-col mb-8;
 
   header {
-    @apply py-4 gap-4;
+    @apply pb-6;
   }
 }
 
@@ -782,7 +789,7 @@ article header h1 {
         var(--color-secondary),
         var(--color-melescuro)); */
   background-clip: text;
-  margin-top: 2rem;
+  margin-top: 4rem;
   /* -webkit-text-stroke-width: 1px;
 	-webkit-text-stroke-color: hsl(0 0% 10% / 30%); */
 }
