@@ -537,7 +537,7 @@ li::marker {
 #footer {
   box-shadow: 0px -7px 10px -12px rgba(0, 0, 0, 0.5);
   p {
-    @apply prose max-w-none prose-p:text-base prose-a:no-underline hover:prose-a:underline prose-a:text-p;
+    @apply prose max-w-none prose-p:text-base prose-a:no-underline hover:prose-a:underline prose-a:text-p mb-1;
   }
 
   .wp-block-group {
@@ -545,6 +545,10 @@ li::marker {
   }
   ul#menu-footer {
     padding: 0.5rem 0rem 0rem 1rem;
+
+    li {
+      margin-bottom: 0.85rem;
+    }
   }
 }
 
