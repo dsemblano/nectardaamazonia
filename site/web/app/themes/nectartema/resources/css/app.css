@@ -543,6 +543,9 @@ li::marker {
   .wp-block-group {
     @apply my-2;
   }
+  ul#menu-footer {
+    padding: 0.5rem 0rem 0rem 1rem;
+  }
 }
 
 /* Woocommerce */
