@@ -226,3 +226,19 @@ add_action('woocommerce_email_order_item_meta', function($item_id, $item, $order
  * Carregar o CSS dos blocos do Gutenberg apenas quando forem utilizados na página.
  */
 add_filter('should_load_separate_core_block_assets', '__return_true');
+
+add_filter( 'gettext', function( $translated_text, $text, $domain ) {
+    // You can filter by domain e.g. 'woocommerce-fast-cart' if needed
+    switch ( $text ) {
+        case 'Shopping Cart':
+            return 'Carrinho de Compras';
+            
+        case 'Empty Cart':
+            return 'Esvaziar carrinho';
+            
+        case 'Your cart is currently empty.':
+            return 'Seu carrinho está vazio.';
+    }
+
+    return $translated_text;
+}, 20, 3 );
