@@ -586,6 +586,14 @@ body.sage {
   color: var(--color-fundo);
 }
 
+.checkout {
+  
+  p.woocommerce-notice.woocommerce-notice--success.woocommerce-thankyou-order-received {
+    font-size: 3rem;
+    font-weight: bold;
+  }
+}
+
 /* Main CTA */
 .hero-cta,
 .woocommerce div.product form.cart .single_add_to_cart_button,
@@ -615,6 +623,7 @@ a.button.wc-backward,
 .woo-better-button-current-style,
 .woocommerce .cart .button,
 .woocommerce a.button,
+#place_order, 
 .section-home .button {
   @apply cta-second;
 }
@@ -1019,3 +1028,4 @@ figure.w-full img {
     }
   }
 }
+
