@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "36dd19f89a01a79e5a66ba59fa3d40c9",
+    "content-hash": "38ee5267989798f73f564f2fd48774d8",
     "packages": [
         {
             "name": "brick/math",
@@ -7592,36 +7592,6 @@
                 "source": "https://plugins.svn.wordpress.org/gtm-kit"
             },
             "time": "2026-08-07T12:41:27+00:00"
-        },
-        {
-            "name": "wp-plugin/image-zoom-on-hover",
-            "version": "1.0.3",
-            "source": {
-                "type": "svn",
-                "url": "https://plugins.svn.wordpress.org/image-zoom-on-hover/",
-                "reference": "tags/1.0.3"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/image-zoom-on-hover.1.0.3.zip"
-            },
-            "require": {
-                "composer/installers": "~1.0|~2.0"
-            },
-            "type": "wordpress-plugin",
-            "notification-url": "https://wp-packages.org/downloads",
-            "authors": [
-                {
-                    "name": "Mathew"
-                }
-            ],
-            "description": "Transform your WordPress images with elegant zoom functionality. Click any image to view it in a beautiful full-screen overlay with smooth animations.",
-            "support": {
-                "changelog": "https://wordpress.org/plugins/image-zoom-on-hover/#developers",
-                "issues": "https://wordpress.org/support/plugin/image-zoom-on-hover",
-                "source": "https://plugins.svn.wordpress.org/image-zoom-on-hover"
-            },
-            "time": "2026-06-16T09:45:46+00:00"
         },
         {
             "name": "wp-plugin/infixs-correios-automatico",
