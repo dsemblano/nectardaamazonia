@@ -1,5 +1,5 @@
 <section id="hero" class="section-home text-white relative overflow-hidden">
-    <picture class="hero-bg-img" class="w-full h-full block">
+    <picture id="hero-bg-img" class="hero-bg-img" class="w-full h-full block">
         <!-- 1. Mobile devices (under 576px) -->
         <source media="(max-width: 576px)" srcset="{{ Vite::asset('resources/images/loja.avif') }}"
             type="image/avif">

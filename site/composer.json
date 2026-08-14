@@ -67,7 +67,8 @@
     "roots/acorn-mail": "^2.0",
     "wp-plugin/debug-log-manager": "^2.5",
     "wp-plugin/query-monitor": "^4.0",
-    "wp-plugin/optimole-wp": "^4.2"
+    "wp-plugin/optimole-wp": "^4.2",
+    "wp-plugin/image-zoom-on-hover": "^1.0"
   },
   "require-dev": {
     "roave/security-advisories": "dev-latest",
