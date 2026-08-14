@@ -373,7 +373,7 @@ p {
 
   section.wp-block-zolo-container,
   article.wp-block-zolo-container {
-      @apply prose lg:prose-lg mt-0 max-w-none prose-a:no-underline prose-a:hover:underline prose-figure:mt-4 prose-h2:mt-0 prose-h2:mb-4 md:prose-h2:mb-4 md:prose-h2:mt-0 prose-p:text-xl;
+      @apply prose lg:prose-lg max-w-none prose-a:no-underline prose-a:hover:underline prose-figure:mt-4 prose-h2:mt-0 prose-h2:mb-4 md:prose-h2:mb-4 md:prose-h2:mt-0;
 
       h2,
       h3,h4 {
@@ -501,9 +501,9 @@ li::marker {
   }
 }
 
-.wp-block-heading {
+/* .wp-block-heading {
   @apply mt-8 md:mt-0;
-}
+} */
 
 /* Pages with Zolo block */
 
