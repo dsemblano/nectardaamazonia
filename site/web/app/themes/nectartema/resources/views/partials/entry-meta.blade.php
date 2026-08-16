@@ -7,7 +7,7 @@
   </div>
 </time>
 
-@if (!is_category())
+@if (is_single())
   
 <div class="flex flex-col lg:flex-row items-center author py-2 w-fit m-auto lg:m-0">
   <figure class="">
