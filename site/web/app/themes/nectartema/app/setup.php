@@ -382,3 +382,61 @@ add_shortcode('whatsapp_button', function ($atts) {
     // Renderiza a view do Blade e retorna como string para o WordPress
     return view('shortcodes.whatsapp', $attributes)->render();
 });
+
+/**
+ * Shortcode para renderizar o grid de posts do blog com paginação [loop_posts]
+ */
+add_shortcode('loop_posts', function ($atts) {
+    $atts = shortcode_atts([
+        'limit'    => 6,
+        'category' => 'blog',
+    ], $atts, 'loop_posts');
+
+    // Captura a página atual
+    $paged = get_query_var('paged') ? get_query_var('paged') : (get_query_var('page') ? get_query_var('page') : 1);
+
+    $query = new \WP_Query([
+        'post_type'      => 'post',
+        'posts_per_page' => (int) $atts['limit'],
+        'category_name'  => $atts['category'],
+        'post_status'    => 'publish',
+        'paged'          => $paged,
+    ]);
+
+    if (! $query->have_posts()) {
+        return '';
+    }
+
+    $pagination = '';
+    if ($query->max_num_pages > 1) {
+        $big = 999999999;
+
+        // Tipo 'plain' gera as tags <a> e <span> nativas do get_the_posts_pagination
+        $links = paginate_links([
+            'base'      => str_replace($big, '%#%', esc_url(get_pagenum_link($big))),
+            'format'    => '?paged=%#%',
+            'current'   => max(1, $paged),
+            'total'     => $query->max_num_pages,
+            'prev_text' => '« Anterior',
+            'next_text' => 'Próximo »',
+            'type'      => 'plain',
+        ]);
+
+        if ($links) {
+            // Envelope idêntico ao do get_the_posts_pagination()
+            $pagination  = '<nav class="navigation pagination" aria-label="' . esc_attr__('Navegação de posts', 'sage') . '">';
+            $pagination .= '<h2 class="screen-reader-text sr-only">' . __('Navegação de posts', 'sage') . '</h2>';
+            $pagination .= '<div class="nav-links">' . $links . '</div>';
+            $pagination .= '</nav>';
+        }
+    }
+
+    $output = \Roots\view('shortcodes.posts-loop', [
+        'query'      => $query,
+        'pagination' => $pagination,
+    ])->render();
+
+    wp_reset_postdata();
+
+    return $output;
+});
