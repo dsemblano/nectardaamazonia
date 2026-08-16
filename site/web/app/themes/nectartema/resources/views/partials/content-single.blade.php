@@ -1,9 +1,4 @@
-<div class="breadcrumb bg-footer">
-    <div class="breadcrumb-inner h-28 max-w-xs md:max-w-4xl mx-auto px-7 pb-10 pt-4 text-xs md:text-base">
-        {!! do_shortcode('[tsf_breadcrumb sep="⬢"]') !!}
-        {{-- {!! do_shortcode('[tsf_breadcrumb sep="🐝"]') !!} --}}
-    </div>
-</div>
+@include('partials.breadcrumbtsf')
 <div
     class="article-wrapper bg-white max-w-xs md:max-w-4xl mx-auto rounded-3xl p-7 relative bottom-8 md:bottom-14 shadow-lg">
     <article

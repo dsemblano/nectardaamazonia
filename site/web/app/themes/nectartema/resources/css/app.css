@@ -1031,6 +1031,10 @@ figure.w-full img {
 
 /* breadcrumbs */
 .tsf-breadcrumb {
+  ol {
+    padding-inline-start: 0 !important;
+  }
+
   .breadcrumb-item {
     &:not(:last-child)::after {
       content: "⬢";
@@ -1038,7 +1042,8 @@ figure.w-full img {
       font-size: 0.75em;
       margin: 0 0.5rem;
       vertical-align: middle;
-  }
+    }
+
     a {
       color: var(--color-p);
       text-decoration: none;
@@ -1051,6 +1056,7 @@ figure.w-full img {
       }
     }
   }
+
   span[aria-current="page"] {
     color: #1f2937;
     font-weight: 600;
@@ -1059,36 +1065,36 @@ figure.w-full img {
 
 /* Pagination */
 .pagination {
-    @apply text-p my-14;
+  @apply text-p my-14;
 
 
-    h2 {
+  h2 {
+    color: inherit;
+  }
+
+  .nav-links {
+    color: inherit;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+
+    a {
       color: inherit;
     }
 
-    .nav-links {
-      color: inherit;
-      margin: 0 auto;
-      display: flex;
-      justify-content: center;
+    .page-numbers:not(.prev):not(.next) {
+      @apply border-r-2 border-p;
 
-      a {
-        color: inherit;
-      }
+      padding: 0 1rem 0 1rem;
+    }
 
-      .page-numbers:not(.prev):not(.next) {
-        @apply border-r-2 border-p;
+    .next.page-numbers {
+      padding-left: 1rem;
+    }
 
-        padding: 0 1rem 0 1rem;
-      }
-      
-      .next.page-numbers {
-        padding-left: 1rem;
-      }
-
-      .current {
-        font-size: large;
-        font-weight: bolder;
-      }
+    .current {
+      font-size: large;
+      font-weight: bolder;
     }
   }
+}

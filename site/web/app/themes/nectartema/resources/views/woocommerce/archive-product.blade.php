@@ -31,6 +31,7 @@
             @if (woocommerce_product_loop())
                 
                 <div id="shop_products" class="products-archive-container container">
+                    @include('partials.breadcrumbtsf')
                     
                     {{-- @php do_action('woocommerce_before_shop_loop'); @endphp --}}
 
