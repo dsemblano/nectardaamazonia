@@ -12,7 +12,7 @@
 @theme {
   --color-primary: #F7B203;
   --color-headingprimary: #FEBE15;
-  --color-secondary: #EE7605;
+  --color-secondary: #d97706;
   --color-mel: #b8933a;
   --color-marrom: #402810;
   --color-verde: #294023;
@@ -309,7 +309,7 @@ p {
 
 .wp-singular {
   h1.p-name {
-    @apply text-4xl lg:text-6xl;
+    @apply text-2xl lg:text-6xl;
   }
 }
 
@@ -373,19 +373,20 @@ p {
 
   section.wp-block-zolo-container,
   article.wp-block-zolo-container {
-      /* @apply prose lg:prose-lg max-w-none prose-a:no-underline prose-a:hover:underline prose-figure:mt-4 prose-h2:mt-0 prose-h2:mb-4 md:prose-h2:mb-4 md:prose-h2:mt-0; */
-      @apply prose xl:prose-lg 2xl:prose-xl max-w-none prose-a:no-underline prose-a:hover:underline prose-figure:mt-4 prose-h2:mt-0;
+    /* @apply prose lg:prose-lg max-w-none prose-a:no-underline prose-a:hover:underline prose-figure:mt-4 prose-h2:mt-0 prose-h2:mb-4 md:prose-h2:mb-4 md:prose-h2:mt-0; */
+    @apply prose xl:prose-lg 2xl:prose-xl max-w-none prose-a:no-underline prose-a:hover:underline prose-figure:mt-4 prose-h2:mt-0;
 
-      h2,
-      h3,h4 {
-        color: var(--color-verde);
-        font-weight: bold;
+    h2,
+    h3,
+    h4 {
+      color: var(--color-verde);
+      font-weight: bold;
 
-        a {
-          color: inherit;
-          font-weight: inherit;
-        }
+      a {
+        color: inherit;
+        font-weight: inherit;
       }
+    }
   }
 }
 
@@ -424,12 +425,12 @@ p {
   }
 }
 
-  /* Para a página loja de meliponários */
-  .orcamento-instalacao-de-meliponarios .h1-container {
-    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.3)), url("@images/meliponarios.webp");
-    background-position: top center;
-    height: 50vh;
-  }
+/* Para a página loja de meliponários */
+.orcamento-instalacao-de-meliponarios .h1-container {
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.3)), url("@images/meliponarios.webp");
+  background-position: top center;
+  height: 50vh;
+}
 
 /* .wp-block-media-text__content {
   margin-top: 2rem;
@@ -537,6 +538,7 @@ li::marker {
 
 #footer {
   box-shadow: 0px -7px 10px -12px rgba(0, 0, 0, 0.5);
+
   p {
     @apply prose max-w-none prose-p:text-base prose-a:no-underline hover:prose-a:underline prose-a:text-p mb-1;
   }
@@ -544,6 +546,7 @@ li::marker {
   .wp-block-group {
     @apply my-2;
   }
+
   ul#menu-footer {
     padding: 0.5rem 0rem 0rem 1rem;
 
@@ -588,7 +591,7 @@ body.sage {
 }
 
 .checkout {
-  
+
   p.woocommerce-notice.woocommerce-notice--success.woocommerce-thankyou-order-received {
     font-size: 3rem;
     font-weight: bold;
@@ -624,7 +627,7 @@ a.button.wc-backward,
 .woo-better-button-current-style,
 .woocommerce .cart .button,
 .woocommerce a.button,
-#place_order, 
+#place_order,
 .section-home .button {
   @apply cta-second;
 }
@@ -810,10 +813,10 @@ li.wc-block-product img:hover {
   display: none;
 }
 
-h1.wp-block-heading,
+.archive h1.wp-block-heading,
 h1.woocommerce-products-header__title,
-h1.product_title,
-article header h1 {
+.archive h1.product_title,
+.wp-singular .h1-container h1 {
   /* background: linear-gradient(120deg,
         var(--color-secondary),
         var(--color-melescuro)); */
@@ -917,10 +920,6 @@ blockquote {
   bottom: 10px;
   width: 50px;
   height: 50px;
-}
-
-.breadcrumb {
-  @apply container mx-auto text-base;
 }
 
 .wp-block-quote {
@@ -1030,3 +1029,30 @@ figure.w-full img {
   }
 }
 
+/* breadcrumbs */
+.tsf-breadcrumb {
+  .breadcrumb-item {
+    &:not(:last-child)::after {
+      content: "⬢";
+      color: var(--color-secondary);
+      font-size: 0.75em;
+      margin: 0 0.5rem;
+      vertical-align: middle;
+  }
+    a {
+      color: var(--color-p);
+      text-decoration: none;
+      transition: color 0.2s ease;
+
+      &:hover {
+        color: var(--color-mel);
+        text-decoration: none;
+        transition: color 0.2s ease;
+      }
+    }
+  }
+  span[aria-current="page"] {
+    color: #1f2937;
+    font-weight: 600;
+  }
+}
