@@ -47,7 +47,7 @@ return [
         /**
          * Disable recent comments CSS.
          */
-        'disable-recent-comments-css' => true,
+        'disable-recent-comments-css' => false,
 
         /**
          * Disable gallery CSS.
@@ -87,7 +87,7 @@ return [
         /**
          * Enable relative URLs.
          */
-        'enabled' => true,
+        'enabled' => false,
 
         /**
          * The hooks to filter.
