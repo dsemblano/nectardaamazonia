@@ -61,7 +61,7 @@
         x-transition:enter-end="opacity-100" x-transition:leave="transition ease-in duration-150"
         x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0"
         class="fixed inset-0 z-40 bg-offmel lg:hidden mt-22" style="display: none">
-        <div class="container px-10 py-4 bg-header shadow-xl h-full overflow-y-auto">
+        <div class="container px-10 bg-header shadow-xl h-full overflow-y-auto">
             
             <ul id="menu-mobile" class="space-y-8">
                 @foreach ($primary_navigation as $item)

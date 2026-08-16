@@ -7,6 +7,8 @@
   </div>
 </time>
 
+@if (!is_category())
+  
 <div class="flex flex-col lg:flex-row items-center author py-2 w-fit m-auto lg:m-0">
   <figure class="">
     <figcaption class="">
@@ -24,6 +26,8 @@
     </div>
   </div>
 </div>
+
+@endif
 
 {{-- <p>
   <span>{{ __('By', 'sage') }}</span>
