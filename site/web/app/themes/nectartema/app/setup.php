@@ -440,3 +440,24 @@ add_shortcode('loop_posts', function ($atts) {
 
     return $output;
 });
+
+/**
+ * 1. Faz os links de breadcrumbs/plugins apontarem direto para /blog/
+ */
+add_filter('term_link', function ($url, $term, $taxonomy) {
+    if ($taxonomy === 'category' && $term->slug === 'blog') {
+        return home_url('/blog/');
+    }
+
+    return $url;
+}, 10, 3);
+
+/**
+ * 2. Redireciona 301 a página de arquivo /category/blog/ para /blog/
+ */
+add_action('template_redirect', function () {
+    if (is_category('blog')) {
+        wp_redirect(home_url('/blog/'), 301);
+        exit;
+    }
+});

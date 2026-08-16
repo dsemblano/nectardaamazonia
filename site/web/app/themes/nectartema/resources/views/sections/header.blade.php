@@ -1,4 +1,4 @@
-<header id="banner" class="sticky banner w-full z-50 bg-header top-0 left-0 shadow">
+<header id="banner" class="sticky banner w-full z-50 bg-header top-0 left-0 shadow py-2">
     <div class="container">
         <div id="banner-inner" class="flex flex-row justify-between lg:justify-start lg:items-center transition-all duration-300">
             @include('partials.logo')
