@@ -1,18 +1,15 @@
-<div class="container prose prose-xl mx-auto max-w-full">
-    <article @php(post_class())>
-        <header>
-            <h2 class="entry-title">
-                <a class="no-underline hover:underline" href="{{ get_permalink() }}">
-                    {!! $title !!}
-                </a>
-            </h2>
+<article @php(post_class('bg-white p-7 rounded-3xl shadow-lg mb-4'))>
+    <header>
+        <h2 class="entry-title">
+            <a class="no-underline hover:underline" href="{{ get_permalink() }}">
+                {!! $title !!}
+            </a>
+        </h2>
 
-            @include('partials.entry-meta')
-        </header>
+        @include('partials.entry-meta')
+    </header>
 
-        <div class="entry-summary">
-            @php(the_excerpt())
-        </div>
-    </article>
-
-</div>
+    <div class="entry-summary">
+        @php(the_excerpt())
+    </div>
+</article>
