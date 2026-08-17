@@ -37,7 +37,7 @@
         </a>
 
         @if ($product->is_on_sale() && !$outOfStock)
-            <span class="absolute top-3 left-3 bg-red-600 text-white text-xs font-bold uppercase tracking-wider px-2.5 py-1 rounded-md shadow-sm z-10">
+            <span class="absolute top-3 left-3 bg-white text-white text-xs font-bold uppercase tracking-wider px-2.5 py-1 rounded-md shadow-sm z-10">
                 Oferta
             </span>
         @endif

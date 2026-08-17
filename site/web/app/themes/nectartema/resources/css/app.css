@@ -1030,9 +1030,13 @@ figure.w-full img {
 }
 
 /* breadcrumbs */
-.tsf-breadcrumb {
+
+.tsf-breadcrumb,
+.wc-breadcrumb {
   @apply text-p text-sm md:text-base;
+
   ol {
+    display: flex;
     padding-inline-start: 0 !important;
     text-transform: capitalize;
   }

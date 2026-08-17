@@ -461,3 +461,24 @@ add_action('template_redirect', function () {
         exit;
     }
 });
+
+/**
+ * 1. Faz os links de breadcrumbs/plugins da categoria de produto 'mel' apontarem para /loja/
+ */
+add_filter('term_link', function ($url, $term, $taxonomy) {
+    if ($taxonomy === 'product_cat' && is_object($term) && $term->slug === 'mel') {
+        return home_url('/loja/');
+    }
+
+    return $url;
+}, 10, 3);
+
+/**
+ * 2. Redireciona 301 a página de arquivo da categoria /product-category/mel/ para /loja/
+ */
+add_action('template_redirect', function () {
+    if (function_exists('is_product_category') && is_product_category('mel')) {
+        wp_redirect(home_url('/loja/'), 301);
+        exit;
+    }
+});

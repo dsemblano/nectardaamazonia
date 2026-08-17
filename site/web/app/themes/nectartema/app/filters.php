@@ -242,3 +242,25 @@ add_filter( 'gettext', function( $translated_text, $text, $domain ) {
 
     return $translated_text;
 }, 20, 3 );
+
+// WooCommerce breadcrumb
+// add_filter( 'woocommerce_breadcrumb_defaults', 'wcc_change_breadcrumb_delimiter' );
+// function wcc_change_breadcrumb_delimiter( $defaults ) {
+// 	// Change the breadcrumb delimeter from '/' to '>'
+// 	$defaults['delimiter'] = ' &gt; ';
+// 	return $defaults;
+// }
+
+/**
+ * Padroniza a estrutura do Breadcrumb do WooCommerce para o padrão TSF
+ */
+add_filter('woocommerce_breadcrumb_defaults', function () {
+    return [
+        'delimiter'   => '', // Vazio pois o hexágono é injetado via CSS ::after
+        'wrap_before' => '<nav aria-label="Breadcrumb" class="wc-breadcrumb container mt-6"><ol>',
+        'wrap_after'  => '</ol></nav>',
+        'before'      => '<li class="breadcrumb-item">',
+        'after'       => '</li>',
+        'home'        => _x('Início', 'breadcrumb', 'woocommerce'),
+    ];
+});

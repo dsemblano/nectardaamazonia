@@ -23,6 +23,7 @@ the readme will list any important changes.
     @endphp
 
     @while (have_posts())
+    {{(woocommerce_breadcrumb())}}
         <section id="shop_single_products" class="container mt-10">
             @php
                 the_post();
