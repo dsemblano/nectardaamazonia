@@ -1,11 +1,27 @@
 <!doctype html>
 <html @php(language_attributes())>
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     {{-- <meta name="google-adsense-account" content="ca-pub-5180633762059604">
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5180633762059604"
      crossorigin="anonymous"></script> --}}
+
+    @if (app()->environment('production') && !is_user_logged_in())
+        <!-- Google Analytics Tag aqui -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-4RDPL3WYS9"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+
+            function gtag() {
+                dataLayer.push(arguments);
+            }
+            gtag('js', new Date());
+            gtag('config', 'G-4RDPL3WYS9');
+        </script>
+    @endif
+
     @php(do_action('get_header'))
     @php(wp_head())
 
@@ -16,10 +32,12 @@
         };
     </script> --}}
 
-@if (is_front_page() || is_home())
-    <link rel="preload" fetchpriority="high" as="image" href="{{ Vite::asset('resources/images/loja.webp') }}" type="image/webp" imagesizes="(max-width: 768px) 100vw, 65vw">
-    <link rel="preload" fetchpriority="high" as="image" href="{{ Vite::asset('resources/images/loja.avif') }}" type="image/webp" imagesizes="(max-width: 576px) 100vw, 100vw">
-@endif
+    @if (is_front_page() || is_home())
+        <link rel="preload" fetchpriority="high" as="image" href="{{ Vite::asset('resources/images/loja.webp') }}"
+            type="image/webp" imagesizes="(max-width: 768px) 100vw, 65vw">
+        <link rel="preload" fetchpriority="high" as="image" href="{{ Vite::asset('resources/images/loja.avif') }}"
+            type="image/webp" imagesizes="(max-width: 576px) 100vw, 100vw">
+    @endif
 
     <link rel="preload" href="{{ Vite::asset('resources/fonts/Poppins/Poppins-Regular.ttf') }}" as="font"
         type="font/ttf" crossorigin>
@@ -56,13 +74,13 @@
             @yield('content')
         </main>
 
-        
-      @hasSection('sidebar')
-        <aside class="sidebar">
-          @yield('sidebar')
-        </aside>
-      @endif
-        
+
+        @hasSection('sidebar')
+            <aside class="sidebar">
+                @yield('sidebar')
+            </aside>
+        @endif
+
 
         @include('sections.footer')
     </div>
@@ -94,10 +112,10 @@
     </script>
 
 
-<svg width="0" height="0" style="position: absolute; pointer-events: none;" aria-hidden="true">
-  <defs>
-    <clipPath id="favo-arredondado-plugin" clipPathUnits="objectBoundingBox">
-      <path d="
+    <svg width="0" height="0" style="position: absolute; pointer-events: none;" aria-hidden="true">
+        <defs>
+            <clipPath id="favo-arredondado-plugin" clipPathUnits="objectBoundingBox">
+                <path d="
         M 0.44 0.03
         Q 0.50 0.00, 0.56 0.03
         L 0.95 0.22
@@ -111,9 +129,10 @@
         L 0.02 0.31
         Q 0.00 0.25, 0.05 0.22
         Z" />
-    </clipPath>
-  </defs>
-</svg>
+            </clipPath>
+        </defs>
+    </svg>
 
 </body>
+
 </html>
