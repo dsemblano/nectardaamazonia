@@ -1123,3 +1123,17 @@ figure.w-full img {
 .wp-block-paragraph {
   padding-bottom: 1rem;
 }
+
+/* Torna todas as imagens da descrição do produto e do blog responsivas automaticamente */
+.woocommerce-product-details__short-description img,
+.woocommerce-Tabs-panel img,
+.entry-content img,
+.prose img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 0.5rem; /* Opcional: cantos levemente arredondados */
+}
+
+figure {
+  max-width: 100%;
+}
