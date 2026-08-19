@@ -313,10 +313,6 @@ p {
   }
 }
 
-.page:not(.home) h1 {
-  @apply text-4xl md:text-6xl;
-}
-
 /* Pages with Zolo block */
 
 /* Header em cada página usando Zolo blocos */
@@ -371,10 +367,14 @@ p {
 /* Section */
 .page:not(.home) {
 
+  h1 {
+    @apply text-4xl md:text-6xl;
+  }
+
   section.wp-block-zolo-container,
   article.wp-block-zolo-container {
     /* @apply prose lg:prose-lg max-w-none prose-a:no-underline prose-a:hover:underline prose-figure:mt-4 prose-h2:mt-0 prose-h2:mb-4 md:prose-h2:mb-4 md:prose-h2:mt-0; */
-    @apply prose xl:prose-lg 2xl:prose-xl max-w-none prose-a:no-underline prose-a:hover:underline prose-figure:mt-4 prose-h2:mt-0;
+    @apply prose xl:prose-lg prose-p:m-0 2xl:prose-xl max-w-none prose-a:no-underline prose-a:hover:underline prose-figure:mt-4 prose-h2:mt-0 prose-ul:m-0;
 
     h2,
     h3,
@@ -1033,10 +1033,14 @@ figure.w-full img {
 
 .tsf-breadcrumb,
 .wc-breadcrumb {
-  @apply text-p text-sm md:text-base;
+  @apply text-p text-sm xl:text-base;
 
   ol {
     display: flex;
+    align-items: center;
+    flex-wrap: nowrap; /* Não deixa quebrar linha */
+    overflow: hidden;
+    white-space: nowrap;
     padding-inline-start: 0 !important;
     text-transform: capitalize;
   }
@@ -1060,11 +1064,23 @@ figure.w-full img {
         transition: color 0.2s ease;
       }
     }
+    &:last-child {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      max-width: 300px;
+    }
   }
 
   span[aria-current="page"] {
+    @apply block xl:contents;
+
     color: #1f2937;
     font-weight: 600;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-width: 300px;
   }
 }
 
