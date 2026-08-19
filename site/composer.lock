@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "38ee5267989798f73f564f2fd48774d8",
+    "content-hash": "99a3df5399345ae1a444aee76b5bd0f2",
     "packages": [
         {
             "name": "brick/math",
@@ -7344,6 +7344,37 @@
                 }
             ],
             "time": "2026-04-26T05:33:54+00:00"
+        },
+        {
+            "name": "wp-plugin/add-to-any",
+            "version": "1.8.18",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/add-to-any/",
+                "reference": "tags/1.8.18"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/add-to-any.1.8.18.zip"
+            },
+            "require": {
+                "composer/installers": "~1.0|~2.0"
+            },
+            "type": "wordpress-plugin",
+            "notification-url": "https://wp-packages.org/downloads",
+            "authors": [
+                {
+                    "name": "micropat"
+                }
+            ],
+            "description": "Share buttons for WordPress including the AddToAny button, Facebook, Bluesky, Mastodon, WhatsApp, Pinterest, Reddit, many more, and follow icons too.",
+            "homepage": "https://www.addtoany.com/",
+            "support": {
+                "changelog": "https://wordpress.org/plugins/add-to-any/#developers",
+                "issues": "https://wordpress.org/support/plugin/add-to-any",
+                "source": "https://plugins.svn.wordpress.org/add-to-any"
+            },
+            "time": "2026-05-22T22:15:51+00:00"
         },
         {
             "name": "wp-plugin/autodescription",
