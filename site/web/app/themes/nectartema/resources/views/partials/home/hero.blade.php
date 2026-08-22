@@ -20,20 +20,20 @@
     <div class="container h-dvh relative z-10">
         <div
             class="prose lg:prose-lg prose-a:no-underline text-left h-dvh md:w-dvh md:h-full leading-loose flex flex-col justify-center">
-            <h1 class="text-white text-4xl md:text-6xl lg:text-7xl">Mel Sustentável da Amazônia</h1>
+            <h1 class="text-white text-4xl md:text-4xl lg:text-5xl">Mel autêntico de abelhas sem ferrão da Floresta Amazônica</h1>
             <p class="text-white font-normal text-2xl md:text-3xl mb-10">
-                <span class="text-mel font-bold">Néctar da Amazônia</span> O mais puro mel de abelhas sem ferrão,
-                <span class="ticker-container block md:inline-block text-mel">
+                <span class="text-mel font-bold">Néctar da Amazônia</span>: Mel puro de abelhas sem ferrão, colhido de abelhas nativas e de flores da Amazônia.
+                {{-- <span class="ticker-container block md:inline-block text-mel">
                     <span class="ticker-wrapper text-mel">
                         <span class="item">rico em antioxidantes</span>
                         <span class="item">do Amapá para o mundo</span>
-                        <span class="item">fortalecendo a bioeconomia</span>
+                        <span class="item">colhido de forma sustentável</span>
                         <span class="item">rico em antioxidantes</span>
                     </span>
-                </span>
+                </span> --}}
             </p>
             <div class="flex flex-col md:flex-row gap-4">
-                <a href="/loja" class="hero-cta w-fit">Garantir meu Mel Puro 🍯 </a>
+                <a href="/loja" class="hero-cta w-fit">Explore nossoss méis 🍯 </a>
                 <a href="/orcamento-instalacao-de-meliponarios" class="hero-colmeia w-fit">Ter meu Meliponário 🏡🐝</a>
             </div>
         </div>
