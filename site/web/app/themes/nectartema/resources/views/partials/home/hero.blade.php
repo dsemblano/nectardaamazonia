@@ -33,7 +33,7 @@
                 </span> --}}
             </p>
             <div class="flex flex-col md:flex-row gap-4">
-                <a href="/loja" class="hero-cta w-fit">Explore nossoss méis 🍯 </a>
+                <a href="/loja" class="hero-cta w-fit">Explore nossos méis 🍯 </a>
                 <a href="/orcamento-instalacao-de-meliponarios" class="hero-colmeia w-fit">Ter meu Meliponário 🏡🐝</a>
             </div>
         </div>
