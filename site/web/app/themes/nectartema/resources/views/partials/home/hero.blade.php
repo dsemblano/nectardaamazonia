@@ -19,9 +19,9 @@
 
     <div class="container h-dvh relative z-10">
         <div
-            class="prose lg:prose-lg prose-a:no-underline text-left h-dvh md:w-dvh md:h-full leading-loose flex flex-col justify-center pb-20">
-            <h1 class="text-white text-4xl md:text-4xl lg:text-5xl">Mel autêntico de abelhas sem ferrão da Floresta Amazônica</h1>
-            <p class="text-white font-normal text-2xl md:text-3xl mb-10">
+            class="prose lg:prose-lg prose-a:no-underline text-left h-dvh md:w-dvh md:h-full leading-loose flex flex-col justify-center pb-16">
+            <h1 class="text-white text-3xl md:text-4xl lg:text-5xl">Mel autêntico de abelhas sem ferrão da Floresta Amazônica</h1>
+            <p class="text-white font-normal text-xl md:text-3xl mb-10">
                 <span class="text-mel font-bold">Néctar da Amazônia</span>: Mel puro de abelhas sem ferrão, colhido de abelhas nativas e de flores da Amazônia.
                 {{-- <span class="ticker-container block md:inline-block text-mel">
                     <span class="ticker-wrapper text-mel">
