@@ -1033,11 +1033,12 @@ figure.w-full img {
 
 .tsf-breadcrumb,
 .wc-breadcrumb {
-  @apply text-p text-sm xl:text-base;
+  @apply text-p text-sm xl:text-base flex flex-row ;
 
   ol {
-    display: flex;
+    display: flex !important;
     align-items: center;
+    width: 100%;
     flex-wrap: nowrap; /* Não deixa quebrar linha */
     overflow: hidden;
     white-space: nowrap;
