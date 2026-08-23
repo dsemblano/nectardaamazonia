@@ -1137,3 +1137,22 @@ figure.w-full img {
 figure {
   max-width: 100%;
 }
+
+.page {
+  .wp-block-media-text {
+    @apply bg-white p-4 lg:p-6 rounded-3xl shadow-lg mb-4;
+
+    .wp-block-media-text__content {
+      @apply p-0 sm:p-6;
+    }
+
+    .wp-block-media-text__media {
+      padding: 0;
+      margin-bottom: 1rem !important;
+
+      img {
+        @apply mb-0 mt-0;
+      }
+    }
+  }
+}
