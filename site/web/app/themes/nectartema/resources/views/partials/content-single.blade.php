@@ -1,6 +1,6 @@
 @include('partials.breadcrumbtsf')
 <div
-    class="article-wrapper bg-white max-w-xs md:max-w-4xl mx-auto rounded-3xl p-7 relative bottom-8 md:bottom-14 shadow-lg">
+    class="article-wrapper bg-white max-w-xs md:max-w-4xl mx-auto rounded-3xl p-7 relative bottom-14 md:bottom-14 shadow-lg">
     <article
         class="mx-auto prose lg:prose-lg prose-a:no-underline prose-h3:text-xl prose-h2:mt-0 prose-picture:mt-0 pt-0 md:pt-8"
         @php(post_class('h-entry'))>
