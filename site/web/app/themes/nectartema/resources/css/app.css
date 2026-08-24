@@ -923,11 +923,11 @@ blockquote {
   font-size: large;
 }
 
-.e-content {
+/* .e-content {
   a {
     @apply hover:underline text-melescuro hover:text-mel;
   }
-}
+} */
 
 /* Quando pede pra criar conta no checkout, plugin nao mostra opção de desabilitar */
 .cfw-check-input {
