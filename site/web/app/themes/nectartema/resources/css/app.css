@@ -374,7 +374,7 @@ p {
   section.wp-block-zolo-container,
   article.wp-block-zolo-container {
     /* @apply prose lg:prose-lg max-w-none prose-a:no-underline prose-a:hover:underline prose-figure:mt-4 prose-h2:mt-0 prose-h2:mb-4 md:prose-h2:mb-4 md:prose-h2:mt-0; */
-    @apply prose xl:prose-lg prose-p:m-0 2xl:prose-xl max-w-none prose-a:no-underline prose-a:hover:underline prose-figure:mt-4 prose-h2:mt-0 prose-ul:m-0;
+    @apply prose lg:prose-lg prose-p:m-0  max-w-none prose-a:no-underline prose-a:hover:underline prose-figure:mt-4 prose-h2:mt-0 prose-ul:m-0;
 
     h2,
     h3,
@@ -1044,13 +1044,14 @@ figure.w-full img {
     white-space: nowrap;
     padding-inline-start: 0 !important;
     text-transform: capitalize;
+    margin: 0;
   }
 
   .breadcrumb-item {
     &:not(:last-child)::after {
       content: "⬢";
       color: var(--color-secondary);
-      margin: 0 0.5rem;
+      margin: 0 0.5rem; 
       vertical-align: middle;
     }
 
