@@ -390,10 +390,10 @@ p {
   }
 }
 
-.page:not(.wp-singular) h2.wp-block-heading,
+/* .page:not(.wp-singular) h2.wp-block-heading,
 .page:not(.wp-singular) .wp-block-group p {
   @apply prose lg:prose-lg text-white;
-}
+} */
 
 /* mobile background */
 .h1-container {
@@ -459,9 +459,6 @@ main section header h1.container {
 /* Cards */
 .wp-block-media-text:not(.post-author) {
   @apply rounded-2xl shadow-lg hover:shadow-xl;
-  /* border: 3px solid var(--color-verde);
-  border-radius: 20px;
-  transition: transform 0.3s ease; */
 }
 
 .wp-block-media-text:hover {
