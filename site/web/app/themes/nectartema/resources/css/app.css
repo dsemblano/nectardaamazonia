@@ -149,7 +149,7 @@ h6 {
 }
 
 .section-home h2 {
-  @apply text-4xl;
+  @apply text-4xl text-center font-bold mb-8;
 }
 
 h1:not(.text-white),
@@ -634,6 +634,7 @@ a.button.wc-backward,
 }
 
 .button-quemsomos,
+.button-todasmaterias a,
 .zolo-post-grid-wrap.zolo-post-style-1 .zolo-post-link-btn a,
 a.wp-block-button__link.wp-element-button {
   @apply cta-second-transparent;
@@ -1153,6 +1154,27 @@ figure {
       img {
         @apply mb-0 mt-0;
       }
+    }
+  }
+}
+
+.wp-block-latest-posts {
+  @apply grid grid-cols-1 md:grid-cols-3 gap-4;
+  li {
+    @apply bg-white p-7 rounded-lg shadow-lg mb-4;
+
+    .wp-block-latest-posts__post-title {
+      @apply text-xl no-underline hover:underline;
+
+      color: var(--color-verde);
+    }
+
+    img {
+      @apply rounded-lg mb-2 aspect-3/2 object-cover lg:min-h-56;
+    }
+
+    .wp-block-latest-posts__post-date {
+      margin-top: 1rem;
     }
   }
 }
