@@ -1178,3 +1178,8 @@ figure {
     }
   }
 }
+
+.woocommerce-terms-and-conditions-wrapper {
+    font-weight: bold;
+    font-size: 1.3rem;
+}
