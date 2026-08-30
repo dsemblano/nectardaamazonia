@@ -1183,3 +1183,65 @@ figure {
     font-weight: bold;
     font-size: 1.3rem;
 }
+
+/* Formulario Meliponario */
+.form-nectar-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+@media (min-width: 640px) {
+  .form-nectar-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.form-nectar-grid .full-width {
+  grid-column: 1 / -1;
+}
+
+.form-nectar-grid .field-group label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 0.35rem;
+  color: #2D3748;
+}
+
+.form-nectar-grid input[type="text"],
+.form-nectar-grid input[type="email"],
+.form-nectar-grid input[type="tel"],
+.form-nectar-grid input[type="number"],
+.form-nectar-grid input[type="date"],
+.form-nectar-grid textarea {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1px solid #CBD5E1;
+  border-radius: 8px;
+  background-color: #FFFFFF;
+  font-size: 0.95rem;
+  transition: all 0.2s ease-in-out;
+}
+
+.form-nectar-grid input:focus,
+.form-nectar-grid textarea:focus {
+  outline: none;
+  border-color: #B28A3E;
+  box-shadow: 0 0 0 3px rgba(178, 138, 62, 0.15);
+}
+
+.form-nectar-grid input[type="submit"] {
+  width: 100%;
+  padding: 0.85rem;
+  background-color: #B28A3E;
+  color: #FFFFFF;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.form-nectar-grid input[type="submit"]:hover {
+  background-color: #967332;
+}
