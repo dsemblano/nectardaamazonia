@@ -75,7 +75,7 @@ add_shortcode('botao_checkout', function ($atts) {
         </div>',
         esc_url($url),
         esc_html($atts['texto']),
-        $atts['valor'] ? '— ' . esc_html($atts['valor']) : ''
+        $atts['valor'] ? 'por ' . esc_html($atts['valor']) : ''
     );
 });
 
