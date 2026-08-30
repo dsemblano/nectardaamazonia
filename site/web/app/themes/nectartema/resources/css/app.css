@@ -872,39 +872,6 @@ h1.woocommerce-products-header__title,
   }
 } */
 
-/* Contato form 7 */
-.wpcf7-form {
-  width: fit-content;
-  display: flex;
-  flex-direction: column;
-  margin: 0 auto;
-
-  textarea {
-    @apply block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg shadow-sm border border-gray-300 outline-none focus:border-mel focus:ring-2 focus:ring-mel;
-  }
-
-  .flexcf7 {
-    @apply flex flex-col lg:flex-row gap-x-4;
-
-  }
-
-  input {
-    @apply block p-3 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 shadow-sm outline-none focus:border-mel focus:ring-2 focus:ring-mel;
-  }
-
-  .wpcf7-submit {
-    @apply py-3 px-5 text-sm font-medium text-center text-white rounded-lg bg-mel sm:w-fit hover:bg-primary focus:ring-4 focus:outline-none focus:ring-melescuro;
-  }
-
-  .wpcf7-response-output {
-    @apply py-3 px-5 text-sm p-4 font-medium text-center text-white rounded-lg bg-green-500 sm:w-fit focus:ring-4 focus:outline-none;
-  }
-}
-
-.wpcf7 form.invalid .wpcf7-response-output {
-  @apply py-3 px-5 text-sm font-medium text-center text-white rounded-lg bg-red-500 border-transparent sm:w-fit focus:ring-4 focus:outline-none;
-}
-
 /* Footer */
 .zolo__display-icon {
   fill: white;
@@ -1184,64 +1151,99 @@ figure {
     font-size: 1.3rem;
 }
 
+/* Contato form 7 */
+.wpcf7-form {
+  width: fit-content;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+
+  textarea {
+    @apply block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg shadow-sm border border-gray-300 outline-none focus:border-mel focus:ring-2 focus:ring-mel;
+  }
+
+  .flexcf7 {
+    @apply flex flex-col lg:flex-row gap-x-4;
+
+  }
+
+  input {
+    @apply block p-3 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 shadow-sm outline-none focus:border-mel focus:ring-2 focus:ring-mel;
+  }
+
+  .wpcf7-submit {
+    @apply py-3 px-5 text-lg font-medium text-center text-white rounded-lg bg-mel sm:w-fit focus:ring-4 focus:outline-none focus:ring-melescuro;
+  }
+
+  .wpcf7-response-output {
+    @apply py-3 px-5 text-sm p-4 font-medium text-center text-white rounded-lg bg-green-500 sm:w-fit focus:ring-4 focus:outline-none;
+  }
+}
+
+.wpcf7 form.invalid .wpcf7-response-output {
+  @apply py-3 px-5 text-sm font-medium text-center text-white rounded-lg bg-red-500 border-transparent sm:w-fit focus:ring-4 focus:outline-none;
+}
+
+
 /* Formulario Meliponario */
+
 .form-nectar-grid {
   display: grid;
   grid-template-columns: 1fr;
   gap: 1rem;
-}
 
-@media (min-width: 640px) {
-  .form-nectar-grid {
+  @media (min-width: 640px) {
     grid-template-columns: 1fr 1fr;
   }
-}
 
-.form-nectar-grid .full-width {
-  grid-column: 1 / -1;
-}
+  .full-width {
+    grid-column: 1 / -1;
+  }
 
-.form-nectar-grid .field-group label {
-  display: block;
-  font-weight: 600;
-  margin-bottom: 0.35rem;
-  color: #2D3748;
-}
+  .field-group {
+    label {
+      display: block;
+      font-weight: 600;
+      margin-bottom: 0.35rem;
+      color: $text-color;
+    }
+  }
 
-.form-nectar-grid input[type="text"],
-.form-nectar-grid input[type="email"],
-.form-nectar-grid input[type="tel"],
-.form-nectar-grid input[type="number"],
-.form-nectar-grid input[type="date"],
-.form-nectar-grid textarea {
-  width: 100%;
-  padding: 0.75rem 1rem;
-  border: 1px solid #CBD5E1;
-  border-radius: 8px;
-  background-color: #FFFFFF;
-  font-size: 0.95rem;
-  transition: all 0.2s ease-in-out;
-}
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"],
+  input[type="number"],
+  input[type="date"],
+  textarea {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    background-color: #FFFFFF;
+    font-size: 0.95rem;
+    transition: all 0.2s ease-in-out;
 
-.form-nectar-grid input:focus,
-.form-nectar-grid textarea:focus {
-  outline: none;
-  border-color: #B28A3E;
-  box-shadow: 0 0 0 3px rgba(178, 138, 62, 0.15);
-}
+    &:focus {
+      outline: none;
+      border-color: var(--color-melescuro);
+      box-shadow: 0 0 0 3px rgba(var(--color-melescuro), 0.15);
+    }
+  }
 
-.form-nectar-grid input[type="submit"] {
-  width: 100%;
-  padding: 0.85rem;
-  background-color: #B28A3E;
-  color: #FFFFFF;
-  font-weight: 600;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: background-color 0.2s ease;
-}
+  input[type="submit"] {
+    @apply hover:scale-105 transition-transform duration-300 ease-in-out;
 
-.form-nectar-grid input[type="submit"]:hover {
-  background-color: #967332;
+    width: 100%;
+    padding: 0.85rem;
+    background-color: var(--color-melescuro);
+    color: #FFFFFF;
+    font-weight: 600;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+
+    /* &:hover {
+      background-color: var(--color-mel);
+    } */
+  }
 }
