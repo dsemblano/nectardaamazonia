@@ -71,7 +71,7 @@ add_shortcode('botao_checkout', function ($atts) {
 
     return sprintf(
         '<div class="my-6 text-center">
-            <a href="%s" class="inline-block bg-amber-600 text-white font-bold py-4 px-8 rounded-xl shadow-md hover:bg-amber-700 transition">%s %s</a>
+            <a href="%s" class="inline-block bg-melescuro px-4 py-4 rounded-lg text-lg font-bold hover:scale-105 transition-transform duration-300 ease-in-out text-white! hover:no-underline!  border-mel border-2 hover:shadow-lg">%s %s</a>
         </div>',
         esc_url($url),
         esc_html($atts['texto']),
