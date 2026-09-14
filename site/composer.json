@@ -29,6 +29,10 @@
     "forum": "https://discourse.roots.io/category/bedrock"
   },
   "repositories": {
+    "acf-pro": {
+      "type": "composer",
+      "url": "https://connect.advancedcustomfields.com"
+    },
     "wp-packages": {
       "type": "composer",
       "url": "https://repo.wp-packages.org"
@@ -43,6 +47,8 @@
     "roots/bedrock-disallow-indexing": "^2.0",
     "roots/wordpress": "^7",
     "roots/wp-config": "1.0.0",
+    "ffraenz/private-composer-installer": "^5.0",
+    "wpengine/advanced-custom-fields-pro": "^6.0",
     "wp-theme/twentytwentyfive": "^1.0",
     "roots/acorn-prettify": "^1.0",
     "wp-plugin/woocommerce": "^11.0",
@@ -79,12 +85,14 @@
     "preferred-install": "dist",
     "allow-plugins": {
       "composer/installers": true,
-      "roots/wordpress-core-installer": true
+      "roots/wordpress-core-installer": true,
+      "ffraenz/private-composer-installer": true
     }
   },
   "minimum-stability": "dev",
   "prefer-stable": true,
   "extra": {
+    "acf-pro-key": "b3JkZXJfaWQ9Nzk3MjN8dHlwZT1kZXZlbG9wZXJ8ZGF0ZT0yMDE2LTA0LTE2IDIxOjM5OjQw",
     "installer-paths": {
       "web/app/mu-plugins/{$name}/": [
         "type:wordpress-muplugin"

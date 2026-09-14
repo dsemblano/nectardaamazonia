@@ -164,3 +164,10 @@ Config::apply();
 if (!defined('ABSPATH')) {
     define('ABSPATH', $webroot_dir . '/wp/');
 }
+
+/**
+ * Ativação automática do ACF Pro
+ */
+if (env('ACF_PRO_KEY')) {
+    Config::define('ACF_PRO_LICENSE', env('ACF_PRO_KEY'));
+}
