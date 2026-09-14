@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "7bd68c3e74d8365902392ff9523f9dca",
+    "content-hash": "512037ee337ff9140dd3e2ae6b39d7c3",
     "packages": [
         {
             "name": "brick/math",
@@ -582,73 +582,6 @@
                 }
             ],
             "time": "2025-03-06T22:45:56+00:00"
-        },
-        {
-            "name": "ffraenz/private-composer-installer",
-            "version": "v5.0.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/ffraenz/private-composer-installer.git",
-                "reference": "8655e3da4e8f99203f13ccca33b9ab953ad30a31"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/ffraenz/private-composer-installer/zipball/8655e3da4e8f99203f13ccca33b9ab953ad30a31",
-                "reference": "8655e3da4e8f99203f13ccca33b9ab953ad30a31",
-                "shasum": ""
-            },
-            "require": {
-                "composer-plugin-api": "^1.0 || ^2.0",
-                "php": "^7.1 || ^8.0",
-                "vlucas/phpdotenv": "^4.1 || ^5.2"
-            },
-            "require-dev": {
-                "composer/composer": "^1.0 || ^2.0",
-                "laminas/laminas-coding-standard": "^2.0",
-                "symfony/phpunit-bridge": "^5.1",
-                "symfony/process": "^4.4 || ^5.1"
-            },
-            "type": "composer-plugin",
-            "extra": {
-                "class": "FFraenz\\PrivateComposerInstaller\\Plugin",
-                "plugin-modifies-downloads": true
-            },
-            "autoload": {
-                "psr-4": {
-                    "FFraenz\\PrivateComposerInstaller\\": "src"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Fränz Friederes",
-                    "email": "fraenz@frieder.es",
-                    "homepage": "https://fraenz.frieder.es"
-                }
-            ],
-            "description": "A composer install helper for private packages",
-            "keywords": [
-                "composer",
-                "env",
-                "plugin",
-                "private",
-                "wordpress",
-                "wp"
-            ],
-            "support": {
-                "issues": "https://github.com/ffraenz/private-composer-installer/issues",
-                "source": "https://github.com/ffraenz/private-composer-installer/tree/v5.0.1"
-            },
-            "funding": [
-                {
-                    "url": "https://github.com/ffraenz",
-                    "type": "github"
-                }
-            ],
-            "time": "2020-10-30T09:35:33+00:00"
         },
         {
             "name": "fruitcake/php-cors",
