@@ -482,3 +482,11 @@ add_action('template_redirect', function () {
         exit;
     }
 });
+
+/**
+ * Change the author URL slug base from 'author' to 'autor'
+ */
+add_action('init', function () {
+    global $wp_rewrite;
+    $wp_rewrite->author_base = 'autor';
+});

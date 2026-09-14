@@ -31,7 +31,11 @@ class Post extends Composer
                 return get_the_title($home);
             }
 
-            return __('Latest Posts', 'sage');
+            return __('Últimos posts', 'sage');
+        }
+
+        if (is_author()) {
+            return sprintf(__('Autor: %s', 'sage'), get_the_author());
         }
 
         if (is_archive()) {
