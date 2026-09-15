@@ -23,11 +23,11 @@
                         {{ get_the_author() }}
                     </a>
                 </span>
-                <p class="author-bio text-sm text-center">
+                {{-- <p class="author-bio text-sm text-center">
                     @php
                         echo get_the_author_meta('description');
                     @endphp
-                </p>
+                </p> --}}
             </div>
             @endif
         </div>
