@@ -1254,7 +1254,7 @@ figure {
     @apply relative bottom-3 lg:bottom-5;
   }
   #menu-menu-principal {
-    @apply relative bottom-4;
+    @apply relative bottom-3;
   }
   #banner-nav {
     @apply relative bottom-3;
