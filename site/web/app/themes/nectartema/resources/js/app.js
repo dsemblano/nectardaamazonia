@@ -73,28 +73,48 @@ document.addEventListener("DOMContentLoaded", function() {
 
 // logocroll
 document.addEventListener("DOMContentLoaded", function() {
-    //hide or show the "back to top" link
     window.onscroll = function() {
-        if (window.pageYOffset > 300) {
-            document.querySelector('.cd-top').classList.add('cd-is-visible');
-            document.querySelector('.cd-top').classList.remove('cd-fade-out');
-        } else {
-            document.querySelector('.cd-top').classList.remove('cd-is-visible');
+        const scrollY = window.scrollY || window.pageYOffset;
+
+        // Botão Back to Top
+        const cdTop = document.querySelector('.cd-top');
+        if (cdTop) {
+            if (scrollY > 300) {
+                cdTop.classList.add('cd-is-visible');
+                cdTop.classList.remove('cd-fade-out');
+            } else {
+                cdTop.classList.remove('cd-is-visible');
+            }
+            if (scrollY > 1200) {
+                cdTop.classList.add('cd-fade-out');
+            }
         }
-        if (window.pageYOffset > 1200) {
-            document.querySelector('.cd-top').classList.add('cd-fade-out');
-        }
-        if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
-            document.getElementById("logo").classList.add("shrink", "bottom-4");
-            document.getElementById("logosurname").classList.add("hidden");
-            document.getElementById("logosurnamepage").classList.remove("hidden");
-            document.getElementById("logosurnamepage").classList.add("block");
-            
-        } else {
-            document.getElementById("logo").classList.remove("shrink");
-            document.getElementById("logosurname").classList.remove("hidden");
-            document.getElementById("logosurnamepage").classList.remove("block");
-            document.getElementById("logosurnamepage").classList.add("hidden");
+
+        // Alternância de Logos com Transição
+        const banner = document.getElementById("banner");
+        const logoCompleta = document.getElementById("logocompleta");
+        const logoOnly = document.getElementById("logoonly");
+
+        if (logoCompleta && logoOnly) {
+            if (scrollY > 50) {
+                if (banner) banner.classList.add("shrink", "bottom-6", "h-16");
+                
+                // Esconde a completa e exibe a menor
+                logoCompleta.classList.add("opacity-0", "pointer-events-none");
+                logoCompleta.classList.remove("opacity-100");
+
+                logoOnly.classList.add("opacity-100");
+                logoOnly.classList.remove("opacity-0", "pointer-events-none");
+            } else {
+                if (banner) banner.classList.remove("shrink", "bottom-6", "h-16");
+
+                // Exibe a completa e esconde a menor
+                logoCompleta.classList.add("opacity-100");
+                logoCompleta.classList.remove("opacity-0", "pointer-events-none");
+
+                logoOnly.classList.add("opacity-0", "pointer-events-none");
+                logoOnly.classList.remove("opacity-100");
+            }
         }
     };
 });

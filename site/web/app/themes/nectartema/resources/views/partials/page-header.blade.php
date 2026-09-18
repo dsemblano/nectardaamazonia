@@ -8,4 +8,6 @@
             {{ get_the_author_meta('description') }}
         </div>
     </section>
+    {{-- {!! do_shortcode('[tsf_breadcrumb sep="⬢"]') !!} --}}
+
 @endif

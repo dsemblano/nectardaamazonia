@@ -5,9 +5,7 @@ apt_dev_package_state: latest
 apt_clean_sources: false
 composer_keep_updated: true
 php_version: "8.3"
-upload_max_filesize : 300M
-upload_max_size: 300M
-php_memory_limit: 768M
+php_memory_limit: 300M
 php_upload_max_filesize: 300M
 php_post_max_size: 300M
 ntp_timezone: Etc/UTC

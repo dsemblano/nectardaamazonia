@@ -568,7 +568,7 @@ li::marker {
 }
 
 body.sage {
-  @apply bg-fundo;
+  /* @apply bg-fundo; */
 }
 
 .woo-better-icon-current-style {
@@ -815,9 +815,6 @@ li.wc-block-product img:hover {
 h1.woocommerce-products-header__title,
 .archive h1.product_title,
 .wp-singular .h1-container h1 {
-  /* background: linear-gradient(120deg,
-        var(--color-secondary),
-        var(--color-melescuro)); */
   background-clip: text;
   margin-top: 4rem;
   /* -webkit-text-stroke-width: 1px;
@@ -1251,3 +1248,14 @@ figure {
 #footer {
     margin-top: 5rem;
 }
+
+.shrink {
+  #logoonly {
+    @apply lg:relative lg:bottom-3.5;
+  }
+  #menu-menu-principal {
+    @apply bottom-3.5
+  }
+}
+
+bg-heaader
