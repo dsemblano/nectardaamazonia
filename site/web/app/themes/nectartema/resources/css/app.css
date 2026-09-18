@@ -1257,6 +1257,6 @@ figure {
     @apply relative bottom-4;
   }
   #banner-nav {
-    @apply relative bottom-2.5;
+    @apply relative bottom-3;
   }
 }
