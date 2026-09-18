@@ -40,40 +40,37 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       }
 
-      // Alternância de Logos e Encolhimento do Menu
-      if (scrollY > 50) {
-        // Menu encolhido
-        if (banner) banner.classList.add('shrink', 'bottom-6', 'h-16')
-        if (bannerInner) {
-          bannerInner.classList.remove('py-4')
-          bannerInner.classList.add('py-2')
-        }
+// Alternância de Logos e Encolhimento do Menu
+if (scrollY > 50) {
+  // Menu encolhido ao rolar
+  if (banner) banner.classList.add('shrink', 'bottom-6', 'h-16')
+  if (bannerInner) bannerInner.classList.add('py-2')
 
-        // Logos
-        if (logoCompleta && logoOnly) {
-          logoCompleta.classList.add('opacity-0', 'pointer-events-none')
-          logoCompleta.classList.remove('opacity-100')
+  // Logos
+  if (logoCompleta && logoOnly) {
+    logoCompleta.classList.add('opacity-0', 'pointer-events-none')
+    logoCompleta.classList.remove('opacity-100')
 
-          logoOnly.classList.add('opacity-100')
-          logoOnly.classList.remove('opacity-0', 'pointer-events-none')
-        }
-      } else {
-        // Menu no topo (Retorna exatamente ao estado original)
-        if (banner) banner.classList.remove('shrink', 'bottom-6', 'h-16')
-        if (bannerInner) {
-          bannerInner.classList.remove('py-4')
-          bannerInner.classList.add('py-2')
-        }
+    logoOnly.classList.add('opacity-100')
+    logoOnly.classList.remove('opacity-0', 'pointer-events-none')
+  }
+} else {
+  // Estado original ao voltar para o topo
+  if (banner) banner.classList.remove('shrink', 'bottom-6', 'h-16')
+  if (bannerInner) {
+    // Remove apenas a classe adicionada pelo scroll sem injetar py-4
+    bannerInner.classList.remove('py-2', 'py-4')
+  }
 
-        // Logos
-        if (logoCompleta && logoOnly) {
-          logoCompleta.classList.add('opacity-100')
-          logoCompleta.classList.remove('opacity-0', 'pointer-events-none')
+  // Logos
+  if (logoCompleta && logoOnly) {
+    logoCompleta.classList.add('opacity-100')
+    logoCompleta.classList.remove('opacity-0', 'pointer-events-none')
 
-          logoOnly.classList.add('opacity-0', 'pointer-events-none')
-          logoOnly.classList.remove('opacity-100')
-        }
-      }
+    logoOnly.classList.add('opacity-0', 'pointer-events-none')
+    logoOnly.classList.remove('opacity-100')
+  }
+}
     },
     { passive: true }
   )
