@@ -1202,7 +1202,6 @@ figure {
       display: block;
       font-weight: 600;
       margin-bottom: 0.35rem;
-      color: $text-color;
     }
   }
 
@@ -1251,7 +1250,7 @@ figure {
 
 .shrink {
   #logoonly {
-    @apply relative bottom-3 lg:bottom-5;
+    @apply relative bottom-3 lg:bottom-5 h-full;
   }
   #menu-menu-principal {
     @apply relative bottom-3;
@@ -1259,4 +1258,8 @@ figure {
   #banner-nav {
     @apply relative bottom-3;
   }
+}
+
+.woocommerce img, .woocommerce-page img {
+  height: 100%;
 }
