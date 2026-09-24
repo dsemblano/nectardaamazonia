@@ -650,7 +650,7 @@ final class VWP_Video_Watch_Pages {
 
         wp_register_style('vwp-frontend', false, [], self::VERSION);
         wp_enqueue_style('vwp-frontend');
-        wp_add_inline_style('vwp-frontend', '.vwp-watch-video{width:100%;margin:0 0 1.5rem}.vwp-watch-video video{display:block;width:100%;height:auto;aspect-ratio:16/9;background:#000}.vwp-watch-meta{font-size:.95rem;opacity:.8;margin:.75rem 0 1.5rem}.vwp-watch-description{margin:0 0 1.5rem}.vwp-watch-link{margin:.75rem 0;font-size:.95rem}.vwp-watch-link a{font-weight:600}.vwp-video-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.5rem}.vwp-video-card{display:block;text-decoration:none}.vwp-video-card img{display:block;width:100%;height:auto;aspect-ratio:16/9;object-fit:cover}.vwp-video-card h2{font-size:1.15rem;margin:.6rem 0}.vwp-no-thumb{aspect-ratio:16/9;background:#111;color:#fff;display:grid;place-items:center}');
+        wp_add_inline_style('vwp-frontend', '.vwp-watch-video{width:100%;aspect-ratio:16/9;position:relative;overflow:hidden;border-radius:12px;background:#000;margin:0 0 1.5rem}.vwp-watch-video video{width:100%;height:100%;object-fit:cover;display:block}.vwp-watch-video video.vwp-playing{object-fit:contain}.vwp-watch-meta{font-size:.95rem;opacity:.8;margin:.75rem 0 1.5rem}.vwp-watch-description{margin:0 0 1.5rem}.vwp-watch-link{margin:.75rem 0;font-size:.95rem}.vwp-watch-link a{font-weight:600}.vwp-video-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.5rem}.vwp-video-card{display:block;text-decoration:none}.vwp-video-card img{display:block;width:100%;height:auto;aspect-ratio:16/9;object-fit:cover}.vwp-video-card h2{font-size:1.15rem;margin:.6rem 0}.vwp-no-thumb{aspect-ratio:16/9;background:#111;color:#fff;display:grid;place-items:center}');
     }
 
     public function columns(array $columns): array {
@@ -709,7 +709,6 @@ final class VWP_Video_Watch_Pages {
         }
 
         $thumbnail = (string) get_post_meta($post_id, self::META_THUMBNAIL_URL, true);
-        // Fallback to post featured image if unique thumbnail meta is empty
         if ($thumbnail === '') {
             $thumbnail = (string) get_the_post_thumbnail_url($post_id, 'full');
         }
@@ -723,10 +722,12 @@ final class VWP_Video_Watch_Pages {
 
         ob_start();
         ?>
-        <video controls preload="metadata" playsinline<?php echo $thumbnail !== '' ? ' poster="' . esc_url($thumbnail) . '"' : ''; ?>>
+        <div class="vwp-watch-video">
+        <video controls preload="metadata" playsinline<?php echo $thumbnail !== '' ? ' poster="' . esc_url($thumbnail) . '"' : ''; ?> onplay="this.classList.add('vwp-playing')" onended="this.classList.remove('vwp-playing')">
         <source src="<?php echo esc_url($url); ?>" type="<?php echo esc_attr($this->mime_type_from_url($url)); ?>">
         <?php esc_html_e('Your browser does not support the video element.', 'video-watch-pages'); ?>
         </video>
+        </div>
 
         <div class="vwp-watch-meta">
             <?php
