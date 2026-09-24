@@ -10,7 +10,7 @@
       </h1>
 
       <p class="mt-3 max-w-2xl text-lg text-gray-600">
-        Página dedicada aoss vídeos da Néctar da Amazônia onde estão nas matérias. Notícias, entrevistas e conteúdos sobre abelhas nativas,
+        Página dedicada aos vídeos da Néctar da Amazônia onde estão nas matérias. Notícias, entrevistas e conteúdos sobre abelhas nativas,
         meliponicultura e sustentabilidade na Amazônia.
       </p>
     </header>
