@@ -1,6 +1,7 @@
 # Application
 web/app/plugins/*
 !web/app/plugins/whatsapp-floating-button/
+!web/app/plugins/nectar-video-watch-pages/
 !web/app/plugins/.gitkeep
 web/app/mu-plugins/*/
 web/app/themes/twentytwentyfive/

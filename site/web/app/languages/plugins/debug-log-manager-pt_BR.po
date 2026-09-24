@@ -1,0 +1,288 @@
+# Translation of Plugins - Debug Log Manager &#8211; Conveniently Monitor and Inspect Errors - Stable (latest release) in Portuguese (Brazil)
+# This file is distributed under the same license as the Plugins - Debug Log Manager &#8211; Conveniently Monitor and Inspect Errors - Stable (latest release) package.
+msgid ""
+msgstr ""
+"PO-Revision-Date: 2026-05-22 09:58:16+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n > 1;\n"
+"X-Generator: GlotPress/4.0.3\n"
+"Language: pt_BR\n"
+"Project-Id-Version: Plugins - Debug Log Manager &#8211; Conveniently Monitor and Inspect Errors - Stable (latest release)\n"
+
+#: classes/class-log-trimmer.php:283
+msgid "Debug Log Manager: Older log entries were removed to stay within the size limit."
+msgstr "Debug Log Manager: As entradas de registo mais antigas foram removidas, para não ultrapassar o limite de tamanho."
+
+#: bootstrap.php:432 classes/class-debug-log.php:1758
+msgid "Type"
+msgstr "Tipo"
+
+#: classes/class-debug-log.php:1742
+msgid "All Types"
+msgstr "Todos os tipos"
+
+#: bootstrap.php:314
+msgid "Do not process entries with non-UTC timezones, which can be resource-intensive when log file size is significantly large."
+msgstr "Não processar entradas com fusos horários diferentes do UTC, o que pode consumir muitos recursos se o tamanho do arquivo de registro for muito grande."
+
+#: bootstrap.php:306
+msgid "Do not modify SCRIPT_DEBUG value in wp-config.php"
+msgstr "Não modificar o valor SCRIPT_DEBUG no wp-config.php"
+
+#: bootstrap.php:298
+msgid "Do not log javascript errors"
+msgstr "Não registrar erros de JavaScript"
+
+#: bootstrap.php:259
+msgid "Sponsor"
+msgstr "Patrocinar"
+
+#: bootstrap.php:290
+msgid "Disable Editor"
+msgstr "Desativar editor"
+
+#: bootstrap.php:289
+msgid "Once error logging is enabled, the core's plugin/theme editor stays enabled even if error logging has been disabled later on. This allows for viewing the files where errors occurred even when logging has been disabled. You can optionally disable the editor here once you're done debugging."
+msgstr "Quando o registro de erros é ativado, o editor de plugins/temas dos arquivos básicos permanece ativado, mesmo que o registro de erros tenha sido desativado posteriormente. Isso permite a visualização dos arquivos em que ocorreram os erros, mesmo que o registro tenha sido desativado. Opcionalmente, você pode desativar o editor aqui quando concluir a depuração."
+
+#: bootstrap.php:457
+msgid "WordPress plugin/theme editor has been disabled. "
+msgstr "O editor de plugins/temas do WordPress foi desativado. "
+
+#: classes/class-debug-log.php:1614 classes/class-debug-log.php:1624
+#: classes/class-debug-log.php:1626 classes/class-debug-log.php:1631
+#: classes/class-debug-log.php:1642 classes/class-debug-log.php:1644
+#: classes/class-debug-log.php:1649
+msgid "File"
+msgstr "Arquivo"
+
+#: classes/class-debug-log.php:1614 classes/class-debug-log.php:1628
+#: classes/class-debug-log.php:1631 classes/class-debug-log.php:1646
+#: classes/class-debug-log.php:1649
+msgid "Line"
+msgstr "Linha"
+
+#: classes/class-debug-log.php:1594 classes/class-debug-log.php:1748
+msgid "PHP Exception"
+msgstr "Exceção do PHP"
+
+#: classes/class-debug-log.php:1495
+msgid "Plugin"
+msgstr "Plugin"
+
+#: classes/class-debug-log.php:1490
+msgid "Theme"
+msgstr "Tema"
+
+#: classes/class-debug-log.php:1484
+msgid "WordPress core"
+msgstr "Arquivos básicos (core) do WordPress"
+
+#: bootstrap.php:377
+msgid "Debug Log | Latest Errors"
+msgstr "Registro de depuração | Erros mais recentes"
+
+#: classes/class-debug-log.php:1928
+msgid "Go to Debug Log Manager"
+msgstr "Acesse o gerenciador de registros de depuração"
+
+#: classes/class-debug-log.php:253 classes/class-debug-log.php:1707
+#: classes/class-debug-log.php:1785 classes/class-debug-log.php:1996
+msgid "%s occurrence logged"
+msgid_plural "%s occurrences logged"
+msgstr[0] "%s ocorrência registrada"
+msgstr[1] "%s ocorrências registradas"
+
+#: bootstrap.php:464
+msgid "(filtered from _MAX_ total entries)"
+msgstr "(filtrado do total de entradas _MAX_)"
+
+#: classes/class-debug-log.php:330 classes/class-debug-log.php:341
+msgid "Auto-Refresh"
+msgstr "Atualização automática"
+
+#: bootstrap.php:286
+msgid "Clear Log"
+msgstr "Limpar registro"
+
+#: classes/class-debug-log.php:1597 classes/class-debug-log.php:1749
+msgid "Database"
+msgstr "Banco de dados"
+
+#: classes/class-debug-log.php:1759
+msgid "Details"
+msgstr "Detalhes"
+
+#: classes/class-debug-log.php:341
+msgid "Disabled"
+msgstr "Desativado"
+
+#: classes/class-debug-log.php:298
+msgid "Disabled on"
+msgstr "Desativado em"
+
+#: classes/class-debug-log.php:330
+msgid "Enabled"
+msgstr "Ativado"
+
+#: classes/class-debug-log.php:267
+msgid "Enabled on"
+msgstr "Ativado em"
+
+#: bootstrap.php:455
+msgid "Entries have been copied from an existing debug.log file."
+msgstr "As entradas foram copiadas de um arquivo debug.log existente."
+
+#: classes/class-debug-log.php:69 classes/class-debug-log.php:73
+#: classes/class-debug-log.php:267 classes/class-debug-log.php:298
+msgid "Error Logging"
+msgstr "Registro de erros"
+
+#: bootstrap.php:454
+msgid "Error logging has been enabled and the latest entries have been loaded."
+msgstr "O registro de erros foi ativado e as entradas mais recentes, carregadas."
+
+#: bootstrap.php:230
+msgid "Error logging is enabled. Click to access the Debug Log Manager."
+msgstr "O registro de erros está ativado. Clique para acessar o gerenciador de registros de depuração."
+
+#: bootstrap.php:258
+msgid "Feedback"
+msgstr "Feedback"
+
+#: bootstrap.php:469
+msgid "First"
+msgstr "Primeiro"
+
+#: classes/class-debug-log.php:1558 classes/class-debug-log.php:1561
+#: classes/class-debug-log.php:1750
+msgid "JavaScript"
+msgstr "JavaScript"
+
+#: bootstrap.php:470
+msgid "Last"
+msgstr "Último"
+
+#: classes/class-debug-log.php:1760
+msgid "Last Occurrence"
+msgstr "Última ocorrência"
+
+#: bootstrap.php:285
+msgid "Log file"
+msgstr "Arquivo de registro"
+
+#: bootstrap.php:456
+msgid "Log file has been cleared."
+msgstr "O arquivo de registros foi limpo."
+
+#: bootstrap.php:471
+msgid "Next"
+msgstr "Próximo"
+
+#: bootstrap.php:461
+msgid "No data available in table"
+msgstr "Nenhum dado disponível na tabela"
+
+#: bootstrap.php:467
+msgid "No matching records found"
+msgstr "Nenhum registro correspondente encontrado"
+
+#: classes/class-debug-log.php:1600 classes/class-debug-log.php:1751
+msgid "Other"
+msgstr "Outro"
+
+#: classes/class-debug-log.php:1585 classes/class-debug-log.php:1746
+msgid "PHP Deprecated"
+msgstr "PHP obsoleto"
+
+#: classes/class-debug-log.php:1567 classes/class-debug-log.php:1743
+msgid "PHP Fatal"
+msgstr "Erro fatal do PHP"
+
+#: classes/class-debug-log.php:1581 classes/class-debug-log.php:1745
+msgid "PHP Notice"
+msgstr "Notificação do PHP"
+
+#: classes/class-debug-log.php:1590 classes/class-debug-log.php:1747
+msgid "PHP Parse"
+msgstr "Análise do PHP"
+
+#: classes/class-debug-log.php:1575 classes/class-debug-log.php:1744
+msgid "PHP Warning"
+msgstr "Alerta do PHP"
+
+#: bootstrap.php:458
+msgid "Pagination is active. Auto-refresh has been disabled."
+msgstr "A paginação está ativa. A atualização automática foi desativada."
+
+#: bootstrap.php:472
+msgid "Previous"
+msgstr "Anterior"
+
+#: bootstrap.php:257
+msgid "Review"
+msgstr "Avaliar"
+
+#: bootstrap.php:466
+msgid "Search:"
+msgstr "Pesquisar:"
+
+#: bootstrap.php:465
+msgid "Show _MENU_ entries"
+msgstr "Mostrar _MENU_ entradas"
+
+#: bootstrap.php:463
+msgid "Showing 0 to 0 of 0 entries"
+msgstr "Mostrando de 0 a 0 de 0 entradas"
+
+#: bootstrap.php:462
+msgid "Showing _START_ to _END_ of _TOTAL_ entries"
+msgstr "Mostrando de _START_ a _END_ do _TOTAL_ de entradas"
+
+#: bootstrap.php:180
+msgid "View Debug Log"
+msgstr "Ver registro de depuração"
+
+#: bootstrap.php:254
+msgid "by"
+msgstr "por"
+
+#: classes/class-debug-log.php:73 classes/class-debug-log.php:103
+msgid "disabled"
+msgstr "desativado"
+
+#: classes/class-debug-log.php:69 classes/class-debug-log.php:99
+msgid "enabled"
+msgstr "ativado"
+
+#: classes/class-debug-log.php:69 classes/class-debug-log.php:73
+msgid "on"
+msgstr "em"
+
+#. Author of the plugin
+#: debug-log-manager.php
+msgid "Bowo"
+msgstr "Bowo"
+
+#. Plugin Name of the plugin
+#: debug-log-manager.php bootstrap.php:164 bootstrap.php:165 bootstrap.php:195
+#: bootstrap.php:254
+msgid "Debug Log Manager"
+msgstr "Debug Log Manager"
+
+#. Description of the plugin
+#: debug-log-manager.php
+msgid "Log errors via WP_DEBUG. Create, view and clear debug.log file."
+msgstr "Registre erros através do WP_DEBUG. Crie, visualize e limpe o arquivo debug.log."
+
+#. Author URI of the plugin
+#: debug-log-manager.php
+msgid "https://bowo.io"
+msgstr "https://bowo.io"
+
+#. Plugin URI of the plugin
+#: debug-log-manager.php
+msgid "https://wordpress.org/plugins/debug-log-manager/"
+msgstr "https://wordpress.org/plugins/debug-log-manager/"
