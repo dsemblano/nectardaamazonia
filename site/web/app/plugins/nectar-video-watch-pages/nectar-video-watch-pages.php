@@ -718,7 +718,7 @@ final class VWP_Video_Watch_Pages {
 
         ob_start();
         ?>
-        <video controls preload="metadata" playsinline>
+        <video controls preload="metadata" playsinline poster=<?php the_post_thumbnail(); ?>>
         <source src="<?php echo esc_url($url); ?>" type="<?php echo esc_attr($this->mime_type_from_url($url)); ?>">
         <?php esc_html_e('Your browser does not support the video element.', 'video-watch-pages'); ?>
         </video>
