@@ -583,7 +583,7 @@ final class VWP_Video_Watch_Pages {
             $link_html = sprintf(
                 '<p class="vwp-watch-link"><a href="%1$s">%2$s</a></p>',
                 esc_url($watch_url),
-                esc_html__('Watch this video on its dedicated page →', 'video-watch-pages')
+                esc_html__('Se quiser, veja esse vídeo na sua página dedicada→', 'video-watch-pages')
             );
 
             $pattern = sprintf(
@@ -718,12 +718,10 @@ final class VWP_Video_Watch_Pages {
 
         ob_start();
         ?>
-        <div class="vwp-watch-video">
-            <video controls preload="metadata" playsinline<?php echo $thumbnail ? ' poster="' . esc_url($thumbnail) . '"' : ''; ?>>
-                <source src="<?php echo esc_url($url); ?>" type="<?php echo esc_attr($this->mime_type_from_url($url)); ?>">
-                <?php esc_html_e('Your browser does not support the video element.', 'video-watch-pages'); ?>
-            </video>
-        </div>
+        <video controls preload="metadata" playsinline>
+        <source src="<?php echo esc_url($url); ?>" type="<?php echo esc_attr($this->mime_type_from_url($url)); ?>">
+        <?php esc_html_e('Your browser does not support the video element.', 'video-watch-pages'); ?>
+        </video>
 
         <div class="vwp-watch-meta">
             <?php
