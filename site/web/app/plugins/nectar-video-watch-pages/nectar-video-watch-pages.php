@@ -709,6 +709,11 @@ final class VWP_Video_Watch_Pages {
         }
 
         $thumbnail = (string) get_post_meta($post_id, self::META_THUMBNAIL_URL, true);
+        // Fallback to post featured image if unique thumbnail meta is empty
+        if ($thumbnail === '') {
+            $thumbnail = (string) get_the_post_thumbnail_url($post_id, 'full');
+        }
+
         $description = (string) get_post_meta($post_id, self::META_DESCRIPTION, true);
         $duration = absint(get_post_meta($post_id, self::META_DURATION, true));
         $sources = get_post_meta($post_id, self::META_SOURCE_IDS, true);
@@ -718,7 +723,7 @@ final class VWP_Video_Watch_Pages {
 
         ob_start();
         ?>
-        <video controls preload="metadata" playsinline poster=<?php the_post_thumbnail(); ?>>
+        <video controls preload="metadata" playsinline<?php echo $thumbnail !== '' ? ' poster="' . esc_url($thumbnail) . '"' : ''; ?>>
         <source src="<?php echo esc_url($url); ?>" type="<?php echo esc_attr($this->mime_type_from_url($url)); ?>">
         <?php esc_html_e('Your browser does not support the video element.', 'video-watch-pages'); ?>
         </video>
