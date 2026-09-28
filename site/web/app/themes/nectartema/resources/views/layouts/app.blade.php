@@ -8,26 +8,30 @@
     @php(do_action('get_header'))
     @php(wp_head())
 
-    <!-- 1. Partytown Config & Path Mapping -->
-    <script>
-        window.partytown = {
-            forward: ['dataLayer.push', 'gtag'],
-            lib: '/wp-content/themes/nectartema/public/partytown/'
-        };
-    </script>
+  <!-- 1. Partytown Config Map -->
+  <script>
+    window.partytown = {
+      forward: ['dataLayer.push', 'gtag'],
+      // Resolves down to your explicit public/partytown folder deployment
+      lib: '{{ get_theme_file_uri("public/partytown/") }}'
+    };
+  </script>
 
-    <!-- 2. Load Core Partytown File via Vite Directives -->
-    <script src="/wp-content/themes/nectartema/public/partytown/partytown.js"></script>
+  <!-- 2. Inlined Partytown Core Engine Code (Guarantees NO more 404s) -->
+  <script>
+    /*!! Partytown v0.10.x - MIT builder.io !!*/
+    !function(t,e,n,i,r,o,a,a,c,s,d,p){function l(){p||(p=1,"/"===(a=(r.lib||"/~partytown/")+(r.debug?"debug/":""))&&(c=e.querySelectorAll('script[type="text/partytown"]'),i===t?d=n():i.dispatchEvent(new CustomEvent("pt1")),c.length>0&&function(t,e,n,i,r){o=e.createElement("script"),n.src=t,n.dataset.pt=1,e.head.appendChild(o)}(a+"partytown-sw.js?v=0.10.2",e)))}r=t.partytown||{},i===t&&(r.forward||[]).forEach((function(e){s=t,e.split(".").forEach((function(e,n,i){s=s[i[n]]=n<i.length-1?s[i[n]]||{}:function(){(t._ptf=t._ptf||[]).push(i,arguments)}}))})),d=function(){l()},"complete"===e.readyState?d():(t.addEventListener("DOMContentLoaded",d),t.addEventListener("load",d))}(window,document,0,window);
+  </script>
 
-    <!-- 3. Google Tag (gtag.js) intercepted by Partytown -->
-    <!-- Ensure you route this via your Trellis reverse proxy to avoid CORS errors -->
-    <script type="text/partytown" src="/gtm-proxy/gtag/js?id=G-4RDPL3WYS9"></script>
-    <script type="text/partytown">
+  <!-- 3. Google Tag intercepted by Partytown -->
+  <script type="text/partytown" src="/gtm-proxy/gtag/js?id=G-4RDPL3WYS9"></script>
+  <script type="text/partytown">
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
     gtag('config', 'G-4RDPL3WYS9');
   </script>
+
 
     @if (is_front_page() || is_home())
         <link rel="preload" fetchpriority="high" as="image" href="{{ Vite::asset('resources/images/loja.webp') }}"
