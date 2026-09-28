@@ -8,29 +8,55 @@
     @php(do_action('get_header'))
     @php(wp_head())
 
-  <!-- 1. Exact Partytown Target Routing Configuration -->
-  <script>
-    window.partytown = {
-      forward: ['dataLayer.push', 'gtag'],
-      // Strictly paths to the un-nested worker directory root
-      lib: '/wp-content/themes/nectartema/public/partytown/'
-    };
-  </script>
+    <!-- 1. Partytown Config Map with Resolver Hook -->
+    <script>
+        window.partytown = {
+            forward: ['dataLayer.push', 'gtag'],
+            lib: '/wp-content/themes/nectartema/public/partytown/',
 
-  <!-- 2. Integrated Partytown Core Loader Engine -->
-  <script>
-    /*!! Partytown v0.10.x - MIT builder.io !!*/
-    !function(t,e,n,i,r,o,a,a,c,s,d,p){function l(){p||(p=1,"/"===(a=(r.lib||"/~partytown/")+(r.debug?"debug/":""))&&(c=e.querySelectorAll('script[type="text/partytown"]'),i===t?d=n():i.dispatchEvent(new CustomEvent("pt1")),c.length>0&&function(t,e,n,i,r){o=e.createElement("script"),n.src=t,n.dataset.pt=1,e.head.appendChild(o)}(a+"partytown-sw.js?v=0.10.2",e)))}r=t.partytown||{},i===t&&(r.forward||[]).forEach((function(e){s=t,e.split(".").forEach((function(e,n,i){s=s[i[n]]=n<i.length-1?s[i[n]]||{}:function(){(t._ptf=t._ptf||[]).push(i,arguments)}}))})),d=function(){l()},"complete"===e.readyState?d():(t.addEventListener("DOMContentLoaded",d),t.addEventListener("load",d))}(window,document,0,window);
-  </script>
+            // Intercept and bypass cross-origin worker scripts dynamically
+            resolveUrl: function(url, location, type) {
+                if (type === 'script' && url.hostname.includes('google')) {
+                    var proxyUrl = new URL(window.location.origin + '/gtm-proxy/');
+                    proxyUrl.searchParams.append('url', url.href);
+                    return proxyUrl;
+                }
+                return url;
+            }
+        };
+    </script>
 
-  <!-- 3. Proxied Google Tag Payload Execution -->
-  <script type="text/partytown" src="/gtm-proxy/gtag/js?id=G-4RDPL3WYS9"></script>
-  <script type="text/partytown">
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-4RDPL3WYS9');
-  </script>
+    <!-- 2. Integrated Partytown Core Loader Engine -->
+    <script>
+        /*!! Partytown v0.10.x - MIT builder.io !!*/ ! function(t, e, n, i, r, o, a, a, c, s, d, p) {
+            function l() {
+                p || (p = 1, "/" === (a = (r.lib || "/~partytown/") + (r.debug ? "debug/" : "")) && (c = e.querySelectorAll(
+                    'script[type="text/partytown"]'), i === t ? d = n() : i.dispatchEvent(new CustomEvent(
+                    "pt1")), c.length > 0 && function(t, e, n, i, r) {
+                    o = e.createElement("script"), n.src = t, n.dataset.pt = 1, e.head.appendChild(o)
+                }(a + "partytown-sw.js?v=0.10.2", e)))
+            }
+            r = t.partytown || {}, i === t && (r.forward || []).forEach((function(e) {
+                s = t, e.split(".").forEach((function(e, n, i) {
+                    s = s[i[n]] = n < i.length - 1 ? s[i[n]] || {} : function() {
+                        (t._ptf = t._ptf || []).push(i, arguments)
+                    }
+                }))
+            })), d = function() {
+                l()
+            }, "complete" === e.readyState ? d() : (t.addEventListener("DOMContentLoaded", d), t.addEventListener(
+                "load", d))
+        }(window, document, 0, window);
+    </script>
+
+    <!-- 3. Google Tag Tracking Script -->
+    <script type="text/partytown" src="/gtm-proxy/gtag/js?id=G-4RDPL3WYS9"></script>
+    <script type="text/partytown">
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-4RDPL3WYS9');
+</script>
 
     @if (is_front_page() || is_home())
         <link rel="preload" fetchpriority="high" as="image" href="{{ Vite::asset('resources/images/loja.webp') }}"
