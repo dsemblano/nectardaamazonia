@@ -12,7 +12,6 @@
     <script>
         window.partytown = {
             forward: ['dataLayer.push', 'gtag'],
-            // Points Partytown to Vite's asset folder mapping
             lib: '/wp-content/themes/nectartema/public/partytown/'
         };
     </script>

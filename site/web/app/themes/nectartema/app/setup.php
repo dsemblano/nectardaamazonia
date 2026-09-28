@@ -490,3 +490,13 @@ add_action('init', function () {
     global $wp_rewrite;
     $wp_rewrite->author_base = 'autor';
 });
+
+add_action('after_setup_theme', function () {
+    $source = get_theme_file_path('resources/partytown');
+    $destination = get_theme_file_path('public/partytown');
+
+    if (is_dir($source) && !is_dir($destination)) {
+        wp_mkdir_p($destination);
+        copy_dir($source, $destination);
+    }
+});
