@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     @php(do_action('get_header'))
-    @php(wp_head())
 
     <!-- 1. Partytown Config Map with Resolver Hook -->
     <script>
@@ -58,6 +57,10 @@
   gtag('config', 'G-4RDPL3WYS9');
 </script>
 
+
+    @php(wp_head())
+
+    
     @if (is_front_page() || is_home())
         <link rel="preload" fetchpriority="high" as="image" href="{{ Vite::asset('resources/images/loja.webp') }}"
             type="image/webp" imagesizes="(max-width: 768px) 100vw, 65vw">
