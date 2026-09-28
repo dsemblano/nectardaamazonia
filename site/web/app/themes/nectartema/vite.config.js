@@ -15,6 +15,7 @@ export default defineConfig({
         'resources/js/editor.js',
       ],
       refresh: true,
+      assets: ['node_modules/@builder.io/partytown/lib/**'],
     }),
 
     wordpressPlugin(),

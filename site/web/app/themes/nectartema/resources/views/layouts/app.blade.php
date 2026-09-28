@@ -4,33 +4,31 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    {{-- <meta name="google-adsense-account" content="ca-pub-5180633762059604">
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5180633762059604"
-     crossorigin="anonymous"></script> --}}
-
-    @if (app()->environment('production') && !is_user_logged_in())
-        <!-- Google Analytics Tag aqui -->
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-4RDPL3WYS9"></script>
-        <script>
-            window.dataLayer = window.dataLayer || [];
-
-            function gtag() {
-                dataLayer.push(arguments);
-            }
-            gtag('js', new Date());
-            gtag('config', 'G-4RDPL3WYS9');
-        </script>
-    @endif
 
     @php(do_action('get_header'))
     @php(wp_head())
 
-    <!-- Add forwarding event for Google Tag Manager -->
-    {{-- <script>
-        partytown = {
-            forward: ['dataLayer.push'],
+    <!-- 1. Partytown Config & Path Mapping -->
+    <script>
+        window.partytown = {
+            forward: ['dataLayer.push', 'gtag'],
+            // Points Partytown to Vite's asset folder mapping
+            lib: '/wp-content/themes/nectartema/public/build/assets/'
         };
-    </script> --}}
+    </script>
+
+    <!-- 2. Load Core Partytown File via Vite Directives -->
+    @vite(['node_modules/@builder.io/partytown/lib/partytown.js'])
+
+    <!-- 3. Google Tag (gtag.js) intercepted by Partytown -->
+    <!-- Ensure you route this via your Trellis reverse proxy to avoid CORS errors -->
+    <script type="text/partytown" src="/gtm-proxy/gtag/js?id=G-4RDPL3WYS9"></script>
+    <script type="text/partytown">
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-4RDPL3WYS9');
+  </script>
 
     @if (is_front_page() || is_home())
         <link rel="preload" fetchpriority="high" as="image" href="{{ Vite::asset('resources/images/loja.webp') }}"
@@ -42,19 +40,7 @@
     <link rel="preload" href="{{ Vite::asset('resources/fonts/Poppins/Poppins-Regular.ttf') }}" as="font"
         type="font/ttf" crossorigin>
     <link rel="author" type="text/plain" href="{{ Vite::asset('resources/fonts/humans.txt') }}" />
-    {{-- @include('partials.gtag') --}}
-    {{-- @include('partials.partytown')
-    @include('partials.gtm') --}}
 
-    {{-- <script type="text/partytown" src="https://www.googletagmanager.com/gtag/js?GTM-TXS3QB8L">
-    </script>
-    <script type="text/partytown">
-    window.dataLayer = window.dataLayer || [];
-    window.gtag = function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    
-    gtag('config', 'GTM-TXS3QB8L');
-    </script> --}}
 
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>

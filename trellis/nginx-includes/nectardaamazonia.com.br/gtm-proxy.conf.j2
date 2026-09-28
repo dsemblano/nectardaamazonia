@@ -1,0 +1,11 @@
+# site/nginx-includes/your-site.test/gtm-proxy.conf.j2
+location /gtm-proxy/ {
+    proxy_pass https://googletagmanager.com;
+    proxy_set_header X-Real-IP $remote_addr;
+    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+    proxy_ssl_server_name on;
+
+    # Enable CORS headers for the virtual machine network
+    add_header 'Access-Control-Allow-Origin' '*' always;
+    add_header 'Access-Control-Allow-Methods' 'GET, OPTIONS' always;
+}
