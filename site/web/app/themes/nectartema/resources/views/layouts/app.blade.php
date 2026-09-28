@@ -9,18 +9,25 @@
 
     <!-- 1. Partytown Config Map with Intercept Resolver -->
 <script>
-    window.partytown = {
-        forward: ['dataLayer.push', 'gtag'],
-        lib: '/wp-content/themes/nectartema/public/partytown/',
-        resolveUrl: function(url, location, type) {
-            if (type === 'script' && url.hostname.includes('google')) {
-                var proxyUrl = new URL(window.location.origin + '/gtm-proxy/');
-                proxyUrl.searchParams.append('url', url.href);
-                return proxyUrl;
-            }
+window.partytown = {
+    forward: ['dataLayer.push', 'gtag'],
+    lib: '/app/themes/nectartema/public/partytown/',
+    resolveUrl: function(url, location, type) {
+        // Intercept GTM dynamic scripts
+        if (url.hostname === 'www.googletagmanager.com') {
+            url.hostname = window.location.hostname;
+            url.pathname = '/gtm-proxy' + url.pathname;
             return url;
         }
-    };
+        // Intercept Google Analytics dynamic scripts (spawned by GTM)
+        if (url.hostname === 'www.google-analytics.com') {
+            url.hostname = window.location.hostname;
+            url.pathname = '/ga-proxy' + url.pathname;
+            return url;
+        }
+        return url;
+    }
+};
 </script>
 
 <!-- 2. FULL, Intact Partytown Inline Loader Code -->
