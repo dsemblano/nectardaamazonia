@@ -18,7 +18,7 @@
     </script>
 
     <!-- 2. Load Core Partytown File via Vite Directives -->
-    @vite(['node_modules/@builder.io/partytown/lib/partytown.js'])
+    <script src="/wp-content/themes/nectartema/public/build/partytown/partytown.js"></script>
 
     <!-- 3. Google Tag (gtag.js) intercepted by Partytown -->
     <!-- Ensure you route this via your Trellis reverse proxy to avoid CORS errors -->

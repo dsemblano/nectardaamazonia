@@ -23,7 +23,8 @@
     "alpinejs": "^3.14.9",
     "laravel-vite-plugin": "^1.2.0",
     "tailwindcss": "^4.0.9",
-    "vite": "^6.2.0"
+    "vite": "^6.2.0",
+    "vite-plugin-static-copy": "^4.1.1"
   },
   "dependencies": {
     "@builder.io/partytown": "^0.10.3",
