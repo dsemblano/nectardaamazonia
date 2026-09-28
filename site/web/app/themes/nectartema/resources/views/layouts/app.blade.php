@@ -13,12 +13,12 @@
         window.partytown = {
             forward: ['dataLayer.push', 'gtag'],
             // Points Partytown to Vite's asset folder mapping
-            lib: '/wp-content/themes/nectartema/public/build/assets/'
+            lib: '/wp-content/themes/nectartema/public/partytown/'
         };
     </script>
 
     <!-- 2. Load Core Partytown File via Vite Directives -->
-    <script src="/wp-content/themes/nectartema/public/build/partytown/partytown.js"></script>
+    <script src="/wp-content/themes/nectartema/public/partytown/partytown.js"></script>
 
     <!-- 3. Google Tag (gtag.js) intercepted by Partytown -->
     <!-- Ensure you route this via your Trellis reverse proxy to avoid CORS errors -->

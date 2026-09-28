@@ -24,7 +24,7 @@ export default defineConfig({
       targets: [
         {
           src: 'node_modules/@builder.io/partytown/lib/*',
-          dest: 'partytown'
+          dest: '../partytown'
         }
       ]
     }),
