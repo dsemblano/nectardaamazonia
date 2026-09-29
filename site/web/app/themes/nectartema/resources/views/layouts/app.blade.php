@@ -48,32 +48,39 @@
 
     <!-- 3. GA4 Script Tag -->
     <script type="text/partytown" src="https://www.googletagmanager.com/gtag/js?id=G-4RDPL3WYS9"></script>
-    <script type="text/partytown">
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-4RDPL3WYS9', {
-        'allow_google_signals': false,
-        'allow_ad_personalization_signals': false,
-        'restricted_data_processing': true
-    });
-    </script>
-    @php(wp_head())
+    <<!-- Native GA4 via First-Party Nginx Proxy (Zero Partytown CPU Overhead) -->
+        <script async src="/gtm-proxy/gtag/js?id=G-4RDPL3WYS9"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+
+            function gtag() {
+                dataLayer.push(arguments);
+            }
+            gtag('js', new Date());
+            gtag('config', 'G-4RDPL3WYS9', {
+                'transport_url': 'https://nectardaamazonia.com.br/ga-proxy',
+                'allow_google_signals': false,
+                'allow_ad_personalization_signals': false
+            });
+        </script>
+
+        @php(wp_head())
 
 
-    @if (is_front_page() || is_home())
-        <link rel="preload" fetchpriority="high" as="image" href="{{ Vite::asset('resources/images/loja.webp') }}"
-            type="image/webp" imagesizes="(max-width: 768px) 100vw, 65vw">
-        <link rel="preload" fetchpriority="high" as="image" href="{{ Vite::asset('resources/images/loja.avif') }}"
-            type="image/webp" imagesizes="(max-width: 576px) 100vw, 100vw">
-    @endif
+        @if (is_front_page() || is_home())
+            <link rel="preload" fetchpriority="high" as="image" href="{{ Vite::asset('resources/images/loja.webp') }}"
+                type="image/webp" imagesizes="(max-width: 768px) 100vw, 65vw">
+            <link rel="preload" fetchpriority="high" as="image"
+                href="{{ Vite::asset('resources/images/loja.avif') }}" type="image/webp"
+                imagesizes="(max-width: 576px) 100vw, 100vw">
+        @endif
 
-    <link rel="preload" href="{{ Vite::asset('resources/fonts/Poppins/Poppins-Regular.ttf') }}" as="font"
-        type="font/ttf" crossorigin>
-    <link rel="author" type="text/plain" href="{{ Vite::asset('resources/fonts/humans.txt') }}" />
+        <link rel="preload" href="{{ Vite::asset('resources/fonts/Poppins/Poppins-Regular.ttf') }}" as="font"
+            type="font/ttf" crossorigin>
+        <link rel="author" type="text/plain" href="{{ Vite::asset('resources/fonts/humans.txt') }}" />
 
 
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
+        @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 
 <body @php(body_class())>
