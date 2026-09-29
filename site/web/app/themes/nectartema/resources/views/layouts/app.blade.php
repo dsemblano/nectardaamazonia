@@ -13,10 +13,15 @@ window.partytown = {
     forward: ['dataLayer.push', 'gtag'],
     lib: '/app/themes/nectartema/public/partytown/',
     resolveUrl: function(url, location, type) {
-        // Block DoubleClick / Google Ads remarketing scripts (prevents lidar.js unload warning)
-        if (url.hostname.indexOf('googlesyndication.com') > -1 || url.hostname.indexOf('doubleclick.net') > -1) {
+        // Catch all variations of Google Ads / DoubleClick / lidar.js
+        if (
+            url.hostname.indexOf('googlesyndication.com') > -1 || 
+            url.hostname.indexOf('doubleclick.net') > -1 ||
+            url.href.indexOf('lidar.js') > -1
+        ) {
             return 'about:blank';
         }
+
         if (url.hostname.indexOf('googletagmanager.com') > -1) {
             return new URL('https://nectardaamazonia.com.br/gtm-proxy' + url.pathname + url.search);
         }
