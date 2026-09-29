@@ -11,13 +11,11 @@
 <script>
 window.partytown = {
     forward: ['dataLayer.push', 'gtag'],
-    lib: '/app/themes/nectartema/public/partytown/',
+    lib: '/partytown/',
     resolveUrl: function(url, location, type) {
-        // Match any GTM or Google Tag host
         if (url.hostname.indexOf('googletagmanager.com') > -1) {
             return new URL('https://nectardaamazonia.com.br/gtm-proxy' + url.pathname + url.search);
         }
-        // Match any GA collection host
         if (url.hostname.indexOf('google-analytics.com') > -1) {
             return new URL('https://nectardaamazonia.com.br/ga-proxy' + url.pathname + url.search);
         }
@@ -40,7 +38,8 @@ window.partytown = {
     gtag('js', new Date());
     gtag('config', 'G-4RDPL3WYS9');
 </script>
-    @php(wp_head())
+
+@php(wp_head())
 
     
     @if (is_front_page() || is_home())

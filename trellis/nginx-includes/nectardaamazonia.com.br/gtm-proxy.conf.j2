@@ -1,9 +1,21 @@
-# 1. Google Tag Manager Proxy
+# 1. Map /partytown/ directly from domain root to theme public dir
+location ^~ /partytown/ {
+    alias /srv/www/nectardaamazonia.com.br/current/web/app/themes/nectartema/public/partytown/;
+    add_header Service-Worker-Allowed "/" always;
+    add_header Access-Control-Allow-Origin "*" always;
+}
+
+# 2. Google Tag Manager Proxy
 location ^~ /gtm-proxy/ {
     proxy_pass https://www.googletagmanager.com/;
+
+    proxy_http_version 1.1;
+    proxy_set_header Connection "";
     proxy_set_header Host www.googletagmanager.com;
+
     proxy_ssl_server_name on;
     proxy_ssl_name www.googletagmanager.com;
+    proxy_ssl_protocols TLSv1.2 TLSv1.3;
 
     proxy_set_header X-Real-IP $remote_addr;
     proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
@@ -13,21 +25,17 @@ location ^~ /gtm-proxy/ {
     add_header 'Access-Control-Allow-Origin' '*' always;
 }
 
-# 2. Service Worker Scope Elevation
-location ^~ /wp-content/themes/nectartema/public/partytown/ {
-    add_header Service-Worker-Allowed "/" always;
-}
-# Update rule #2 to use /app/ (Bedrock path)
-location ^~ /app/themes/nectartema/public/partytown/ {
-    add_header Service-Worker-Allowed "/" always;
-}
-
 # 3. Google Analytics Proxy (GA4)
 location ^~ /ga-proxy/ {
     proxy_pass https://www.google-analytics.com/;
+
+    proxy_http_version 1.1;
+    proxy_set_header Connection "";
     proxy_set_header Host www.google-analytics.com;
+
     proxy_ssl_server_name on;
     proxy_ssl_name www.google-analytics.com;
+    proxy_ssl_protocols TLSv1.2 TLSv1.3;
 
     proxy_set_header X-Real-IP $remote_addr;
     proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
