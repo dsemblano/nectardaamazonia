@@ -7,10 +7,10 @@
 
     @php(do_action('get_header'))
 
-    <!-- 1. Partytown Config Map with Intercept Resolver -->
+<!-- 1. Partytown Config -->
 <script>
 window.partytown = {
-    debug: true, // <--- Add this temporarily
+    debug: true,
     forward: ['dataLayer.push', 'gtag'],
     lib: '/app/themes/nectartema/public/partytown/',
     resolveUrl: function(url, location, type) {
@@ -29,10 +29,10 @@ window.partytown = {
 };
 </script>
 
-<!-- 2. FULL, Intact Partytown Inline Loader Code -->
+<!-- 2. Clean, Official Partytown Inline Loader -->
 <script>
-    /*!! Partytown v0.10.x - MIT builder.io !!*/
-    !function(t,e,n,i,r,o,a,c,s,a,d,p){function l(){p||(p=1,"/"===(a=(r.lib||"/~partytown/")+(r.debug?"debug/":""))[0]&&(c=e.querySelectorAll('script[type="text/partytown"]'),i===t?d=n():i.dispatchEvent(new CustomEvent("pt1")),c.length>0&&function(t,e,n,i,r){o=e.createElement("script"),n.src=t,n.dataset.pt=1,e.head.appendChild(o)}(a+"partytown-sw.js?v=0.10.2",e)))}r=t.partytown||{},i===t&&(r.forward||[]).forEach((function(e){s=t,e.split(".").forEach((function(e,n,i){s=s[i[n]]=n<i.length-1?s[i[n]]||{}:function(){(t._ptf=t._ptf||[]).push(i,arguments)}}))})),d=function(){l()},"complete"===e.readyState?d():(t.addEventListener("DOMContentLoaded",d),t.addEventListener("load",d))}(window,document,0,window);
+    /*!! Partytown v0.10.x - MIT builder.io */
+    !function(w,d,s,u,p,j,a,b,k,l,f,g){function m(){g||(g=1,"/"===(a=(p.lib||"/~partytown/")+(p.debug?"debug/":""))[0]&&(k=d.querySelectorAll('script[type="text/partytown"]'),u===w?(f=function(){var e=d.createElement("iframe");e.dataset.partytown="sandbox",e.style.display="none",d.body.appendChild(e)}):u.dispatchEvent(new CustomEvent("pt1")),k.length>0&&(b=d.createElement("script"),b.src=a+"partytown-sw.js?v=0.10.2",b.dataset.pt=1,d.head.appendChild(b))))}p=w.partytown||{},u===w&&(p.forward||[]).forEach((function(e){l=w,e.split(".").forEach((function(e,n,i){l=l[i[n]]=n<i.length-1?l[i[n]]||{}:function(){(w._ptf=w._ptf||[]).push(i,arguments)}}))})),"complete"===d.readyState?m():(w.addEventListener("DOMContentLoaded",m),w.addEventListener("load",m))}(window,document,0,window);
 </script>
 
 <!-- 3. Google Tag Script Managed by Partytown -->
