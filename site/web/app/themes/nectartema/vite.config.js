@@ -1,6 +1,8 @@
 import { defineConfig } from 'vite'
 import tailwindcss from '@tailwindcss/vite';
 import laravel from 'laravel-vite-plugin'
+import { copyLibFiles } from '@qwik.dev/partytown/utils';
+import path from 'path';
 import { wordpressPlugin, wordpressThemeJson } from '@roots/vite-plugin';
 
 export default defineConfig({
@@ -16,6 +18,14 @@ export default defineConfig({
       ],
       refresh: true,
     }),
+
+    {
+      name: 'partytown-copy',
+      async buildStart() {
+        // Copies updated @qwik.dev/partytown build files to public/partytown/
+        await copyLibFiles(path.resolve(__dirname, 'public/partytown'));
+      },
+    },
 
     wordpressPlugin(),
 
