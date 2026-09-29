@@ -10,7 +10,7 @@
 <!-- 1. Partytown Config -->
 <script>
 window.partytown = {
-    debug: true,
+    // debug: true,
     forward: ['dataLayer.push', 'gtag'],
     lib: '/app/themes/nectartema/public/partytown/',
     resolveUrl: function(url, location, type) {
