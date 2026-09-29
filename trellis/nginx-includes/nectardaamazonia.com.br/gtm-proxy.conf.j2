@@ -1,6 +1,5 @@
-# 1. Map /partytown/ directly from domain root to theme public dir
-location ^~ /partytown/ {
-    alias /srv/www/nectardaamazonia.com.br/current/web/app/themes/nectartema/public/partytown/;
+# 1. Native Bedrock Theme Path + Scope Elevation Header
+location ^~ /app/themes/nectartema/public/partytown/ {
     add_header Service-Worker-Allowed "/" always;
     add_header Access-Control-Allow-Origin "*" always;
 }
@@ -34,13 +33,3 @@ location ^~ /ga-proxy/ {
     proxy_set_header Host www.google-analytics.com;
 
     proxy_ssl_server_name on;
-    proxy_ssl_name www.google-analytics.com;
-    proxy_ssl_protocols TLSv1.2 TLSv1.3;
-
-    proxy_set_header X-Real-IP $remote_addr;
-    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-    proxy_set_header X-Forwarded-Proto $scheme;
-
-    proxy_hide_header Access-Control-Allow-Origin;
-    add_header 'Access-Control-Allow-Origin' '*' always;
-}
