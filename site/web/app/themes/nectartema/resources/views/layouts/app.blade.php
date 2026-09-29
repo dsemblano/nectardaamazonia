@@ -10,16 +10,15 @@
     <!-- 1. Partytown Config Map with Intercept Resolver -->
 <script>
 window.partytown = {
+    debug: true, // <--- Add this temporarily
     forward: ['dataLayer.push', 'gtag'],
     lib: '/app/themes/nectartema/public/partytown/',
     resolveUrl: function(url, location, type) {
-        // Intercept GTM dynamic scripts
         if (url.hostname === 'www.googletagmanager.com') {
             url.hostname = window.location.hostname;
             url.pathname = '/gtm-proxy' + url.pathname;
             return url;
         }
-        // Intercept Google Analytics dynamic scripts (spawned by GTM)
         if (url.hostname === 'www.google-analytics.com') {
             url.hostname = window.location.hostname;
             url.pathname = '/ga-proxy' + url.pathname;

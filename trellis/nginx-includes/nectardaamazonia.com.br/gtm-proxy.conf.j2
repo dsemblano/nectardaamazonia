@@ -17,6 +17,10 @@ location ^~ /gtm-proxy/ {
 location ^~ /wp-content/themes/nectartema/public/partytown/ {
     add_header Service-Worker-Allowed "/" always;
 }
+# Update rule #2 to use /app/ (Bedrock path)
+location ^~ /app/themes/nectartema/public/partytown/ {
+    add_header Service-Worker-Allowed "/" always;
+}
 
 # 3. Google Analytics Proxy (GA4)
 location ^~ /ga-proxy/ {
