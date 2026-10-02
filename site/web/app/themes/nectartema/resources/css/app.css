@@ -835,6 +835,11 @@ h1.woocommerce-products-header__title,
   }
 }
 
+/* bug do Foogallery */
+.fg-noscript-item {
+    display: none;
+}
+
 /* Preço */
 .price-out-of-stock {
   display: block;
