@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "c62c8d06e45aadbe8f2ea1392fd2c4a0",
+    "content-hash": "102fe9c8d0c09f08ccee525232e3b560",
     "packages": [
         {
             "name": "brick/math",
@@ -7446,6 +7446,37 @@
                 "source": "https://plugins.svn.wordpress.org/basic-user-avatars"
             },
             "time": "2026-03-23T19:23:21+00:00"
+        },
+        {
+            "name": "wp-plugin/caddy",
+            "version": "3.2.0",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/caddy/",
+                "reference": "tags/3.2.0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/caddy.3.2.0.zip"
+            },
+            "require": {
+                "composer/installers": "~1.0|~2.0"
+            },
+            "type": "wordpress-plugin",
+            "notification-url": "https://wp-packages.org/downloads",
+            "authors": [
+                {
+                    "name": "Tribe Interactive"
+                }
+            ],
+            "description": "A high-performance WooCommerce side cart, mini cart, and free shipping bar that boosts AOV with in-cart upsells and save for later.",
+            "homepage": "https://usecaddy.com",
+            "support": {
+                "changelog": "https://wordpress.org/plugins/caddy/#developers",
+                "issues": "https://wordpress.org/support/plugin/caddy",
+                "source": "https://plugins.svn.wordpress.org/caddy"
+            },
+            "time": "2026-08-04T18:45:59+00:00"
         },
         {
             "name": "wp-plugin/contact-form-7",

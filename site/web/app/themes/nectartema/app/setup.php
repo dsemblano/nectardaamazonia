@@ -500,3 +500,28 @@ add_action('after_setup_theme', function () {
         copy_dir($source, $destination);
     }
 });
+
+
+/**
+ * Remove jQuery and legacy WooCommerce scripts from the frontend.
+ */
+add_action('wp_enqueue_scripts', function () {
+    if (is_admin()) {
+        return;
+    }
+
+    // 1. Deregister jQuery, jQuery Core, and jQuery Migrate
+    wp_deregister_script('jquery');
+    wp_deregister_script('jquery-core');
+    wp_deregister_script('jquery-migrate');
+
+    // 2. Register empty fallback handles so plugins listing 'jquery' as a dependency won't re-trigger it
+    wp_register_script('jquery', false);
+    wp_register_script('jquery-core', false);
+    wp_register_script('jquery-migrate', false);
+
+    // 3. Dequeue legacy WooCommerce jQuery scripts handled natively by Caddy
+    wp_dequeue_script('wc-add-to-cart');
+    wp_dequeue_script('wc-cart-fragments');
+    wp_dequeue_script('woocommerce');
+}, 999);
