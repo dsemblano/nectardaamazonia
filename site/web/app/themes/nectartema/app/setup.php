@@ -525,3 +525,19 @@ add_action('wp_enqueue_scripts', function () {
     wp_dequeue_script('wc-cart-fragments');
     wp_dequeue_script('woocommerce');
 }, 999);
+
+/**
+ * Remove Caddy plugin default CSS files from the frontend.
+ */
+add_action('wp_enqueue_scripts', function () {
+    if (is_admin()) {
+        return;
+    }
+
+    // Dequeue and deregister Caddy CSS assets
+    wp_dequeue_style('caddy-icons');
+    wp_deregister_style('caddy-icons');
+
+    wp_dequeue_style('caddy-public');
+    wp_deregister_style('caddy-public');
+}, 999);
