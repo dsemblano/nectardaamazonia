@@ -565,4 +565,4 @@ add_action('wp_footer', function () {
             }
         }
     }
-}, 1);  
+}, 1);
