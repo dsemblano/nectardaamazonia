@@ -196,3 +196,10 @@ if (typeof jQuery !== 'undefined') {
 }
 
 import.meta.glob(['../images/**', '../fonts/**'])
+
+// resources/scripts/app.js
+document.addEventListener('DOMContentLoaded', () => {
+  // Remove Caddy runtime style tags
+  const caddyStyles = document.querySelectorAll('style[id*="caddy"], link[href*="caddy"]');
+  caddyStyles.forEach(el => el.remove());
+});

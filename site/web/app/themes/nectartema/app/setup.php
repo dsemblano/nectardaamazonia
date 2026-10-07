@@ -546,3 +546,23 @@ add_action('wp_print_styles', function () {
         }
     }
 }, 9999);
+
+/**
+ * Remove Caddy styles enqueued late in the footer.
+ */
+add_action('wp_footer', function () {
+    if (is_admin()) {
+        return;
+    }
+
+    global $wp_styles;
+
+    if (! empty($wp_styles->registered)) {
+        foreach ($wp_styles->registered as $handle => $style) {
+            if (str_contains($handle, 'caddy') || (isset($style->src) && str_contains($style->src, '/plugins/caddy/'))) {
+                wp_dequeue_style($handle);
+                wp_deregister_style($handle);
+            }
+        }
+    }
+}, 1);  
