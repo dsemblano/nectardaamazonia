@@ -527,17 +527,22 @@ add_action('wp_enqueue_scripts', function () {
 }, 999);
 
 /**
- * Remove Caddy plugin default CSS files from the frontend.
+ * Automatically dequeue all stylesheets loaded from the Caddy plugin directory.
  */
-add_action('wp_enqueue_scripts', function () {
+add_action('wp_print_styles', function () {
     if (is_admin()) {
         return;
     }
 
-    // Dequeue and deregister Caddy CSS assets
-    wp_dequeue_style('caddy-icons');
-    wp_deregister_style('caddy-icons');
+    global $wp_styles;
 
-    wp_dequeue_style('caddy-public');
-    wp_deregister_style('caddy-public');
-}, 999);
+    if (! empty($wp_styles->registered)) {
+        foreach ($wp_styles->registered as $handle => $style) {
+            // Check if stylesheet path originates from the caddy plugin folder
+            if (isset($style->src) && str_contains($style->src, '/plugins/caddy/')) {
+                wp_dequeue_style($handle);
+                wp_deregister_style($handle);
+            }
+        }
+    }
+}, 9999);
