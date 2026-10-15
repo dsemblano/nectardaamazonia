@@ -78,7 +78,8 @@
     "wp-plugin/meow-gallery": "^5.5",
     "wp-plugin/ewww-image-optimizer": "^8.9",
     "wp-plugin/image-zoom-on-hover": "^1.0",
-    "wp-plugin/sales-analytics-for-woocommerce": "^2.7"
+    "wp-plugin/sales-analytics-for-woocommerce": "^2.7",
+    "millipress/millicache": "^1.8"
   },
   "require-dev": {
     "roave/security-advisories": "dev-latest",
