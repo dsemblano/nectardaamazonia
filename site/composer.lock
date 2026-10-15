@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "40ee5f9496ef7860fde4669d89a1aee3",
+    "content-hash": "63a5b573865b53e788a7dfeb36888a69",
     "packages": [
         {
             "name": "brick/math",
@@ -7540,6 +7540,37 @@
             "time": "2026-06-26T02:25:59+00:00"
         },
         {
+            "name": "wp-plugin/ewww-image-optimizer",
+            "version": "8.9.0",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/ewww-image-optimizer/",
+                "reference": "tags/8.9.0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/ewww-image-optimizer.8.9.0.zip"
+            },
+            "require": {
+                "composer/installers": "~1.0|~2.0"
+            },
+            "type": "wordpress-plugin",
+            "notification-url": "https://wp-packages.org/downloads",
+            "authors": [
+                {
+                    "name": "Shane Bishop"
+                }
+            ],
+            "description": "Comprehensive image optimization with WebP, AVIF, Lazy Load, and more. Optimize images automatically for Faster Sites and Happy Visitors.",
+            "homepage": "https://wordpress.org/plugins/ewww-image-optimizer/",
+            "support": {
+                "changelog": "https://wordpress.org/plugins/ewww-image-optimizer/#developers",
+                "issues": "https://wordpress.org/support/plugin/ewww-image-optimizer",
+                "source": "https://plugins.svn.wordpress.org/ewww-image-optimizer"
+            },
+            "time": "2026-10-13T17:13:03+00:00"
+        },
+        {
             "name": "wp-plugin/fast-cart",
             "version": "1.2.5",
             "source": {
@@ -7662,6 +7693,36 @@
                 "source": "https://plugins.svn.wordpress.org/gtm-kit"
             },
             "time": "2026-10-13T06:56:28+00:00"
+        },
+        {
+            "name": "wp-plugin/image-zoom-on-hover",
+            "version": "1.0.3",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/image-zoom-on-hover/",
+                "reference": "tags/1.0.3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/image-zoom-on-hover.1.0.3.zip"
+            },
+            "require": {
+                "composer/installers": "~1.0|~2.0"
+            },
+            "type": "wordpress-plugin",
+            "notification-url": "https://wp-packages.org/downloads",
+            "authors": [
+                {
+                    "name": "Mathew"
+                }
+            ],
+            "description": "Transform your WordPress images with elegant zoom functionality. Click any image to view it in a beautiful full-screen overlay with smooth animations.",
+            "support": {
+                "changelog": "https://wordpress.org/plugins/image-zoom-on-hover/#developers",
+                "issues": "https://wordpress.org/support/plugin/image-zoom-on-hover",
+                "source": "https://plugins.svn.wordpress.org/image-zoom-on-hover"
+            },
+            "time": "2026-09-07T10:25:54+00:00"
         },
         {
             "name": "wp-plugin/infixs-correios-automatico",
@@ -7877,6 +7938,37 @@
                 "source": "https://plugins.svn.wordpress.org/regenerate-thumbnails"
             },
             "time": "2026-03-23T19:23:21+00:00"
+        },
+        {
+            "name": "wp-plugin/sales-analytics-for-woocommerce",
+            "version": "2.7.0",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/sales-analytics-for-woocommerce/",
+                "reference": "tags/2.7.0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/sales-analytics-for-woocommerce.2.7.0.zip"
+            },
+            "require": {
+                "composer/installers": "~1.0|~2.0"
+            },
+            "type": "wordpress-plugin",
+            "notification-url": "https://wp-packages.org/downloads",
+            "authors": [
+                {
+                    "name": "TechBeeps Services"
+                }
+            ],
+            "description": "Sales Analytics for WooCommerce: detailed reports, payment analytics, AI-based insights, CSV/PDF export, multi-currency, and chart visuals.",
+            "homepage": "https://plugins.techbeeps.com",
+            "support": {
+                "changelog": "https://wordpress.org/plugins/sales-analytics-for-woocommerce/#developers",
+                "issues": "https://wordpress.org/support/plugin/sales-analytics-for-woocommerce",
+                "source": "https://plugins.svn.wordpress.org/sales-analytics-for-woocommerce"
+            },
+            "time": "2026-09-30T11:06:10+00:00"
         },
         {
             "name": "wp-plugin/woocommerce",
