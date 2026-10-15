@@ -53,7 +53,6 @@ window.partytown = {
 </script>
     @php(wp_head())
 
-    @include('partials.head')
 
     @if (is_front_page() || is_home())
         <link rel="preload" fetchpriority="high" as="image" href="{{ Vite::asset('resources/images/loja.webp') }}"
