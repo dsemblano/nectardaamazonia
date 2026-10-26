@@ -1,0 +1,9 @@
+"@development":
+  ssh: "nectardaamazonia.test"
+  path: "/srv/www/nectardaamazonia.com.br/current/web/wp"
+"@production":
+  ssh: "web@165.227.191.68:22"
+  path: "/srv/www/nectardaamazonia.com.br/current/web/wp"
+"@staging":
+  ssh: "web@167.172.252.49:22"
+  path: "/srv/www/nectardaamazonia.com.br/current/web/wp"

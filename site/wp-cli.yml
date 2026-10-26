@@ -1,8 +1,14 @@
 path: web/wp
 server:
   docroot: web
+# @development:
+  # ssh: vagrant@nectardaamazonia.test/srv/www/nectardaamazonia.com.br/current
+  # ssh: lima-nectardaamazonia-com-br/srv/www/nectardaamazonia.com.br/current
+
 @development:
-  ssh: vagrant@nectardaamazonia.test/srv/www/nectardaamazonia.com.br/current
+  ssh: daniel@lima-nectardaamazonia-com-br
+  path: /srv/www/nectardaamazonia.com.br/current/web/wp
+
 @staging:
   ssh: web@206.189.200.210/srv/www/nectardaamazonia.com.br/current
 @production:

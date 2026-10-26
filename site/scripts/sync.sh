@@ -5,7 +5,7 @@
 # Copyright (c) Ben Word
 
 DEVDIR="web/app/uploads/"
-DEVSITE="https://http://nectardaamazonia.test/"
+DEVSITE="http://nectardaamazonia.test/"
 
 PRODDIR="web@165.227.191.68:/srv/www/nectardaamazonia.com.br/shared/uploads/"
 PRODSITE="https://nectardaamazonia.com.br"

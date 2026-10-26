@@ -22,13 +22,13 @@ Roots is an independent open source org, supported only by developers like you. 
 
 ### Sponsors
 
-<a href="https://carrot.com/"><img src="https://cdn.roots.io/app/uploads/carrot.svg" alt="Carrot" height="90"></a> <a href="https://wordpress.com/"><img src="https://cdn.roots.io/app/uploads/wordpress.svg" alt="WordPress.com" height="90"></a> <a href="https://www.itineris.co.uk/"><img src="https://cdn.roots.io/app/uploads/itineris.svg" alt="Itineris" height="90"></a> <a href="https://kinsta.com/?kaid=OFDHAJIXUDIV"><img src="https://cdn.roots.io/app/uploads/kinsta.svg" alt="Kinsta" height="90"></a>
+<a href="https://carrot.com/"><img src="https://cdn.roots.io/app/uploads/carrot.svg" alt="Carrot" height="90"></a> <a href="https://wordpress.com/"><img src="https://cdn.roots.io/app/uploads/wordpress.svg" alt="WordPress.com" height="90"></a> <a href="https://www.itineris.co.uk/"><img src="https://cdn.roots.io/app/uploads/itineris.svg" alt="Itineris" height="90"></a> <a href="https://kinsta.com/?kaid=OFDHAJIXUDIV"><img src="https://cdn.roots.io/app/uploads/kinsta.svg" alt="Kinsta" height="90"></a> <a href="https://ploi.io/"><img src="https://cdn.roots.io/app/uploads/ploi.svg" alt="Ploi" height="90"></a>
 
 ## Overview
 
 Trellis is a collection of Ansible playbooks for setting up a LEMP stack for WordPress.
 
-- Local development environment with Vagrant
+- Local development environment with Lima VMs
 - High-performance production servers
 - Zero-downtime deploys for your [Bedrock](https://roots.io/bedrock/)-based WordPress sites
 - [trellis-cli](https://github.com/roots/trellis-cli) for easier management

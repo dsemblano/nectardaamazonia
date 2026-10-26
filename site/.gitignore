@@ -3,6 +3,7 @@ web/app/plugins/*
 !web/app/plugins/whatsapp-floating-button/
 !web/app/plugins/nectar-video-watch-pages/
 !web/app/plugins/.gitkeep
+# Ignore Composer-installed mu-plugin directories; single-file mu-plugins are tracked intentionally
 web/app/mu-plugins/*/
 web/app/themes/twentytwentyfive/
 web/app/upgrade
@@ -25,6 +26,11 @@ web/.htaccess
 # Composer
 /vendor
 auth.json
+
+# PHPUnit/Pest
+phpunit.xml
+.phpunit.result.cache
+.phpunit.cache
 
 # WP-CLI
 wp-cli.local.yml

@@ -5,6 +5,11 @@ import { copyLibFiles } from '@qwik.dev/partytown/utils';
 import path from 'path';
 import { wordpressPlugin, wordpressThemeJson } from '@roots/vite-plugin';
 
+// Set APP_URL if it doesn't exist for Laravel Vite plugin
+if (! process.env.APP_URL) {
+  process.env.APP_URL = 'http://nectardaamazonia.test';
+}
+
 export default defineConfig({
   base: '/app/themes/nectartema/public/build/',
   plugins: [
@@ -17,6 +22,7 @@ export default defineConfig({
         'resources/js/editor.js',
       ],
       refresh: true,
+      assets: ['resources/images/**', 'resources/fonts/**'],
     }),
 
     {
@@ -35,6 +41,7 @@ export default defineConfig({
       disableTailwindColors: false,
       disableTailwindFonts: false,
       disableTailwindFontSizes: false,
+      disableTailwindBorderRadius: false,
     }),
   ],
   optimizeDeps: {
