@@ -291,7 +291,7 @@ p {
 }
 
 .servicos-info {
-  @apply prose lg:prose-lg prose-a:no-underline prose-h2:mt-0 prose-figure:mt-0 text-center;
+  @apply prose lg:prose-lg prose-a:no-underline prose-h2:mt-0 prose-figure:mt-0 prose-a:text-green-800 prose-a:text-lg;
 
   h3 {
     color: var(--color-verde);
@@ -912,9 +912,9 @@ blockquote {
   line-height: normal;
 }
 
-.woocommerce-account-fields {
+/* .woocommerce-account-fields {
   display: none;
-}
+} */
 
 figure.w-full img {
   width: 100%;
