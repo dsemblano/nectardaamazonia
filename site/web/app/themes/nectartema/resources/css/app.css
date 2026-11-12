@@ -633,7 +633,7 @@ a.button.wc-backward,
 }
 
 @utility cta-second-transparent {
-  @apply px-2 py-2 rounded-lg text-base fill-mel text-center font-semibold text-mel bg-transparent hover:bg-mel/10 border-solid border-mel border-2;
+  @apply px-2 py-2 rounded-lg text-base fill-verde text-center font-semibold text-verde bg-transparent hover:bg-verde/10 border-solid border-verde border-2;
 }
 
 .button-quemsomos,
