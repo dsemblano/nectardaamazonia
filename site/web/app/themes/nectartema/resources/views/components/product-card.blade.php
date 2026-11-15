@@ -72,7 +72,7 @@
             {{-- Bloco de Ação Inteligente --}}
             @if ($outOfStock)
                 {{-- Se QUALQUER tipo de produto estiver fora de estoque --}}
-                <div class="bg-gray-100 text-gray-400 py-2.5 px-2 rounded-xl text-sm font-semibold text-center cursor-not-allowed select-none">
+                <div class="bg-gray-100 text-gray-700 py-2.5 px-2 rounded-xl text-sm font-semibold text-center cursor-not-allowed select-none">
                     Fora de estoque
                 </div>
             @else
