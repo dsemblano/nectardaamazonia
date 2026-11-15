@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     @php(do_action('get_header'))
+    @include('snippets.adsense')
 
     <!-- 1. Partytown Config -->
 <script>
