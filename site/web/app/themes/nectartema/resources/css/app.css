@@ -17,7 +17,8 @@
   --color-headingprimary: #FEBE15;
   --color-secondary: #d97706;
   --color-mel: #b8933a;
-  --color-marrom: #402810;
+  /* --color-marrom: #402810; */
+  --color-marrom: #7B4F1E;
   --color-verde: #294023;
   --color-header: #f5f5dc;
   --color-footer: #E2E297;
@@ -607,7 +608,7 @@ body.sage {
 #fkcart-modal .fkcart-zero-state .fkcart-shop-button,
 .product-button,
 #fkcart-modal .fkcart-checkout-wrap #fkcart-checkout-button {
-  @apply px-4 py-4 rounded-lg text-lg font-bold transition text-h bg-mel hover:brightness-[80%] hover:scale-105 hover:shadow-lg active:scale-95;
+  @apply px-4 py-4 rounded-lg text-lg font-bold transition text-white bg-marrom hover:brightness-[80%] hover:scale-105 hover:shadow-lg active:scale-95;
 }
 
 .hero-colmeia {
@@ -620,7 +621,7 @@ body.sage {
 
 /* Second CTA */
 @utility cta-second {
-  @apply px-2 py-2 rounded-lg text-base font-semibold transition text-fundo bg-mel hover:brightness-[130%] hover:scale-105 hover:shadow-lg active:scale-95;
+  @apply px-2 py-2 rounded-lg text-base font-semibold transition text-fundo bg-marrom hover:brightness-[130%] hover:scale-105 hover:shadow-lg active:scale-95;
 }
 
 a.button.wc-backward,
