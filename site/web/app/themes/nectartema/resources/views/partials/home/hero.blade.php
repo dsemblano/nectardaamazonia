@@ -11,7 +11,7 @@
         <source srcset="{{ Vite::asset('resources/images/loja_compressed.webp') }}" type="image/webp">
 
         <!-- 3. Native fallback (This is where your layout classes MUST sit) -->
-        <img src="{{ Vite::asset('resources/images/loja_compressed.webp') }}" data-opt-lazy-loaded="false"
+        <img class="hero-bg-img" src="{{ Vite::asset('resources/images/loja_compressed.webp') }}" data-opt-lazy-loaded="false"
             fetchpriority="high" class="hero-bg-img no-lazy w-full object-cover optml-skip"
             alt="">
     </picture>
