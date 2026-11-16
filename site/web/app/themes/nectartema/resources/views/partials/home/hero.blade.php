@@ -1,17 +1,17 @@
 <section id="hero" class="section-home text-white relative overflow-hidden">
-    <picture id="hero-bg-img" class="hero-bg-img" class="w-full h-full block">
+    <picture class="hero-bg-img" class="w-full h-full block">
         <!-- 1. Mobile devices (under 576px) -->
-        <source media="(max-width: 576px)" srcset="{{ Vite::asset('resources/images/loja.avif') }}"
+        <source media="(max-width: 576px)" srcset="{{ Vite::asset('resources/images/loja_compressed.avif') }}"
             type="image/avif">
-        <source media="(max-width: 576px)" srcset="{{ Vite::asset('resources/images/loja.webp') }}"
+        <source media="(max-width: 576px)" srcset="{{ Vite::asset('resources/images/loja_compressed.webp') }}"
             type="image/webp">
 
         <!-- 2. Desktop/Tablet devices -->
-        <source srcset="{{ Vite::asset('resources/images/loja.avif') }}" type="image/avif">
-        <source srcset="{{ Vite::asset('resources/images/loja.webp') }}" type="image/webp">
+        <source srcset="{{ Vite::asset('resources/images/loja_compressed.avif') }}" type="image/avif">
+        <source srcset="{{ Vite::asset('resources/images/loja_compressed.webp') }}" type="image/webp">
 
         <!-- 3. Native fallback (This is where your layout classes MUST sit) -->
-        <img src="{{ Vite::asset('resources/images/loja.webp') }}" data-opt-lazy-loaded="false"
+        <img src="{{ Vite::asset('resources/images/loja_compressed.webp') }}" data-opt-lazy-loaded="false"
             fetchpriority="high" class="hero-bg-img no-lazy w-full object-cover optml-skip"
             alt="">
     </picture>
