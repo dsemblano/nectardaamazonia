@@ -1,7 +1,7 @@
 {
   "apiVersion": 3,
   "name": "acf/product-callout",
-  "title": "Produto relacionado",
+  "title": "CTA Bloco Produto relacionado",
   "description": "Adiciona uma chamada para um produto da loja.",
   "category": "widgets",
   "icon": "cart",
