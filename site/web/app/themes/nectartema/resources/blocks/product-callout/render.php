@@ -45,10 +45,10 @@ $heading_id = wp_unique_id('product-callout-title-');
     <div class="product-callout__content">
 
         <?php if ($title) : ?>
-            <h3 id="<?php echo esc_attr($heading_id); ?>"
+            <p id="<?php echo esc_attr($heading_id); ?>"
                 class="product-callout__title">
                 <?php echo esc_html($title); ?>
-            </h3>
+            </p>
         <?php endif; ?>
 
         <?php if ($text) : ?>
