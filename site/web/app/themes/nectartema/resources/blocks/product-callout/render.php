@@ -5,18 +5,17 @@ $title = get_field('product_callout_title');
 $text  = get_field('product_callout_text');
 $link  = get_field('product_callout_link');
 
+if (! $image && ! $title && ! $text && empty($link['url'])) {
+    return;
+}
+
 $link_url = $link['url'] ?? '';
+
 $link_title = ! empty($link['title'])
     ? $link['title']
     : __('Conheça o produto', 'nectar');
 
-$link_target = ! empty($link['target'])
-    ? $link['target']
-    : '_self';
-
-if (! $image && ! $title && ! $text && ! $link_url) {
-    return;
-}
+$link_target = $link['target'] ?? '_self';
 
 $heading_id = wp_unique_id('product-callout-title-');
 
@@ -28,6 +27,7 @@ $heading_id = wp_unique_id('product-callout-title-');
     ]); ?>
     aria-labelledby="<?php echo esc_attr($heading_id); ?>"
 >
+
     <?php if ($image) : ?>
         <div class="product-callout__media">
             <?php
@@ -46,7 +46,8 @@ $heading_id = wp_unique_id('product-callout-title-');
     <div class="product-callout__content">
 
         <?php if ($title) : ?>
-            <h3 id="<?php echo esc_attr($heading_id); ?>">
+            <h3 id="<?php echo esc_attr($heading_id); ?>"
+                class="product-callout__title">
                 <?php echo esc_html($title); ?>
             </h3>
         <?php endif; ?>
@@ -59,9 +60,9 @@ $heading_id = wp_unique_id('product-callout-title-');
 
         <?php if ($link_url) : ?>
             <a
-                class="product-callout__link"
                 href="<?php echo esc_url($link_url); ?>"
                 target="<?php echo esc_attr($link_target); ?>"
+                class="product-callout__link"
                 <?php if ($link_target === '_blank') : ?>
                     rel="noopener noreferrer"
                 <?php endif; ?>
@@ -71,4 +72,5 @@ $heading_id = wp_unique_id('product-callout-title-');
         <?php endif; ?>
 
     </div>
+
 </aside>
