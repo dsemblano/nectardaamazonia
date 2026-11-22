@@ -69,9 +69,9 @@
                     <li class="{{ $item->classes }} relative flex flex-col"
                         @if($item->children) x-data="{ subMenuOpen: false }" @endif>
                         
-                        <div class="flex items-center justify-between border-b border-gray-100 py-3">
+                        <div class="flex items-center justify-between border-b border-gray-100">
                             <a href="{{ $item->url }}" @click="mobileOpen = false"
-                                class="text-xl no-underline {{ $item->active ? 'text-mel' : 'text-p' }}"
+                                class="text-base no-underline {{ $item->active ? 'text-mel' : 'text-p' }}"
                                 @if ($item->active || $item->activeAncestor) aria-current="{{ $item->active ? 'page' : 'true' }}" @endif>
                                 {{ $item->label }}
                             </a>
@@ -95,7 +95,7 @@
                                 @foreach ($item->children as $child)
                                     <li class="{{ $child->classes }} w-full clear-both py-2">
                                         <a href="{{ $child->url }}" @click="mobileOpen = false"
-                                            class="block text-lg no-underline {{ $child->active ? 'text-mel' : 'text-gray-600' }}">
+                                            class="block text-base no-underline {{ $child->active ? 'text-mel' : 'text-gray-600' }}">
                                             {{ $child->label }}
                                         </a>
                                     </li>
