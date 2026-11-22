@@ -1,0 +1,18 @@
+{
+  "apiVersion": 3,
+  "name": "acf/product-callout",
+  "title": "Produto relacionado",
+  "description": "Adiciona uma chamada para um produto da loja.",
+  "category": "widgets",
+  "icon": "cart",
+  "keywords": ["produto", "loja", "cta"],
+  "acf": {
+    "mode": "preview",
+    "renderTemplate": "render.php"
+  },
+  "supports": {
+    "align": false,
+    "anchor": true,
+    "html": false
+  }
+}
