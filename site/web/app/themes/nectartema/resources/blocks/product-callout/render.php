@@ -25,8 +25,7 @@ $heading_id = wp_unique_id('product-callout-title-');
     <?php echo get_block_wrapper_attributes([
         'class' => 'product-callout',
     ]); ?>
-    aria-labelledby="<?php echo esc_attr($heading_id); ?>"
->
+    aria-labelledby="<?php echo esc_attr($heading_id); ?>">
 
     <?php if ($image) : ?>
         <div class="product-callout__media">
@@ -61,14 +60,11 @@ $heading_id = wp_unique_id('product-callout-title-');
         <?php if ($link_url) : ?>
             <a
                 href="<?php echo esc_url($link_url); ?>"
-                target="<?php echo esc_attr($link_target); ?>"
+                target="<?php echo esc_attr(! empty($link_target) ? $link_target : '_self'); ?>"
                 class="product-callout__link"
                 <?php if ($link_target === '_blank') : ?>
-                    rel="noopener noreferrer"
-                <?php endif; ?>
-            >
-                <?php echo esc_html($link_title); ?>
-            </a>
+                rel="noopener noreferrer"
+                <?php endif; ?>><?php echo esc_html($link_title); ?></a>
         <?php endif; ?>
 
     </div>
