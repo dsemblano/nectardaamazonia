@@ -11,6 +11,22 @@ if (! $image && ! $title && ! $text && empty($link['url'])) {
 
 $link_url = $link['url'] ?? '';
 
+$link_url = $link['url'] ?? '';
+
+if ($link_url) {
+    $site_host = wp_parse_url(home_url(), PHP_URL_HOST);
+    $link_host = wp_parse_url($link_url, PHP_URL_HOST);
+
+    // Convert internal URLs to root-relative paths.
+    if (
+        $site_host &&
+        $link_host &&
+        strcasecmp($site_host, $link_host) === 0
+    ) {
+        $link_url = wp_make_link_relative($link_url);
+    }
+}
+
 $link_title = ! empty($link['title'])
     ? $link['title']
     : __('Conheça o produto', 'nectar');
