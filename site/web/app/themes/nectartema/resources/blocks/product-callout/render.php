@@ -64,7 +64,9 @@ $heading_id = wp_unique_id('product-callout-title-');
                 class="product-callout__link"
                 <?php if ($link_target === '_blank') : ?>
                 rel="noopener noreferrer"
-                <?php endif; ?>><?php echo esc_html($link_title); ?></a>
+                <?php endif; ?>><?php echo esc_html($link_title); ?>
+            <span class="product-callout__arrow" aria-hidden="true">→</span></a>
+                
         <?php endif; ?>
 
     </div>
