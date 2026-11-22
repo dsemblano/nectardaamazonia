@@ -1272,3 +1272,50 @@ figure {
 .woocommerce img, .woocommerce-page img {
   height: 100%;
 }
+
+.product-callout {
+    display: grid;
+    grid-template-columns: minmax(0, 12rem) minmax(0, 1fr);
+    align-items: center;
+    gap: 1.5rem;
+    margin-block: 2rem;
+    padding: 1.5rem;
+    border: 1px solid #e5e7eb;
+    border-radius: 0.75rem;
+}
+
+.product-callout__image {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+    border-radius: 0.5rem;
+}
+
+.product-callout__content h3 {
+    margin-top: 0;
+    margin-bottom: 0.75rem;
+}
+
+.product-callout__link {
+    display: inline-block;
+    margin-top: 0.75rem;
+    color: #176b45;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.product-callout__link:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 640px) {
+    .product-callout {
+        grid-template-columns: 1fr;
+    }
+
+    .product-callout__media {
+        max-width: 180px;
+    }
+}

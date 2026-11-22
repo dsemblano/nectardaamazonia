@@ -566,3 +566,10 @@ add_action('wp_footer', function () {
         }
     }
 }, 1);
+
+//  
+add_action('init', function () {
+    register_block_type(
+        resource_path('blocks/product-callout')
+    );
+});
