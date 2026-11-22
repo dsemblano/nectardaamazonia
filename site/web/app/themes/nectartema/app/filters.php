@@ -264,3 +264,38 @@ add_filter('woocommerce_breadcrumb_defaults', function () {
         'home'        => _x('Início', 'breadcrumb', 'woocommerce'),
     ];
 });
+
+
+$restore_wpautop = null;
+
+$restore_wpautop = static function ($content) use (&$restore_wpautop) {
+    add_filter('woocommerce_short_description', 'wpautop', 10);
+
+    remove_filter(
+        'woocommerce_short_description',
+        $restore_wpautop,
+        12
+    );
+
+    return $content;
+};
+
+add_filter('woocommerce_short_description', static function ($content) use (&$restore_wpautop) {
+
+    if (! is_shop() || ! has_blocks($content)) {
+        return $content;
+    }
+
+    // Prevent wpautop from processing rendered Gutenberg blocks.
+    remove_filter('woocommerce_short_description', 'wpautop', 10);
+
+    // Restore wpautop immediately after this content is processed.
+    add_filter(
+        'woocommerce_short_description',
+        $restore_wpautop,
+        12
+    );
+
+    return $content;
+
+}, 8);
