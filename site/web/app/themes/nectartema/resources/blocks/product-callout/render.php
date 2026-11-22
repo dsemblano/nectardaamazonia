@@ -39,7 +39,7 @@ $heading_id = wp_unique_id('product-callout-title-');
 
 <aside
     <?php echo get_block_wrapper_attributes([
-        'class' => 'product-callout',
+        'class' => 'product-callout not-prose',
     ]); ?>
     aria-labelledby="<?php echo esc_attr($heading_id); ?>">
 

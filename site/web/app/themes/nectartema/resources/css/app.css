@@ -1353,6 +1353,7 @@ figure {
     line-height: 1.3;
     text-decoration: none;
     transition: background-color 0.2s;
+    margin-top: 1rem;
 }
 
 .product-callout__link > span:first-child {
