@@ -3,7 +3,8 @@
 @endphp
 
 <div class="snowfall" aria-hidden="true">
-  @for ($i = 0; $i < 40; $i++)
+  {{-- @for ($i = 0; $i < 40; $i++) --}}
+  @for ($i = 0; $i < 5; $i++)
     @php
       $duration = random_int(8, 20);
       $delay = random_int(0, $duration);
