@@ -6,6 +6,9 @@
 @source "../**/*.js";
 @source "../blocks/**/*.php";
 @import './fonts.css';
+/* @import './lightsxmas.css'; */
+@import './snowfall.css';
+
 
 /* @import './fast-public.css'; */
 @import './caddy-public.css';

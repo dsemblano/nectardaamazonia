@@ -143,7 +143,7 @@ window.partytown = {
             </clipPath>
         </defs>
     </svg>
-
+<x-snowfall />
 </body>
 
 </html>
