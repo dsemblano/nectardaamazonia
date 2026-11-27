@@ -2,7 +2,7 @@
 /*
   Plugin Name: freesoul deactivate plugins [fdp]
   Description: mu-plugin automatically installed by freesoul deactivate plugins
-  Version: 2.7.0
+  Version: 2.8.0
   Plugin URI: https://freesoul-deactivate-plugins.com/
   Author: Jose Mortellaro
   Author URI: https://josemortellaro.com/
@@ -43,7 +43,7 @@ if( is_admin() && isset( $_REQUEST['action'] ) && in_array( sanitize_text_field(
 	return;
 }
 
-define( 'EOS_DP_MU_VERSION','2.7.0' );
+define( 'EOS_DP_MU_VERSION','2.8.0' );
 define( 'EOS_DP_MU_PLUGIN_DIR',untrailingslashit( dirname( __FILE__ ) ) );
 
 
@@ -434,7 +434,11 @@ if(
 						$opts_by_path = eos_dp_get_opts_by_url( $after_home_uri );
 					}
 					if( $opts_by_path && isset( $opts_by_path['post_id'] ) && ( ! isset( $opts_by_path['post_status'] ) || ! in_array( $opts_by_path['post_status'], array( 'draft') ) || eos_dp_is_user_logged() ) ){
-						if( absint( $opts_by_path['post_id'] ) > 0 ){
+						if( absint( $opts_by_path['post_id'] ) > 0 && eos_dp_path_matches_non_singular( $after_home_uri, $rewrite_rules, $post_types ) ){
+							$info[] = sprintf( 'Skipped filesystem single ID %s (%s) because %s matches a non-singular rewrite rule.', absint( $opts_by_path['post_id'] ), isset( $opts_by_path['post_type'] ) ? $opts_by_path['post_type'] : '', $after_home_uri );
+							$opts_by_path = false;
+						}
+						elseif( absint( $opts_by_path['post_id'] ) > 0 ){
 							$eos_page_id = absint( $opts_by_path['post_id'] );
 							$info[] = sprintf( 'Evaluated Singles Settings. ID: %s. Post type: %s',$eos_page_id,$opts_by_path['post_type'] );
 						}
@@ -454,7 +458,13 @@ if(
 									// Blog post
 									$p = get_page_by_path( basename( $after_home_uri ),'OBJECT',$post_types );
 									if( is_object( $p ) && ( ! isset( $p->post_status ) || ! in_array( $p->post_status, array( 'draft' ) ) || eos_dp_is_user_logged() ) ){
-										$eos_page_id =  $p->ID;
+										if( eos_dp_path_matches_non_singular( $after_home_uri, $rewrite_rules, $post_types ) ){
+											$info[] = sprintf( 'Skipped single ID %s (%s) because %s matches a non-singular rewrite rule.', $p->ID, $p->post_type, $after_home_uri );
+											$p = false;
+										}
+										else{
+											$eos_page_id =  $p->ID;
+										}
 									}
 
 								}
@@ -477,7 +487,11 @@ if(
 											unset( $post_types_query[array_search( 'page',$post_types_query )] );
 										}
 										$p = get_page_by_path( basename( $after_home_uri ),'OBJECT',$post_types_query );
-										if( is_object( $p ) && isset( $p->post_type ) ){
+										if( is_object( $p ) && isset( $p->post_type ) && eos_dp_path_matches_non_singular( $after_home_uri, $rewrite_rules, $post_types ) ){
+											$info[] = sprintf( 'Skipped single ID %s (%s) because %s matches a non-singular rewrite rule.', $p->ID, $p->post_type, $after_home_uri );
+											$p = false;
+										}
+										elseif( is_object( $p ) && isset( $p->post_type ) ){
 											$first_id = $p->ID;
 											// We have retrieved a custom post type, we still need to check if different custom post types have the same slug.
 											unset( $post_types_query[array_search( $p->post_type,$post_types_query )] );
@@ -2094,7 +2108,7 @@ function eos_dp_only_fdp( $plugins ){
  *
  */
 function eos_dp_disabled_plugins_on_ajax_filter( $plugins ) {
-	if( ( ( wp_doing_ajax() && isset( $_REQUEST['action'] ) ) || isset( $_REQUEST['wc-ajax'] ) ) || ( ! empty( $_POST ) && ! defined( 'DOING_CRON' ) ) ){
+	if( ( ( wp_doing_ajax() && isset( $_REQUEST['action'] ) ) || isset( $_REQUEST['wc-ajax'] ) ) || ( ! empty( $_POST ) && ! defined( 'DOING_CRON' ) ) || eos_dp_wc_add_to_cart_action() ){
 		$plugins = apply_filters( 'fdp_ajax_plugins',$plugins );
 		$disabled_on_ajax = eos_dp_disabled_plugins_on_ajax();
 		if( is_array( $plugins ) && $disabled_on_ajax ){
@@ -2138,7 +2152,10 @@ function eos_dp_disabled_plugins_on_ajax() {
 		}
 		elseif( isset( $_REQUEST['wc-ajax'] ) ) {
 			$action = sanitize_text_field( $_REQUEST['wc-ajax'] );
-		};
+		}
+		if( ! $action ){
+			$action = eos_dp_wc_add_to_cart_action();
+		}
 		if( $action && isset( $actions[$action] ) ){
 			$disabled_plugins = array_filter( explode( ',',$actions[sanitize_text_field( $action ) ] ),'strlen' );
 			return $disabled_plugins;
@@ -2154,14 +2171,56 @@ function eos_dp_disabled_plugins_on_ajax() {
 	return false;
 }
 
+/**
+ * Action name when WooCommerce adds a product to the cart outside admin-ajax.
+ *
+ * The block Add to cart button calls the Store API. The classic button sends
+ * add-to-cart in the request. Both should match the add_to_cart Ajax setting.
+ *
+ * @since 2.3.1
+ *
+ * @return string
+ */
+function eos_dp_wc_store_cart_add_uri( $uri ){
+	$uri = strtolower( (string) $uri );
+	$is_store = false !== strpos( $uri,'wc/store/' ) || false !== strpos( $uri,'/cart/add-item' ) || false !== strpos( $uri,'/cart/update-item' );
+	$is_add = false !== strpos( $uri,'/cart/add-item' ) || false !== strpos( $uri,'/cart/update-item' );
+	return $is_store && $is_add;
+}
 
-if ( wp_doing_ajax() || isset( $_POST['wc-ajax'] ) ){
+function eos_dp_wc_add_to_cart_action(){
+	if( isset( $_REQUEST['wc-ajax'] ) && 'add_to_cart' === sanitize_key( wp_unslash( $_REQUEST['wc-ajax'] ) ) ){
+		return 'add_to_cart';
+	}
+	if( isset( $_REQUEST['add-to-cart'] ) && '' !== (string) wp_unslash( $_REQUEST['add-to-cart'] ) ){
+		return 'add_to_cart';
+	}
+	$uri = isset( $_SERVER['REQUEST_URI'] ) ? strtolower( rawurldecode( (string) wp_unslash( $_SERVER['REQUEST_URI'] ) ) ) : '';
+	if( eos_dp_wc_store_cart_add_uri( $uri ) ){
+		return 'add_to_cart';
+	}
+	if( false !== strpos( $uri,'wc/store/' ) && false !== strpos( $uri,'/batch' ) && isset( $GLOBALS['fdp_post_data']['requests'] ) && is_array( $GLOBALS['fdp_post_data']['requests'] ) ){
+		foreach( $GLOBALS['fdp_post_data']['requests'] as $request ){
+			$path = is_array( $request ) && isset( $request['path'] ) ? strtolower( rawurldecode( (string) $request['path'] ) ) : '';
+			if( eos_dp_wc_store_cart_add_uri( $path ) ){
+				return 'add_to_cart';
+			}
+		}
+	}
+	return '';
+}
+
+
+if ( wp_doing_ajax() || isset( $_POST['wc-ajax'] ) || eos_dp_wc_add_to_cart_action() ){
 	$action = false;
 	if( isset( $_REQUEST['action'] ) ){
 		$action = sanitize_text_field( $_REQUEST['action'] );
 	}
 	elseif( isset( $_REQUEST['wc-ajax'] ) ){
 		$action = sanitize_text_field( $_REQUEST['wc-ajax'] );
+	}
+	if( ! $action ){
+		$action = eos_dp_wc_add_to_cart_action();
 	}
 	$ajaxTheme = eos_dp_get_option( 'eos_dp_pro_ajax_theme' );
 	if( isset( $ajaxTheme[$action] ) && !$ajaxTheme[$action] ){
@@ -2515,6 +2574,119 @@ function eos_dp_not( $a ){
 }
 
 /**
+ * Path of the current request, without the query string.
+ *
+ * @since 2.8.0
+ *
+ * @return string
+ */
+function eos_dp_request_path(){
+	$uri = isset( $_SERVER['REQUEST_URI'] ) ? (string) wp_unslash( $_SERVER['REQUEST_URI'] ) : '';
+	$query = strpos( $uri,'?' );
+	if( false !== $query ){
+		$uri = substr( $uri,0,$query );
+	}
+	return $uri;
+}
+
+/**
+ * Whether this request is a REST API call.
+ *
+ * REST_REQUEST is defined only in rest_api_loaded(), on parse_request.
+ * Before that, the URI prefix or the rest_route parameter is enough.
+ * A subdirectory install is /subdir/wp-json/, so the prefix is matched
+ * anywhere in the path, not only at the start of REQUEST_URI.
+ *
+ * @since 2.8.0
+ *
+ * @return bool
+ */
+function eos_dp_is_rest_request(){
+	if( defined( 'REST_REQUEST' ) && REST_REQUEST ){
+		return true;
+	}
+	if( isset( $_GET['rest_route'] ) && '' !== (string) wp_unslash( $_GET['rest_route'] ) ){
+		return true;
+	}
+	$prefix = function_exists( 'rest_get_url_prefix' ) ? rest_get_url_prefix() : 'wp-json';
+	$prefix = trim( (string) $prefix,'/' );
+	if( '' === $prefix ){
+		return false;
+	}
+	$path = eos_dp_request_path();
+	if( '' === $path ){
+		$path = isset( $_SERVER['PATH_INFO'] ) ? (string) wp_unslash( $_SERVER['PATH_INFO'] ) : '';
+	}
+	if( '' === $path ){
+		return false;
+	}
+	$needle = '/'.$prefix;
+	return false !== strpos( $path,$needle.'/' ) || substr( $path,-strlen( $needle ) ) === $needle;
+}
+
+/**
+ * Whether an application password may be sent with this request.
+ *
+ * Reads the header only. It does not authenticate.
+ *
+ * @since 2.8.0
+ *
+ * @return bool
+ */
+function eos_dp_request_has_basic_auth(){
+	if( isset( $_SERVER['PHP_AUTH_USER'] ) && '' !== (string) $_SERVER['PHP_AUTH_USER'] ){
+		return true;
+	}
+	$header = '';
+	if( ! empty( $_SERVER['HTTP_AUTHORIZATION'] ) ){
+		$header = (string) wp_unslash( $_SERVER['HTTP_AUTHORIZATION'] );
+	}
+	elseif( ! empty( $_SERVER['REDIRECT_HTTP_AUTHORIZATION'] ) ){
+		$header = (string) wp_unslash( $_SERVER['REDIRECT_HTTP_AUTHORIZATION'] );
+	}
+	return 0 === stripos( ltrim( $header ),'basic ' );
+}
+
+/**
+ * Skip wp_get_current_user() until REST_REQUEST exists.
+ *
+ * An earlier call runs determine_current_user while application passwords
+ * are still refused, and the anonymous user stays cached for the request.
+ *
+ * @since 2.8.0
+ *
+ * @return bool
+ */
+function eos_dp_defer_current_user(){
+	if( ( defined( 'REST_REQUEST' ) && REST_REQUEST ) || ( defined( 'XMLRPC_REQUEST' ) && XMLRPC_REQUEST ) ){
+		return false;
+	}
+	return eos_dp_is_rest_request();
+}
+
+/**
+ * Resolve the current user once this request is known to be REST.
+ *
+ * Runs before rest_application_password_check_errors (priority 90), so a
+ * wrong application password is reported as invalid_username.
+ *
+ * @since 2.8.0
+ *
+ * @param mixed $result
+ * @return mixed
+ */
+function eos_dp_prime_rest_application_password( $result ){
+	if( ! empty( $result ) || ! eos_dp_request_has_basic_auth() ){
+		return $result;
+	}
+	if( function_exists( 'wp_get_current_user' ) ){
+		wp_get_current_user();
+	}
+	return $result;
+}
+add_filter( 'rest_authentication_errors','eos_dp_prime_rest_application_password',1 );
+
+/**
  * Check if user logged in when the WP core function not available.
  *
  * @since 1.9.0
@@ -2541,7 +2713,9 @@ function eos_dp_is_user_logged(){
  *
  */
 function eos_dp_get_current_user() {
-		if( function_exists( 'wp_get_current_user' ) ) return wp_get_current_user(); // If the core function is available, we use it and return.
+		// On a REST request, wp_get_current_user() is safe only after REST_REQUEST is defined.
+		// doing_filter() avoids calling it again from inside determine_current_user.
+		if( function_exists( 'wp_get_current_user' ) && ! eos_dp_defer_current_user() && ! doing_filter( 'determine_current_user' ) ) return wp_get_current_user(); // If the core function is available, we use it and return.
 		if( !defined( 'LOGGED_IN_COOKIE' ) || !isset( $_COOKIE[LOGGED_IN_COOKIE] ) ) return false;
 		$cookie = $_COOKIE[LOGGED_IN_COOKIE]; // @codingStandardsIgnoreLine.
     if ( empty( $cookie ) ) {
@@ -2761,6 +2935,65 @@ function eos_dp_missing_fdp_notice(){
 }
 
 /**
+ * True when $path matches a rewrite rule that is not a single post.
+ *
+ * Runs only for a path that already contains a slash. Stops at the first
+ * matching rule, the same way WP::parse_request() does.
+ *
+ * @param string       $path       Path relative to the home URL.
+ * @param array|string $rules      rewrite_rules option.
+ * @param array        $post_types Post type slugs FDP can resolve as singles.
+ * @return bool
+ */
+function eos_dp_path_matches_non_singular( $path, $rules, $post_types ){
+	if( ! is_string( $path ) || false === strpos( $path, '/' ) || ! is_array( $rules ) ){
+		return false;
+	}
+	$path = trim( strtok( $path, '?' ), '/' );
+	if( '' === $path ){
+		return false;
+	}
+	$query = '';
+	foreach( $rules as $match => $rule_query ){
+		if( ! is_string( $match ) || ! is_string( $rule_query ) ){
+			continue;
+		}
+		$matches = array();
+		if(
+			( '' !== $path && 1 === preg_match( '#^' . $match . '#', $path, $matches ) )
+			|| 1 === preg_match( '#^' . $match . '#', urldecode( $path ), $matches )
+		){
+			$query = $rule_query;
+			break;
+		}
+	}
+	if( '' === $query ){
+		return false;
+	}
+	$query = preg_replace( '/\$matches\[\d+\]/', '1', $query );
+	$qpos = strpos( $query, '?' );
+	wp_parse_str( false === $qpos ? $query : substr( $query, $qpos + 1 ), $vars );
+	if( ! is_array( $vars ) || empty( $vars ) ){
+		return false;
+	}
+	$singular = array( 'p', 'page_id', 'name', 'pagename', 'attachment' );
+	if( is_array( $post_types ) ){
+		foreach( $post_types as $post_type ){
+			if( is_string( $post_type ) && '' !== $post_type ){
+				$singular[] = $post_type;
+			}
+		}
+	}
+	foreach( $singular as $key ){
+		if( isset( $vars[ $key ] ) && '' !== (string) $vars[ $key ] ){
+			return false;
+		}
+	}
+	unset( $vars['paged'], $vars['page'], $vars['feed'], $vars['embed'], $vars['cpage'] );
+	return ! empty( $vars );
+}
+
+/**
  * Get options by URL.
  *
  * @param string $url
@@ -2891,7 +3124,7 @@ function eos_dp_sanitize_file_name( $filename ){
 	}
 	$filename  = array_shift( $parts );
 	$extension = array_pop( $parts );
-	$mimes     = function_exists( 'wp_get_current_user' ) ? get_allowed_mime_types() : false;
+	$mimes     = ( function_exists( 'wp_get_current_user' ) && ! eos_dp_defer_current_user() && ! doing_filter( 'determine_current_user' ) ) ? get_allowed_mime_types() : false;
 	foreach ( (array) $parts as $part ) {
 		$filename .= '.' . $part;
 		if ( preg_match( '/^[a-zA-Z]{2,5}\d?$/', $part ) ) {
@@ -3019,7 +3252,7 @@ function eos_dp_fatal_error_notice(){
  *
  */
 function eos_dp_update_admin_notices( $key,$msg ){
-	if( function_exists( 'get_current_user_id' ) ){
+	if( function_exists( 'get_current_user_id' ) && ! eos_dp_defer_current_user() && ! doing_filter( 'determine_current_user' ) ){
 		$user_id = get_current_user_id();
 		if( $key && '' !== $key && $user_id && absint( $user_id ) > 0 ){
 			$admin_notices = get_user_meta( $user_id,'fdp_admin_notices',true );
@@ -3084,6 +3317,216 @@ function eos_dp_filter_active_plugins( $callback,$priority,$cron = false ){
 	}
 }
 
+/**
+ * Record Ajax and Post actions while a PRO recorder is running.
+ *
+ * Runs from the mu-plugin so the action is stored even when PRO is disabled
+ * on the request that performs it.
+ *
+ * @since 2.7.0
+ */
+function eos_dp_capture_active_recordings(){
+	if( ! defined( 'FDP_PRO_IS_ACTIVE' ) || ! FDP_PRO_IS_ACTIVE || wp_doing_cron() ){
+		return;
+	}
+	if( isset( $_REQUEST['action'] ) ){
+		$request_action = sanitize_text_field( wp_unslash( $_REQUEST['action'] ) );
+		if( in_array( $request_action, array( 'eos_dp_pro_record_ajax_action_start', 'eos_dp_pro_record_ajax_action_stop', 'heartbeat' ), true ) ){
+			return;
+		}
+	}
+	$has_action = isset( $_REQUEST['action'] ) || isset( $_REQUEST['wc-ajax'] );
+	$has_body = ! empty( $_POST ) || ( isset( $GLOBALS['fdp_post_data'] ) && is_array( $GLOBALS['fdp_post_data'] ) && ! empty( $GLOBALS['fdp_post_data'] ) );
+	$has_wc = function_exists( 'eos_dp_wc_add_to_cart_action' ) && '' !== eos_dp_wc_add_to_cart_action();
+	if( ! $has_action && ! $has_body && ! $has_wc ){
+		return;
+	}
+	$recordings = get_site_transient( 'eos_dp_recording_on' );
+	if( ! is_array( $recordings ) || empty( $recordings ) ){
+		return;
+	}
+	$GLOBALS['eos_dp_actions_recorded'] = true;
+	$session_id = isset( $_COOKIE['PHPSESSID'] ) ? sanitize_text_field( wp_unslash( $_COOKIE['PHPSESSID'] ) ) : '';
+	$browser_token = isset( $_COOKIE['eos_dp_rec_browser'] ) ? sanitize_text_field( wp_unslash( $_COOKIE['eos_dp_rec_browser'] ) ) : '';
+	$ip = eos_dp_recording_client_ip();
+	$ip_hash = '' !== $ip ? md5( $ip ) : '';
+	$action = '';
+	if( isset( $_REQUEST['action'] ) ){
+		$action = sanitize_text_field( wp_unslash( $_REQUEST['action'] ) );
+	}
+	elseif( isset( $_REQUEST['wc-ajax'] ) ){
+		$action = sanitize_text_field( wp_unslash( $_REQUEST['wc-ajax'] ) );
+	}
+	if( '' === $action && function_exists( 'eos_dp_wc_add_to_cart_action' ) ){
+		$action = eos_dp_wc_add_to_cart_action();
+	}
+	foreach( $recordings as $rec_id => $meta ){
+		if( ! eos_dp_recording_request_matches( $meta, $session_id, $ip_hash, $browser_token ) ){
+			continue;
+		}
+		$rec_id = sanitize_text_field( $rec_id );
+		$transient = get_site_transient( 'eos_dp_recording_action_'.$rec_id );
+		$transient = $transient && is_array( $transient ) ? $transient : array();
+		$transient_post = get_site_transient( 'eos_dp_recording_post_'.$rec_id );
+		if( $transient_post && 'true' === $transient_post ){
+			$pvalue = '';
+			foreach( eos_dp_recording_post_data() as $pk => $pv ){
+				if( is_array( $pv ) ){
+					$pv = '*';
+				}
+				$pvalue .= 'action' !== $pk && apply_filters( 'fdp_anonymize_post_values', true ) && ( ! defined( 'FDP_ANONYMIZE_POST_VALUES' ) || ! FDP_ANONYMIZE_POST_VALUES ) ? $pk.'=*&' : $pk.'='.$pv.'&';
+			}
+			$value = rtrim( $pvalue, '&' );
+		}
+		else{
+			$value = $action;
+		}
+		if( $value && false === strpos( (string) $value, 'eos_dp_pro_record_ajax_action_stop' ) ){
+			$transient[] = sanitize_text_field( $value );
+			set_site_transient( 'eos_dp_recording_action_'.$rec_id, array_unique( $transient ), 60 * 10 );
+		}
+	}
+}
+
+/**
+ * Whether the current request belongs to a recording.
+ *
+ * @since 2.7.0
+ *
+ * @param array  $meta
+ * @param string $session_id
+ * @param string $ip_hash
+ * @param string $browser_token
+ * @return bool
+ */
+function eos_dp_recording_request_matches( $meta, $session_id, $ip_hash, $browser_token = '' ){
+	if( ! is_array( $meta ) || empty( $meta['scope'] ) ){
+		return false;
+	}
+	if( 'any' === $meta['scope'] ){
+		return true;
+	}
+	if( 'ip' === $meta['scope'] ){
+		return '' !== $ip_hash && isset( $meta['ip_hash'] ) && hash_equals( (string) $meta['ip_hash'], (string) $ip_hash );
+	}
+	if( 'session' === $meta['scope'] ){
+		$stored_browser = isset( $meta['browser'] ) ? (string) $meta['browser'] : '';
+		if( '' !== $stored_browser && '' !== $browser_token && hash_equals( $stored_browser, (string) $browser_token ) ){
+			return true;
+		}
+		$stored_session = isset( $meta['session_id'] ) ? (string) $meta['session_id'] : '';
+		return '' !== $stored_session && hash_equals( $stored_session, (string) $session_id );
+	}
+	return false;
+}
+
+/**
+ * Client IP used to match Ajax and Post action recordings.
+ *
+ * @since 2.7.0
+ *
+ * @return string
+ */
+function eos_dp_recording_client_ip(){
+	$remote = isset( $_SERVER['REMOTE_ADDR'] ) ? eos_dp_recording_valid_ip( wp_unslash( $_SERVER['REMOTE_ADDR'] ) ) : '';
+	if( $remote && eos_dp_recording_is_public_ip( $remote ) ){
+		return $remote;
+	}
+	$candidates = array();
+	foreach( array( 'HTTP_CF_CONNECTING_IP', 'HTTP_X_REAL_IP' ) as $key ){
+		if( ! empty( $_SERVER[ $key ] ) ){
+			$candidates[] = wp_unslash( $_SERVER[ $key ] );
+		}
+	}
+	if( ! empty( $_SERVER['HTTP_X_FORWARDED_FOR'] ) ){
+		$candidates = array_merge( $candidates, explode( ',', wp_unslash( $_SERVER['HTTP_X_FORWARDED_FOR'] ) ) );
+	}
+	$fallback = '';
+	foreach( $candidates as $candidate ){
+		$ip = eos_dp_recording_valid_ip( $candidate );
+		if( ! $ip ){
+			continue;
+		}
+		if( eos_dp_recording_is_public_ip( $ip ) ){
+			return $ip;
+		}
+		if( '' === $fallback ){
+			$fallback = $ip;
+		}
+	}
+	if( '' !== $fallback ){
+		return eos_dp_recording_normalize_loopback( $fallback );
+	}
+	return eos_dp_recording_normalize_loopback( $remote );
+}
+
+/**
+ * Validate an IP address.
+ *
+ * @since 2.7.0
+ *
+ * @param string $ip
+ * @return string
+ */
+function eos_dp_recording_valid_ip( $ip ){
+	$ip = trim( sanitize_text_field( (string) $ip ) );
+	if( '' === $ip || ! filter_var( $ip, FILTER_VALIDATE_IP ) ){
+		return '';
+	}
+	return $ip;
+}
+
+/**
+ * Whether an IP is public.
+ *
+ * @since 2.7.0
+ *
+ * @param string $ip
+ * @return bool
+ */
+function eos_dp_recording_is_public_ip( $ip ){
+	return false !== filter_var( $ip, FILTER_VALIDATE_IP, FILTER_FLAG_NO_PRIV_RANGE | FILTER_FLAG_NO_RES_RANGE );
+}
+
+/**
+ * Treat local loopback addresses as the same client.
+ *
+ * @since 2.7.0
+ *
+ * @param string $ip
+ * @return string
+ */
+function eos_dp_recording_normalize_loopback( $ip ){
+	$ip = strtolower( (string) $ip );
+	if( '::1' === $ip || '127.0.0.1' === $ip || '::ffff:127.0.0.1' === $ip ){
+		return '127.0.0.1';
+	}
+	return $ip;
+}
+
+/**
+ * Body fields to store for a Post recording.
+ *
+ * @since 2.7.0
+ *
+ * @return array
+ */
+function eos_dp_recording_post_data(){
+	if( ! empty( $_POST ) ){
+		return $_POST;
+	}
+	$payload = isset( $GLOBALS['fdp_post_data'] ) && is_array( $GLOBALS['fdp_post_data'] ) ? $GLOBALS['fdp_post_data'] : array();
+	if( isset( $payload['requests'] ) && is_array( $payload['requests'] ) ){
+		foreach( $payload['requests'] as $request ){
+			if( is_array( $request ) && isset( $request['path'], $request['body'] ) && is_array( $request['body'] ) && function_exists( 'eos_dp_wc_store_cart_add_uri' ) && eos_dp_wc_store_cart_add_uri( $request['path'] ) ){
+				return $request['body'];
+			}
+		}
+		return array();
+	}
+	return $payload;
+}
+
 add_action( 'muplugins_loaded',function(){
 	/**
 	 * Add filters to disable plugins according to the settings.
@@ -3126,6 +3569,7 @@ add_action( 'muplugins_loaded',function(){
 		if( wp_doing_cron() ){
 			add_filter( 'option_active_plugins','eos_dp_cron_active_plugins' );
 		}
+		eos_dp_capture_active_recordings();
 	}
 	// Apply custom load order last, after deactivation filters have chosen which plugins load.
 	eos_dp_filter_active_plugins( 'eos_dp_apply_firing_order_filter', 999999, 1 );
