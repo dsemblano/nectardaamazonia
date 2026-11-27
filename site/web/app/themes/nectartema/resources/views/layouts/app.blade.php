@@ -143,7 +143,9 @@ window.partytown = {
             </clipPath>
         </defs>
     </svg>
+@if (! is_home() && ! is_singular('post'))    
 <x-snowfall />
+@endif
 </body>
 
 </html>
