@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "f9c6127de67bb4c21244e38eadc19e4f",
+    "content-hash": "8b9c207f818c58d863da3768b9f31965",
     "packages": [
         {
             "name": "brick/math",
@@ -8185,6 +8185,37 @@
                 "source": "https://plugins.svn.wordpress.org/regenerate-thumbnails"
             },
             "time": "2026-09-29T13:03:58+00:00"
+        },
+        {
+            "name": "wp-plugin/wisp-gallery",
+            "version": "1.3.1",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/wisp-gallery/",
+                "reference": "tags/1.3.1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/wisp-gallery.1.3.1.zip"
+            },
+            "require": {
+                "composer/installers": "~1.0|~2.0"
+            },
+            "type": "wordpress-plugin",
+            "notification-url": "https://wp-packages.org/downloads",
+            "authors": [
+                {
+                    "name": "eedee"
+                }
+            ],
+            "description": "Filterable gallery block for image and photo galleries in masonry, justified rows, grid, carousel or accordion, with a lightbox and scroll reveal.",
+            "homepage": "https://wispgallery.com",
+            "support": {
+                "changelog": "https://wordpress.org/plugins/wisp-gallery/#developers",
+                "issues": "https://wordpress.org/support/plugin/wisp-gallery",
+                "source": "https://plugins.svn.wordpress.org/wisp-gallery"
+            },
+            "time": "2026-11-13T21:46:47+00:00"
         },
         {
             "name": "wp-plugin/woocommerce",
